@@ -213,6 +213,18 @@
         "On success cancel unexecuted combat queues, retain applied effects and cooldowns; ordinary monsters do not follow across maps.",
         "On failure restore last server-confirmed valid map and position."
       ]
+    },
+    "dataStructure": {
+      "choice": "C",
+      "name": "模組化分層地圖資料結構",
+      "status": "approved",
+      "approvedDate": "2026-10-24",
+      "rules": [
+        "Separate map metadata, terrain, collision, portals/interactions and monster spawn configuration.",
+        "Small maps may load all modules together; chunked loading and caching may be added for large maps after profiling.",
+        "Preserve existing V0.5.43 game until replacement maps are playable and user approves migration.",
+        "Use stable custom mapId and original Taiwan NPC IDs for monster templates."
+      ]
     }
   },
   "proposals": {
@@ -245,5 +257,27 @@
       "version": "schemaVersion",
       "mapChunking": "optional for large maps, implementation pending"
     }
+  },
+  "mapRemake": {
+    "status": "in_progress",
+    "phase": "1_define_existing_three_map_blueprints",
+    "maps": [
+      {
+        "mapId": "map-ancient-battlefield",
+        "name": "遠古戰場",
+        "status": "pending_user_layout_review"
+      },
+      {
+        "mapId": "map-vineyard",
+        "name": "葡萄園",
+        "status": "pending_user_layout_review"
+      },
+      {
+        "mapId": "map-ghoul-grounds",
+        "name": "食屍鬼出沒地",
+        "status": "pending_user_layout_review"
+      }
+    ],
+    "strategy": "Design each map with user, implement modular assets, test individually, then switch playable game without losing existing version."
   }
 }
