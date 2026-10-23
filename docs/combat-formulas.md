@@ -38,3 +38,9 @@
 - `calcNpcPcDamage()`：等級低於 10 時，`Random(0..lvl-1)+10+STR/2+1`；等級 10 以上為 `Random(0..lvl-1)+STR/2+1`。V0.5.20 已修正低等級 +10 與整數 STR/2。
 - `calcPcDefense()`：AC 防禦最大值透過 `_targetPc.getClassFeature().getAcDefenseMax(ac)` 取得，`ac=max(0,10-PC_AC)`；**目前遊戲仍以 AC/2 暫代，尚未驗證騎士 class feature 公式**。
 - NPC 原始 STR、hitup、dmgup、undead 與攻擊狀態資料尚待核實；目前遊戲 NPC STR 為等級推算值，不能視為原版。
+
+## V0.5.21：騎士 AC 防禦已核實
+來源：`L1J-TW_3.80c/src/l1j/server/server/model/classes/L1KnightClassFeature.java` 的 `getAcDefenseMax(int ac) { return ac / 2; }`；`L1Attack.java` 的 `calcPcDefense()`：`ac=Math.max(0,10-_targetPc.getAc())`，`Random.nextInt(acDefMax+1)`。
+- 已確認：騎士 AC 物理減傷隨機值為 0 到 `floor(max(0,10-AC)/2)`，含兩端。
+- V0.5.20 實際運算與原版一致；V0.5.21 移除錯誤的「暫定係數」標示。
+- 尚未核實：怪物資料庫的真實 STR、hitup、dmgup，玩家 Dodge/NDodge、ER、額外防具 DR 與技能效果。
