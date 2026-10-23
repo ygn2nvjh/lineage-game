@@ -365,6 +365,30 @@
               "2026-10-24: User prioritizes completing vineyard first, then town, then ancient battlefield, then ghoul grounds. Specific destinations not approved."
             ]
           }
+        },
+        "farmhouseHideoutDraft": {
+          "status": "proposal_not_approved",
+          "concept": "Abandoned farmhouse as bandit hideout; vineyard monsters may randomly drop a farmhouse key; key allows entry to farmhouse encounter with bandit leader.",
+          "boss": {
+            "npcId": 45370,
+            "name": "強盜頭目",
+            "source": "Taiwan L1J 3.80c",
+            "level": 35,
+            "hp": 500,
+            "mp": 50,
+            "ac": -25,
+            "mr": 50,
+            "exp": 1226
+          },
+          "pending": [
+            "Key eligible monster list",
+            "Key drop rate",
+            "Key consumption/reuse",
+            "Farmhouse map or interior scene",
+            "Boss respawn and multiplayer access",
+            "Whether original boss loot remains unchanged"
+          ],
+          "implementation": "none"
         }
       },
       {
