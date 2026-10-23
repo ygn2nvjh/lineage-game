@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "updated": "2026-10-23",
-  "note": "14 playable monsters with full original L1J 3.80c Japan npc.sql rows. Existing localized names and map zones retained. Combat uses verified STR/size/undead/DR; non-table behavior remains subject to source code.",
+  "note": "14 playable monsters verified against locally archived Taiwan L1J 3.80c monster catalog. Original Japanese snapshots retained for provenance; Taiwan source is authoritative. Existing names, zones, artwork, and runtime combat shape unchanged.",
   "monsters": [
     {
       "npcId": 45107,
@@ -23,17 +23,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45107
       },
       "originalL1J": {
         "npcid": 45107,
@@ -100,6 +103,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45107,
+        "name": "骷髏",
+        "gfxid": 30,
+        "lvl": 10,
+        "hp": 80,
+        "mp": 30,
+        "ac": 3,
+        "str": 16,
+        "con": 14,
+        "dex": 16,
+        "wis": 12,
+        "intel": 10,
+        "mr": 10,
+        "exp": 101,
+        "size": "small",
+        "undead": 1,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 1,
+        "ranged": 1
       }
     },
     {
@@ -122,17 +149,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45122
       },
       "originalL1J": {
         "npcid": 45122,
@@ -199,6 +229,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45122,
+        "name": "骷髏弓箭手",
+        "gfxid": 1096,
+        "lvl": 12,
+        "hp": 80,
+        "mp": 25,
+        "ac": 0,
+        "str": 16,
+        "con": 14,
+        "dex": 16,
+        "wis": 12,
+        "intel": 10,
+        "mr": 10,
+        "exp": 145,
+        "size": "small",
+        "undead": 1,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 1,
+        "ranged": 10
       }
     },
     {
@@ -221,17 +275,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45161
       },
       "originalL1J": {
         "npcid": 45161,
@@ -298,6 +355,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45161,
+        "name": "史巴托",
+        "gfxid": 145,
+        "lvl": 16,
+        "hp": 120,
+        "mp": 30,
+        "ac": -3,
+        "str": 17,
+        "con": 15,
+        "dex": 16,
+        "wis": 14,
+        "intel": 14,
+        "mr": 18,
+        "exp": 257,
+        "size": "small",
+        "undead": 1,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 1,
+        "ranged": 1
       }
     },
     {
@@ -320,17 +401,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45223
       },
       "originalL1J": {
         "npcid": 45223,
@@ -397,6 +481,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45223,
+        "name": "食人妖精",
+        "gfxid": 152,
+        "lvl": 22,
+        "hp": 250,
+        "mp": 30,
+        "ac": -6,
+        "str": 19,
+        "con": 18,
+        "dex": 12,
+        "wis": 12,
+        "intel": 10,
+        "mr": 10,
+        "exp": 485,
+        "size": "large",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 1,
+        "ranged": 1
       }
     },
     {
@@ -419,17 +527,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45009
       },
       "originalL1J": {
         "npcid": 45009,
@@ -496,6 +607,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45009,
+        "name": "妖魔",
+        "gfxid": 56,
+        "lvl": 2,
+        "hp": 6,
+        "mp": 4,
+        "ac": 10,
+        "str": 6,
+        "con": 12,
+        "dex": 10,
+        "wis": 6,
+        "intel": 10,
+        "mr": 0,
+        "exp": 5,
+        "size": "small",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 0,
+        "ranged": 1
       }
     },
     {
@@ -518,17 +653,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45019
       },
       "originalL1J": {
         "npcid": 45019,
@@ -595,6 +733,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45019,
+        "name": "妖魔弓箭手",
+        "gfxid": 3860,
+        "lvl": 3,
+        "hp": 12,
+        "mp": 4,
+        "ac": 10,
+        "str": 12,
+        "con": 11,
+        "dex": 12,
+        "wis": 7,
+        "intel": 8,
+        "mr": 2,
+        "exp": 10,
+        "size": "small",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 0,
+        "ranged": 10
       }
     },
     {
@@ -617,17 +779,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45082
       },
       "originalL1J": {
         "npcid": 45082,
@@ -694,6 +859,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45082,
+        "name": "妖魔鬥士",
+        "gfxid": 3864,
+        "lvl": 8,
+        "hp": 50,
+        "mp": 8,
+        "ac": 5,
+        "str": 14,
+        "con": 14,
+        "dex": 14,
+        "wis": 8,
+        "intel": 10,
+        "mr": 5,
+        "exp": 65,
+        "size": "small",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 0,
+        "ranged": 1
       }
     },
     {
@@ -716,17 +905,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45121
       },
       "originalL1J": {
         "npcid": 45121,
@@ -793,6 +985,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45121,
+        "name": "妖魔法師",
+        "gfxid": 1211,
+        "lvl": 12,
+        "hp": 80,
+        "mp": 50,
+        "ac": 0,
+        "str": 6,
+        "con": 12,
+        "dex": 10,
+        "wis": 13,
+        "intel": 10,
+        "mr": 30,
+        "exp": 145,
+        "size": "small",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 0,
+        "ranged": 1
       }
     },
     {
@@ -815,17 +1031,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45278
       },
       "originalL1J": {
         "npcid": 45278,
@@ -892,6 +1111,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45278,
+        "name": "歐吉",
+        "gfxid": 1020,
+        "lvl": 28,
+        "hp": 500,
+        "mp": 20,
+        "ac": -18,
+        "str": 20,
+        "con": 18,
+        "dex": 12,
+        "wis": 12,
+        "intel": 8,
+        "mr": 20,
+        "exp": 785,
+        "size": "large",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 1,
+        "ranged": 2
       }
     },
     {
@@ -914,17 +1157,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 81066
       },
       "originalL1J": {
         "npcid": 81066,
@@ -991,6 +1237,30 @@
         "amount_fixed": 1,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 81066,
+        "name": "黑騎士搜索隊",
+        "gfxid": 4003,
+        "lvl": 16,
+        "hp": 100,
+        "mp": 10,
+        "ac": -10,
+        "str": 16,
+        "con": 16,
+        "dex": 15,
+        "wis": 12,
+        "intel": 12,
+        "mr": 10,
+        "exp": 257,
+        "size": "small",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 0,
+        "ranged": 2
       }
     },
     {
@@ -1013,17 +1283,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45065
       },
       "originalL1J": {
         "npcid": 45065,
@@ -1090,6 +1363,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45065,
+        "name": "人形殭屍",
+        "gfxid": 52,
+        "lvl": 6,
+        "hp": 45,
+        "mp": 12,
+        "ac": 8,
+        "str": 14,
+        "con": 16,
+        "dex": 6,
+        "wis": 5,
+        "intel": 2,
+        "mr": 5,
+        "exp": 37,
+        "size": "small",
+        "undead": 1,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 1,
+        "ranged": 1
       }
     },
     {
@@ -1112,17 +1409,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45157
       },
       "originalL1J": {
         "npcid": 45157,
@@ -1189,6 +1489,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45157,
+        "name": "食屍鬼",
+        "gfxid": 144,
+        "lvl": 16,
+        "hp": 110,
+        "mp": 30,
+        "ac": -4,
+        "str": 16,
+        "con": 17,
+        "dex": 16,
+        "wis": 11,
+        "intel": 4,
+        "mr": 13,
+        "exp": 257,
+        "size": "small",
+        "undead": 1,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 4,
+        "paralysis_atk": 0,
+        "agro": 1,
+        "ranged": 1
       }
     },
     {
@@ -1211,17 +1535,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45136
       },
       "originalL1J": {
         "npcid": 45136,
@@ -1288,6 +1615,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45136,
+        "name": "夏洛伯",
+        "gfxid": 95,
+        "lvl": 14,
+        "hp": 100,
+        "mp": 15,
+        "ac": 0,
+        "str": 15,
+        "con": 13,
+        "dex": 17,
+        "wis": 6,
+        "intel": 5,
+        "mr": 12,
+        "exp": 197,
+        "size": "large",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 1,
+        "ranged": 2
       }
     },
     {
@@ -1310,17 +1661,20 @@
         "dmgup": 0
       },
       "verification": {
-        "baseStats": "verified_L1J_3.80c_Japan_npc_sql",
+        "baseStats": "verified_L1J_3.80c_Taiwan_npc_sql",
         "size": "verified",
         "undead": "verified",
         "damageReduction": "verified",
         "hard": "verified",
-        "npcStr": "verified"
+        "npcStr": "verified",
+        "taiwanCrosscheck": "matched_14_monsters_core_and_combat_fields"
       },
       "source": {
         "game": "lineage_v0516.html",
         "upstream": "L1J-TW_3.80c",
-        "npcTable": "db/Japan/MyISAM/npc.sql"
+        "npcTable": "db/Taiwan/npc.sql",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45184
       },
       "originalL1J": {
         "npcid": 45184,
@@ -1387,6 +1741,30 @@
         "amount_fixed": 0,
         "change_head": 0,
         "cant_resurrect": 0
+      },
+      "originalTaiwan": {
+        "npcid": 45184,
+        "name": "楊果里恩",
+        "gfxid": 146,
+        "lvl": 18,
+        "hp": 200,
+        "mp": 30,
+        "ac": -5,
+        "str": 18,
+        "con": 16,
+        "dex": 14,
+        "wis": 6,
+        "intel": 5,
+        "mr": 10,
+        "exp": 325,
+        "size": "large",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 1,
+        "paralysis_atk": 0,
+        "agro": 1,
+        "ranged": 2
       }
     }
   ]
