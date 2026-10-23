@@ -69,3 +69,9 @@
 - `L1Attack.calcNpcPcHit()`：`attackerDice=d20+hitRate-1`，`fumble=hitRate`，`critical=hitRate+19`，再比對玩家 AC 防禦骰。
 - V0.5.26 改用上述明確門檻，取代原本直接 `roll===1/20` 的簡寫。
 - 未實作的加成與迴避：裝備重量、Dodge/NDodge、ER、食物及技能 buff、特殊攻擊失效條件；不可稱為完整命中系統。
+
+## V0.5.28：騎士近戰額外命中與負重
+- 已核對 `L1Attack.calShortRageHit()`：額外加入 `getHitup()`、`getOriginalHitup()`、`getHitModifierByArmor()`；料理 2_0 給 +1、3_2 給 +2（對應 buff 時生效）。
+- `calcPcNpcHit()` 負重命中懲罰依 `getWeight242()`：81–121 => -1；122–160 => -3；161–200 => -5；其他 => 0（忠實保留該版本程式分支）。
+- V0.5.28 新增 `lineageMeleeHitExtras(character)`，讀取可選 `combatBonuses.hitup/originalHitup/armorHitModifier/cookingMeleeHit`；新增 `lineageWeightHitPenalty(character.weight242)`。
+- **尚未接通**：真實背包重量換算、裝備實際加成資料、料理 buff 狀態；目前未提供值時皆為 0，不能宣稱負重／裝備已完整實際生效。
