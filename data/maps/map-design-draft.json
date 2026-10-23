@@ -574,9 +574,22 @@
         },
         "monsterRosterReview": {
           "choice": "D",
-          "status": "pending_verification",
+          "status": "pending_verification_with_exclusion_approved",
           "decision": "Research comparable outdoor spawn areas, original geography, ecology and loot before fixing monster roster.",
-          "noGameplayChanges": true
+          "noGameplayChanges": true,
+          "excludedFromVineyard": [
+            {
+              "group": "high-tier orc tribes",
+              "names": [
+                "甘地妖魔",
+                "羅孚妖魔",
+                "阿吐巴妖魔",
+                "那魯加妖魔"
+              ],
+              "reason": "Reserve for 燃柳村 and surrounding orc activity area per user decision"
+            }
+          ],
+          "reservedForFutureArea": "燃柳村"
         }
       },
       {
