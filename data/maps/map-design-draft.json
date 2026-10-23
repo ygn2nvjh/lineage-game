@@ -367,7 +367,7 @@
           }
         },
         "farmhouseHideoutDraft": {
-          "status": "proposal_not_approved",
+          "status": "direction_approved_rules_pending",
           "concept": "Abandoned farmhouse as bandit hideout; vineyard monsters may randomly drop a farmhouse key; key allows entry to farmhouse encounter with bandit leader.",
           "boss": {
             "npcId": 45370,
@@ -388,7 +388,16 @@
             "Boss respawn and multiplayer access",
             "Whether original boss loot remains unchanged"
           ],
-          "implementation": "none"
+          "implementation": "none",
+          "selectedPlan": "C",
+          "designDirection": "Phase 1 shared farmhouse with one server-wide boss and key-gated entry; reserve map-template/instance separation for possible future party instances.",
+          "rulesPending": [
+            "Key consumption and reusability",
+            "Boss death loot settlement and safe exit",
+            "Multiple players entry, reentry, disconnect and boss respawn",
+            "Instance behavior deferred; no implementation"
+          ],
+          "recordedOn": "2026-10-24"
         }
       },
       {
