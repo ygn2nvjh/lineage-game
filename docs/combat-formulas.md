@@ -50,3 +50,10 @@
 - 遊戲怪物生成改使用資料庫 `str`；NPC 命中與傷害額外加值接上資料庫（原始 npc.sql 沒有獨立 hitup/dmgup 欄位時預設 0）。
 - `size`、`undead`、`damage_reduction`、`hard`、`poison_atk`、`paralysis_atk` 皆保存，硬皮與中毒機制尚未實作。
 - 目前只匯入正在測試的 14 隻，不代表整個原始 npc.sql 全部已匯入；原始來源為 Japan 資料目錄，並非獨立驗證的台服資料。
+
+## V0.5.23：硬皮怪物與武器損傷
+來源：`L1J-TW_3.80c/src/l1j/server/server/model/L1Attack.java` 的 `damageNpcWeaponDurability()`；`db/Japan/MyISAM/weapon.sql` 的 `canbedmg` 與 `bless`。
+- 條件：PC→NPC、NPC `hard=1`、非空手、武器 `canbedmg=1`、未處於 SOUL_OF_FLAME；一般／詛咒武器 `Random(1..100)<10`，祝福武器 `Random(1..100)<3`，分別實際 9%／2%。
+- 原始碼將 `weapon.getEnchantLevel()-weapon.get_durability()` 作為近戰武器有效強化值。V0.5.23 已加入損傷累積和傷害扣除；SOUL_OF_FLAME、修理武器、損傷保存尚未實作。
+- 武器 24 短劍與 42 細劍的 `canbedmg=1`、`bless=1` 已由原始武器 SQL 核實。
+- **目前測試的 14 隻怪物原始 `hard` 全部為 0，因此這些怪物不會觸發壞刀；需後續加入真正 hard=1 的怪物才能實測。**
