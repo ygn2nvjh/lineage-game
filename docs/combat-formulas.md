@@ -31,3 +31,10 @@
 - 新增怪物命中時的 d20、攻擊值、防禦值、基傷與 AC 減傷紀錄。
 - **現有 NPC 基傷及 AC 減傷係數暫時維持舊版測試公式，未宣稱與 L1J 原版一致。**
 - 下一步：核對 `L1Attack.java` NPC→PC 完整公式、怪物原始攻擊參數及武器損壞判定，再替換暫定公式。
+
+## V0.5.20：L1J NPC→PC 基礎傷害核對
+原始碼：`L1J-TW_3.80c/src/l1j/server/server/model/L1Attack.java`。
+- `calcNpcPcHit()`：NPC 等級 + hitup，d20；AC >= 0 為 `10-AC`，AC < 0 為 `10+Random(1..-AC)`；Dodge/NDodge、遠程 ER、娃娃等特殊條件仍未接入。
+- `calcNpcPcDamage()`：等級低於 10 時，`Random(0..lvl-1)+10+STR/2+1`；等級 10 以上為 `Random(0..lvl-1)+STR/2+1`。V0.5.20 已修正低等級 +10 與整數 STR/2。
+- `calcPcDefense()`：AC 防禦最大值透過 `_targetPc.getClassFeature().getAcDefenseMax(ac)` 取得，`ac=max(0,10-PC_AC)`；**目前遊戲仍以 AC/2 暫代，尚未驗證騎士 class feature 公式**。
+- NPC 原始 STR、hitup、dmgup、undead 與攻擊狀態資料尚待核實；目前遊戲 NPC STR 為等級推算值，不能視為原版。
