@@ -65,3 +65,10 @@ V0.5.30 加入 `lineageMaxWeight(character)`，僅當 STR、CON 存在時回傳�
 - 怪物自動取得戰利品前，以當前已知背包重量加上物品 SQL 重量，並依 `L1PcInventory.checkAddItem` 的 `+1` 預估及 `weight242>=242` 條件阻止取得；被拒絕的物品會提示數量，但不留在地面。
 - 修正 `lineageWeightState` 備援計算原先誤要求 `maxWeight` 欄位已存在的問題。
 - 仍未涵蓋未建模裝備/物品、完整 HP/MP 自然恢復與其技能例外；背包負重上限目前僅於已取得角色與重量資料時生效。
+
+## V0.5.34：HP/MP 自然恢復測試邏輯
+- 原始碼來源 `model/HpRegeneration.java`、`model/MpRegeneration.java`：HP 等級恢復門檻（騎士 >=30 使用 2*4 點）、MP 64 點，`run()` 每次累積 `_curPoint`（預設 4）。
+- 原型 `lineageRegenStep(dt)` 暫用每秒累積 4 點，**一秒排程尚未從伺服器排程核對，不代表正式 L1J 恢復時間**。
+- HP 在負重值 >=121 時停止正向基礎恢復；MP 在 >=120 時停止。EXOTIC_VITALIZE / ADDITIONAL_FIRE 可豁免兩者；黃金之翼（item 20049）只豁免 HP。例外旗標已預留 `character.regenBonuses`，尚無遊戲操作介面。
+- 原型角色 MP 使用 `baseMaxMp` 初始化，沒有完整 MP 消耗及 UI；HP/MP 恢復量尚未涵蓋原始碼所有加成、負向裝備效果、飢餓、水中等情境。
+- 下一步：核對 L1J 排程呼叫頻率、完善恢復公式、裝備/技能/飽食度條件與可見 MP UI。
