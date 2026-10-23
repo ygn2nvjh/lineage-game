@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>類天堂｜葡萄園地圖 V1.0 地形試玩</title>
+<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#10140e;color:#f4e6c2;font-family:system-ui}canvas{display:block;width:100vw;height:100dvh;image-rendering:pixelated;touch-action:none}#hud{position:fixed;top:8px;left:8px;background:#131a12d9;padding:8px 11px;border:1px solid #8b7955;border-radius:5px;font-size:12px;pointer-events:none}#pad{position:fixed;bottom:20px;left:18px;display:grid;grid-template-columns:repeat(3,52px);grid-template-rows:repeat(3,52px);gap:3px;touch-action:none}button{background:#263323dd;border:1px solid #a39167;color:#f5eac8;border-radius:9px;font-size:22px;touch-action:none}button:active{background:#6d6642}#help{position:fixed;right:10px;bottom:12px;background:#151b13d9;border:1px solid #887653;padding:8px;font-size:11px;max-width:140px}</style></head><body><canvas id="game"></canvas><div id="hud">葡萄園 V1.0｜地形與碰撞測試<br><span id="status"></span></div><div id="pad"><span></span><button data-d="up">▲</button><span></span><button data-d="left">◀</button><span></span><button data-d="right">▶</button><span></span><button data-d="down">▼</button><span></span></div><div id="help">方向鍵／WASD 移動<br>地圖 120×96 格（暫定）<br>出口暫不切圖<br>怪物尚未載入，不影響正式版</div>
+<script>
+'use strict';
+const W=120,H=96,T=24,cv=document.getElementById('game'),cx=cv.getContext('2d'),status=document.getElementById('status');
+let vw=0,vh=0,dpr=1;function resize(){dpr=Math.min(devicePixelRatio||1,2);vw=innerWidth;vh=innerHeight;cv.width=Math.round(vw*dpr);cv.height=Math.round(vh*dpr);cx.setTransform(dpr,0,0,dpr,0,0);cx.imageSmoothingEnabled=false}addEventListener('resize',resize);resize();
+const tiles=new Uint8Array(W*H),blocked=new Uint8Array(W*H);
+const at=(x,y)=>y*W+x,inside=(x,y)=>x>=0&&x<W&&y>=0&&y<H;
+function rand(x,y,s=0){let z=Math.imul(x+241,374761393)^Math.imul(y+97,668265263)^Math.imul(s+17,1274126177);z=Math.imul(z^(z>>>13),1274126177);return ((z^(z>>>16))>>>0)/4294967296}
+function paint(x,y,t,solid=0){if(inside(x,y)){tiles[at(x,y)]=t;blocked[at(x,y)]=solid}}
+function rect(x,y,w,h,t,solid=0){for(let j=y;j<y+h;j++)for(let i=x;i<x+w;i++)paint(i,j,t,solid)}
+function road(x,y){for(let a=-2;a<=2;a++)for(let b=-2;b<=2;b++)if(a*a+b*b<=6)paint(x+a,y+b,2)}
+for(let y=0;y<H;y++)for(let x=0;x<W;x++){const r=rand(x,y);paint(x,y,r<.13?1:0);if(x<35&&y<36&&r<.29)paint(x,y,3,1);else if(x>83&&y<32&&r<.12)paint(x,y,4,1);else if(x<44&&y>26&&y<77&&x%7===0&&r<.82)paint(x,y,5,1);else if(x>77&&y>34&&y<85&&r<.13)paint(x,y,6,0)}
+// Farmhouse: north-of-center, west of the north-south road. Door on east wall.
+rect(48,32,15,11,7,1);rect(49,33,13,9,8,1);paint(62,38,9,0);paint(61,38,2,0);paint(63,38,2,0);
+for(let y=0;y<H;y++){let x=Math.round(69+6*Math.sin(y/12)+2*Math.sin(y/5));road(x,y)}
+// East and west trails are independent and do not create an east-west highway.
+for(let x=0;x<70;x++){let y=Math.round(67+5*Math.sin(x/12));paint(x,y,2);paint(x,y+1,2)}
+for(let x=70;x<W;x++){let y=Math.round(58+6*Math.sin(x/11));paint(x,y,2);paint(x,y+1,2)}
+// Farmhouse spur.
+for(let x=62;x<=72;x++)road(x,39);
+for(let x=0;x<W;x++){if(Math.abs(x-69)<6){paint(x,0,2);paint(x,H-1,2)}}
+for(let y=0;y<H;y++){if(Math.abs(y-67)<4)paint(0,y,2);if(Math.abs(y-58)<4)paint(W-1,y,2)}
+const player={x:69,y:88};let move={},last=0,notice='';const dirs={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
+function attempt(dx,dy){const x=player.x+dx,y=player.y+dy;if(!inside(x,y)){notice='出口尚未連接其他地圖';return}if(blocked[at(x,y)]){notice='障礙物阻擋';return}player.x=x;player.y=y;notice=''}
+document.querySelectorAll('button[data-d]').forEach(b=>{const d=b.dataset.d;b.addEventListener('pointerdown',e=>{e.preventDefault();b.setPointerCapture(e.pointerId);move[d]=true});for(const ev of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(ev,()=>move[d]=false)});
+const keymap={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right'};addEventListener('keydown',e=>{const d=keymap[e.key];if(d){e.preventDefault();move[d]=true}});addEventListener('keyup',e=>{const d=keymap[e.key];if(d)move[d]=false});
+const colors=['#52663b','#6a7142','#887651','#263e2a','#80754c','#48492c','#8a7845','#40362d','#79603c','#c2a46c'];
+function frame(t){if(t-last>110){for(const d of ['up','down','left','right'])if(move[d]){attempt(...dirs[d]);break}last=t}
+cx.clearRect(0,0,vw,vh);const ox=Math.floor(vw/2-player.x*T-T/2),oy=Math.floor(vh/2-player.y*T-T/2);
+const x0=Math.max(0,Math.floor(-ox/T)),x1=Math.min(W-1,Math.ceil((vw-ox)/T)),y0=Math.max(0,Math.floor(-oy/T)),y1=Math.min(H-1,Math.ceil((vh-oy)/T));
+for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++){const t=tiles[at(x,y)],sx=ox+x*T,sy=oy+y*T;cx.fillStyle=colors[t];cx.fillRect(sx,sy,T,T);const r=rand(x,y,9);if(t===3){cx.fillStyle='#142a1a';cx.fillRect(sx+5,sy+2,15,18);cx.fillStyle='#53633a';cx.fillRect(sx+9,sy+14,6,9)}else if(t===5){cx.fillStyle='#28261b';cx.fillRect(sx+9,sy,5,T);cx.fillStyle='#a19a56';cx.fillRect(sx+3,sy+5,17,5)}else if(t===4){cx.fillStyle='#a79d7a';cx.fillRect(sx+5,sy+7,14,12)}else if(t===6){cx.fillStyle='#ac9a5a';cx.fillRect(sx+9,sy+7,3,9)}else if(t===0&&r<.18){cx.fillStyle='#7a8b49';cx.fillRect(sx+8,sy+9,3,6)}else if(t===8){cx.fillStyle='#9b794d';cx.fillRect(sx+2,sy+2,20,20)}else if(t===9){cx.fillStyle='#d9b777';cx.fillRect(sx+4,sy+3,15,18)}}
+cx.fillStyle='#161714';cx.fillRect(ox+player.x*T+6,oy+player.y*T+6,13,16);cx.fillStyle='#f2d0a1';cx.fillRect(ox+player.x*T+8,oy+player.y*T+2,9,9);cx.fillStyle='#4a6c9b';cx.fillRect(ox+player.x*T+6,oy+player.y*T+12,13,9);
+status.textContent='座標 '+player.x+','+player.y+'｜'+(notice||'移動測試中');requestAnimationFrame(frame)}requestAnimationFrame(frame);
+</script></body></html>
