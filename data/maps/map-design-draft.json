@@ -674,6 +674,71 @@
           "noOtherZones": true,
           "remainingSevenSpecies": "pending_review",
           "noGameplayChanges": true
+        },
+        "monsterZoneAssignments": {
+          "status": "pending_review",
+          "total": 36,
+          "primarySecondarySplit": "pending",
+          "entries": [
+            {
+              "name": "妖魔",
+              "npcId": 45009,
+              "count": 8,
+              "primary": "南側入口",
+              "secondary": "西側藤架"
+            },
+            {
+              "name": "妖魔弓箭手",
+              "npcId": 45019,
+              "count": 5,
+              "primary": "西側藤架",
+              "secondary": "東側農田"
+            },
+            {
+              "name": "妖魔鬥士",
+              "npcId": 45082,
+              "count": 5,
+              "primary": "西側藤架",
+              "secondary": "東側農田"
+            },
+            {
+              "name": "狼人",
+              "npcId": 45024,
+              "count": 4,
+              "primary": "農舍周邊",
+              "secondary": "東北荒地"
+            },
+            {
+              "name": "侏儒",
+              "npcId": 45041,
+              "count": 5,
+              "primary": "西北樹林",
+              "secondary": "南側入口"
+            },
+            {
+              "name": "侏儒戰士",
+              "npcId": 45092,
+              "count": 4,
+              "primary": "西北樹林",
+              "secondary": "農舍周邊"
+            },
+            {
+              "name": "妖魔法師",
+              "npcId": 45121,
+              "count": 4,
+              "primary": "東側農田",
+              "secondary": "西側藤架"
+            },
+            {
+              "name": "歐吉",
+              "npcId": 45278,
+              "count": 1,
+              "primary": "東北荒地",
+              "secondary": null
+            }
+          ],
+          "ogreRule": "Approved: one ogre only in northeast wasteland",
+          "noGameplayChanges": true
         }
       },
       {
