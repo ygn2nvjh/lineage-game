@@ -394,7 +394,6 @@
           "rulesPending": [
             "Instance behavior deferred; no implementation",
             "Boss respawn interval and server-sleep recovery",
-            "Voluntary exit and re-entry key handling",
             "Disconnect/reconnect location and 60-second evacuation handling"
           ],
           "recordedOn": "2026-10-24",
@@ -547,6 +546,13 @@
             "originalBossSpawnMapId": 4,
             "originalCycleType": "etc1",
             "originalSpawnRowCount": 5
+          },
+          "voluntaryExit": {
+            "choice": "A",
+            "status": "approved",
+            "rule": "Player may voluntarily exit farmhouse at any time; spent key is not refunded. If boss is still alive, re-entry requires a fresh key per player; if boss is dead, entry remains closed until respawn.",
+            "disconnectIsNotVoluntaryExit": true,
+            "approvedOn": "2026-10-24"
           }
         }
       },
