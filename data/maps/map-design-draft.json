@@ -186,6 +186,19 @@
         "On failed transition, restore last server-confirmed valid map and position.",
         "Ordinary monsters do not chase players across map boundaries."
       ]
+    },
+    "mapDimensions": {
+      "choice": "C",
+      "name": "地圖尺寸自由設定",
+      "status": "approved",
+      "approvedDate": "2026-10-23",
+      "details": "Each map independently defines widthTiles and heightTiles; non-square maps supported; no fixed 64/128/256 presets required.",
+      "safeguards": [
+        "Positive integer widthTiles and heightTiles validated on import.",
+        "Performance constraints via viewport culling and chunked map data for large maps.",
+        "Server validates map bounds, collisions and transition destinations.",
+        "No fixed maximum dimension approved yet; benchmark before choosing technical caps."
+      ]
     }
   },
   "proposals": {
@@ -195,31 +208,24 @@
       "reason": "Logical tile size; rendering may scale independently on iPhone Safari."
     },
     "mapDimensionsTiles": {
-      "recommendedDefault": [
-        128,
-        128
-      ],
-      "small": [
-        64,
-        64
-      ],
-      "large": [
-        256,
-        256
-      ],
-      "status": "proposed",
-      "reason": "Streaming/culling needed for large maps; sizes not yet benchmarked."
+      "status": "superseded_by_approved_C",
+      "note": "64/128/256 are optional design examples only, not mandatory map dimensions."
     },
     "transitions": {
-      "recommended": "server-authoritative portal trigger with target mapId and spawn marker; atomic state change; client loading overlay",
-      "status": "proposed"
+      "recommended": "Server-authoritative boundary/portal transition: walk into a defined exit area, verify destination, atomically change map and spawn marker, then sync client.",
+      "status": "proposed",
+      "options": {
+        "A": "Walk into boundary/portal trigger, automatic transition",
+        "B": "Tap an exit/door, then server-authorized transition",
+        "C": "Support both automatic boundaries and interactive doors/portals"
+      }
     },
     "schema": {
       "mapId": "unique stable string",
       "name": "display name",
       "category": "town|field|dungeon|interior",
-      "tileWidth": "integer",
-      "tileHeight": "integer",
+      "tileWidth": "positive integer independently configured per map",
+      "tileHeight": "positive integer independently configured per map",
       "tileSizePx": "integer",
       "terrain": "separate tiles/layers",
       "collision": "tile flags or polygon obstacles",
@@ -228,7 +234,8 @@
       "spawnGroups": "monster npcId, count, geometry, respawn settings",
       "regions": "named areas and gameplay flags",
       "originalL1jReferences": "optional historical map IDs",
-      "version": "schemaVersion"
+      "version": "schemaVersion",
+      "mapChunking": "optional for large maps, implementation pending"
     }
   }
 }
