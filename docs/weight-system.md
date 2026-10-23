@@ -77,3 +77,10 @@ V0.5.30 加入 `lineageMaxWeight(character)`，僅當 STR、CON 存在時回傳�
 - HUD 左上角保留角色名稱、HP 紅條、MP 藍條與 `HP current/max　MP current/max` 數值；移除擊殺數與紅水數量（快捷藥水數量不變）。
 - `L1PcInstance.java#startHpRegeneration()` 和 `#startMpRegeneration()` 均以 `scheduleAtFixedRate(...,1000,1000)` 每 1000ms 執行，確認 V0.5.34 原型採用的一秒排程週期。
 - HP/MP 恢復量及其他情境仍是部分模擬，尚待逐項核對原始碼；MP UI 已連動實際 MP 數值。
+
+## V0.5.36：EXP HUD 整合及恢復公式核對
+- 左上 HUD：EXP 條移到 HP/MP 下方，只顯示本等級 EXP 百分比（4 位小數），不再顯示原始經驗數字。`人物／裝備` 增加本級經驗值/需求值/距離升級詳細數據。XP 條寬度 142px 與 HP/MP 對齊。
+- 已核對 `HpRegeneration.java#regenHp`：Lv>11、CON>=14 時 `maxBonus=min(CON-12,14)`，`Random.nextInt(maxBonus)+1`；原型 V0.5.35 尚未套用 CON>25 的 14 上限，下一輪需修正。
+- HP 裝備 HPR + getHpr，Nature's Touch +15、住宅/旅館 +5、料理及原始 HPR 等，飢餓 food<3 / weight242>=121 / BERSERKERS 抑制正向基本與正向裝備恢復，但負向裝備 HPR 保留；水中及特定地圖可能額外扣血。
+- 已核對 `MpRegeneration.java#regenMp`：WIS 15-16=2，>=17=3，其餘=1；藍水、住宅/旅館、料理、原始 MPR 等可加成；food<3 / weight242>=120 抑制正向基本與正向裝備恢復，負向裝備 MPR 保留。
+- 本輪先完成 HUD 與來源核對，尚未宣稱上述全部恢復修正已寫入遊戲；後續分階段接入。
