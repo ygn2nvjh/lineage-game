@@ -635,21 +635,23 @@
           "noGameplayChanges": true
         },
         "roadAndExitReview": {
-          "status": "pending_confirmation",
+          "status": "approved",
           "northExit": {
             "reserved": true,
             "destination": "undecided"
           },
           "southNorthAxis": "continuous main road with farmhouse spur",
-          "eastWestAxis": "narrow footpaths through wasteland and marsh; not formal roads",
+          "eastWestAxis": "separate narrow trails to west and east exits; trails need not connect to each other",
           "exits": [
             "north",
             "south",
             "east",
             "west"
           ],
-          "note": "User requested changes; awaiting layout confirmation before treating geometry as final.",
-          "noGameplayChanges": true
+          "note": "Four exits; east/west trails through wasteland/marsh, no continuous east-west thoroughfare. Geometry and zones remain pending.",
+          "noGameplayChanges": true,
+          "choice": "B",
+          "northSouthAxis": "continuous north-south main road"
         }
       },
       {
