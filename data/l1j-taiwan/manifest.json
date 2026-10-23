@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repository": "nonono44/l1j-tw-99nets",
+    "path": "L1J-TW_3.80c/db/Taiwan/npc.sql",
+    "table": "npc380_131029",
+    "snapshotDate": "2013-10-29"
+  },
+  "rowCount": 3428,
+  "columns": [
+    "npcid",
+    "name",
+    "nameid",
+    "note",
+    "impl",
+    "gfxid",
+    "lvl",
+    "hp",
+    "mp",
+    "ac",
+    "str",
+    "con",
+    "dex",
+    "wis",
+    "intel",
+    "mr",
+    "exp",
+    "lawful",
+    "size",
+    "weakAttr",
+    "ranged",
+    "tamable",
+    "passispeed",
+    "atkspeed",
+    "alt_atk_speed",
+    "atk_magic_speed",
+    "sub_magic_speed",
+    "undead",
+    "poison_atk",
+    "paralysis_atk",
+    "agro",
+    "agrososc",
+    "agrocoi",
+    "family",
+    "agrofamily",
+    "agrogfxid1",
+    "agrogfxid2",
+    "picupitem",
+    "digestitem",
+    "bravespeed",
+    "hprinterval",
+    "hpr",
+    "mprinterval",
+    "mpr",
+    "teleport",
+    "randomlevel",
+    "randomhp",
+    "randommp",
+    "randomac",
+    "randomexp",
+    "randomlawful",
+    "damage_reduction",
+    "hard",
+    "doppel",
+    "IsTU",
+    "IsErase",
+    "bowActId",
+    "karma",
+    "transform_id",
+    "transform_gfxid",
+    "light_size",
+    "amount_fixed",
+    "change_head",
+    "cant_resurrect",
+    "hascastle",
+    "spawnlist_door",
+    "count_map"
+  ],
+  "parts": [
+    {
+      "path": "data/l1j-taiwan/npc-part-01.json",
+      "rows": 500
+    },
+    {
+      "path": "data/l1j-taiwan/npc-part-02.json",
+      "rows": 500
+    },
+    {
+      "path": "data/l1j-taiwan/npc-part-03.json",
+      "rows": 500
+    },
+    {
+      "path": "data/l1j-taiwan/npc-part-04.json",
+      "rows": 500
+    },
+    {
+      "path": "data/l1j-taiwan/npc-part-05.json",
+      "rows": 500
+    },
+    {
+      "path": "data/l1j-taiwan/npc-part-06.json",
+      "rows": 500
+    },
+    {
+      "path": "data/l1j-taiwan/npc-part-07.json",
+      "rows": 428
+    }
+  ],
+  "notes": [
+    "Raw NPC table includes non-monster NPCs and deprecated records.",
+    "Do not auto-spawn every row; keep playable 14 monsters unchanged.",
+    "Undead night damage multiplier is reference only and disabled in game."
+  ]
+}
