@@ -84,3 +84,10 @@ V0.5.30 加入 `lineageMaxWeight(character)`，僅當 STR、CON 存在時回傳�
 - HP 裝備 HPR + getHpr，Nature's Touch +15、住宅/旅館 +5、料理及原始 HPR 等，飢餓 food<3 / weight242>=121 / BERSERKERS 抑制正向基本與正向裝備恢復，但負向裝備 HPR 保留；水中及特定地圖可能額外扣血。
 - 已核對 `MpRegeneration.java#regenMp`：WIS 15-16=2，>=17=3，其餘=1；藍水、住宅/旅館、料理、原始 MPR 等可加成；food<3 / weight242>=120 抑制正向基本與正向裝備恢復，負向裝備 MPR 保留。
 - 本輪先完成 HUD 與來源核對，尚未宣稱上述全部恢復修正已寫入遊戲；後續分階段接入。
+
+## V0.5.39：自然恢復公式修正
+- HP 恢復等級表 `[30,25,20,16,14,12,11,10,9,3,2]`，騎士 Lv30+ 使用第 11 段，即 8 點/每秒累積 4 點，約 2 秒一次；MP 64 點，約 16 秒一次。
+- HP CON 14+ 且 Lv>11：`maxBonus=min(CON-12,14)`，恢復隨機 1..maxBonus；其餘 1。
+- 支援可選 `regenBonuses`：`naturesTouch`, `inHouse`, `inInn`, `inLifeStream`, `cookingHpr`, `originalHpr`, `equipmentHpr`, `otherHpr`, `bluePotion`, `cookingMpr`, `originalMpr`, `equipmentMpr`, `otherMpr`, `berserkers`, `exoticVitalize`, `additionalFire`, `goldenWings`；角色 `food` 低於 3 抑制基礎及正向裝備恢復。
+- HP 最低 1、MP 最低 0；恢復值不得超過最大值。
+- 注意：可選旗標尚未接到裝備/技能/飽食度 UI；水下與特殊地圖扣血尚未接入，不能宣稱完全等同 L1J。左上角 HUD 沿用 V0.5.38，未再修改。
