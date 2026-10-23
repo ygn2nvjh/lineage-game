@@ -260,7 +260,7 @@
   },
   "mapRemake": {
     "status": "in_progress",
-    "phase": "review_vineyard_layout",
+    "phase": "review_vineyard_obstacles_and_collision",
     "maps": [
       {
         "mapId": "map-ancient-battlefield",
@@ -284,6 +284,18 @@
             "泥土道路"
           ],
           "notes": "Terrain theme only; layout and exits await review."
+        },
+        "layout": {
+          "roadNetwork": {
+            "choice": "B",
+            "status": "approved",
+            "approvedDate": "2026-10-24",
+            "description": "彎曲主道路連接南入口與東出口，支線通往廢棄農舍與荒廢藤架。",
+            "constraints": [
+              "Road network approved conceptually; precise tile coordinates not yet approved.",
+              "Do not implement unapproved exit destinations or collision geometry."
+            ]
+          }
         }
       },
       {
