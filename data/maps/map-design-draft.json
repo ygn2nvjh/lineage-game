@@ -260,7 +260,7 @@
   },
   "mapRemake": {
     "status": "in_progress",
-    "phase": "review_vineyard_exit_destinations_and_return_paths",
+    "phase": "finish_vineyard_before_other_maps",
     "maps": [
       {
         "mapId": "map-ancient-battlefield",
@@ -349,7 +349,7 @@
           },
           "worldConnectionPlan": {
             "choice": "A",
-            "status": "selected_pending_destination_review",
+            "status": "deferred_pending_vineyard_completion",
             "selectedDate": "2026-10-24",
             "concept": "Three existing maps connect directly without transitional maps",
             "proposedDestinations": {
@@ -361,7 +361,8 @@
             "notes": [
               "Choice A recorded, but each specific destination and return portal is not yet formally approved.",
               "Do not implement map transitions until destination map IDs, entry points and reciprocal links are reviewed.",
-              "Farmhouse remains reserved only."
+              "Farmhouse remains reserved only.",
+              "2026-10-24: User prioritizes completing vineyard first, then town, then ancient battlefield, then ghoul grounds. Specific destinations not approved."
             ]
           }
         }
@@ -373,6 +374,17 @@
       }
     ],
     "strategy": "Design each map with user, implement modular assets, test individually, then switch playable game without losing existing version.",
-    "activeMapId": "map-vineyard"
+    "activeMapId": "map-vineyard",
+    "buildOrder": [
+      "map-vineyard",
+      "map-town",
+      "map-ancient-battlefield",
+      "map-ghoul-grounds"
+    ],
+    "workflow": {
+      "priority": "Finish vineyard terrain, road, collisions, monster placements, playable test; then town; then ancient battlefield; then ghoul grounds.",
+      "otherMaps": "No implementation before vineyard playtest",
+      "exitDestinations": "Proposals only, not approved or implemented"
+    }
   }
 }
