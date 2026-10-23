@@ -1,0 +1,1522 @@
+{
+  "schemaVersion": 1,
+  "status": "audit_only_not_approved_spawn",
+  "source": "nonono44/l1j-tw-99nets/L1J-TW_3.80c/db/Taiwan/droplist.sql",
+  "sourceDate": "2011-05-25",
+  "fullSourceRowCount": 10115,
+  "fullSourceDistinctNpcIds": 1015,
+  "notes": [
+    "These are raw item IDs; names must be cross-referenced with item tables.",
+    "Chance uses L1J integer units; do not infer final gameplay probabilities without confirming server implementation.",
+    "These are candidate monster drops, not approved vineyard spawns.",
+    "Source data may differ from live game and newer Taiwan NPC snapshot."
+  ],
+  "candidateMonsterDrops": [
+    {
+      "npcId": 45009,
+      "drops": [
+        {
+          "npcId": 45009,
+          "itemId": 1,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 21,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 20034,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 20135,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 40005,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 40008,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 40088,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 40308,
+          "min": 10,
+          "max": 30,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 40405,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 40496,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 40899,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 49238,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 200001,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 220034,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45009,
+          "itemId": 220135,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45019,
+      "drops": [
+        {
+          "npcId": 45019,
+          "itemId": 171,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 20034,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 20135,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 20136,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 40005,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 40010,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 40017,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 40056,
+          "min": 1,
+          "max": 1,
+          "chance": 300000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 40088,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 40265,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 40308,
+          "min": 11,
+          "max": 32,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 40743,
+          "min": 10,
+          "max": 30,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 40744,
+          "min": 10,
+          "max": 30,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 49238,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 200171,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 220135,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 220136,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45019,
+          "itemId": 240010,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45082,
+      "drops": [
+        {
+          "npcId": 45082,
+          "itemId": 20034,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 20056,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 20072,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 20110,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 20135,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 20136,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 20237,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 40001,
+          "min": 1,
+          "max": 1,
+          "chance": 300000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 40010,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 40267,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 40305,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 40308,
+          "min": 20,
+          "max": 45,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 49238,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 220135,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45082,
+          "itemId": 220237,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45121,
+      "drops": [
+        {
+          "npcId": 45121,
+          "itemId": 128,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45121,
+          "itemId": 129,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45121,
+          "itemId": 131,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45121,
+          "itemId": 40015,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45121,
+          "itemId": 40180,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45121,
+          "itemId": 40191,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45121,
+          "itemId": 40224,
+          "min": 1,
+          "max": 1,
+          "chance": 100,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45121,
+          "itemId": 40305,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45121,
+          "itemId": 40308,
+          "min": 33,
+          "max": 65,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45121,
+          "itemId": 49105,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45278,
+      "drops": [
+        {
+          "npcId": 45278,
+          "itemId": 143,
+          "min": 1,
+          "max": 1,
+          "chance": 300000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 145,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 148,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 20015,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 20115,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 20317,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 40014,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 40074,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 40087,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 40271,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 40308,
+          "min": 135,
+          "max": 225,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45278,
+          "itemId": 40513,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45008,
+      "drops": [
+        {
+          "npcId": 45008,
+          "itemId": 23,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45008,
+          "itemId": 40010,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45008,
+          "itemId": 40308,
+          "min": 10,
+          "max": 30,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45008,
+          "itemId": 40405,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45008,
+          "itemId": 40899,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45024,
+      "drops": [
+        {
+          "npcId": 45024,
+          "itemId": 31,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 20147,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 20205,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 20213,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 20239,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 40025,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 40056,
+          "min": 1,
+          "max": 1,
+          "chance": 300000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 40171,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 40173,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 40265,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 40267,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 40274,
+          "min": 1,
+          "max": 1,
+          "chance": 1000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 40307,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 40308,
+          "min": 22,
+          "max": 50,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 220122,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 220125,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 220147,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45024,
+          "itemId": 220213,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45041,
+      "drops": [
+        {
+          "npcId": 45041,
+          "itemId": 26,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 20007,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 20052,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 20223,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 40025,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 40088,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 40304,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 40308,
+          "min": 13,
+          "max": 36,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 40408,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 40494,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 40496,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 40899,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45041,
+          "itemId": 240010,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45092,
+      "drops": [
+        {
+          "npcId": 45092,
+          "itemId": 26,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45092,
+          "itemId": 144,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45092,
+          "itemId": 20007,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45092,
+          "itemId": 20052,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45092,
+          "itemId": 20223,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45092,
+          "itemId": 40013,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45092,
+          "itemId": 40018,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45092,
+          "itemId": 40304,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45092,
+          "itemId": 40308,
+          "min": 22,
+          "max": 50,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45092,
+          "itemId": 40408,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45060,
+      "drops": []
+    },
+    {
+      "npcId": 45136,
+      "drops": [
+        {
+          "npcId": 45136,
+          "itemId": 40006,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 40007,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 40013,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 40018,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 40174,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 40190,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 40211,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 40273,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 40304,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 40308,
+          "min": 41,
+          "max": 78,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 49046,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45136,
+          "itemId": 140100,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45184,
+      "drops": [
+        {
+          "npcId": 45184,
+          "itemId": 40007,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40013,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40017,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40018,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40087,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40174,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40181,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40211,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40273,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40304,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40308,
+          "min": 61,
+          "max": 110,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 40590,
+          "min": 1,
+          "max": 1,
+          "chance": 300000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 49046,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 49106,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45184,
+          "itemId": 140100,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45144,
+      "drops": [
+        {
+          "npcId": 45144,
+          "itemId": 25,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 20011,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 20242,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 40013,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 40018,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 40046,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 40100,
+          "min": 1,
+          "max": 1,
+          "chance": 300000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 40267,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 40271,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 40306,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45144,
+          "itemId": 40308,
+          "min": 45,
+          "max": 86,
+          "chance": 1000000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45161,
+      "drops": [
+        {
+          "npcId": 45161,
+          "itemId": 27,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 20043,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 20149,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 20242,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 40008,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 40013,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 40018,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 40308,
+          "min": 50,
+          "max": 93,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 40738,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 49238,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45161,
+          "itemId": 100027,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "npcId": 45173,
+      "drops": [
+        {
+          "npcId": 45173,
+          "itemId": 104,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 143,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 20122,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 20147,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 20205,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 20242,
+          "min": 1,
+          "max": 1,
+          "chance": 100000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 40044,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 40087,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 40171,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 40173,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 40174,
+          "min": 1,
+          "max": 1,
+          "chance": 50000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 40307,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 40308,
+          "min": 56,
+          "max": 102,
+          "chance": 1000000,
+          "enchantLevel": 0
+        },
+        {
+          "npcId": 45173,
+          "itemId": 40319,
+          "min": 1,
+          "max": 1,
+          "chance": 10000,
+          "enchantLevel": 0
+        }
+      ]
+    }
+  ]
+}
