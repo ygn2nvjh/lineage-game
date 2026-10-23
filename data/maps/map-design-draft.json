@@ -596,6 +596,43 @@
           "status": "approved",
           "rule": "No bandit monsters spawn outside the abandoned farmhouse; bandits and boss are confined to the farmhouse interior, which is key-gated.",
           "implementation": "none"
+        },
+        "firstPlayableMonsterRoster": {
+          "status": "pending_review",
+          "npcIds": [
+            45009,
+            45019,
+            45082,
+            45024,
+            45041,
+            45092,
+            45121,
+            45278
+          ],
+          "names": [
+            "妖魔",
+            "妖魔弓箭手",
+            "妖魔鬥士",
+            "狼人",
+            "侏儒",
+            "侏儒戰士",
+            "妖魔法師",
+            "歐吉"
+          ],
+          "simultaneousPopulationRange": [
+            30,
+            40
+          ],
+          "zones": [
+            "南側入口",
+            "西側藤架",
+            "東側農田",
+            "北側荒林",
+            "東北荒地",
+            "廢棄農舍"
+          ],
+          "notes": "Only eight outdoor species. Farmhouse interior bandits and boss are separate and excluded. Proposed region counts not yet approved.",
+          "noGameplayChanges": true
         }
       },
       {
