@@ -57,3 +57,9 @@
 - 原始碼將 `weapon.getEnchantLevel()-weapon.get_durability()` 作為近戰武器有效強化值。V0.5.23 已加入損傷累積和傷害扣除；SOUL_OF_FLAME、修理武器、損傷保存尚未實作。
 - 武器 24 短劍與 42 細劍的 `canbedmg=1`、`bless=1` 已由原始武器 SQL 核實。
 - **目前測試的 14 隻怪物原始 `hard` 全部為 0，因此這些怪物不會觸發壞刀；需後續加入真正 hard=1 的怪物才能實測。**
+
+## V0.5.25：武器有效強化與命中
+- 核對 `L1Attack.java`：近戰武器初始化 `_weaponEnchant = weapon.getEnchantLevel() - weapon.get_durability()`，`calcPcNpcHit()` 以 `_weaponEnchant / 2` 加入命中值（Java 整數除法向零截斷）。
+- 遊戲改用 `Math.trunc((enchant-durability)/2)`，與傷害使用有效強化值一致。
+- 本版未實作祝福武器切換介面；祝福加成已在 V0.5.24 接入公式，但仍缺可操作的祝福測試武器。
+- 使用者提出的「硬皮怪物對可壞武器額外減傷」草案仍未核定、未套用。
