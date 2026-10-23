@@ -260,7 +260,7 @@
   },
   "mapRemake": {
     "status": "in_progress",
-    "phase": "1_define_existing_three_map_blueprints",
+    "phase": "review_vineyard_layout",
     "maps": [
       {
         "mapId": "map-ancient-battlefield",
@@ -270,7 +270,21 @@
       {
         "mapId": "map-vineyard",
         "name": "葡萄園",
-        "status": "pending_user_layout_review"
+        "status": "pending_user_layout_review",
+        "style": {
+          "choice": "B",
+          "name": "荒廢葡萄園",
+          "status": "approved",
+          "approvedDate": "2026-10-24",
+          "elements": [
+            "荒草",
+            "破損圍欄",
+            "廢棄農舍",
+            "荒廢葡萄藤",
+            "泥土道路"
+          ],
+          "notes": "Terrain theme only; layout and exits await review."
+        }
       },
       {
         "mapId": "map-ghoul-grounds",
@@ -278,6 +292,7 @@
         "status": "pending_user_layout_review"
       }
     ],
-    "strategy": "Design each map with user, implement modular assets, test individually, then switch playable game without losing existing version."
+    "strategy": "Design each map with user, implement modular assets, test individually, then switch playable game without losing existing version.",
+    "activeMapId": "map-vineyard"
   }
 }
