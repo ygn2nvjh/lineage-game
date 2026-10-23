@@ -46,3 +46,9 @@ reduction = 1 + armorWeightReduction/100 + dollWeightReduction/100 + 0.04*(origi
 maxWeight = (base*reduction + (DECREASE_WEIGHT active ? 180 : 0))*Config.RATE_WEIGHT_LIMIT
 ```
 V0.5.30 加入 `lineageMaxWeight(character)`，僅當 STR、CON 存在時回傳計算值。未接通的裝備/娃娃/技能補正預設為 0，伺服器倍率暫設 1（測試假設，非原服實際設定）。只有 inventoryWeight 是有限數值時，才使用最大負重計算 weight242；尚未核對物品重量資料，不假造背包總重。待續：原始 item SQL 重量、物品數量及背包接線。
+
+## V0.5.31：掉落物品 SQL 重量資料
+- 已從 L1J-TW_3.80c/db/Japan/MyISAM/{etcitem,weapon,armor}.sql 提取目前 L1J_DROPS 中全部 113 個 itemId 的 `weight` 欄位，保存於 `data/item-weights.json`；113/113 均找到。
+- 背包顯示已核對戰利品重量小計，採 `sum(trunc(item.weight*count/1000))`，單位與 L1J 背包重量一致。
+- **尚未接入角色完整負重**：藥水、裝備及其他物品重量尚未整合；未將小計寫入 character.inventoryWeight，避免錯誤觸發命中/恢復/禁止攻擊等懲罰。
+- 待辦：核對目前測試武器與藥水 itemId、實際背包存取及重量加總、撿物前重量上限檢查、負重百分比 UI、HP/MP 恢復限制、禁止攻擊。
