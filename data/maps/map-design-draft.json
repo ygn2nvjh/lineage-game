@@ -260,7 +260,7 @@
   },
   "mapRemake": {
     "status": "in_progress",
-    "phase": "review_vineyard_obstacles_and_collision",
+    "phase": "review_vineyard_exits_and_connections",
     "maps": [
       {
         "mapId": "map-ancient-battlefield",
@@ -294,6 +294,21 @@
             "constraints": [
               "Road network approved conceptually; precise tile coordinates not yet approved.",
               "Do not implement unapproved exit destinations or collision geometry."
+            ]
+          },
+          "collision": {
+            "choice": "C",
+            "status": "approved",
+            "approvedDate": "2026-10-24",
+            "name": "混合碰撞",
+            "rules": [
+              "地形阻擋以格子旗標管理。",
+              "樹幹、岩石、建築、特殊物件可使用圓形或矩形碰撞體。",
+              "葡萄藤架主體阻擋，行間小徑可通行。",
+              "農舍牆體阻擋，門口預留互動或出入口。",
+              "完整柵欄阻擋，破損缺口可通行。",
+              "一般荒草可通行。",
+              "最終碰撞體尺寸與位置待實作測試核定。"
             ]
           }
         }
