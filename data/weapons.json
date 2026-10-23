@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "source": "V0.5.17 testing weapons; values require original L1J weapon SQL verification",
+  "weapons": [
+    {
+      "id": 24,
+      "name": "短劍",
+      "small": 6,
+      "large": 8,
+      "hit": 0,
+      "bonus": 0,
+      "material": "iron",
+      "bless": null,
+      "canBreak": null,
+      "verification": "provisional"
+    },
+    {
+      "id": 42,
+      "name": "細劍",
+      "small": 11,
+      "large": 6,
+      "hit": 0,
+      "bonus": 0,
+      "material": "oriharukon",
+      "bless": null,
+      "canBreak": null,
+      "verification": "provisional"
+    }
+  ]
+}
