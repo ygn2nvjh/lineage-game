@@ -199,6 +199,20 @@
         "Server validates map bounds, collisions and transition destinations.",
         "No fixed maximum dimension approved yet; benchmark before choosing technical caps."
       ]
+    },
+    "transitions": {
+      "choice": "C",
+      "name": "自動區域切換與互動入口並存",
+      "status": "approved",
+      "approvedDate": "2026-10-23",
+      "rules": [
+        "General roads and map boundaries can use automatic trigger regions.",
+        "Doors, staircases, dungeon entrances and teleporters may require explicit interaction.",
+        "Each portal has an explicit triggerType (auto|interact), destination mapId, destination spawn marker, and optional conditions.",
+        "Server authoritatively validates transitions and applies map and position changes atomically.",
+        "On success cancel unexecuted combat queues, retain applied effects and cooldowns; ordinary monsters do not follow across maps.",
+        "On failure restore last server-confirmed valid map and position."
+      ]
     }
   },
   "proposals": {
@@ -212,13 +226,7 @@
       "note": "64/128/256 are optional design examples only, not mandatory map dimensions."
     },
     "transitions": {
-      "recommended": "Server-authoritative boundary/portal transition: walk into a defined exit area, verify destination, atomically change map and spawn marker, then sync client.",
-      "status": "proposed",
-      "options": {
-        "A": "Walk into boundary/portal trigger, automatic transition",
-        "B": "Tap an exit/door, then server-authorized transition",
-        "C": "Support both automatic boundaries and interactive doors/portals"
-      }
+      "status": "superseded_by_approved_C"
     },
     "schema": {
       "mapId": "unique stable string",
