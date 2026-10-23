@@ -367,7 +367,7 @@
           }
         },
         "farmhouseHideoutDraft": {
-          "status": "direction_approved_rules_pending",
+          "status": "core_rules_approved_implementation_deferred",
           "concept": "Abandoned farmhouse as bandit hideout; vineyard monsters may randomly drop a farmhouse key; key allows entry to farmhouse encounter with bandit leader.",
           "boss": {
             "npcId": 45370,
@@ -392,9 +392,13 @@
           "selectedPlan": "C",
           "designDirection": "Phase 1 shared farmhouse with one server-wide boss and key-gated entry; reserve map-template/instance separation for possible future party instances.",
           "rulesPending": [
-            "Instance behavior deferred; no implementation",
-            "Boss respawn interval and server-sleep recovery",
-            "Disconnect/reconnect location and 60-second evacuation handling"
+            "Determine boss respawn interval by verifying original etc1 server code and decide adaptation",
+            "Specify vineyard key drop source monsters and drop probability",
+            "Set farmhouse map layout, entry/exit coordinates, and safe vineyard return position",
+            "Define boss death/respawn persistence across server sleep and restart",
+            "Finalize edge cases: reconnect after voluntary exit, simultaneous boss death and login, loot left on floor after 60 seconds",
+            "Determine key inventory/trading and party behavior only if needed for implementation",
+            "Future instanced version deferred"
           ],
           "recordedOn": "2026-10-24",
           "keyConsumption": {
@@ -552,6 +556,19 @@
             "status": "approved",
             "rule": "Player may voluntarily exit farmhouse at any time; spent key is not refunded. If boss is still alive, re-entry requires a fresh key per player; if boss is dead, entry remains closed until respawn.",
             "disconnectIsNotVoluntaryExit": true,
+            "approvedOn": "2026-10-24"
+          },
+          "disconnectReconnect": {
+            "choice": "A",
+            "status": "approved",
+            "rules": [
+              "Reconnect does not consume an additional key and disconnect is not voluntary exit.",
+              "If boss alive, restore last server-confirmed farmhouse position/state.",
+              "If boss dead and 60-second evacuation window still open, restore player to farmhouse for remaining window.",
+              "If evacuation deadline has passed, restore player to designated safe vineyard exit point.",
+              "Player death remains governed by existing death rules; reconnect cannot revive.",
+              "Server authoritative timestamp and map membership govern outcomes even after server sleep/restart."
+            ],
             "approvedOn": "2026-10-24"
           }
         }
