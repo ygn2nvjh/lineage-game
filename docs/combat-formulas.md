@@ -63,3 +63,9 @@
 - 遊戲改用 `Math.trunc((enchant-durability)/2)`，與傷害使用有效強化值一致。
 - 本版未實作祝福武器切換介面；祝福加成已在 V0.5.24 接入公式，但仍缺可操作的祝福測試武器。
 - 使用者提出的「硬皮怪物對可壞武器額外減傷」草案仍未核定、未套用。
+
+## V0.5.26：PC↔NPC 命中判定順序
+- `L1Attack.calcPcNpcHit()`：`attackerDice = d20 + hitRate - 10`，`fumble=hitRate-9`，`critical=hitRate+10`，依序判定失手／必中／攻擊值 > `10-NPC_AC`。
+- `L1Attack.calcNpcPcHit()`：`attackerDice=d20+hitRate-1`，`fumble=hitRate`，`critical=hitRate+19`，再比對玩家 AC 防禦骰。
+- V0.5.26 改用上述明確門檻，取代原本直接 `roll===1/20` 的簡寫。
+- 未實作的加成與迴避：裝備重量、Dodge/NDodge、ER、食物及技能 buff、特殊攻擊失效條件；不可稱為完整命中系統。
