@@ -260,7 +260,7 @@
   },
   "mapRemake": {
     "status": "in_progress",
-    "phase": "review_vineyard_exits_and_connections",
+    "phase": "review_vineyard_exit_destinations",
     "maps": [
       {
         "mapId": "map-ancient-battlefield",
@@ -310,6 +310,42 @@
               "一般荒草可通行。",
               "最終碰撞體尺寸與位置待實作測試核定。"
             ]
+          },
+          "exits": [
+            {
+              "id": "vineyard-south",
+              "side": "south",
+              "triggerType": "auto",
+              "status": "approved_location_only",
+              "destinationMapId": null
+            },
+            {
+              "id": "vineyard-east",
+              "side": "east",
+              "triggerType": "auto",
+              "status": "approved_location_only",
+              "destinationMapId": null
+            },
+            {
+              "id": "vineyard-west",
+              "side": "west",
+              "triggerType": "auto",
+              "status": "approved_location_only",
+              "destinationMapId": null
+            },
+            {
+              "id": "vineyard-farmhouse-door",
+              "side": "farmhouse",
+              "triggerType": "interact",
+              "status": "reserved_future",
+              "destinationMapId": null
+            }
+          ],
+          "exitConfiguration": {
+            "choice": "B+west",
+            "status": "approved",
+            "approvedDate": "2026-10-24",
+            "description": "南、東、西三處野外自動切圖出口，另預留農舍互動入口；各目的地及座標尚未核定。"
           }
         }
       },
