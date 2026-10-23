@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "purpose": "Custom game map database design. This is an independent planning dataset; existing V0.5.43 maps and gameplay are unchanged.",
+  "reference": {
+    "npcCatalog": "data/l1j-taiwan/monster-catalog.json",
+    "originalSpawnIndex": "data/l1j-taiwan/spawns/map-monster-index.json",
+    "currentPlayableMonsters": "data/monsters.json"
+  },
+  "principles": [
+    "Original L1J map IDs and coordinates are archival references, not custom game coordinates.",
+    "Custom map IDs remain stable even when art/layout changes.",
+    "Monster templates use original Taiwan L1J npcId; placement/spawn is separate from monster stats.",
+    "Respawn timing, positions, quantities, boundaries, entrances and exits are pending map design and must not be fabricated.",
+    "Client presentation and server authoritative spawn state must remain separate."
+  ],
+  "zones": [
+    {
+      "zoneId": "zone-001",
+      "name": "遠古戰場",
+      "status": "existing_test_zone_reference",
+      "layoutStatus": "to_redesign",
+      "mapIds": [],
+      "monsterPool": [
+        {
+          "npcId": 45107,
+          "name": "骷髏",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45122,
+          "name": "骷髏弓箭手",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45161,
+          "name": "史巴托",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45223,
+          "name": "食人妖精",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        }
+      ],
+      "notes": "Preserves current test-zone membership only; not an approved new map."
+    },
+    {
+      "zoneId": "zone-002",
+      "name": "葡萄園",
+      "status": "existing_test_zone_reference",
+      "layoutStatus": "to_redesign",
+      "mapIds": [],
+      "monsterPool": [
+        {
+          "npcId": 45009,
+          "name": "妖魔",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45019,
+          "name": "妖魔弓箭手",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45082,
+          "name": "妖魔鬥士",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45121,
+          "name": "妖魔法師",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45278,
+          "name": "歐吉",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        }
+      ],
+      "notes": "Preserves current test-zone membership only; not an approved new map."
+    },
+    {
+      "zoneId": "zone-003",
+      "name": "食屍鬼出沒地",
+      "status": "existing_test_zone_reference",
+      "layoutStatus": "to_redesign",
+      "mapIds": [],
+      "monsterPool": [
+        {
+          "npcId": 81066,
+          "name": "黑騎士搜索隊",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45065,
+          "name": "人形殭屍",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45157,
+          "name": "食屍鬼",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45136,
+          "name": "夏洛伯",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        },
+        {
+          "npcId": 45184,
+          "name": "楊果里恩",
+          "source": "current_playable_zone",
+          "spawnCount": null,
+          "spawnPoints": [],
+          "respawnRule": null
+        }
+      ],
+      "notes": "Preserves current test-zone membership only; not an approved new map."
+    }
+  ],
+  "futureMapSchema": {
+    "mapId": "string stable ID",
+    "zoneId": "zone reference",
+    "name": "display name",
+    "widthTiles": "integer TBD",
+    "heightTiles": "integer TBD",
+    "terrainLayers": "TBD",
+    "collisionGrid": "TBD",
+    "entrances": "array TBD",
+    "exits": "array TBD",
+    "spawnGroups": "array of npcId, location geometry, count and respawn policy TBD",
+    "originalL1jMapReferences": "optional array of original map IDs for reference only",
+    "status": "draft|approved|implemented"
+  }
+}
