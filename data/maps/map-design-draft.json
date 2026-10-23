@@ -652,6 +652,18 @@
           "noGameplayChanges": true,
           "choice": "B",
           "northSouthAxis": "continuous north-south main road"
+        },
+        "terrainLayoutReview": {
+          "status": "user_accepted_concept",
+          "version": "V1.2",
+          "northwest": "forest",
+          "northeast": "wasteland with sparse vegetation",
+          "west": "abandoned vineyard trellises",
+          "east": "abandoned farmland",
+          "farmhouse": "north of center west of north-south main road",
+          "roads": "north-south main road; east and west separate footpaths",
+          "exactCoordinates": "pending",
+          "noGameplayChanges": true
         }
       },
       {
