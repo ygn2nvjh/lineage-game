@@ -37,3 +37,12 @@
 - V0.5.28 已有 lineageWeightHitPenalty(weight242)；尚未接通真實物品重量、最大負重、HP/MP 自然恢復、197 攻擊限制、242 撿物限制及畫面百分比。
 - 待辦：資料庫 item.weight → 背包總重；角色最大負重；統一 weight242 換算；負重顯示；攻擊及撿物攔截；HP/MP regen 與例外；測試邊界值 80/81、119/120/121/122、160/161、196/197、200/201、241/242。
 - 未核對：負重對移動速度、施法、道具使用等其他系統的影響；不可直接宣稱有這些懲罰。
+
+## V0.5.30：最大負重公式已核對
+來源：`model/Instance/L1PcInstance.java#getMaxWeight()`。
+```
+base = 150 * floor(0.6*STR + 0.4*CON + 1)
+reduction = 1 + armorWeightReduction/100 + dollWeightReduction/100 + 0.04*(originalStrWeightReduction + originalConWeightReduction)
+maxWeight = (base*reduction + (DECREASE_WEIGHT active ? 180 : 0))*Config.RATE_WEIGHT_LIMIT
+```
+V0.5.30 加入 `lineageMaxWeight(character)`，僅當 STR、CON 存在時回傳計算值。未接通的裝備/娃娃/技能補正預設為 0，伺服器倍率暫設 1（測試假設，非原服實際設定）。只有 inventoryWeight 是有限數值時，才使用最大負重計算 weight242；尚未核對物品重量資料，不假造背包總重。待續：原始 item SQL 重量、物品數量及背包接線。
