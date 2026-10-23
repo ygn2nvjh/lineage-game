@@ -171,5 +171,64 @@
     "spawnGroups": "array of npcId, location geometry, count and respawn policy TBD",
     "originalL1jMapReferences": "optional array of original map IDs for reference only",
     "status": "draft|approved|implemented"
+  },
+  "decisions": {
+    "worldArchitecture": {
+      "choice": "B",
+      "name": "多張獨立地圖組成連續世界",
+      "status": "approved",
+      "approvedDate": "2026-10-23",
+      "description": "城鎮、野外、洞穴各為獨立地圖，透過地圖出口連接。",
+      "constraints": [
+        "Keep existing V0.5.43 test maps unchanged until new implementation is approved.",
+        "Monster combat and spawn states remain server authoritative.",
+        "On successful map transition, cancel queued unexecuted attacks/skills, retain already-applied effects and cooldowns.",
+        "On failed transition, restore last server-confirmed valid map and position.",
+        "Ordinary monsters do not chase players across map boundaries."
+      ]
+    }
+  },
+  "proposals": {
+    "tileSizePx": {
+      "recommended": 32,
+      "status": "proposed",
+      "reason": "Logical tile size; rendering may scale independently on iPhone Safari."
+    },
+    "mapDimensionsTiles": {
+      "recommendedDefault": [
+        128,
+        128
+      ],
+      "small": [
+        64,
+        64
+      ],
+      "large": [
+        256,
+        256
+      ],
+      "status": "proposed",
+      "reason": "Streaming/culling needed for large maps; sizes not yet benchmarked."
+    },
+    "transitions": {
+      "recommended": "server-authoritative portal trigger with target mapId and spawn marker; atomic state change; client loading overlay",
+      "status": "proposed"
+    },
+    "schema": {
+      "mapId": "unique stable string",
+      "name": "display name",
+      "category": "town|field|dungeon|interior",
+      "tileWidth": "integer",
+      "tileHeight": "integer",
+      "tileSizePx": "integer",
+      "terrain": "separate tiles/layers",
+      "collision": "tile flags or polygon obstacles",
+      "portals": "portalId, sourceRegion, targetMapId, targetSpawnId, conditions",
+      "spawnMarkers": "named safe spawn points",
+      "spawnGroups": "monster npcId, count, geometry, respawn settings",
+      "regions": "named areas and gameplay flags",
+      "originalL1jReferences": "optional historical map IDs",
+      "version": "schemaVersion"
+    }
   }
 }
