@@ -590,6 +590,12 @@
             }
           ],
           "reservedForFutureArea": "燃柳村"
+        },
+        "farmhouseExteriorBandits": {
+          "choice": "B",
+          "status": "approved",
+          "rule": "No bandit monsters spawn outside the abandoned farmhouse; bandits and boss are confined to the farmhouse interior, which is key-gated.",
+          "implementation": "none"
         }
       },
       {
