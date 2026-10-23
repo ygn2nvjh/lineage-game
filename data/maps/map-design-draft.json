@@ -542,8 +542,11 @@
                 100
               ]
             ],
-            "notes": "Five original spawn rows, mapId 0, each with group tag etc1; columns at indices 14-20 require original SQL schema verification before interpreting timing.",
-            "approvedOn": "2026-10-24"
+            "notes": "Verified against original SQL column order: mapid index 15 = 4 (not group_id index 5 = 0); cycle_type etc1 requires Java server implementation lookup to determine respawn interval.",
+            "approvedOn": "2026-10-24",
+            "originalBossSpawnMapId": 4,
+            "originalCycleType": "etc1",
+            "originalSpawnRowCount": 5
           }
         }
       },
