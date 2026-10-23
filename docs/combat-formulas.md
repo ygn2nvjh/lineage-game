@@ -44,3 +44,9 @@
 - 已確認：騎士 AC 物理減傷隨機值為 0 到 `floor(max(0,10-AC)/2)`，含兩端。
 - V0.5.20 實際運算與原版一致；V0.5.21 移除錯誤的「暫定係數」標示。
 - 尚未核實：怪物資料庫的真實 STR、hitup、dmgup，玩家 Dodge/NDodge、ER、額外防具 DR 與技能效果。
+
+## V0.5.22：14 隻怪物原始 NPC 資料核對與接入
+來源：`nonono44/l1j-tw-99nets/L1J-TW_3.80c/db/Japan/MyISAM/npc.sql`，每列 64 欄。已把 14 隻怪物完整原始欄位保存至 `data/monsters.json` 的 `originalL1J`；等級、HP、AC 與先前遊戲數值核對一致。
+- 遊戲怪物生成改使用資料庫 `str`；NPC 命中與傷害額外加值接上資料庫（原始 npc.sql 沒有獨立 hitup/dmgup 欄位時預設 0）。
+- `size`、`undead`、`damage_reduction`、`hard`、`poison_atk`、`paralysis_atk` 皆保存，硬皮與中毒機制尚未實作。
+- 目前只匯入正在測試的 14 隻，不代表整個原始 npc.sql 全部已匯入；原始來源為 Japan 資料目錄，並非獨立驗證的台服資料。
