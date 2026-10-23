@@ -678,7 +678,53 @@
         "monsterZoneAssignments": {
           "status": "pending_review",
           "total": 36,
-          "primarySecondarySplit": "pending",
+          "primarySecondarySplit": {
+            "status": "pending_review",
+            "targetPrimaryPercent": [
+              60,
+              70
+            ],
+            "targetSecondaryPercent": [
+              30,
+              40
+            ],
+            "integerRounding": "closest feasible integer per species",
+            "proposedCounts": {
+              "45009": [
+                5,
+                3
+              ],
+              "45019": [
+                3,
+                2
+              ],
+              "45024": [
+                3,
+                1
+              ],
+              "45041": [
+                3,
+                2
+              ],
+              "45082": [
+                3,
+                2
+              ],
+              "45092": [
+                3,
+                1
+              ],
+              "45121": [
+                3,
+                1
+              ],
+              "45278": [
+                1,
+                0
+              ]
+            },
+            "note": "Four-count monsters 3/1 are 75/25; ogre remains 1/0 by approved rule. Not finalized."
+          },
           "entries": [
             {
               "name": "妖魔",
