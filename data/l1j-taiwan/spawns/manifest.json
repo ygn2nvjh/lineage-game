@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "sourceRepo": "nonono44/l1j-tw-99nets",
+  "sourceDirectory": "L1J-TW_3.80c/db/Taiwan",
+  "note": "Original map IDs/coordinates retained; not directly mapped to redesigned game maps. Spawn files date 2011; NPC table snapshot dates 2013.",
+  "tables": [
+    {
+      "table": "spawnlist",
+      "sourceFile": "spawnlist.sql",
+      "rowCount": 11729,
+      "columns": [
+        "id",
+        "location",
+        "count",
+        "npc_templateid",
+        "group_id",
+        "locx",
+        "locy",
+        "randomx",
+        "randomy",
+        "locx1",
+        "locy1",
+        "locx2",
+        "locy2",
+        "heading",
+        "min_respawn_delay",
+        "max_respawn_delay",
+        "mapid",
+        "respawn_screen",
+        "movement_distance",
+        "rest",
+        "near_spawn"
+      ],
+      "files": [
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-01.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-02.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-03.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-04.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-05.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-06.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-07.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-08.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-09.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-10.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-11.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-12.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-13.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-14.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-15.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-16.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist-part-17.json",
+          "rows": 529
+        }
+      ]
+    },
+    {
+      "table": "spawnlist_boss",
+      "sourceFile": "spawnlist_boss.sql",
+      "rowCount": 118,
+      "columns": [
+        "id",
+        "location",
+        "cycle_type",
+        "count",
+        "npc_id",
+        "group_id",
+        "locx",
+        "locy",
+        "randomx",
+        "randomy",
+        "locx1",
+        "locy1",
+        "locx2",
+        "locy2",
+        "heading",
+        "mapid",
+        "respawn_screen",
+        "movement_distance",
+        "rest",
+        "spawn_type",
+        "percentage"
+      ],
+      "files": [
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist_boss-part-01.json",
+          "rows": 118
+        }
+      ]
+    },
+    {
+      "table": "spawnlist_npc",
+      "sourceFile": "spawnlist_npc.sql",
+      "rowCount": 2380,
+      "columns": [
+        "id",
+        "location",
+        "count",
+        "npc_templateid",
+        "locx",
+        "locy",
+        "randomx",
+        "randomy",
+        "heading",
+        "respawn_delay",
+        "mapid",
+        "movement_distance"
+      ],
+      "files": [
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist_npc-part-01.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist_npc-part-02.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist_npc-part-03.json",
+          "rows": 700
+        },
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist_npc-part-04.json",
+          "rows": 280
+        }
+      ]
+    },
+    {
+      "table": "spawnlist_time",
+      "sourceFile": "spawnlist_time.sql",
+      "rowCount": 5,
+      "columns": [
+        "spawn_id",
+        "time_start",
+        "time_end",
+        "delete_at_endtime"
+      ],
+      "files": [
+        {
+          "path": "data/l1j-taiwan/spawns/spawnlist_time-part-01.json",
+          "rows": 5
+        }
+      ]
+    }
+  ]
+}
