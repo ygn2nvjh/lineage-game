@@ -392,7 +392,6 @@
           "selectedPlan": "C",
           "designDirection": "Phase 1 shared farmhouse with one server-wide boss and key-gated entry; reserve map-template/instance separation for possible future party instances.",
           "rulesPending": [
-            "Boss death loot settlement and safe exit",
             "Multiple players entry, reentry, disconnect and boss respawn",
             "Instance behavior deferred; no implementation"
           ],
@@ -402,6 +401,14 @@
             "status": "approved",
             "rule": "Each player consumes exactly one farmhouse key on successful entry to shared farmhouse; failed entry must not consume key.",
             "atomicity": "Server-authoritative atomic key deduction and map transfer; no double-charge on retry.",
+            "approvedOn": "2026-10-24"
+          },
+          "bossDeathSettlement": {
+            "choice": "B",
+            "status": "approved",
+            "rule": "On boss death server resolves combat and generates ground loot, immediately blocks new farmhouse entries, permits 60 seconds to pick up loot, then transfers all remaining farmhouse players to vineyard.",
+            "lootOwnership": "Preserve existing multiplayer loot ownership/protection rules; 60-second timer is farmhouse evacuation grace period only.",
+            "serverAuthority": "Death and loot finalized before evacuation; transition is server-authoritative.",
             "approvedOn": "2026-10-24"
           }
         }
