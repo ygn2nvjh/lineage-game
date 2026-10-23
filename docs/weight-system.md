@@ -72,3 +72,8 @@ V0.5.30 加入 `lineageMaxWeight(character)`，僅當 STR、CON 存在時回傳�
 - HP 在負重值 >=121 時停止正向基礎恢復；MP 在 >=120 時停止。EXOTIC_VITALIZE / ADDITIONAL_FIRE 可豁免兩者；黃金之翼（item 20049）只豁免 HP。例外旗標已預留 `character.regenBonuses`，尚無遊戲操作介面。
 - 原型角色 MP 使用 `baseMaxMp` 初始化，沒有完整 MP 消耗及 UI；HP/MP 恢復量尚未涵蓋原始碼所有加成、負向裝備效果、飢餓、水中等情境。
 - 下一步：核對 L1J 排程呼叫頻率、完善恢復公式、裝備/技能/飽食度條件與可見 MP UI。
+
+## V0.5.35：左上角 HP/MP HUD 與恢復週期核對
+- HUD 左上角保留角色名稱、HP 紅條、MP 藍條與 `HP current/max　MP current/max` 數值；移除擊殺數與紅水數量（快捷藥水數量不變）。
+- `L1PcInstance.java#startHpRegeneration()` 和 `#startMpRegeneration()` 均以 `scheduleAtFixedRate(...,1000,1000)` 每 1000ms 執行，確認 V0.5.34 原型採用的一秒排程週期。
+- HP/MP 恢復量及其他情境仍是部分模擬，尚待逐項核對原始碼；MP UI 已連動實際 MP 數值。
