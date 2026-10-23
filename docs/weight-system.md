@@ -1,0 +1,39 @@
+# 負重系統：L1J-TW 3.80c 核對與實作規格
+
+狀態：來源核對完成第一輪；**尚未核定完整玩法、尚未接入背包與攻擊禁止邏輯**。原始碼取自 nonono44/l1j-tw-99nets 的 L1J-TW_3.80c。
+
+## 來源
+- model/L1PcInventory.java：getWeight242、calcWeight242、checkAddItem
+- model/L1Attack.java：calcPcNpcHit、calcPcPcHit 的負重命中
+- model/HpRegeneration.java：isOverWeight、HP 恢復
+- model/MpRegeneration.java：isOverWeight、MP 恢復
+- clientpackets/C_Attack.java：超重禁止一般攻擊
+
+## 內部數值
+- 正常負重：weight242 = round((getWeight() / getMaxWeight()) * 242)，Java Math.round；高於最大負重設 242；Config.RATE_WEIGHT_LIMIT==0 則為 0。
+- 對外顯示百分比：getWeight()/getMaxWeight()*100；內部仍使用 weight242。負重單位、最大負重計算及裝備/技能容量加成待另查。
+- 注意：原始碼 `(weight * 100 / maxWeight) * 242.00 / 100.00` 的運算以 double maxWeight 執行。
+
+## 懲罰及門檻（精確使用內部數值）
+| 條件 | 效果 | 來源 |
+|---|---|---|
+| 0–80 | 命中無負重懲罰 | L1Attack |
+| 81–121 | 命中 -1 | L1Attack |
+| 122–160 | 命中 -3 | L1Attack |
+| 161–200 | 命中 -5 | L1Attack |
+| >=201 | 此段無額外命中懲罰分支；但一般攻擊早已被禁止 | L1Attack + C_Attack |
+| >=120 | MP 自然恢復：一般基礎恢復及正向裝備恢復被抑制；負值裝備恢復仍可生效 | MpRegeneration |
+| >=121 | HP 自然恢復：一般基礎恢復及正向裝備恢復被抑制；負值裝備恢復仍可生效 | HpRegeneration |
+| >=197 | C_Attack 一般攻擊禁止，送訊息 110 | C_Attack |
+| 新增物品後 >=242 | checkAddItem 拒絕增加物品 | L1PcInventory |
+
+### HP/MP 超重例外
+- HP：EXOTIC_VITALIZE、ADDITIONAL_FIRE 或裝備 item 20049（Golden Wings）使 isOverWeight 回傳 false。
+- MP：EXOTIC_VITALIZE、ADDITIONAL_FIRE 使 isOverWeight 回傳 false；**未見 Golden Wings 例外**。
+- 飢餓（food < 3）也抑制自然恢復，但與負重是獨立條件。
+- 注意「自然恢復停止」不是絕對無任何 HP/MP 變動：裝備負向恢復、其他環境減血等仍可能作用。
+
+## 目前《類天堂》實作狀態
+- V0.5.28 已有 lineageWeightHitPenalty(weight242)；尚未接通真實物品重量、最大負重、HP/MP 自然恢復、197 攻擊限制、242 撿物限制及畫面百分比。
+- 待辦：資料庫 item.weight → 背包總重；角色最大負重；統一 weight242 換算；負重顯示；攻擊及撿物攔截；HP/MP regen 與例外；測試邊界值 80/81、119/120/121/122、160/161、196/197、200/201、241/242。
+- 未核對：負重對移動速度、施法、道具使用等其他系統的影響；不可直接宣稱有這些懲罰。
