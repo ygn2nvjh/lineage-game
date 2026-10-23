@@ -260,7 +260,7 @@
   },
   "mapRemake": {
     "status": "in_progress",
-    "phase": "review_vineyard_exit_destinations",
+    "phase": "review_vineyard_exit_destinations_and_return_paths",
     "maps": [
       {
         "mapId": "map-ancient-battlefield",
@@ -346,6 +346,23 @@
             "status": "approved",
             "approvedDate": "2026-10-24",
             "description": "南、東、西三處野外自動切圖出口，另預留農舍互動入口；各目的地及座標尚未核定。"
+          },
+          "worldConnectionPlan": {
+            "choice": "A",
+            "status": "selected_pending_destination_review",
+            "selectedDate": "2026-10-24",
+            "concept": "Three existing maps connect directly without transitional maps",
+            "proposedDestinations": {
+              "south": "城鎮／安全區（尚未建立）",
+              "west": "遠古戰場",
+              "east": "食屍鬼出沒地"
+            },
+            "transitionMaps": "none_proposed",
+            "notes": [
+              "Choice A recorded, but each specific destination and return portal is not yet formally approved.",
+              "Do not implement map transitions until destination map IDs, entry points and reciprocal links are reviewed.",
+              "Farmhouse remains reserved only."
+            ]
           }
         }
       },
