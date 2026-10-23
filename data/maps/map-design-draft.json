@@ -835,6 +835,22 @@
           ],
           "respawnPositionSafety": "pending L1J source verification",
           "noGameplayChanges": true
+        },
+        "respawnScreenReview": {
+          "choice": "C",
+          "status": "pending_source_verification",
+          "decision": "Use original Taiwan L1J per-spawn respawnScreen settings where verified; do not impose blanket visibility rule",
+          "monsterNpcIds": [
+            45009,
+            45019,
+            45082,
+            45024,
+            45041,
+            45092,
+            45121,
+            45278
+          ],
+          "noGameplayChanges": true
         }
       },
       {
