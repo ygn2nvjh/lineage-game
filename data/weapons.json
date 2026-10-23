@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "source": "V0.5.17 testing weapons; values require original L1J weapon SQL verification",
   "weapons": [
     {
@@ -10,9 +10,13 @@
       "hit": 0,
       "bonus": 0,
       "material": "iron",
-      "bless": null,
-      "canBreak": null,
-      "verification": "provisional"
+      "bless": 1,
+      "canBreak": true,
+      "verification": "verified_L1J_3.80c_Japan_weapon_sql",
+      "canbedmg": 1,
+      "safeEnchant": 6,
+      "durability": 0,
+      "source": "L1J-TW_3.80c/db/Japan/MyISAM/weapon.sql"
     },
     {
       "id": 42,
@@ -22,9 +26,13 @@
       "hit": 0,
       "bonus": 0,
       "material": "oriharukon",
-      "bless": null,
-      "canBreak": null,
-      "verification": "provisional"
+      "bless": 1,
+      "canBreak": true,
+      "verification": "verified_L1J_3.80c_Japan_weapon_sql",
+      "canbedmg": 1,
+      "safeEnchant": 6,
+      "durability": 0,
+      "source": "L1J-TW_3.80c/db/Japan/MyISAM/weapon.sql"
     }
   ]
 }
