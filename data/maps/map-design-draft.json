@@ -664,6 +664,16 @@
           "roads": "north-south main road; east and west separate footpaths",
           "exactCoordinates": "pending",
           "noGameplayChanges": true
+        },
+        "ogreSpawnDecision": {
+          "choice": "B",
+          "status": "approved",
+          "npcId": 45278,
+          "maxSimultaneous": 1,
+          "spawnZone": "東北荒地",
+          "noOtherZones": true,
+          "remainingSevenSpecies": "pending_review",
+          "noGameplayChanges": true
         }
       },
       {
