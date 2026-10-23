@@ -91,3 +91,9 @@ V0.5.30 加入 `lineageMaxWeight(character)`，僅當 STR、CON 存在時回傳�
 - 支援可選 `regenBonuses`：`naturesTouch`, `inHouse`, `inInn`, `inLifeStream`, `cookingHpr`, `originalHpr`, `equipmentHpr`, `otherHpr`, `bluePotion`, `cookingMpr`, `originalMpr`, `equipmentMpr`, `otherMpr`, `berserkers`, `exoticVitalize`, `additionalFire`, `goldenWings`；角色 `food` 低於 3 抑制基礎及正向裝備恢復。
 - HP 最低 1、MP 最低 0；恢復值不得超過最大值。
 - 注意：可選旗標尚未接到裝備/技能/飽食度 UI；水下與特殊地圖扣血尚未接入，不能宣稱完全等同 L1J。左上角 HUD 沿用 V0.5.38，未再修改。
+
+## V0.5.40：裝備屬性連動測試
+- 人物／裝備新增明確標記為「測試」的 AC、HPR、MPR、裝備重量數值輸入。
+- AC 連動 `player.ac` 與怪物命中；HPR/MPR 連動自然恢復；重量加到已知背包重量並連動負重懲罰。
+- 不宣稱這些測試補正是正式 L1J 物品屬性，亦尚未建立可穿脫的實際防具資料庫、物品裝備欄位及伺服器權威驗證。
+- 下階段：從 L1J armor SQL 核對實際物品的 AC、HPR、MPR、重量，再設計裝備槽及穿脫操作。
