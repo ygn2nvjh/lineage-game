@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "policy": "L1J-TW_3.80c db/Taiwan first",
+  "sourceRepository": "https://github.com/nonono44/l1j-tw-99nets",
+  "sourcePath": "L1J-TW_3.80c/db/Taiwan",
+  "sourcePriority": [
+    "Taiwan original SQL",
+    "Taiwan server source implementation",
+    "Japan or other versions (reference only, not authoritative)"
+  ],
+  "rules": [
+    "Keep imported source version and source path per dataset",
+    "Do not silently mix regions or versions",
+    "Preserve existing gameplay until values verified and approved",
+    "Commit verified normalized JSON plus provenance/manifest to GitHub",
+    "Retain upstream URL and commit SHA; archive original SQL only after checking license and redistribution rights"
+  ],
+  "existingAudit": {
+    "weapons": "data/weapons.json currently 2 entries attributed to Japan SQL; needs Taiwan comparison",
+    "weights": "data/item-weights.json references Japan SQL; needs Taiwan comparison",
+    "npc": "data/l1j-taiwan/manifest.json references Taiwan npc.sql",
+    "armor": "Taiwan armor.sql exists upstream but no local armor attribute dataset found"
+  },
+  "upstreamTables": [
+    "weapon.sql",
+    "armor.sql",
+    "armor_set.sql",
+    "etcitem.sql",
+    "drop_item.sql",
+    "shop.sql",
+    "skills.sql"
+  ]
+}
