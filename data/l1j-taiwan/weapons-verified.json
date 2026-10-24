@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repository": "nonono44/l1j-tw-99nets",
+    "path": "L1J-TW_3.80c/db/Taiwan/weapon.sql",
+    "region": "Taiwan",
+    "snapshotDate": "2011-04-30",
+    "table": "weapon"
+  },
+  "status": "verified_against_Taiwan_SQL",
+  "gameplayIntegration": "not changed",
+  "weapons": [
+    {
+      "id": 24,
+      "name": "短劍",
+      "type": "sword",
+      "small": 6,
+      "large": 8,
+      "hit": 0,
+      "bonus": 0,
+      "material": "iron",
+      "weight": 30000,
+      "safeEnchant": 6,
+      "canbedmg": 1,
+      "bless": 1,
+      "range": 1,
+      "use_knight": 1,
+      "use_royal": 1,
+      "use_mage": 1,
+      "use_elf": 1,
+      "use_darkelf": 1,
+      "use_dragonknight": 1,
+      "use_illusionist": 0,
+      "min_lvl": 0,
+      "max_lvl": 0
+    },
+    {
+      "id": 42,
+      "name": "細劍",
+      "type": "sword",
+      "small": 11,
+      "large": 6,
+      "hit": 0,
+      "bonus": 0,
+      "material": "oriharukon",
+      "weight": 60000,
+      "safeEnchant": 6,
+      "canbedmg": 1,
+      "bless": 1,
+      "range": 1,
+      "use_knight": 1,
+      "use_royal": 0,
+      "use_mage": 0,
+      "use_elf": 1,
+      "use_darkelf": 1,
+      "use_dragonknight": 1,
+      "use_illusionist": 0,
+      "min_lvl": 0,
+      "max_lvl": 0
+    }
+  ],
+  "notes": [
+    "Separate Taiwan-verified snapshot; original data/weapons.json is not overwritten",
+    "Full Taiwan weapon catalog not yet imported"
+  ]
+}
