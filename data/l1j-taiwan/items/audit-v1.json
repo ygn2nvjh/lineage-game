@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "sourceManifest": "data/l1j-taiwan/items/manifest.json",
+  "auditDate": "2026-10-24",
+  "results": {
+    "weapon": {
+      "rows": 351,
+      "parts": 5,
+      "duplicateIdsWithinTable": 0
+    },
+    "armor": {
+      "rows": 643,
+      "parts": 9,
+      "duplicateIdsWithinTable": 0
+    },
+    "etcitem": {
+      "rows": 1998,
+      "parts": 20,
+      "duplicateIdsWithinTable": 0
+    },
+    "weaponArmorCrossTableDuplicateIds": 0,
+    "parsedRows": 2992
+  },
+  "fieldMapping": {
+    "armor": {
+      "ac": "ac",
+      "mr": "m_def",
+      "dr": "damage_reduction",
+      "safeEnchant": "safenchant",
+      "knightAllowed": "use_knight",
+      "weight": "weight"
+    },
+    "weapon": {
+      "smallDamage": "dmg_small",
+      "largeDamage": "dmg_large",
+      "hit": "hitmodifier",
+      "bonusDamage": "dmgmodifier",
+      "safeEnchant": "safenchant"
+    }
+  },
+  "remainingChecks": [
+    "Cross-table etcitem vs weapon and armor ID collisions not yet verified",
+    "Numeric field type and range audit pending",
+    "Source SQL snapshot commit SHA and redistributability need confirmation",
+    "Armor-set and special-effect runtime rules must be verified separately"
+  ],
+  "gameplayModified": false
+}
