@@ -1766,6 +1766,171 @@
         "agro": 1,
         "ranged": 2
       }
+    },
+    {
+      "npcId": 45024,
+      "name": "狼人",
+      "level": 9,
+      "hp": 50,
+      "mp": 20,
+      "ac": 4,
+      "exp": 82,
+      "zone": "葡萄園",
+      "combat": {
+        "size": "small",
+        "undead": 0,
+        "damageReduction": 0,
+        "hard": 0,
+        "poisonAtk": 0,
+        "paralysisAtk": 0,
+        "hitup": 0,
+        "dmgup": 0
+      },
+      "verification": {
+        "baseStats": "verified_local_L1J_Taiwan_monster_catalog",
+        "family": "pending_original_npc_sql_crosscheck",
+        "agrofamily": "pending_original_npc_sql_crosscheck",
+        "respawn": "pending_spawnlist_crosscheck"
+      },
+      "source": {
+        "upstream": "L1J-TW_3.80c",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45024
+      },
+      "originalTaiwan": {
+        "npcid": 45024,
+        "name": "狼人",
+        "gfxid": 1110,
+        "lvl": 9,
+        "hp": 50,
+        "mp": 20,
+        "ac": 4,
+        "str": 15,
+        "con": 15,
+        "dex": 12,
+        "wis": 10,
+        "intel": 10,
+        "mr": 10,
+        "exp": 82,
+        "size": "small",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 0,
+        "ranged": 1
+      }
+    },
+    {
+      "npcId": 45041,
+      "name": "侏儒",
+      "level": 5,
+      "hp": 30,
+      "mp": 5,
+      "ac": 10,
+      "exp": 26,
+      "zone": "葡萄園",
+      "combat": {
+        "size": "small",
+        "undead": 0,
+        "damageReduction": 0,
+        "hard": 0,
+        "poisonAtk": 0,
+        "paralysisAtk": 0,
+        "hitup": 0,
+        "dmgup": 0
+      },
+      "verification": {
+        "baseStats": "verified_local_L1J_Taiwan_monster_catalog",
+        "family": "pending_original_npc_sql_crosscheck",
+        "agrofamily": "pending_original_npc_sql_crosscheck",
+        "respawn": "pending_spawnlist_crosscheck"
+      },
+      "source": {
+        "upstream": "L1J-TW_3.80c",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45041
+      },
+      "originalTaiwan": {
+        "npcid": 45041,
+        "name": "侏儒",
+        "gfxid": 54,
+        "lvl": 5,
+        "hp": 30,
+        "mp": 5,
+        "ac": 10,
+        "str": 10,
+        "con": 12,
+        "dex": 10,
+        "wis": 7,
+        "intel": 10,
+        "mr": 2,
+        "exp": 26,
+        "size": "small",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 0,
+        "ranged": 1
+      }
+    },
+    {
+      "npcId": 45092,
+      "name": "侏儒戰士",
+      "level": 9,
+      "hp": 70,
+      "mp": 5,
+      "ac": 5,
+      "exp": 82,
+      "zone": "葡萄園",
+      "combat": {
+        "size": "small",
+        "undead": 0,
+        "damageReduction": 0,
+        "hard": 0,
+        "poisonAtk": 0,
+        "paralysisAtk": 0,
+        "hitup": 0,
+        "dmgup": 0
+      },
+      "verification": {
+        "baseStats": "verified_local_L1J_Taiwan_monster_catalog",
+        "family": "pending_original_npc_sql_crosscheck",
+        "agrofamily": "pending_original_npc_sql_crosscheck",
+        "respawn": "pending_spawnlist_crosscheck"
+      },
+      "source": {
+        "upstream": "L1J-TW_3.80c",
+        "localCatalog": "data/l1j-taiwan/monster-catalog.json",
+        "localNpcId": 45092
+      },
+      "originalTaiwan": {
+        "npcid": 45092,
+        "name": "侏儒戰士",
+        "gfxid": 1184,
+        "lvl": 9,
+        "hp": 70,
+        "mp": 5,
+        "ac": 5,
+        "str": 15,
+        "con": 13,
+        "dex": 15,
+        "wis": 9,
+        "intel": 9,
+        "mr": 1,
+        "exp": 82,
+        "size": "small",
+        "undead": 0,
+        "damage_reduction": 0,
+        "hard": 0,
+        "poison_atk": 0,
+        "paralysis_atk": 0,
+        "agro": 0,
+        "ranged": 1
+      }
     }
   ]
 }
