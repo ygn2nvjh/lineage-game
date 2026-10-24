@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "auditDate": "2026-10-24",
+  "source": "L1J-TW_3.80c/db/Taiwan/*.sql",
+  "tableStats": {
+    "weapon": {
+      "rows": 351,
+      "uniqueIds": 351,
+      "columns": 45,
+      "invalidCriticalNumeric": 0,
+      "negativeWeights": 0
+    },
+    "armor": {
+      "rows": 643,
+      "uniqueIds": 643,
+      "columns": 55,
+      "invalidCriticalNumeric": 0,
+      "negativeWeights": 0
+    },
+    "etcitem": {
+      "rows": 1998,
+      "uniqueIds": 1998,
+      "columns": 29,
+      "invalidCriticalNumeric": 0,
+      "negativeWeights": 0
+    }
+  },
+  "duplicates": [
+    {
+      "tables": [
+        "weapon",
+        "armor"
+      ],
+      "count": 0,
+      "ids": []
+    },
+    {
+      "tables": [
+        "weapon",
+        "etcitem"
+      ],
+      "count": 0,
+      "ids": []
+    },
+    {
+      "tables": [
+        "armor",
+        "etcitem"
+      ],
+      "count": 0,
+      "ids": []
+    }
+  ],
+  "invalidNumeric": [],
+  "gameplayModified": false
+}
