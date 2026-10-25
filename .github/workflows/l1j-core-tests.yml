@@ -20,6 +20,8 @@ jobs:
           node-version: '24'
       - name: Test independent ES module core
         run: npm run test:core
+      - name: Test independent browser adapter contracts with Node
+        run: npm run test:integration
 
   regression:
     name: Normal regression (must pass)
