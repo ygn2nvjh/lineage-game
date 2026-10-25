@@ -9,6 +9,18 @@ permissions:
   contents: read
 
 jobs:
+  independent-core:
+    name: Independent core (unit, transactions, save migration)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test independent ES module core
+        run: npm run test:core
+
   regression:
     name: Normal regression (must pass)
     runs-on: ubuntu-latest

@@ -1,0 +1,15 @@
+{
+  "note": "Synthetic architecture fixtures, not new game data or adopted item values.",
+  "catalogVersion": "test-catalog-v1",
+  "templates": [
+    { "id": 90001, "name": "Fixture capacity armor", "category": "armor", "type": "armor", "weight": 30000, "use_knight": 1, "ac": -5, "add_hp": 100, "add_mp": 20, "add_str": 2, "add_con": 5, "add_wis": 5, "damage_reduction": 3 },
+    { "id": 90002, "name": "Fixture ring", "category": "armor", "type": "ring", "weight": 1000, "use_knight": 1, "ac": -1, "add_hp": 10, "add_str": 1 },
+    { "id": 90003, "name": "Fixture sword", "category": "weapon", "type": "sword", "weight": 60000, "use_knight": 1, "dmg_small": 11, "dmg_large": 6, "hitmodifier": 0, "dmgmodifier": 0 },
+    { "id": 90004, "name": "Fixture replacement armor", "category": "armor", "type": "armor", "weight": 20000, "use_knight": 1, "ac": -2, "add_hp": 50, "add_mp": 10 },
+    { "id": 90005, "name": "Fixture forbidden armor", "category": "armor", "type": "armor", "weight": 10000, "use_knight": 0, "add_hp": 400 },
+    { "id": 90006, "name": "Fixture high-level armor", "category": "armor", "type": "armor", "weight": 10000, "use_knight": 1, "min_lvl": 60 },
+    { "id": 90007, "name": "Fixture helmet", "category": "armor", "type": "helm", "weight": 1000, "use_knight": 1, "ac": -1 },
+    { "id": 90008, "name": "Fixture numeric-overflow armor", "category": "armor", "type": "armor", "weight": 1000, "use_knight": 1, "add_hp": 9007199254740991 },
+    { "id": 90009, "name": "Fixture capacity-lowering armor", "category": "armor", "type": "armor", "weight": 1000, "use_knight": 1, "add_hp": -80, "add_mp": -8 }
+  ]
+}

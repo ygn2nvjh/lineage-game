@@ -5,7 +5,11 @@
   "description": "Read-only baseline tests; no game build or deployment",
   "engines": { "node": ">=24" },
   "scripts": {
-    "test": "node --test --test-isolation=none --test-reporter=tap tests/regression/*.test.cjs tests/diagnostics/*.test.cjs tests/pending/*.test.cjs",
+    "test": "node --test --test-isolation=none --test-reporter=tap tests/regression/*.test.cjs tests/diagnostics/*.test.cjs tests/pending/*.test.cjs tests/core/*.test.mjs tests/migration/*.test.mjs",
+    "test:core": "node --test --test-isolation=none --test-reporter=tap tests/core/*.test.mjs tests/migration/*.test.mjs",
+    "test:core:unit": "node --test --test-isolation=none --test-reporter=tap tests/core/unit.test.mjs",
+    "test:core:transactions": "node --test --test-isolation=none --test-reporter=tap tests/core/transactions.test.mjs",
+    "test:migration": "node --test --test-isolation=none --test-reporter=tap tests/migration/*.test.mjs",
     "test:regression": "node --test --test-isolation=none --test-reporter=tap tests/regression/*.test.cjs",
     "test:diagnostics": "node --test --test-isolation=none --test-reporter=tap tests/diagnostics/*.test.cjs",
     "test:pending": "node --test --test-isolation=none --test-reporter=tap tests/pending/*.test.cjs"
