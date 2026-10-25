@@ -1,0 +1,40 @@
+name: L1J core baseline tests
+
+on:
+  push:
+    branches: [refactor/l1j-core]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    name: Normal regression (must pass)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run normal regression assertions
+        run: npm run test:regression
+
+  diagnostics:
+    name: Known defects and unimplemented coverage (not regression passes)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Execute desired-behavior assertions for known defects
+        run: npm run test:diagnostics
+      - name: List unimplemented coverage as skipped
+        run: npm run test:pending
+      - name: Explain diagnostic status
+        if: always()
+        run: |
+          echo 'Known-defect TODOs are executed, unmet desired-behavior assertions. They are not regression passes or proof of correctness. SKIPs are unimplemented coverage. See TAP logs and docs/v06-stage-0a.md.' >> "$GITHUB_STEP_SUMMARY"

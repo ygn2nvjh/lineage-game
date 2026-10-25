@@ -1,0 +1,13 @@
+{
+  "name": "lineage-game-core-baseline",
+  "version": "0.6.0-stage-0a",
+  "private": true,
+  "description": "Read-only baseline tests; no game build or deployment",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test --test-isolation=none --test-reporter=tap tests/regression/*.test.cjs tests/diagnostics/*.test.cjs tests/pending/*.test.cjs",
+    "test:regression": "node --test --test-isolation=none --test-reporter=tap tests/regression/*.test.cjs",
+    "test:diagnostics": "node --test --test-isolation=none --test-reporter=tap tests/diagnostics/*.test.cjs",
+    "test:pending": "node --test --test-isolation=none --test-reporter=tap tests/pending/*.test.cjs"
+  }
+}
