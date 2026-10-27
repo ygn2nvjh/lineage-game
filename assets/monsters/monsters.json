@@ -1,0 +1,2859 @@
+{
+  "bodyPixels": 112,
+  "originX": 0,
+  "originY": 0,
+  "frames": {
+    "skeleton_fighter:attack:1": {
+      "x": 0,
+      "y": 0,
+      "width": 83,
+      "height": 123,
+      "offsetX": -39,
+      "offsetY": -123
+    },
+    "spartoi:attack:1": {
+      "x": 87,
+      "y": 0,
+      "width": 86,
+      "height": 121,
+      "offsetX": -49,
+      "offsetY": -121
+    },
+    "white_wolf_king:walk:up:0": {
+      "x": 177,
+      "y": 0,
+      "width": 94,
+      "height": 114,
+      "offsetX": -48,
+      "offsetY": -114
+    },
+    "white_wolf_king:walk:up:2": {
+      "x": 275,
+      "y": 0,
+      "width": 94,
+      "height": 114,
+      "offsetX": -46,
+      "offsetY": -114
+    },
+    "white_wolf_king:walk:up:3": {
+      "x": 373,
+      "y": 0,
+      "width": 93,
+      "height": 114,
+      "offsetX": -46,
+      "offsetY": -114
+    },
+    "spartoi:idle:down": {
+      "x": 470,
+      "y": 0,
+      "width": 107,
+      "height": 113,
+      "offsetX": -66,
+      "offsetY": -113
+    },
+    "spartoi:walk:down:2": {
+      "x": 581,
+      "y": 0,
+      "width": 78,
+      "height": 113,
+      "offsetX": -38,
+      "offsetY": -113
+    },
+    "spartoi:walk:up:2": {
+      "x": 663,
+      "y": 0,
+      "width": 97,
+      "height": 113,
+      "offsetX": -35,
+      "offsetY": -113
+    },
+    "spartoi:walk:up:3": {
+      "x": 764,
+      "y": 0,
+      "width": 97,
+      "height": 113,
+      "offsetX": -37,
+      "offsetY": -113
+    },
+    "skeleton_fighter:idle:up": {
+      "x": 865,
+      "y": 0,
+      "width": 87,
+      "height": 113,
+      "offsetX": -36,
+      "offsetY": -113
+    },
+    "skeleton_fighter:idle:left": {
+      "x": 0,
+      "y": 127,
+      "width": 75,
+      "height": 113,
+      "offsetX": -46,
+      "offsetY": -113
+    },
+    "skeleton_fighter:walk:down:2": {
+      "x": 79,
+      "y": 127,
+      "width": 78,
+      "height": 113,
+      "offsetX": -36,
+      "offsetY": -113
+    },
+    "skeleton_fighter:walk:down:3": {
+      "x": 161,
+      "y": 127,
+      "width": 86,
+      "height": 113,
+      "offsetX": -47,
+      "offsetY": -113
+    },
+    "werewolf:walk:down:1": {
+      "x": 251,
+      "y": 127,
+      "width": 81,
+      "height": 113,
+      "offsetX": -39,
+      "offsetY": -113
+    },
+    "night_werewolf:walk:up:1": {
+      "x": 336,
+      "y": 127,
+      "width": 88,
+      "height": 113,
+      "offsetX": -44,
+      "offsetY": -113
+    },
+    "white_wolf_king:idle:left": {
+      "x": 428,
+      "y": 127,
+      "width": 58,
+      "height": 113,
+      "offsetX": -21,
+      "offsetY": -113
+    },
+    "spartoi:idle:right": {
+      "x": 490,
+      "y": 127,
+      "width": 86,
+      "height": 112,
+      "offsetX": -33,
+      "offsetY": -112
+    },
+    "spartoi:walk:right:1": {
+      "x": 580,
+      "y": 127,
+      "width": 83,
+      "height": 112,
+      "offsetX": -37,
+      "offsetY": -112
+    },
+    "spartoi:walk:down:0": {
+      "x": 667,
+      "y": 127,
+      "width": 107,
+      "height": 112,
+      "offsetX": -67,
+      "offsetY": -112
+    },
+    "spartoi:walk:down:3": {
+      "x": 778,
+      "y": 127,
+      "width": 94,
+      "height": 112,
+      "offsetX": -58,
+      "offsetY": -112
+    },
+    "skeleton_fighter:idle:down": {
+      "x": 876,
+      "y": 127,
+      "width": 101,
+      "height": 112,
+      "offsetX": -62,
+      "offsetY": -112
+    },
+    "skeleton_fighter:idle:right": {
+      "x": 0,
+      "y": 244,
+      "width": 68,
+      "height": 112,
+      "offsetX": -27,
+      "offsetY": -112
+    },
+    "skeleton_fighter:walk:right:0": {
+      "x": 72,
+      "y": 244,
+      "width": 94,
+      "height": 112,
+      "offsetX": -50,
+      "offsetY": -112
+    },
+    "skeleton_fighter:walk:right:1": {
+      "x": 170,
+      "y": 244,
+      "width": 82,
+      "height": 112,
+      "offsetX": -33,
+      "offsetY": -112
+    },
+    "skeleton_fighter:walk:right:4": {
+      "x": 256,
+      "y": 244,
+      "width": 81,
+      "height": 112,
+      "offsetX": -39,
+      "offsetY": -112
+    },
+    "skeleton_fighter:walk:right:5": {
+      "x": 341,
+      "y": 244,
+      "width": 62,
+      "height": 112,
+      "offsetX": -36,
+      "offsetY": -112
+    },
+    "skeleton_fighter:walk:down:1": {
+      "x": 407,
+      "y": 244,
+      "width": 72,
+      "height": 112,
+      "offsetX": -32,
+      "offsetY": -112
+    },
+    "skeleton_fighter:walk:up:1": {
+      "x": 483,
+      "y": 244,
+      "width": 88,
+      "height": 112,
+      "offsetX": -40,
+      "offsetY": -112
+    },
+    "skeleton_fighter:walk:up:2": {
+      "x": 575,
+      "y": 244,
+      "width": 91,
+      "height": 112,
+      "offsetX": -40,
+      "offsetY": -112
+    },
+    "skeleton_fighter:walk:up:3": {
+      "x": 670,
+      "y": 244,
+      "width": 94,
+      "height": 112,
+      "offsetX": -40,
+      "offsetY": -112
+    },
+    "werewolf:idle:left": {
+      "x": 768,
+      "y": 244,
+      "width": 71,
+      "height": 112,
+      "offsetX": -26,
+      "offsetY": -112
+    },
+    "werewolf:idle:right": {
+      "x": 843,
+      "y": 244,
+      "width": 62,
+      "height": 112,
+      "offsetX": -36,
+      "offsetY": -112
+    },
+    "werewolf:walk:down:0": {
+      "x": 909,
+      "y": 244,
+      "width": 88,
+      "height": 112,
+      "offsetX": -43,
+      "offsetY": -112
+    },
+    "werewolf:walk:down:2": {
+      "x": 0,
+      "y": 360,
+      "width": 92,
+      "height": 112,
+      "offsetX": -46,
+      "offsetY": -112
+    },
+    "werewolf:walk:down:3": {
+      "x": 96,
+      "y": 360,
+      "width": 85,
+      "height": 112,
+      "offsetX": -41,
+      "offsetY": -112
+    },
+    "werewolf:walk:up:0": {
+      "x": 185,
+      "y": 360,
+      "width": 83,
+      "height": 112,
+      "offsetX": -40,
+      "offsetY": -112
+    },
+    "werewolf:walk:up:1": {
+      "x": 272,
+      "y": 360,
+      "width": 84,
+      "height": 112,
+      "offsetX": -43,
+      "offsetY": -112
+    },
+    "werewolf:walk:up:3": {
+      "x": 360,
+      "y": 360,
+      "width": 87,
+      "height": 112,
+      "offsetX": -43,
+      "offsetY": -112
+    },
+    "night_werewolf:idle:left": {
+      "x": 451,
+      "y": 360,
+      "width": 70,
+      "height": 112,
+      "offsetX": -46,
+      "offsetY": -112
+    },
+    "night_werewolf:idle:right": {
+      "x": 525,
+      "y": 360,
+      "width": 69,
+      "height": 112,
+      "offsetX": -23,
+      "offsetY": -112
+    },
+    "night_werewolf:walk:down:2": {
+      "x": 598,
+      "y": 360,
+      "width": 88,
+      "height": 112,
+      "offsetX": -44,
+      "offsetY": -112
+    },
+    "night_werewolf:walk:down:3": {
+      "x": 690,
+      "y": 360,
+      "width": 85,
+      "height": 112,
+      "offsetX": -43,
+      "offsetY": -112
+    },
+    "night_werewolf:walk:up:2": {
+      "x": 779,
+      "y": 360,
+      "width": 86,
+      "height": 112,
+      "offsetX": -44,
+      "offsetY": -112
+    },
+    "night_werewolf:walk:up:3": {
+      "x": 869,
+      "y": 360,
+      "width": 86,
+      "height": 112,
+      "offsetX": -43,
+      "offsetY": -112
+    },
+    "white_wolf_king:idle:right": {
+      "x": 959,
+      "y": 360,
+      "width": 60,
+      "height": 112,
+      "offsetX": -38,
+      "offsetY": -112
+    },
+    "white_wolf_king:walk:down:1": {
+      "x": 0,
+      "y": 476,
+      "width": 89,
+      "height": 112,
+      "offsetX": -45,
+      "offsetY": -112
+    },
+    "white_wolf_king:walk:down:2": {
+      "x": 93,
+      "y": 476,
+      "width": 92,
+      "height": 112,
+      "offsetX": -45,
+      "offsetY": -112
+    },
+    "white_wolf_king:walk:up:1": {
+      "x": 189,
+      "y": 476,
+      "width": 91,
+      "height": 112,
+      "offsetX": -45,
+      "offsetY": -112
+    },
+    "spartoi:idle:up": {
+      "x": 284,
+      "y": 476,
+      "width": 106,
+      "height": 111,
+      "offsetX": -39,
+      "offsetY": -111
+    },
+    "spartoi:idle:left": {
+      "x": 394,
+      "y": 476,
+      "width": 91,
+      "height": 111,
+      "offsetX": -57,
+      "offsetY": -111
+    },
+    "spartoi:walk:down:1": {
+      "x": 489,
+      "y": 476,
+      "width": 73,
+      "height": 111,
+      "offsetX": -37,
+      "offsetY": -111
+    },
+    "spartoi:walk:up:0": {
+      "x": 566,
+      "y": 476,
+      "width": 95,
+      "height": 111,
+      "offsetX": -37,
+      "offsetY": -111
+    },
+    "skeleton_fighter:walk:right:2": {
+      "x": 665,
+      "y": 476,
+      "width": 66,
+      "height": 111,
+      "offsetX": -32,
+      "offsetY": -111
+    },
+    "skeleton_fighter:walk:right:3": {
+      "x": 735,
+      "y": 476,
+      "width": 82,
+      "height": 111,
+      "offsetX": -44,
+      "offsetY": -111
+    },
+    "skeleton_fighter:walk:down:0": {
+      "x": 821,
+      "y": 476,
+      "width": 96,
+      "height": 111,
+      "offsetX": -57,
+      "offsetY": -111
+    },
+    "skeleton_fighter:walk:up:0": {
+      "x": 921,
+      "y": 476,
+      "width": 91,
+      "height": 111,
+      "offsetX": -40,
+      "offsetY": -111
+    },
+    "werewolf:walk:up:2": {
+      "x": 0,
+      "y": 592,
+      "width": 86,
+      "height": 111,
+      "offsetX": -43,
+      "offsetY": -111
+    },
+    "night_werewolf:walk:down:0": {
+      "x": 90,
+      "y": 592,
+      "width": 92,
+      "height": 111,
+      "offsetX": -47,
+      "offsetY": -111
+    },
+    "night_werewolf:walk:down:1": {
+      "x": 186,
+      "y": 592,
+      "width": 79,
+      "height": 111,
+      "offsetX": -39,
+      "offsetY": -111
+    },
+    "white_wolf_king:walk:down:0": {
+      "x": 269,
+      "y": 592,
+      "width": 94,
+      "height": 111,
+      "offsetX": -47,
+      "offsetY": -111
+    },
+    "spartoi:walk:right:0": {
+      "x": 367,
+      "y": 592,
+      "width": 86,
+      "height": 110,
+      "offsetX": -50,
+      "offsetY": -110
+    },
+    "spartoi:walk:right:4": {
+      "x": 457,
+      "y": 592,
+      "width": 90,
+      "height": 110,
+      "offsetX": -40,
+      "offsetY": -110
+    },
+    "skeleton_fighter:attack:5": {
+      "x": 551,
+      "y": 592,
+      "width": 75,
+      "height": 110,
+      "offsetX": -42,
+      "offsetY": -110
+    },
+    "night_werewolf:idle:up": {
+      "x": 630,
+      "y": 592,
+      "width": 74,
+      "height": 110,
+      "offsetX": -36,
+      "offsetY": -110
+    },
+    "white_wolf_king:idle:down": {
+      "x": 708,
+      "y": 592,
+      "width": 78,
+      "height": 110,
+      "offsetX": -39,
+      "offsetY": -110
+    },
+    "white_wolf_king:walk:down:3": {
+      "x": 790,
+      "y": 592,
+      "width": 90,
+      "height": 110,
+      "offsetX": -42,
+      "offsetY": -110
+    },
+    "spartoi:walk:right:3": {
+      "x": 884,
+      "y": 592,
+      "width": 95,
+      "height": 109,
+      "offsetX": -50,
+      "offsetY": -109
+    },
+    "spartoi:walk:right:5": {
+      "x": 0,
+      "y": 707,
+      "width": 72,
+      "height": 109,
+      "offsetX": -43,
+      "offsetY": -109
+    },
+    "spartoi:walk:up:1": {
+      "x": 76,
+      "y": 707,
+      "width": 96,
+      "height": 109,
+      "offsetX": -36,
+      "offsetY": -109
+    },
+    "night_werewolf:idle:down": {
+      "x": 176,
+      "y": 707,
+      "width": 76,
+      "height": 109,
+      "offsetX": -38,
+      "offsetY": -109
+    },
+    "white_wolf_king:idle:up": {
+      "x": 256,
+      "y": 707,
+      "width": 71,
+      "height": 109,
+      "offsetX": -35,
+      "offsetY": -109
+    },
+    "werewolf:idle:down": {
+      "x": 331,
+      "y": 707,
+      "width": 77,
+      "height": 108,
+      "offsetX": -37,
+      "offsetY": -108
+    },
+    "night_werewolf:walk:up:0": {
+      "x": 412,
+      "y": 707,
+      "width": 89,
+      "height": 108,
+      "offsetX": -45,
+      "offsetY": -108
+    },
+    "spartoi:walk:right:2": {
+      "x": 505,
+      "y": 707,
+      "width": 79,
+      "height": 107,
+      "offsetX": -43,
+      "offsetY": -107
+    },
+    "werewolf:idle:up": {
+      "x": 588,
+      "y": 707,
+      "width": 77,
+      "height": 107,
+      "offsetX": -38,
+      "offsetY": -107
+    },
+    "werewolf:attack:1": {
+      "x": 669,
+      "y": 707,
+      "width": 89,
+      "height": 107,
+      "offsetX": -47,
+      "offsetY": -107
+    },
+    "night_werewolf:walk:right:2": {
+      "x": 762,
+      "y": 707,
+      "width": 83,
+      "height": 107,
+      "offsetX": -52,
+      "offsetY": -107
+    },
+    "skeleton_fighter:attack:0": {
+      "x": 849,
+      "y": 707,
+      "width": 84,
+      "height": 106,
+      "offsetX": -44,
+      "offsetY": -106
+    },
+    "night_werewolf:walk:right:0": {
+      "x": 0,
+      "y": 820,
+      "width": 93,
+      "height": 105,
+      "offsetX": -52,
+      "offsetY": -105
+    },
+    "night_werewolf:walk:right:1": {
+      "x": 97,
+      "y": 820,
+      "width": 86,
+      "height": 105,
+      "offsetX": -57,
+      "offsetY": -105
+    },
+    "night_werewolf:walk:right:3": {
+      "x": 187,
+      "y": 820,
+      "width": 90,
+      "height": 105,
+      "offsetX": -55,
+      "offsetY": -105
+    },
+    "night_werewolf:walk:right:4": {
+      "x": 281,
+      "y": 820,
+      "width": 89,
+      "height": 105,
+      "offsetX": -55,
+      "offsetY": -105
+    },
+    "skeleton_fighter:attack:2": {
+      "x": 374,
+      "y": 820,
+      "width": 131,
+      "height": 104,
+      "offsetX": -60,
+      "offsetY": -104
+    },
+    "werewolf:walk:right:5": {
+      "x": 509,
+      "y": 820,
+      "width": 87,
+      "height": 104,
+      "offsetX": -58,
+      "offsetY": -104
+    },
+    "night_werewolf:walk:right:5": {
+      "x": 600,
+      "y": 820,
+      "width": 82,
+      "height": 104,
+      "offsetX": -51,
+      "offsetY": -104
+    },
+    "werewolf:walk:right:1": {
+      "x": 686,
+      "y": 820,
+      "width": 86,
+      "height": 103,
+      "offsetX": -57,
+      "offsetY": -103
+    },
+    "spartoi:attack:5": {
+      "x": 776,
+      "y": 820,
+      "width": 87,
+      "height": 102,
+      "offsetX": -51,
+      "offsetY": -102
+    },
+    "spartoi:reaction:0": {
+      "x": 867,
+      "y": 820,
+      "width": 100,
+      "height": 102,
+      "offsetX": -45,
+      "offsetY": -102
+    },
+    "werewolf:walk:right:4": {
+      "x": 0,
+      "y": 929,
+      "width": 86,
+      "height": 102,
+      "offsetX": -57,
+      "offsetY": -102
+    },
+    "spartoi:attack:0": {
+      "x": 90,
+      "y": 929,
+      "width": 95,
+      "height": 101,
+      "offsetX": -60,
+      "offsetY": -101
+    },
+    "spartoi:attack:4": {
+      "x": 189,
+      "y": 929,
+      "width": 84,
+      "height": 101,
+      "offsetX": -57,
+      "offsetY": -101
+    },
+    "werewolf:walk:right:3": {
+      "x": 277,
+      "y": 929,
+      "width": 93,
+      "height": 101,
+      "offsetX": -60,
+      "offsetY": -101
+    },
+    "night_werewolf:attack:1": {
+      "x": 374,
+      "y": 929,
+      "width": 99,
+      "height": 101,
+      "offsetX": -53,
+      "offsetY": -101
+    },
+    "skeleton_fighter:attack:4": {
+      "x": 477,
+      "y": 929,
+      "width": 140,
+      "height": 100,
+      "offsetX": -52,
+      "offsetY": -100
+    },
+    "werewolf:walk:right:0": {
+      "x": 621,
+      "y": 929,
+      "width": 86,
+      "height": 100,
+      "offsetX": -57,
+      "offsetY": -100
+    },
+    "werewolf:walk:right:2": {
+      "x": 711,
+      "y": 929,
+      "width": 89,
+      "height": 100,
+      "offsetX": -60,
+      "offsetY": -100
+    },
+    "werewolf:attack:5": {
+      "x": 804,
+      "y": 929,
+      "width": 85,
+      "height": 100,
+      "offsetX": -45,
+      "offsetY": -100
+    },
+    "white_wolf_king:walk:right:5": {
+      "x": 893,
+      "y": 929,
+      "width": 79,
+      "height": 100,
+      "offsetX": -51,
+      "offsetY": -100
+    },
+    "spartoi:attack:2": {
+      "x": 0,
+      "y": 1035,
+      "width": 136,
+      "height": 98,
+      "offsetX": -72,
+      "offsetY": -98
+    },
+    "skeleton_fighter:attack:3": {
+      "x": 140,
+      "y": 1035,
+      "width": 148,
+      "height": 98,
+      "offsetX": -67,
+      "offsetY": -98
+    },
+    "white_wolf_king:walk:right:2": {
+      "x": 292,
+      "y": 1035,
+      "width": 66,
+      "height": 98,
+      "offsetX": -41,
+      "offsetY": -98
+    },
+    "night_werewolf:attack:0": {
+      "x": 362,
+      "y": 1035,
+      "width": 87,
+      "height": 97,
+      "offsetX": -42,
+      "offsetY": -97
+    },
+    "werewolf:attack:0": {
+      "x": 453,
+      "y": 1035,
+      "width": 88,
+      "height": 96,
+      "offsetX": -50,
+      "offsetY": -96
+    },
+    "white_wolf_king:walk:right:1": {
+      "x": 545,
+      "y": 1035,
+      "width": 82,
+      "height": 96,
+      "offsetX": -51,
+      "offsetY": -96
+    },
+    "white_wolf_king:walk:right:3": {
+      "x": 631,
+      "y": 1035,
+      "width": 86,
+      "height": 96,
+      "offsetX": -54,
+      "offsetY": -96
+    },
+    "white_wolf_king:walk:right:4": {
+      "x": 721,
+      "y": 1035,
+      "width": 85,
+      "height": 96,
+      "offsetX": -56,
+      "offsetY": -96
+    },
+    "werewolf:attack:3": {
+      "x": 810,
+      "y": 1035,
+      "width": 138,
+      "height": 95,
+      "offsetX": -77,
+      "offsetY": -95
+    },
+    "werewolf:attack:4": {
+      "x": 0,
+      "y": 1137,
+      "width": 115,
+      "height": 95,
+      "offsetX": -57,
+      "offsetY": -95
+    },
+    "white_wolf_king:walk:right:0": {
+      "x": 119,
+      "y": 1137,
+      "width": 86,
+      "height": 95,
+      "offsetX": -52,
+      "offsetY": -95
+    },
+    "werewolf:attack:2": {
+      "x": 209,
+      "y": 1137,
+      "width": 131,
+      "height": 94,
+      "offsetX": -75,
+      "offsetY": -94
+    },
+    "skeleton_fighter:reaction:0": {
+      "x": 344,
+      "y": 1137,
+      "width": 83,
+      "height": 93,
+      "offsetX": -37,
+      "offsetY": -93
+    },
+    "spartoi:attack:3": {
+      "x": 431,
+      "y": 1137,
+      "width": 126,
+      "height": 92,
+      "offsetX": -73,
+      "offsetY": -92
+    },
+    "night_werewolf:attack:3": {
+      "x": 561,
+      "y": 1137,
+      "width": 117,
+      "height": 92,
+      "offsetX": -67,
+      "offsetY": -92
+    },
+    "night_werewolf:attack:4": {
+      "x": 682,
+      "y": 1137,
+      "width": 107,
+      "height": 92,
+      "offsetX": -61,
+      "offsetY": -92
+    },
+    "night_werewolf:attack:5": {
+      "x": 793,
+      "y": 1137,
+      "width": 86,
+      "height": 92,
+      "offsetX": -49,
+      "offsetY": -92
+    },
+    "night_werewolf:attack:2": {
+      "x": 883,
+      "y": 1137,
+      "width": 119,
+      "height": 91,
+      "offsetX": -71,
+      "offsetY": -91
+    },
+    "night_werewolf:reaction:0": {
+      "x": 0,
+      "y": 1236,
+      "width": 89,
+      "height": 89,
+      "offsetX": -30,
+      "offsetY": -89
+    },
+    "white_wolf_king:attack:1": {
+      "x": 93,
+      "y": 1236,
+      "width": 93,
+      "height": 89,
+      "offsetX": -51,
+      "offsetY": -89
+    },
+    "white_wolf_king:attack:0": {
+      "x": 190,
+      "y": 1236,
+      "width": 78,
+      "height": 88,
+      "offsetX": -42,
+      "offsetY": -88
+    },
+    "skeleton_fighter:reaction:1": {
+      "x": 272,
+      "y": 1236,
+      "width": 78,
+      "height": 87,
+      "offsetX": -45,
+      "offsetY": -87
+    },
+    "white_wolf_king:attack:5": {
+      "x": 354,
+      "y": 1236,
+      "width": 78,
+      "height": 87,
+      "offsetX": -44,
+      "offsetY": -87
+    },
+    "spartoi:reaction:1": {
+      "x": 436,
+      "y": 1236,
+      "width": 71,
+      "height": 86,
+      "offsetX": -38,
+      "offsetY": -86
+    },
+    "white_wolf_king:attack:4": {
+      "x": 511,
+      "y": 1236,
+      "width": 106,
+      "height": 86,
+      "offsetX": -55,
+      "offsetY": -86
+    },
+    "white_wolf_king:attack:2": {
+      "x": 621,
+      "y": 1236,
+      "width": 96,
+      "height": 85,
+      "offsetX": -54,
+      "offsetY": -85
+    },
+    "werewolf:reaction:0": {
+      "x": 721,
+      "y": 1236,
+      "width": 82,
+      "height": 84,
+      "offsetX": -31,
+      "offsetY": -84
+    },
+    "white_wolf_king:attack:3": {
+      "x": 807,
+      "y": 1236,
+      "width": 107,
+      "height": 84,
+      "offsetX": -67,
+      "offsetY": -84
+    },
+    "night_werewolf:reaction:1": {
+      "x": 918,
+      "y": 1236,
+      "width": 76,
+      "height": 79,
+      "offsetX": -53,
+      "offsetY": -79
+    },
+    "white_wolf_king:reaction:0": {
+      "x": 0,
+      "y": 1329,
+      "width": 84,
+      "height": 79,
+      "offsetX": -31,
+      "offsetY": -79
+    },
+    "white_wolf_king:reaction:1": {
+      "x": 88,
+      "y": 1329,
+      "width": 70,
+      "height": 74,
+      "offsetX": -44,
+      "offsetY": -74
+    },
+    "werewolf:reaction:1": {
+      "x": 162,
+      "y": 1329,
+      "width": 63,
+      "height": 73,
+      "offsetX": -37,
+      "offsetY": -73
+    },
+    "spartoi:reaction:2": {
+      "x": 229,
+      "y": 1329,
+      "width": 115,
+      "height": 71,
+      "offsetX": -69,
+      "offsetY": -71
+    },
+    "skeleton_fighter:reaction:2": {
+      "x": 348,
+      "y": 1329,
+      "width": 107,
+      "height": 71,
+      "offsetX": -67,
+      "offsetY": -71
+    },
+    "white_wolf_king:reaction:2": {
+      "x": 459,
+      "y": 1329,
+      "width": 87,
+      "height": 64,
+      "offsetX": -59,
+      "offsetY": -64
+    },
+    "werewolf:reaction:2": {
+      "x": 550,
+      "y": 1329,
+      "width": 92,
+      "height": 62,
+      "offsetX": -57,
+      "offsetY": -62
+    },
+    "skeleton_fighter:reaction:3": {
+      "x": 646,
+      "y": 1329,
+      "width": 131,
+      "height": 56,
+      "offsetX": -70,
+      "offsetY": -56
+    },
+    "night_werewolf:reaction:2": {
+      "x": 781,
+      "y": 1329,
+      "width": 100,
+      "height": 56,
+      "offsetX": -67,
+      "offsetY": -56
+    },
+    "spartoi:reaction:3": {
+      "x": 885,
+      "y": 1329,
+      "width": 132,
+      "height": 51,
+      "offsetX": -74,
+      "offsetY": -51
+    },
+    "white_wolf_king:reaction:3": {
+      "x": 0,
+      "y": 1412,
+      "width": 111,
+      "height": 50,
+      "offsetX": -54,
+      "offsetY": -50
+    },
+    "werewolf:reaction:3": {
+      "x": 115,
+      "y": 1412,
+      "width": 93,
+      "height": 49,
+      "offsetX": -50,
+      "offsetY": -49
+    },
+    "skeleton_fighter:reaction:4": {
+      "x": 212,
+      "y": 1412,
+      "width": 117,
+      "height": 45,
+      "offsetX": -59,
+      "offsetY": -45
+    },
+    "spartoi:reaction:4": {
+      "x": 333,
+      "y": 1412,
+      "width": 130,
+      "height": 40,
+      "offsetX": -65,
+      "offsetY": -40
+    },
+    "skeleton_fighter:reaction:5": {
+      "x": 467,
+      "y": 1412,
+      "width": 125,
+      "height": 39,
+      "offsetX": -62,
+      "offsetY": -39
+    },
+    "spartoi:reaction:5": {
+      "x": 596,
+      "y": 1412,
+      "width": 129,
+      "height": 37,
+      "offsetX": -65,
+      "offsetY": -37
+    },
+    "night_werewolf:reaction:3": {
+      "x": 729,
+      "y": 1412,
+      "width": 108,
+      "height": 36,
+      "offsetX": -53,
+      "offsetY": -36
+    },
+    "white_wolf_king:reaction:4": {
+      "x": 841,
+      "y": 1412,
+      "width": 126,
+      "height": 36,
+      "offsetX": -63,
+      "offsetY": -36
+    },
+    "night_werewolf:reaction:4": {
+      "x": 0,
+      "y": 1466,
+      "width": 100,
+      "height": 35,
+      "offsetX": -50,
+      "offsetY": -35
+    },
+    "werewolf:reaction:4": {
+      "x": 104,
+      "y": 1466,
+      "width": 118,
+      "height": 34,
+      "offsetX": -59,
+      "offsetY": -34
+    },
+    "white_wolf_king:reaction:5": {
+      "x": 226,
+      "y": 1466,
+      "width": 107,
+      "height": 34,
+      "offsetX": -54,
+      "offsetY": -34
+    },
+    "night_werewolf:reaction:5": {
+      "x": 337,
+      "y": 1466,
+      "width": 119,
+      "height": 31,
+      "offsetX": -60,
+      "offsetY": -31
+    },
+    "werewolf:reaction:5": {
+      "x": 460,
+      "y": 1466,
+      "width": 113,
+      "height": 30,
+      "offsetX": -56,
+      "offsetY": -30
+    }
+  },
+  "packing": [
+    {
+      "kind": "spartoi",
+      "pose": "idle:down",
+      "sourceBox": [
+        27,
+        39,
+        234,
+        257
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "idle:up",
+      "sourceBox": [
+        304,
+        39,
+        508,
+        254
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "idle:left",
+      "sourceBox": [
+        561,
+        39,
+        736,
+        254
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "idle:right",
+      "sourceBox": [
+        808,
+        40,
+        974,
+        256
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:right:0",
+      "sourceBox": [
+        51,
+        309,
+        217,
+        522
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:right:1",
+      "sourceBox": [
+        335,
+        307,
+        495,
+        523
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:right:2",
+      "sourceBox": [
+        570,
+        311,
+        723,
+        517
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:right:3",
+      "sourceBox": [
+        800,
+        310,
+        984,
+        521
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:right:4",
+      "sourceBox": [
+        1079,
+        310,
+        1252,
+        523
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:right:5",
+      "sourceBox": [
+        1350,
+        309,
+        1488,
+        520
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "attack:0",
+      "sourceBox": [
+        26,
+        575,
+        210,
+        769
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "attack:1",
+      "sourceBox": [
+        288,
+        537,
+        453,
+        770
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "attack:2",
+      "sourceBox": [
+        524,
+        580,
+        787,
+        769
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "attack:3",
+      "sourceBox": [
+        784,
+        591,
+        1027,
+        769
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "attack:4",
+      "sourceBox": [
+        1057,
+        577,
+        1219,
+        772
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "attack:5",
+      "sourceBox": [
+        1323,
+        572,
+        1491,
+        769
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "reaction:0",
+      "sourceBox": [
+        31,
+        797,
+        224,
+        993
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "reaction:1",
+      "sourceBox": [
+        281,
+        822,
+        418,
+        987
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "reaction:2",
+      "sourceBox": [
+        488,
+        845,
+        710,
+        981
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "reaction:3",
+      "sourceBox": [
+        736,
+        883,
+        991,
+        982
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "reaction:4",
+      "sourceBox": [
+        1001,
+        910,
+        1251,
+        988
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "reaction:5",
+      "sourceBox": [
+        1277,
+        915,
+        1526,
+        987
+      ],
+      "scale": 0.5185185185185185
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:down:0",
+      "sourceBox": [
+        28,
+        7,
+        217,
+        205
+      ],
+      "scale": 0.5642317380352645
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:down:1",
+      "sourceBox": [
+        258,
+        7,
+        388,
+        204
+      ],
+      "scale": 0.5642317380352645
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:down:2",
+      "sourceBox": [
+        426,
+        7,
+        565,
+        207
+      ],
+      "scale": 0.5642317380352645
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:down:3",
+      "sourceBox": [
+        577,
+        7,
+        743,
+        206
+      ],
+      "scale": 0.5642317380352645
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:up:0",
+      "sourceBox": [
+        799,
+        7,
+        968,
+        203
+      ],
+      "scale": 0.5642317380352645
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:up:1",
+      "sourceBox": [
+        992,
+        7,
+        1163,
+        200
+      ],
+      "scale": 0.5642317380352645
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:up:2",
+      "sourceBox": [
+        1165,
+        7,
+        1337,
+        207
+      ],
+      "scale": 0.5642317380352645
+    },
+    {
+      "kind": "spartoi",
+      "pose": "walk:up:3",
+      "sourceBox": [
+        1349,
+        7,
+        1521,
+        208
+      ],
+      "scale": 0.5642317380352645
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "idle:down",
+      "sourceBox": [
+        44,
+        19,
+        250,
+        246
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "idle:up",
+      "sourceBox": [
+        334,
+        13,
+        511,
+        243
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "idle:left",
+      "sourceBox": [
+        555,
+        17,
+        707,
+        247
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "idle:right",
+      "sourceBox": [
+        832,
+        18,
+        970,
+        246
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:right:0",
+      "sourceBox": [
+        44,
+        275,
+        236,
+        502
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:right:1",
+      "sourceBox": [
+        322,
+        275,
+        488,
+        503
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:right:2",
+      "sourceBox": [
+        569,
+        275,
+        703,
+        501
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:right:3",
+      "sourceBox": [
+        804,
+        278,
+        970,
+        503
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:right:4",
+      "sourceBox": [
+        1063,
+        275,
+        1228,
+        503
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:right:5",
+      "sourceBox": [
+        1323,
+        274,
+        1450,
+        502
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "attack:0",
+      "sourceBox": [
+        53,
+        544,
+        223,
+        760
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "attack:1",
+      "sourceBox": [
+        298,
+        510,
+        466,
+        760
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "attack:2",
+      "sourceBox": [
+        516,
+        541,
+        783,
+        753
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "attack:3",
+      "sourceBox": [
+        768,
+        558,
+        1070,
+        758
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "attack:4",
+      "sourceBox": [
+        1046,
+        557,
+        1332,
+        760
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "attack:5",
+      "sourceBox": [
+        1322,
+        537,
+        1475,
+        760
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "reaction:0",
+      "sourceBox": [
+        59,
+        804,
+        227,
+        994
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "reaction:1",
+      "sourceBox": [
+        288,
+        816,
+        446,
+        994
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "reaction:2",
+      "sourceBox": [
+        492,
+        843,
+        710,
+        987
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "reaction:3",
+      "sourceBox": [
+        726,
+        877,
+        992,
+        991
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "reaction:4",
+      "sourceBox": [
+        998,
+        903,
+        1237,
+        995
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "reaction:5",
+      "sourceBox": [
+        1256,
+        918,
+        1510,
+        998
+      ],
+      "scale": 0.49122807017543857
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:down:0",
+      "sourceBox": [
+        37,
+        214,
+        212,
+        416
+      ],
+      "scale": 0.5503685503685504
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:down:1",
+      "sourceBox": [
+        259,
+        213,
+        390,
+        416
+      ],
+      "scale": 0.5503685503685504
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:down:2",
+      "sourceBox": [
+        431,
+        214,
+        572,
+        419
+      ],
+      "scale": 0.5503685503685504
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:down:3",
+      "sourceBox": [
+        593,
+        213,
+        749,
+        419
+      ],
+      "scale": 0.5503685503685504
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:up:0",
+      "sourceBox": [
+        795,
+        214,
+        960,
+        415
+      ],
+      "scale": 0.5503685503685504
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:up:1",
+      "sourceBox": [
+        981,
+        213,
+        1141,
+        416
+      ],
+      "scale": 0.5503685503685504
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:up:2",
+      "sourceBox": [
+        1159,
+        213,
+        1325,
+        417
+      ],
+      "scale": 0.5503685503685504
+    },
+    {
+      "kind": "skeleton_fighter",
+      "pose": "walk:up:3",
+      "sourceBox": [
+        1344,
+        213,
+        1515,
+        417
+      ],
+      "scale": 0.5503685503685504
+    },
+    {
+      "kind": "werewolf",
+      "pose": "idle:down",
+      "sourceBox": [
+        55,
+        30,
+        228,
+        274
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "idle:up",
+      "sourceBox": [
+        301,
+        30,
+        476,
+        271
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "idle:left",
+      "sourceBox": [
+        572,
+        24,
+        732,
+        277
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "idle:right",
+      "sourceBox": [
+        757,
+        24,
+        897,
+        277
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:right:0",
+      "sourceBox": [
+        31,
+        316,
+        225,
+        543
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:right:1",
+      "sourceBox": [
+        255,
+        313,
+        450,
+        545
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:right:2",
+      "sourceBox": [
+        496,
+        317,
+        697,
+        544
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:right:3",
+      "sourceBox": [
+        748,
+        315,
+        958,
+        543
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:right:4",
+      "sourceBox": [
+        1017,
+        315,
+        1211,
+        545
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:right:5",
+      "sourceBox": [
+        1293,
+        310,
+        1490,
+        545
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "attack:0",
+      "sourceBox": [
+        22,
+        596,
+        220,
+        812
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "attack:1",
+      "sourceBox": [
+        278,
+        569,
+        479,
+        811
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "attack:2",
+      "sourceBox": [
+        496,
+        597,
+        793,
+        810
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "attack:3",
+      "sourceBox": [
+        756,
+        596,
+        1067,
+        811
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "attack:4",
+      "sourceBox": [
+        1039,
+        595,
+        1298,
+        809
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "attack:5",
+      "sourceBox": [
+        1310,
+        587,
+        1502,
+        812
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "reaction:0",
+      "sourceBox": [
+        50,
+        825,
+        235,
+        1015
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "reaction:1",
+      "sourceBox": [
+        296,
+        849,
+        438,
+        1015
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "reaction:2",
+      "sourceBox": [
+        501,
+        870,
+        708,
+        1011
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "reaction:3",
+      "sourceBox": [
+        752,
+        900,
+        963,
+        1010
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "reaction:4",
+      "sourceBox": [
+        980,
+        931,
+        1247,
+        1008
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "reaction:5",
+      "sourceBox": [
+        1262,
+        940,
+        1517,
+        1007
+      ],
+      "scale": 0.4426877470355731
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:down:0",
+      "sourceBox": [
+        60,
+        425,
+        204,
+        609
+      ],
+      "scale": 0.6103542234332425
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:down:1",
+      "sourceBox": [
+        250,
+        424,
+        383,
+        609
+      ],
+      "scale": 0.6103542234332425
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:down:2",
+      "sourceBox": [
+        419,
+        425,
+        569,
+        609
+      ],
+      "scale": 0.6103542234332425
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:down:3",
+      "sourceBox": [
+        609,
+        426,
+        748,
+        609
+      ],
+      "scale": 0.6103542234332425
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:up:0",
+      "sourceBox": [
+        805,
+        424,
+        941,
+        607
+      ],
+      "scale": 0.6103542234332425
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:up:1",
+      "sourceBox": [
+        986,
+        425,
+        1124,
+        608
+      ],
+      "scale": 0.6103542234332425
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:up:2",
+      "sourceBox": [
+        1168,
+        425,
+        1309,
+        607
+      ],
+      "scale": 0.6103542234332425
+    },
+    {
+      "kind": "werewolf",
+      "pose": "walk:up:3",
+      "sourceBox": [
+        1352,
+        424,
+        1494,
+        608
+      ],
+      "scale": 0.6103542234332425
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "idle:down",
+      "sourceBox": [
+        75,
+        22,
+        247,
+        270
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "idle:up",
+      "sourceBox": [
+        333,
+        16,
+        501,
+        265
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "idle:left",
+      "sourceBox": [
+        552,
+        17,
+        710,
+        271
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "idle:right",
+      "sourceBox": [
+        848,
+        17,
+        1004,
+        271
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:right:0",
+      "sourceBox": [
+        41,
+        306,
+        252,
+        543
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:right:1",
+      "sourceBox": [
+        296,
+        307,
+        492,
+        545
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:right:2",
+      "sourceBox": [
+        539,
+        302,
+        727,
+        544
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:right:3",
+      "sourceBox": [
+        795,
+        308,
+        999,
+        545
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:right:4",
+      "sourceBox": [
+        1041,
+        307,
+        1243,
+        544
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:right:5",
+      "sourceBox": [
+        1286,
+        309,
+        1472,
+        544
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "attack:0",
+      "sourceBox": [
+        34,
+        581,
+        232,
+        800
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "attack:1",
+      "sourceBox": [
+        270,
+        571,
+        494,
+        799
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "attack:2",
+      "sourceBox": [
+        531,
+        592,
+        801,
+        798
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "attack:3",
+      "sourceBox": [
+        773,
+        590,
+        1039,
+        798
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "attack:4",
+      "sourceBox": [
+        1040,
+        592,
+        1282,
+        800
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "attack:5",
+      "sourceBox": [
+        1294,
+        593,
+        1489,
+        802
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "reaction:0",
+      "sourceBox": [
+        70,
+        811,
+        272,
+        1013
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "reaction:1",
+      "sourceBox": [
+        297,
+        833,
+        470,
+        1012
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "reaction:2",
+      "sourceBox": [
+        515,
+        877,
+        741,
+        1003
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "reaction:3",
+      "sourceBox": [
+        759,
+        920,
+        1004,
+        1002
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "reaction:4",
+      "sourceBox": [
+        1011,
+        919,
+        1237,
+        999
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "reaction:5",
+      "sourceBox": [
+        1249,
+        924,
+        1519,
+        995
+      ],
+      "scale": 0.4409448818897638
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:down:0",
+      "sourceBox": [
+        44,
+        617,
+        205,
+        811
+      ],
+      "scale": 0.5699745547073791
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:down:1",
+      "sourceBox": [
+        243,
+        615,
+        382,
+        809
+      ],
+      "scale": 0.5699745547073791
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:down:2",
+      "sourceBox": [
+        411,
+        615,
+        566,
+        812
+      ],
+      "scale": 0.5699745547073791
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:down:3",
+      "sourceBox": [
+        597,
+        617,
+        746,
+        814
+      ],
+      "scale": 0.5699745547073791
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:up:0",
+      "sourceBox": [
+        793,
+        615,
+        949,
+        804
+      ],
+      "scale": 0.5699745547073791
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:up:1",
+      "sourceBox": [
+        977,
+        615,
+        1132,
+        813
+      ],
+      "scale": 0.5699745547073791
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:up:2",
+      "sourceBox": [
+        1160,
+        615,
+        1311,
+        812
+      ],
+      "scale": 0.5699745547073791
+    },
+    {
+      "kind": "night_werewolf",
+      "pose": "walk:up:3",
+      "sourceBox": [
+        1349,
+        615,
+        1500,
+        811
+      ],
+      "scale": 0.5699745547073791
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "idle:down",
+      "sourceBox": [
+        62,
+        21,
+        245,
+        281
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "idle:up",
+      "sourceBox": [
+        313,
+        21,
+        480,
+        279
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "idle:left",
+      "sourceBox": [
+        588,
+        20,
+        725,
+        286
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "idle:right",
+      "sourceBox": [
+        786,
+        20,
+        927,
+        284
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:right:0",
+      "sourceBox": [
+        38,
+        331,
+        240,
+        556
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:right:1",
+      "sourceBox": [
+        287,
+        329,
+        481,
+        556
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:right:2",
+      "sourceBox": [
+        537,
+        326,
+        692,
+        557
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:right:3",
+      "sourceBox": [
+        762,
+        331,
+        964,
+        557
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:right:4",
+      "sourceBox": [
+        1021,
+        332,
+        1221,
+        559
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:right:5",
+      "sourceBox": [
+        1287,
+        327,
+        1473,
+        562
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "attack:0",
+      "sourceBox": [
+        32,
+        595,
+        217,
+        802
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "attack:1",
+      "sourceBox": [
+        268,
+        595,
+        487,
+        804
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "attack:2",
+      "sourceBox": [
+        513,
+        603,
+        739,
+        804
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "attack:3",
+      "sourceBox": [
+        744,
+        607,
+        996,
+        805
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "attack:4",
+      "sourceBox": [
+        1032,
+        601,
+        1281,
+        803
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "attack:5",
+      "sourceBox": [
+        1315,
+        599,
+        1500,
+        805
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "reaction:0",
+      "sourceBox": [
+        38,
+        819,
+        235,
+        1006
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "reaction:1",
+      "sourceBox": [
+        264,
+        833,
+        430,
+        1007
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "reaction:2",
+      "sourceBox": [
+        459,
+        854,
+        664,
+        1004
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "reaction:3",
+      "sourceBox": [
+        683,
+        891,
+        945,
+        1008
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "reaction:4",
+      "sourceBox": [
+        950,
+        923,
+        1248,
+        1007
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "reaction:5",
+      "sourceBox": [
+        1265,
+        927,
+        1518,
+        1007
+      ],
+      "scale": 0.42424242424242425
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:down:0",
+      "sourceBox": [
+        41,
+        821,
+        207,
+        1018
+      ],
+      "scale": 0.5656565656565656
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:down:1",
+      "sourceBox": [
+        230,
+        821,
+        387,
+        1019
+      ],
+      "scale": 0.5656565656565656
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:down:2",
+      "sourceBox": [
+        410,
+        821,
+        572,
+        1019
+      ],
+      "scale": 0.5656565656565656
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:down:3",
+      "sourceBox": [
+        592,
+        823,
+        751,
+        1018
+      ],
+      "scale": 0.5656565656565656
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:up:0",
+      "sourceBox": [
+        784,
+        817,
+        951,
+        1018
+      ],
+      "scale": 0.5656565656565656
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:up:1",
+      "sourceBox": [
+        974,
+        820,
+        1134,
+        1018
+      ],
+      "scale": 0.5656565656565656
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:up:2",
+      "sourceBox": [
+        1155,
+        818,
+        1322,
+        1019
+      ],
+      "scale": 0.5656565656565656
+    },
+    {
+      "kind": "white_wolf_king",
+      "pose": "walk:up:3",
+      "sourceBox": [
+        1344,
+        818,
+        1508,
+        1019
+      ],
+      "scale": 0.5656565656565656
+    }
+  ]
+}

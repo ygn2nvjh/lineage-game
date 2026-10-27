@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#18251c">
+  <meta name="description" content="類天堂第一版最小循環：整備、野外戰鬥、升級、回城補給。">
+  <title>類天堂・最初的遠征｜MVP 0.8.0</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23233529'/%3E%3Cpath d='M22 4l6 1-1 6-12 12-5-5z' fill='%23d5d9c4'/%3E%3Cpath d='M7 16l10 10M4 28l8-8' stroke='%23c7a66b' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main id="stage" aria-label="類天堂遊戲">
+  <div id="worldViewport" class="world-viewport"><canvas id="game" aria-label="遊戲地圖，點地面移動、點怪物鎖定"></canvas></div>
+  <div class="top-ui" id="topUi">
+  <header class="hud" id="hud" hidden>
+    <div class="name" id="playerName"></div>
+    <div class="bar"><i id="hpFill"></i><span id="hpValue"></span></div>
+    <div class="bar mp"><i id="mpFill"></i><span id="mpValue"></span></div>
+    <div class="bar exp"><i id="xpFill"></i><span id="xpValue"></span></div>
+    <div class="vitals"><span>AC <b id="acValue"></b></span><span>負重 <b id="weightValue"></b></span></div>
+  </header>
+  <div class="righttop"><div id="mapName">最初的遠征</div><small id="zoneLabel">MVP 0.8.0</small><div class="gold">◆ <span id="goldValue">—</span></div></div>
+  <button id="systemButton" class="utility" aria-label="開啟系統與資料管理">⚙ 系統</button>
+  <div id="target" class="target" hidden></div>
+  </div>
+  <section id="worldArea" class="world-area" aria-label="中央 15 × 15 格淨空視野"><div id="cleanViewport" aria-hidden="true"></div></section>
+  <div class="bottom-ui" id="controls" hidden>
+    <div class="operation-area" id="operationArea">
+      <div class="system-messages" id="systemMessages" aria-label="系統訊息">
+        <div id="toast" role="status" aria-live="polite" hidden></div>
+        <div id="journey" class="journey" hidden><span id="journeyLabel"></span><button id="journeyAction"></button></div>
+        <div id="contextAction" class="context-action" hidden></div>
+      </div>
+    <div class="control-row">
+      <div class="stick" id="stick" role="group" aria-label="移動搖桿"><span class="stick-cross">✥</span><div class="knob" id="knob"></div></div>
+      <div class="actions"><div class="quick-row"><button class="circle small potion" id="potionButton" aria-label="使用紅色藥水">紅水</button><button class="circle small heal" id="healButton" aria-label="使用治療術">治療術</button></div><div class="attack-row"><button class="circle lock" id="lockButton">鎖定</button><button class="circle attack" id="attackButton">⚔<br>攻擊</button></div></div>
+    </div>
+      <nav class="menu" aria-label="遊戲選單">
+        <button id="charButton" aria-label="人物裝備"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3-5 3 3 5 2-1v11h8V10l2 1 3-5-5-3-4 3z"/></svg><span class="nav-label">人物裝備</span></button>
+        <button id="bagButton" aria-label="背包"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6V4a4 4 0 0 1 8 0v2M5 8h14l1 13H4zM8 13h8v5H8z"/></svg><span class="nav-label">背包</span></button>
+        <button id="shopButton" aria-label="商店"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18l-2-6H5zM4 9v12h16V9M9 21v-8h6v8"/><path d="M3 9q2 5 5 0 4 5 8 0 3 5 5 0"/></svg><span class="nav-label">商店</span></button>
+        <button id="mapButton" aria-label="地圖"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2zM9 3v16M15 5v16"/></svg><span class="nav-label">地圖</span></button>
+        <button id="zoneButton" aria-label="去野外"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 19 6-10 4 6 4-11 6 15zM15 9l2 3 2-1"/></svg><span class="nav-label">去野外</span></button>
+      </nav>
+    </div>
+    <div class="footer-line"><span id="saveStatus" role="status">正在準備資料庫…</span><span>移動 WASD · 攻擊 Space</span></div>
+  </div>
+  <section id="loading" class="center-screen"><div class="emblem">⚔</div><h1>最初的遠征</h1><p>正在載入你的世界…</p></section>
+  <section id="createOverlay" class="overlay" hidden aria-label="建立角色">
+    <form id="createForm" class="create-box">
+      <div class="eyebrow">類天堂 · MVP 0.8.0</div><div class="emblem">⚔</div><h1>最初的遠征</h1><p class="intro">在城鎮整備，向野外踏出第一步。</p>
+      <label>角色名稱<input id="createName" name="name" maxlength="12" required value="見習騎士" autocomplete="off"></label>
+      <label>角色性別<select id="createSex"><option value="male">男性</option><option value="female">女性</option></select></label>
+      <div class="section-line"><h2>六項能力</h2><span>剩餘 <b id="createRemain">0</b> 點</span></div>
+      <div id="createStats" class="creation-stats"></div><p id="createPreview" class="subtle"></p>
+      <p id="createError" class="error" role="alert"></p><button id="createConfirm" class="primary" type="submit">建立角色・進入城鎮</button>
+      <p class="fine-print">單機版 · 自動存檔於此瀏覽器<br>可在系統匯出完整備份，舊版角色不會被覆寫。</p>
+    </form>
+  </section>
+  <section id="panel" class="panel" hidden role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+    <header class="panel-header"><div><small id="panelEyebrow"></small><h2 id="panelTitle"></h2></div><button id="closePanel" class="close" aria-label="關閉面板">✕</button></header>
+    <p id="panelNotice" class="panel-notice" role="status" hidden></p>
+    <nav id="panelTabs" class="tabs" hidden></nav><div id="panelBody"></div>
+  </section>
+  <div id="fatal" class="overlay" hidden><div class="create-box"><h2>目前無法載入遊戲</h2><p id="fatalMessage" class="error"></p><p>資料未被重置。請重新載入，或先下載現有資料備查。</p><button id="rawBackup">下載現有資料</button><button id="retryButton">重新載入</button></div></div>
+  <input id="importFile" type="file" accept="application/json,.json" hidden>
+</main>
+<noscript>此遊戲需要 JavaScript，請在瀏覽器設定中啟用。</noscript>
+<script type="module" src="./src/app.mjs"></script>
+</body>
+</html>

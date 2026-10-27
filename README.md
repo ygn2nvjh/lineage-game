@@ -1,0 +1,15 @@
+# 暮色村莊・最初的遠征
+
+原創瀏覽器 RPG：安全村莊補給、墓園打怪、經木橋進入密林，再回城整備。
+
+## 開發與建置
+
+需要 Node.js 24；執行 `npm test` 驗證核心規則，`npm run build` 建立 dist/index.html。可用 `npm start` 在本機開啟遊戲。建置後的 HTML 包含執行素材，無須外部遊戲服務。
+
+## 資料
+
+程式在 src，武器、道具、怪物、商店、地圖及公式在 data/game/catalog.json。assets 包含執行圖集與原始美術。scripts/prepare-world.py 和 prepare-monsters.py 可重新打包地景與怪物。
+
+人物等級、裝備、背包等個人進度保存在各自瀏覽器；請使用遊戲系統選單匯出完整備份。GitHub 原始碼不會自動包含玩家存檔。
+
+此公開版本不含私人部署設定、內部操作紀錄或實際玩家存檔。

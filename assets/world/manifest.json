@@ -1,0 +1,246 @@
+{
+  "props": {
+    "url": "props.webp",
+    "meta": {
+      "frames": {
+        "shop": {
+          "x": 4,
+          "y": 47,
+          "width": 248,
+          "height": 265
+        },
+        "inn": {
+          "x": 260,
+          "y": 56,
+          "width": 248,
+          "height": 256
+        },
+        "gate": {
+          "x": 516,
+          "y": 72,
+          "width": 248,
+          "height": 240
+        },
+        "well": {
+          "x": 774,
+          "y": 8,
+          "width": 243,
+          "height": 304
+        },
+        "conifer": {
+          "x": 9,
+          "y": 328,
+          "width": 237,
+          "height": 304
+        },
+        "broadleaf": {
+          "x": 260,
+          "y": 361,
+          "width": 248,
+          "height": 271
+        },
+        "tombstone": {
+          "x": 516,
+          "y": 401,
+          "width": 248,
+          "height": 231
+        },
+        "grave": {
+          "x": 772,
+          "y": 410,
+          "width": 248,
+          "height": 222
+        },
+        "bridge": {
+          "x": 4,
+          "y": 658,
+          "width": 248,
+          "height": 294
+        },
+        "boulder": {
+          "x": 260,
+          "y": 771,
+          "width": 248,
+          "height": 181
+        },
+        "fence": {
+          "x": 516,
+          "y": 821,
+          "width": 248,
+          "height": 131
+        },
+        "crypt": {
+          "x": 772,
+          "y": 704,
+          "width": 248,
+          "height": 248
+        }
+      },
+      "packing": [
+        {
+          "kind": "shop",
+          "sourceBox": [
+            17,
+            17,
+            387,
+            412
+          ]
+        },
+        {
+          "kind": "inn",
+          "sourceBox": [
+            411,
+            17,
+            796,
+            414
+          ]
+        },
+        {
+          "kind": "gate",
+          "sourceBox": [
+            814,
+            41,
+            1202,
+            417
+          ]
+        },
+        {
+          "kind": "well",
+          "sourceBox": [
+            1191,
+            132,
+            1432,
+            433
+          ]
+        },
+        {
+          "kind": "conifer",
+          "sourceBox": [
+            68,
+            415,
+            324,
+            743
+          ]
+        },
+        {
+          "kind": "broadleaf",
+          "sourceBox": [
+            396,
+            422,
+            705,
+            760
+          ]
+        },
+        {
+          "kind": "tombstone",
+          "sourceBox": [
+            805,
+            531,
+            1032,
+            742
+          ]
+        },
+        {
+          "kind": "grave",
+          "sourceBox": [
+            1137,
+            473,
+            1411,
+            718
+          ]
+        },
+        {
+          "kind": "bridge",
+          "sourceBox": [
+            55,
+            748,
+            320,
+            1062
+          ]
+        },
+        {
+          "kind": "boulder",
+          "sourceBox": [
+            382,
+            823,
+            651,
+            1019
+          ]
+        },
+        {
+          "kind": "fence",
+          "sourceBox": [
+            702,
+            844,
+            1065,
+            1036
+          ]
+        },
+        {
+          "kind": "crypt",
+          "sourceBox": [
+            1101,
+            737,
+            1422,
+            1058
+          ]
+        }
+      ]
+    }
+  },
+  "tiles": {
+    "url": "tiles.webp",
+    "meta": {
+      "frames": {
+        "grass": {
+          "x": 0,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        "dirt": {
+          "x": 128,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        "cobble": {
+          "x": 256,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        "moss": {
+          "x": 384,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        "cemetery": {
+          "x": 0,
+          "y": 128,
+          "width": 128,
+          "height": 128
+        },
+        "water": {
+          "x": 128,
+          "y": 128,
+          "width": 128,
+          "height": 128
+        },
+        "planks": {
+          "x": 256,
+          "y": 128,
+          "width": 128,
+          "height": 128
+        },
+        "forest": {
+          "x": 384,
+          "y": 128,
+          "width": 128,
+          "height": 128
+        }
+      }
+    }
+  }
+}

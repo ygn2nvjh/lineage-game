@@ -1,0 +1,861 @@
+{
+  "schemaVersion": 2,
+  "version": "mvp-0.6.1",
+  "title": "類天堂・最初的遠征",
+  "provenance": "自有最小循環設定。題材參考天堂系列，數值與公式為本專案設計，非官方原版數值。",
+  "abilities": [
+    {
+      "id": "str",
+      "name": "力量",
+      "description": "提高近戰傷害與負重上限"
+    },
+    {
+      "id": "dex",
+      "name": "敏捷",
+      "description": "提高物理命中與迴避"
+    },
+    {
+      "id": "con",
+      "name": "體質",
+      "description": "提高生命上限與生命恢復"
+    },
+    {
+      "id": "int",
+      "name": "智力",
+      "description": "提高治療術恢復量"
+    },
+    {
+      "id": "wis",
+      "name": "精神",
+      "description": "提高魔力上限與魔力恢復"
+    },
+    {
+      "id": "cha",
+      "name": "魅力",
+      "description": "降低商店購買價格"
+    }
+  ],
+  "rules": {
+    "statBase": 10,
+    "creationPoints": 4,
+    "baseStats": {
+      "str": 14,
+      "dex": 12,
+      "con": 14,
+      "int": 10,
+      "wis": 11,
+      "cha": 10
+    },
+    "defaultAllocation": {
+      "str": 2,
+      "dex": 0,
+      "con": 2,
+      "int": 0,
+      "wis": 0,
+      "cha": 0
+    },
+    "startGold": 180,
+    "startItems": {
+      "red_potion": 3,
+      "return_scroll": 2
+    },
+    "health": {
+      "base": 70,
+      "perCon": 4,
+      "perLevel": 12,
+      "regenBase": 1,
+      "regenPerCon": 0.25
+    },
+    "mana": {
+      "base": 15,
+      "perWis": 3,
+      "perLevel": 3,
+      "regenBase": 1,
+      "regenPerWis": 0.2
+    },
+    "combat": {
+      "baseDamage": 1,
+      "damagePerStr": 0.65,
+      "damagePerLevel": 0.5,
+      "baseHit": 0.86,
+      "hitPerDex": 0.012,
+      "hitPerLevel": 0.012,
+      "evasionPerDex": 0.008,
+      "minHit": 0.35,
+      "maxHit": 0.97,
+      "playerAttackSeconds": 0.8,
+      "armorReduction": 0.55,
+      "minimumDamage": 1,
+      "interactRange": 55,
+      "acBase": 10,
+      "armorClassPerDex": 0.2
+    },
+    "growth": {
+      "baseExp": 60,
+      "expMultiplier": 1.35,
+      "maxLevel": 50,
+      "pointsPerLevel": 1
+    },
+    "weight": {
+      "base": 80,
+      "perStr": 6,
+      "perCon": 3
+    },
+    "economy": {
+      "discountPerCha": 0.01,
+      "maxDiscount": 0.2
+    },
+    "healing": {
+      "base": 18,
+      "perInt": 2,
+      "perLevel": 2,
+      "manaCost": 8,
+      "cooldown": 5
+    },
+    "recovery": {
+      "interval": 5,
+      "townMultiplier": 3,
+      "potionCooldown": 1.4,
+      "deathHpRatio": 0.5
+    },
+    "movement": {
+      "playerSpeed": 145,
+      "playerRadius": 13,
+      "enemyRadius": 15,
+      "leash": 300,
+      "aggroRadius": 150,
+      "attackRange": 47
+    },
+    "restCost": 0,
+    "starterWeapon": "short_sword"
+  },
+  "items": [
+    {
+      "id": "short_sword",
+      "name": "短劍",
+      "type": "weapon",
+      "slot": "weapon",
+      "price": 50,
+      "sellPrice": 20,
+      "weight": 8,
+      "damageMin": 3,
+      "damageMax": 7,
+      "bonuses": {},
+      "description": "新手可靠的第一把武器。"
+    },
+    {
+      "id": "long_sword",
+      "name": "長劍",
+      "type": "weapon",
+      "slot": "weapon",
+      "price": 240,
+      "sellPrice": 96,
+      "weight": 12,
+      "damageMin": 7,
+      "damageMax": 12,
+      "bonuses": {
+        "str": 1
+      },
+      "description": "進階近戰武器，提供額外力量。"
+    },
+    {
+      "id": "cloth_armor",
+      "name": "布甲",
+      "type": "armor",
+      "slot": "armor",
+      "price": 60,
+      "sellPrice": 24,
+      "weight": 10,
+      "defense": 3,
+      "bonuses": {},
+      "description": "輕便的入門防具，減少物理傷害。"
+    },
+    {
+      "id": "leather_armor",
+      "name": "皮甲",
+      "type": "armor",
+      "slot": "armor",
+      "price": 220,
+      "sellPrice": 88,
+      "weight": 18,
+      "defense": 7,
+      "bonuses": {
+        "con": 1
+      },
+      "description": "更堅實的防具，提供額外體質。"
+    },
+    {
+      "id": "wisdom_ring",
+      "name": "精神戒指",
+      "type": "accessory",
+      "slot": "ring",
+      "price": 160,
+      "sellPrice": 64,
+      "weight": 1,
+      "bonuses": {
+        "wis": 2,
+        "int": 1
+      },
+      "description": "提高精神與智力，改善治療續航。"
+    },
+    {
+      "id": "red_potion",
+      "name": "紅色藥水",
+      "type": "consumable",
+      "price": 6,
+      "sellPrice": 2,
+      "weight": 1,
+      "effect": "heal",
+      "power": 40,
+      "description": "補充生命，可搭配系統中的自動補給設定。"
+    },
+    {
+      "id": "return_scroll",
+      "name": "回城卷軸",
+      "type": "consumable",
+      "price": 12,
+      "sellPrice": 4,
+      "weight": 0.2,
+      "effect": "return",
+      "description": "立即返回城鎮。野外出口也能免費回城。"
+    },
+    {
+      "id": "monster_fang",
+      "name": "怪物獠牙",
+      "type": "material",
+      "price": 0,
+      "sellPrice": 8,
+      "weight": 0.5,
+      "description": "野外怪物掉落，回城可出售換取補給。"
+    },
+    {
+      "id": "leather_helmet",
+      "name": "皮頭盔",
+      "type": "armor",
+      "slot": "helmet",
+      "price": 65,
+      "sellPrice": 21,
+      "weight": 2,
+      "bonuses": {},
+      "description": "可穿戴於對應欄位，效果以資料顯示為準。",
+      "defense": 2
+    },
+    {
+      "id": "bronze_necklace",
+      "name": "青銅項鍊",
+      "type": "accessory",
+      "slot": "necklace",
+      "price": 90,
+      "sellPrice": 30,
+      "weight": 2,
+      "bonuses": {
+        "con": 1
+      },
+      "description": "可穿戴於對應欄位，效果以資料顯示為準。"
+    },
+    {
+      "id": "traveler_cloak",
+      "name": "旅人斗篷",
+      "type": "armor",
+      "slot": "cloak",
+      "price": 60,
+      "sellPrice": 20,
+      "weight": 2,
+      "bonuses": {},
+      "description": "可穿戴於對應欄位，效果以資料顯示為準。",
+      "defense": 1
+    },
+    {
+      "id": "leather_gloves",
+      "name": "皮手套",
+      "type": "armor",
+      "slot": "gloves",
+      "price": 55,
+      "sellPrice": 18,
+      "weight": 2,
+      "bonuses": {},
+      "description": "可穿戴於對應欄位，效果以資料顯示為準。",
+      "defense": 1
+    },
+    {
+      "id": "wooden_shield",
+      "name": "木盾",
+      "type": "armor",
+      "slot": "shield",
+      "price": 75,
+      "sellPrice": 25,
+      "weight": 2,
+      "bonuses": {},
+      "description": "可穿戴於對應欄位，效果以資料顯示為準。",
+      "defense": 3
+    },
+    {
+      "id": "leather_boots",
+      "name": "皮靴",
+      "type": "armor",
+      "slot": "boots",
+      "price": 55,
+      "sellPrice": 18,
+      "weight": 2,
+      "bonuses": {},
+      "description": "可穿戴於對應欄位，效果以資料顯示為準。",
+      "defense": 1
+    },
+    {
+      "id": "copper_earring",
+      "name": "銅耳環",
+      "type": "accessory",
+      "slot": "earring",
+      "price": 90,
+      "sellPrice": 30,
+      "weight": 2,
+      "bonuses": {
+        "wis": 1
+      },
+      "description": "可穿戴於對應欄位，效果以資料顯示為準。"
+    },
+    {
+      "id": "cloth_belt",
+      "name": "布腰帶",
+      "type": "accessory",
+      "slot": "belt",
+      "price": 70,
+      "sellPrice": 23,
+      "weight": 2,
+      "bonuses": {
+        "str": 1
+      },
+      "description": "可穿戴於對應欄位，效果以資料顯示為準。"
+    },
+    {
+      "id": "linen_shirt",
+      "name": "亞麻內衣",
+      "type": "armor",
+      "slot": "underwear",
+      "price": 50,
+      "sellPrice": 16,
+      "weight": 2,
+      "bonuses": {},
+      "description": "可穿戴於對應欄位，效果以資料顯示為準。",
+      "defense": 1
+    }
+  ],
+  "monsters": [
+    {
+      "id": "goblin",
+      "name": "哥布林",
+      "sprite": "goblin",
+      "level": 1,
+      "hp": 32,
+      "damageMin": 3,
+      "damageMax": 6,
+      "defense": 0,
+      "hit": 0.72,
+      "exp": 15,
+      "goldMin": 10,
+      "goldMax": 16,
+      "speed": 72,
+      "attackSeconds": 1.5,
+      "aggressive": false,
+      "respawnSeconds": 15,
+      "drops": [
+        {
+          "itemId": "monster_fang",
+          "chance": 0.45,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "orc",
+      "name": "妖魔",
+      "sprite": "orc",
+      "level": 2,
+      "hp": 48,
+      "damageMin": 5,
+      "damageMax": 9,
+      "defense": 1,
+      "hit": 0.76,
+      "exp": 23,
+      "goldMin": 16,
+      "goldMax": 24,
+      "speed": 76,
+      "attackSeconds": 1.6,
+      "aggressive": false,
+      "respawnSeconds": 18,
+      "drops": [
+        {
+          "itemId": "monster_fang",
+          "chance": 0.65,
+          "min": 1,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "id": "skeleton",
+      "name": "骷髏",
+      "sprite": "skeleton",
+      "level": 3,
+      "hp": 66,
+      "damageMin": 7,
+      "damageMax": 12,
+      "defense": 2,
+      "hit": 0.8,
+      "exp": 32,
+      "goldMin": 22,
+      "goldMax": 32,
+      "speed": 70,
+      "attackSeconds": 1.7,
+      "aggressive": true,
+      "respawnSeconds": 20,
+      "drops": [
+        {
+          "itemId": "monster_fang",
+          "chance": 0.75,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "red_potion",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "appearanceId": "skeleton"
+    },
+    {
+      "id": "ogre",
+      "name": "歐吉",
+      "sprite": "ogre",
+      "level": 5,
+      "hp": 130,
+      "damageMin": 12,
+      "damageMax": 19,
+      "defense": 4,
+      "hit": 0.82,
+      "exp": 65,
+      "goldMin": 40,
+      "goldMax": 60,
+      "speed": 60,
+      "attackSeconds": 2,
+      "aggressive": false,
+      "respawnSeconds": 30,
+      "drops": [
+        {
+          "itemId": "monster_fang",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "id": "spartoi",
+      "name": "史巴托",
+      "sprite": "skeleton",
+      "level": 3,
+      "hp": 66,
+      "damageMin": 7,
+      "damageMax": 12,
+      "defense": 2,
+      "hit": 0.8,
+      "exp": 32,
+      "goldMin": 22,
+      "goldMax": 32,
+      "speed": 70,
+      "attackSeconds": 1.7,
+      "aggressive": true,
+      "respawnSeconds": 20,
+      "drops": [
+        {
+          "itemId": "monster_fang",
+          "chance": 0.75,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "red_potion",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "appearanceId": "spartoi"
+    },
+    {
+      "id": "skeleton_fighter",
+      "name": "骷髏鬥士",
+      "sprite": "skeleton",
+      "level": 3,
+      "hp": 66,
+      "damageMin": 7,
+      "damageMax": 12,
+      "defense": 2,
+      "hit": 0.8,
+      "exp": 32,
+      "goldMin": 22,
+      "goldMax": 32,
+      "speed": 70,
+      "attackSeconds": 1.7,
+      "aggressive": true,
+      "respawnSeconds": 20,
+      "drops": [
+        {
+          "itemId": "monster_fang",
+          "chance": 0.75,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "red_potion",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "appearanceId": "skeleton_fighter"
+    }
+  ],
+  "shops": [
+    {
+      "id": "town_shop",
+      "name": "城鎮雜貨舖",
+      "mapId": "town",
+      "items": [
+        "short_sword",
+        "cloth_armor",
+        "red_potion",
+        "return_scroll",
+        "long_sword",
+        "leather_armor",
+        "wisdom_ring",
+        "leather_helmet",
+        "bronze_necklace",
+        "traveler_cloak",
+        "leather_gloves",
+        "wooden_shield",
+        "leather_boots",
+        "copper_earring",
+        "cloth_belt",
+        "linen_shirt"
+      ]
+    }
+  ],
+  "maps": [
+    {
+      "id": "town",
+      "name": "古魯丁城鎮",
+      "safe": true,
+      "width": 960,
+      "height": 960,
+      "spawn": {
+        "x": 480,
+        "y": 550
+      },
+      "exit": {
+        "x": 480,
+        "y": 70,
+        "radius": 48,
+        "to": "field",
+        "arrival": {
+          "x": 600,
+          "y": 1060
+        }
+      },
+      "buildings": [
+        {
+          "x": 300,
+          "y": 330,
+          "name": "雜貨舖",
+          "action": "shop",
+          "shopId": "town_shop"
+        },
+        {
+          "x": 660,
+          "y": 330,
+          "name": "旅人休息所",
+          "action": "rest"
+        }
+      ],
+      "obstacles": [
+        {
+          "x": 210,
+          "y": 270,
+          "width": 180,
+          "height": 130
+        },
+        {
+          "x": 570,
+          "y": 270,
+          "width": 180,
+          "height": 130
+        }
+      ],
+      "spawns": []
+    },
+    {
+      "id": "field",
+      "name": "古魯丁野外",
+      "safe": false,
+      "width": 1200,
+      "height": 1200,
+      "spawn": {
+        "x": 600,
+        "y": 1060
+      },
+      "exit": {
+        "x": 600,
+        "y": 1130,
+        "radius": 42,
+        "to": "town",
+        "arrival": {
+          "x": 480,
+          "y": 145
+        }
+      },
+      "buildings": [],
+      "obstacles": [
+        {
+          "x": 290,
+          "y": 680,
+          "width": 65,
+          "height": 70
+        },
+        {
+          "x": 820,
+          "y": 750,
+          "width": 70,
+          "height": 70
+        },
+        {
+          "x": 320,
+          "y": 300,
+          "width": 70,
+          "height": 80
+        },
+        {
+          "x": 870,
+          "y": 340,
+          "width": 65,
+          "height": 70
+        }
+      ],
+      "spawns": [
+        {
+          "id": "goblin_1",
+          "monsterId": "goblin",
+          "x": 540,
+          "y": 860
+        },
+        {
+          "id": "goblin_2",
+          "monsterId": "goblin",
+          "x": 700,
+          "y": 900
+        },
+        {
+          "id": "goblin_3",
+          "monsterId": "goblin",
+          "x": 420,
+          "y": 930
+        },
+        {
+          "id": "goblin_4",
+          "monsterId": "goblin",
+          "x": 750,
+          "y": 740
+        },
+        {
+          "id": "goblin_5",
+          "monsterId": "goblin",
+          "x": 430,
+          "y": 740
+        },
+        {
+          "id": "orc_1",
+          "monsterId": "orc",
+          "x": 520,
+          "y": 610
+        },
+        {
+          "id": "orc_2",
+          "monsterId": "orc",
+          "x": 760,
+          "y": 550
+        },
+        {
+          "id": "skeleton_1",
+          "monsterId": "skeleton",
+          "x": 480,
+          "y": 390
+        },
+        {
+          "id": "skeleton_2",
+          "monsterId": "skeleton",
+          "x": 720,
+          "y": 300
+        },
+        {
+          "id": "ogre_1",
+          "monsterId": "ogre",
+          "x": 580,
+          "y": 150
+        },
+        {
+          "id": "spartoi_1",
+          "monsterId": "spartoi",
+          "x": 300,
+          "y": 470
+        },
+        {
+          "id": "skeleton_fighter_1",
+          "monsterId": "skeleton_fighter",
+          "x": 850,
+          "y": 480
+        }
+      ]
+    }
+  ],
+  "equipmentSlots": [
+    {
+      "id": "weapon",
+      "name": "武器",
+      "icon": "⚔",
+      "column": 1,
+      "row": 2
+    },
+    {
+      "id": "helmet",
+      "name": "頭盔",
+      "icon": "♜",
+      "column": 2,
+      "row": 1
+    },
+    {
+      "id": "necklace",
+      "name": "項鍊",
+      "icon": "◇",
+      "column": 1,
+      "row": 1
+    },
+    {
+      "id": "armor",
+      "name": "盔甲",
+      "icon": "▣",
+      "column": 3,
+      "row": 2
+    },
+    {
+      "id": "cloak",
+      "name": "斗篷",
+      "icon": "◩",
+      "column": 1,
+      "row": 3
+    },
+    {
+      "id": "gloves",
+      "name": "手套",
+      "icon": "♧",
+      "column": 1,
+      "row": 4
+    },
+    {
+      "id": "shield",
+      "name": "盾牌",
+      "icon": "⬟",
+      "column": 3,
+      "row": 3
+    },
+    {
+      "id": "boots",
+      "name": "鞋子",
+      "icon": "♙",
+      "column": 1,
+      "row": 6
+    },
+    {
+      "id": "ring1",
+      "name": "戒指1",
+      "icon": "◉",
+      "column": 1,
+      "row": 5
+    },
+    {
+      "id": "ring2",
+      "name": "戒指2",
+      "icon": "◉",
+      "column": 3,
+      "row": 5
+    },
+    {
+      "id": "earring",
+      "name": "耳環",
+      "icon": "◌",
+      "column": 3,
+      "row": 1
+    },
+    {
+      "id": "belt",
+      "name": "腰帶",
+      "icon": "═",
+      "column": 3,
+      "row": 4
+    },
+    {
+      "id": "underwear",
+      "name": "內衣",
+      "icon": "▤",
+      "column": 3,
+      "row": 6
+    }
+  ],
+  "monsterAppearances": [
+    {
+      "id": "skeleton",
+      "name": "骷髏",
+      "family": "skeleton",
+      "colorTone": "bone",
+      "weapon": "scimitar",
+      "shield": "none",
+      "helmet": false,
+      "description": "手拿彎刀。此特徵跨美術風格保留。",
+      "requiredTraits": [
+        "weapon"
+      ]
+    },
+    {
+      "id": "spartoi",
+      "name": "史巴托",
+      "family": "skeleton",
+      "colorTone": "blue",
+      "weapon": "scimitar",
+      "shield": "large_wooden",
+      "helmet": false,
+      "description": "顏色偏藍、手拿彎刀、木頭大盾。此特徵跨美術風格保留。",
+      "requiredTraits": [
+        "colorTone",
+        "weapon",
+        "shield"
+      ]
+    },
+    {
+      "id": "skeleton_fighter",
+      "name": "骷髏鬥士",
+      "family": "skeleton",
+      "colorTone": "gold",
+      "weapon": "sword",
+      "shield": "large_steel",
+      "helmet": true,
+      "description": "顏色偏金黃、手拿劍、鋼鐵大盾、配戴頭盔。此特徵跨美術風格保留。",
+      "requiredTraits": [
+        "colorTone",
+        "weapon",
+        "shield",
+        "helmet"
+      ]
+    }
+  ]
+}
