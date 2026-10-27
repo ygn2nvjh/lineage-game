@@ -8,6 +8,7 @@
     "test": "node --test --test-isolation=none tests/core.test.mjs",
     "build": "node scripts/build.mjs",
     "test:online": "node --test --test-isolation=none tests/online.test.mjs",
-    "build:online": "node scripts/build-online-worker.mjs"
+    "build:online": "node scripts/build-online-worker.mjs",
+    "test:latency": "node --test --test-isolation=none tests/online-latency.test.mjs"
   }
 }

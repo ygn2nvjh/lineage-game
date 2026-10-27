@@ -1,6 +1,6 @@
 import {Game,createState,derive,distance} from '../core.mjs';
 import {ART_MOTION} from '../art-config.mjs';
-export const ONLINE={version:'online-0.1.0',maxPlayers:4,roomTtl:20*60*1000,reconnectMs:45000,combatPoll:500,lobbyPoll:2000,step:.05,maxCatchup:2};
+export const ONLINE={version:'online-0.2.0',maxPlayers:4,roomTtl:20*60*1000,reconnectMs:45000,combatPoll:500,lobbyPoll:2000,step:.05,maxCatchup:2};
 export function dungeonCatalog(seed){
  const c=structuredClone(seed),field=c.maps.find(m=>m.id==='field');
  Object.assign(field,{name:'公會墓園',width:640,height:640,spawn:{x:320,y:510},exit:{x:320,y:600,radius:30,to:'town',arrival:{x:480,y:550}},regions:[{id:'crypt',name:'公會墓園',x:0,y:0,width:640,height:640,ground:'cemetery'}],paths:[{ground:'dirt',x:250,y:0,width:140,height:640}],scenery:[{id:'crypt',kind:'crypt',x:320,y:200,width:210,height:190,layer:'object'},{id:'stone1',kind:'tombstone',x:100,y:350,width:55,height:70,layer:'object'},{id:'stone2',kind:'tombstone',x:540,y:350,width:55,height:70,layer:'object'}],obstacles:[{x:240,y:100,width:160,height:90}],buildings:[],spawns:[{id:'bone1',monsterId:'skeleton',x:220,y:340},{id:'bone2',monsterId:'spartoi',x:420,y:340},{id:'bone3',monsterId:'skeleton_fighter',x:320,y:270}]});delete field.river;c.maps.find(m=>m.id==='town').exit.arrival={x:320,y:510};return c;

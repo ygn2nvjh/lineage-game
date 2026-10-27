@@ -5,7 +5,7 @@ export async function buildOnline(assetOrigin='https://lineage-first-expedition.
  const art=JSON.parse(await read('assets/art/manifest.json')),world=JSON.parse(await read('assets/world/manifest.json'));
  for(const a of Object.values(art))a.url=assetOrigin+'/game-assets/art/'+a.url;
  for(const a of Object.values(world))a.url=assetOrigin+'/game-assets/world/'+a.url;
- const parts=['art-config','actor-art','world-art','navigation','catalog','core','sprites','world','online/room','online/client'];
+ const parts=['art-config','actor-art','world-art','navigation','catalog','core','sprites','world','online/room','online/transport','online/prediction','online/client'];
  const bundle=(await Promise.all(parts.map(n=>read('src/'+n+'.mjs')))).map(s=>s.replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'')).join('\n');
  const script=`globalThis.LINEAGE_SEED=${JSON.stringify(seed)};globalThis.LINEAGE_ART=${JSON.stringify(art)};globalThis.LINEAGE_WORLD=${JSON.stringify(world)};${bundle}`;
  let html=await read('index.html');html=html.replace('<link rel="stylesheet" href="./src/styles.css">',()=>'<style>'+readCss+'</style>');

@@ -14,3 +14,5 @@
 `npm run test:online`驗證API與房間規則；`npm run build:online`建立dist-online/worker.mjs。自行部署需要D1綁定DB、套用tests/fixtures/online.sql所示schema（正式使用請保留逐版遷移），以及GAME_ASSET_ORIGIN所指定靜態站的/game-assets。建置主遊戲會產生靜態圖片。
 
 服務商免費額度與用量推算見free-online-options.md；並非目前託管服務的免費帳單保證。
+
+目前版本online0.2，延遲與診斷修正見latency.md；HTTP改為查詢起點500ms節奏，不再回覆後額外等待。
