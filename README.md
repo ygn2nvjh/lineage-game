@@ -27,3 +27,7 @@
 ## online0.2
 
 新增移動預測、狀態／輸入分流、待送目標合併與分段連線診斷，見docs/latency.md。尚未部署WebSocket，真機RTT待驗證。
+
+## WebSocket multiplayer deployment
+
+Cloudflare Workers + SQLite Durable Object test setup: [docs/cloudflare.md](docs/cloudflare.md). Use `npm ci` then `npm run build:cloudflare`. This separate deployment preserves existing solo/browser characters.

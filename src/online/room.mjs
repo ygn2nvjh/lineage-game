@@ -1,9 +1,12 @@
 import {Game,createState,derive,distance} from '../core.mjs';
 import {ART_MOTION} from '../art-config.mjs';
 export const ONLINE={version:'online-0.2.0',maxPlayers:4,roomTtl:20*60*1000,reconnectMs:45000,combatPoll:500,lobbyPoll:2000,step:.05,maxCatchup:2};
+const largeDungeonSeeds=new WeakSet();
+export function enableLargeDungeon(seed){largeDungeonSeeds.add(seed);}
+const usesLargeDungeon=seed=>!!globalThis.LINEAGE_WEBSOCKET||largeDungeonSeeds.has(seed);
 export function dungeonCatalog(seed){
  const c=structuredClone(seed),field=c.maps.find(m=>m.id==='field');
- Object.assign(field,{name:'公會墓園',width:640,height:640,spawn:{x:320,y:510},exit:{x:320,y:600,radius:30,to:'town',arrival:{x:480,y:550}},regions:[{id:'crypt',name:'公會墓園',x:0,y:0,width:640,height:640,ground:'cemetery'}],paths:[{ground:'dirt',x:250,y:0,width:140,height:640}],scenery:[{id:'crypt',kind:'crypt',x:320,y:200,width:210,height:190,layer:'object'},{id:'stone1',kind:'tombstone',x:100,y:350,width:55,height:70,layer:'object'},{id:'stone2',kind:'tombstone',x:540,y:350,width:55,height:70,layer:'object'}],obstacles:[{x:240,y:100,width:160,height:90}],buildings:[],spawns:[{id:'bone1',monsterId:'skeleton',x:220,y:340},{id:'bone2',monsterId:'spartoi',x:420,y:340},{id:'bone3',monsterId:'skeleton_fighter',x:320,y:270}]});delete field.river;c.maps.find(m=>m.id==='town').exit.arrival={x:320,y:510};return c;
+ Object.assign(field,{name:'公會墓園',width:640,height:640,spawn:{x:320,y:510},exit:{x:320,y:600,radius:30,to:'town',arrival:{x:480,y:550}},regions:[{id:'crypt',name:'公會墓園',x:0,y:0,width:640,height:640,ground:'cemetery'}],paths:[{ground:'dirt',x:250,y:0,width:140,height:640}],scenery:[{id:'crypt',kind:'crypt',x:320,y:200,width:210,height:190,layer:'object'},{id:'stone1',kind:'tombstone',x:100,y:350,width:55,height:70,layer:'object'},{id:'stone2',kind:'tombstone',x:540,y:350,width:55,height:70,layer:'object'}],obstacles:[{x:240,y:100,width:160,height:90}],buildings:[],spawns:[{id:'bone1',monsterId:'skeleton',x:220,y:340},{id:'bone2',monsterId:'spartoi',x:420,y:340},{id:'bone3',monsterId:'skeleton_fighter',x:320,y:270}]});delete field.river;c.maps.find(m=>m.id==='town').exit.arrival={x:320,y:510};if(usesLargeDungeon(seed)){Object.assign(field,{width:960,height:1600,spawn:{x:480,y:1450},exit:{x:480,y:1530,radius:30,to:'town',arrival:{x:480,y:550}},regions:[{id:'crypt',name:'公會墓園',x:0,y:0,width:960,height:1600,ground:'cemetery'}],paths:[{ground:'dirt',x:410,y:0,width:140,height:1600}],scenery:[{id:'crypt',kind:'crypt',x:480,y:190,width:210,height:190,layer:'object'},{id:'stone1',kind:'tombstone',x:240,y:800,width:55,height:70,layer:'object'},{id:'stone2',kind:'tombstone',x:700,y:500,width:55,height:70,layer:'object'}],obstacles:[{x:400,y:90,width:160,height:90}],spawns:[{id:'bone1',monsterId:'skeleton',x:480,y:1060},{id:'bone2',monsterId:'spartoi',x:480,y:680},{id:'bone3',monsterId:'skeleton_fighter',x:480,y:300}]});c.maps.find(m=>m.id==='town').exit.arrival={x:480,y:1450};}return c;
 }
 export function guestPlayer(seed,name,sex){
  const p=createState(seed,name,sex);p.inventory.short_sword=1;p.inventory.leather_armor=1;p.inventory.red_potion=10;p.equipment.weapon='short_sword';p.equipment.armor='leather_armor';p.hp=derive(p,seed).maxHp;return p;
@@ -35,7 +38,9 @@ export function tickRoom(room,seed,now){
    const pending=games.find((g,i)=>room.members[i].id===e.attackTarget&&!g.fallen&&g.p.hp>0);
    if(e.animation){e.animation.elapsed+=dt;if(!e.animation.done&&e.animation.elapsed>=e.animation.impact){e.animation.done=true;if(pending){pending.resolveEnemyAttack(e);emit(pending,e.attackTarget);}}}
    const candidates=games.map((g,i)=>({g,m:room.members[i]})).filter(({g,m})=>g.p.hp>0&&!g.fallen&&now-m.lastSeen<=ONLINE.reconnectMs).sort((a,b)=>distance(e,a.g.p)-distance(e,b.g.p));
-   const t=candidates[0];if(!t)continue;const g=t.g,m=g.index.monsters.get(e.monsterId);e.active=true;e.face=Math.atan2(g.p.y-e.y,g.p.x-e.x);
+   const t=candidates[0];if(!t)continue;const g=t.g,m=g.index.monsters.get(e.monsterId);
+   if(usesLargeDungeon(seed)){const d=distance(e,g.p),home={x:e.homeX,y:e.homeY};if(d<g.rules.movement.aggroRadius||e.hp<m.hp)e.active=true;if(d>g.rules.movement.leash||distance(e,home)>g.rules.movement.leash)e.active=false;if(!e.active){if(distance(e,home)>5)e.moving=g.navigate(e,home,m.speed,dt);continue;}}
+   else e.active=true;e.face=Math.atan2(g.p.y-e.y,g.p.x-e.x);
    if(e.swing>0)continue;
    if(distance(e,g.p)>g.rules.movement.attackRange-6)e.moving=g.navigate(e,g.p,m.speed,dt);
    else if(e.cooldown<=0){g.enemyAttack(e);e.attackTarget=t.m.id;}
@@ -50,7 +55,7 @@ export function tickRoom(room,seed,now){
 }
 export function startRoom(room,seed,now){
  if(room.status!=='lobby')throw Error('副本已開始或已結束');if(room.members.length<2)throw Error('至少兩人才能開始');
- const c=dungeonCatalog(seed);room.members.forEach((m,i)=>{const p=structuredClone(m.game.p);p.mapId='field';Object.assign(p,{x:240+i*50,y:510});p.hp=derive(p,c).maxHp;p.mp=derive(p,c).maxMp;const g=new DungeonGame(c,p);m.game=saveGame(g);m.lastSeen=now;});room.enemies=new DungeonGame(c,room.members[0].game.p).enemies;room.status='combat';room.lastAt=now;
+ const c=dungeonCatalog(seed);room.members.forEach((m,i)=>{const p=structuredClone(m.game.p);p.mapId='field';Object.assign(p,c.maps.find(m=>m.id==='field').height===1600?{x:405+i*50,y:1450}:{x:240+i*50,y:510});p.hp=derive(p,c).maxHp;p.mp=derive(p,c).maxMp;const g=new DungeonGame(c,p);m.game=saveGame(g);m.lastSeen=now;});room.enemies=new DungeonGame(c,room.members[0].game.p).enemies;room.status='combat';room.lastAt=now;
 }
 export function roomView(room,owner,now,since=0){
  return {code:room.code,capacity:room.capacity,leader:room.leader,status:room.status,expiresAt:room.expiresAt,serverTime:now,eventId:room.eventId,events:room.events.filter(e=>e.id>since),clock:room.clock,enemies:room.enemies,members:room.members.map(m=>({id:m.id,name:m.name,sex:m.sex,connected:now-m.lastSeen<=ONLINE.reconnectMs,self:m.owner===owner,game:m.owner===owner?m.game:{p:{name:m.name,sex:m.sex,x:m.game.p.x,y:m.game.p.y,hp:m.game.p.hp},autoAttack:m.game.autoAttack,moving:m.game.moving,face:m.game.face,playerAnimation:m.game.playerAnimation,hurt:m.game.hurt,playerHurtFacing:m.game.playerHurtFacing,deathPending:m.game.deathPending,fallen:m.game.fallen}})),settled:room.settled};

@@ -2,3 +2,6 @@ node_modules/
 dist/
 artifacts/
 __pycache__/
+
+dist-cloudflare/
+.wrangler/

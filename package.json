@@ -9,6 +9,13 @@
     "build": "node scripts/build.mjs",
     "test:online": "node --test --test-isolation=none tests/online.test.mjs",
     "build:online": "node scripts/build-online-worker.mjs",
-    "test:latency": "node --test --test-isolation=none tests/online-latency.test.mjs"
+    "test:latency": "node --test --test-isolation=none tests/online-latency.test.mjs",
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "dev:cloudflare": "npm run build:cloudflare && wrangler dev --ip 127.0.0.1",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler deploy",
+    "test:cloudflare": "node --test --test-isolation=none tests/cloudflare-hub.test.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.154.0"
   }
 }
