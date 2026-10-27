@@ -22,7 +22,7 @@ export class Storage {
   async open(){
     if(!globalThis.indexedDB)throw new Error('瀏覽器不支援 IndexedDB，請使用新版 Safari 或 Chrome');
     this.db=await new Promise((resolve,reject)=>{
-      const request=indexedDB.open(DB_NAME,2);
+      const request=indexedDB.open(DB_NAME,3);
       request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains(STORE))request.result.createObjectStore(STORE);};
       request.onsuccess=()=>resolve(request.result);
       request.onerror=()=>reject(request.error);

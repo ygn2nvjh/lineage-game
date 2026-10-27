@@ -217,7 +217,7 @@ p{line-height:1.7}
 .footer-line{margin:6px 0 0;font-size:9px;min-height:12px}
 .footer-line span:last-child{font-size:8px}
 .panel-notice{margin:0;padding:7px 13px;background:#3b3b25;border-bottom:1px solid #918359;color:#f1d6a0;font-size:11px;line-height:1.6;flex-shrink:0;max-height:58px;overflow:auto}
-.paperdoll{display:grid;grid-template-columns:minmax(0,1fr) 100px minmax(0,1fr);grid-template-rows:repeat(6,56px);gap:6px;position:relative;padding:10px 8px;border:1px solid #7a8156;border-radius:8px;background:radial-gradient(ellipse at center,#3e5336,#1d3023 70%);margin:10px 0 14px}
+.paperdoll{display:grid;grid-template-columns:minmax(0,1fr) 118px minmax(0,1fr);grid-template-rows:repeat(6,56px);gap:6px;position:relative;padding:10px 8px;border:1px solid #7a8156;border-radius:8px;background:radial-gradient(ellipse at center,#3e5336,#1d3023 70%);margin:10px 0 14px}
 .equipment-slot{min-width:0;padding:4px 3px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;background:#16291fe8;border:1px solid #697a52;border-radius:5px;text-align:center;overflow:hidden}
 .equipment-slot.selected{border-color:#e3c786;box-shadow:0 0 0 1px #d6bb6b70;background:#3c432b}
 .equipment-slot .slot-label{font-size:10px;color:#c7c8a6;white-space:nowrap}
@@ -225,7 +225,7 @@ p{line-height:1.7}
 .equipment-slot .slot-item{font-size:10px;line-height:14px;color:#f0d89e;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .equipment-slot.empty .slot-item{color:#7f9276;font-size:9px}
 .paperdoll-figure{grid-column:2;grid-row:2 / span 5;min-width:0;align-self:stretch;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
-.paperdoll-figure canvas{width:100%;height:240px;max-height:100%;image-rendering:pixelated}
+.paperdoll-figure canvas{width:100%;height:100%;max-height:100%;object-fit:contain;image-rendering:auto}
 .paperdoll-figure small{font-size:10px;color:#d8d2ae;position:absolute;bottom:8px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .selected-slot-title{display:flex;justify-content:space-between;gap:8px;align-items:center}
 .selected-slot-title h3{margin:0!important}
@@ -235,8 +235,8 @@ p{line-height:1.7}
 .monster-preview canvas{width:100%;height:100px;image-rendering:pixelated}
 .monster-preview b{font-size:11px;color:#e8d7a6}
 .monster-preview p{font-size:9px;line-height:1.6;color:#bdc4a6;margin:5px 1px}
-@media(max-width:360px){.hud{width:179px}.righttop{font-size:10px;max-width:115px}.paperdoll{grid-template-columns:minmax(0,1fr) 82px minmax(0,1fr);gap:4px;padding:8px 6px}.slot-label{font-size:9px!important}.menu{gap:4px}.menu button,.menu #charButton,.menu #bagButton{font-size:9px}.system-messages{right:145px}}
-@media(max-height:700px){.top-ui{flex-basis:calc(100px + env(safe-area-inset-top))}.hud{padding:5px 8px;top:calc(env(safe-area-inset-top) + 5px)}.hud .name{margin-bottom:3px;font-size:10px}.hud .bar{height:10px;margin-bottom:2px}.hud .vitals{font-size:8px}.utility{top:calc(env(safe-area-inset-top) + 65px);font-size:10px;padding:4px 7px}.righttop{top:calc(env(safe-area-inset-top) + 7px)}.target{font-size:9px;line-height:13px}.bottom-ui{padding:7px 10px calc(env(safe-area-inset-bottom) + 4px)}.operation-area{height:142px}.stick{width:88px;height:88px}.knob{left:20px;top:20px}.circle.attack{width:62px;height:62px;font-size:14px}.circle.small,.circle.lock{width:40px;height:40px;font-size:9px}.actions{gap:5px}.system-messages{height:48px;right:130px}.journey{font-size:9px;padding:3px 5px;min-height:38px;line-height:13px}.journey button{font-size:9px;padding:3px 4px}#toast{font-size:9px;line-height:14px;max-height:40px;padding:3px 5px}.menu{margin-top:8px}.menu button,.menu #charButton,.menu #bagButton,.menu #shopButton,.menu #mapButton,.menu #zoneButton{height:33px}.footer-line{font-size:8px;margin-top:4px;min-height:10px}.paperdoll{grid-template-rows:repeat(6,48px)}.paperdoll-figure canvas{height:205px}}
+@media(max-width:360px){.hud{width:179px}.righttop{font-size:10px;max-width:115px}.paperdoll{grid-template-columns:minmax(0,1fr) 90px minmax(0,1fr);gap:4px;padding:8px 6px}.slot-label{font-size:9px!important}.menu{gap:4px}.menu button,.menu #charButton,.menu #bagButton{font-size:9px}.system-messages{right:145px}}
+@media(max-height:700px){.top-ui{flex-basis:calc(100px + env(safe-area-inset-top))}.hud{padding:5px 8px;top:calc(env(safe-area-inset-top) + 5px)}.hud .name{margin-bottom:3px;font-size:10px}.hud .bar{height:10px;margin-bottom:2px}.hud .vitals{font-size:8px}.utility{top:calc(env(safe-area-inset-top) + 65px);font-size:10px;padding:4px 7px}.righttop{top:calc(env(safe-area-inset-top) + 7px)}.target{font-size:9px;line-height:13px}.bottom-ui{padding:7px 10px calc(env(safe-area-inset-bottom) + 4px)}.operation-area{height:142px}.stick{width:88px;height:88px}.knob{left:20px;top:20px}.circle.attack{width:62px;height:62px;font-size:14px}.circle.small,.circle.lock{width:40px;height:40px;font-size:9px}.actions{gap:5px}.system-messages{height:48px;right:130px}.journey{font-size:9px;padding:3px 5px;min-height:38px;line-height:13px}.journey button{font-size:9px;padding:3px 4px}#toast{font-size:9px;line-height:14px;max-height:40px;padding:3px 5px}.menu{margin-top:8px}.menu button,.menu #charButton,.menu #bagButton,.menu #shopButton,.menu #mapButton,.menu #zoneButton{height:33px}.footer-line{font-size:8px;margin-top:4px;min-height:10px}.paperdoll{grid-template-rows:repeat(6,48px)}.paperdoll-figure canvas{height:100%}}
 
 /* 0.6.2: continuous world, with a clear 15×15 center and navigation inside the controls. */
 #stage{--stick-size:100px;--actions-width:134px;background:#253e2b}

@@ -4,7 +4,7 @@ from PIL import Image
 import json,statistics
 root=Path(__file__).resolve().parents[1];r=root/'assets/world'
 ns={'__file__':str(root/'scripts/atlas-extract.py')}
-exec((root/'scripts/atlas-extract.py').read_text().split("pack(extract('chop-source.png'")[0],ns)
+exec((root/'scripts/atlas-extract.py').read_text(),ns)
 # Reuse extraction against the world source directory.
 ns['r']=r/'sources';rows=ns['extract']('props.png',12,4)
 out=Image.new('RGBA',(1024,960));frames={};packing=[]
@@ -18,3 +18,6 @@ for n,kind in enumerate(['grass','dirt','cobble','moss','cemetery','water','plan
  x0=round(n%4*im.width/4);y0=round(n//4*im.height/2);x1=round((n%4+1)*im.width/4);y1=round((n//4+1)*im.height/2);tile=im.crop((x0+2,y0+2,x1-2,y1-2)).resize((128,128),Image.Resampling.NEAREST);tiles.paste(tile,(n%4*128,n//4*128));tf[kind]={'x':n%4*128,'y':n//4*128,'width':128,'height':128}
 tiles.save(r/'tiles.webp',lossless=True,method=6)
 (r/'manifest.json').write_text(json.dumps({'props':{'url':'props.webp','meta':props},'tiles':{'url':'tiles.webp','meta':{'frames':tf}}},indent=2));print('Packed world',len(frames),'props',sum((r/f).stat().st_size for f in ['props.webp','tiles.webp']))
+# Standalone facility prop stays separate so adding it does not repack existing scenery.
+warehouse=Image.open(r/'sources/warehouse.png').convert('RGBA');warehouse=warehouse.crop(warehouse.getchannel('A').point(lambda v:255 if v>24 else 0).getbbox());warehouse.thumbnail((384,384));warehouse.save(r/'warehouse.webp',quality=88,method=6)
+manifest=json.loads((r/'manifest.json').read_text());manifest['warehouse']={'url':'warehouse.webp','meta':{'frames':{'warehouse':{'x':0,'y':0,'width':warehouse.width,'height':warehouse.height}}}};(r/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

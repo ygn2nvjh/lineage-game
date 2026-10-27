@@ -5,7 +5,8 @@ import {SAVE_VERSION, validatePlayer} from './core.mjs';
 // Existing balance edits, items, possessions and progress take precedence over seed data.
 export function upgradeData(inputCatalog,inputSnapshot,seed){
   const catalog=structuredClone(inputCatalog),snapshot=inputSnapshot?structuredClone(inputSnapshot):null;
-  let changed=false;const upgradeWorld=seed?.version==='mvp-0.8.0'&&['mvp-0.6.0','mvp-0.6.1'].includes(catalog.version);
+  const oldVersion=catalog.version,oldSnapshot=snapshot?.schemaVersion;
+  let changed=false;const upgradeWorld=['mvp-0.8.0','mvp-0.9.0'].includes(seed?.version)&&['mvp-0.6.0','mvp-0.6.1'].includes(catalog.version);
   if(snapshot&&snapshot.catalogVersion!==catalog.version)throw new Error('存檔與資料庫版本不符，無法安全轉換');
   if(catalog.schemaVersion===1){
     if(!seed||seed.schemaVersion!==2)throw new Error('舊版轉換需要新版起始資料');
@@ -47,6 +48,16 @@ export function upgradeData(inputCatalog,inputSnapshot,seed){
     if(snapshot){snapshot.catalogVersion=catalog.version;const map=catalog.maps.find(m=>m.id===snapshot.player.mapId);Object.assign(snapshot.player,map.spawn);}
     changed=true;
   }
+  if(seed?.version==='mvp-0.9.0'&&['mvp-0.6.0','mvp-0.6.1','mvp-0.8.0'].includes(oldVersion)){
+    const town=catalog.maps.find(m=>m.id==='town'),template=seed.maps.find(m=>m.id==='town');
+    if(!town.buildings.some(b=>b.action==='warehouse')){
+      town.buildings.push(structuredClone(template.buildings.find(b=>b.action==='warehouse')));
+      town.obstacles.push(structuredClone(template.obstacles.find(b=>b.id==='warehouse')));
+      town.paths??=[];town.paths.push(structuredClone(template.paths.find(b=>b.id==='warehouse_path')));
+    }
+    catalog.version=seed.version;if(snapshot)snapshot.catalogVersion=catalog.version;changed=true;
+  }
+  if(snapshot&&[1,2].includes(oldSnapshot)){snapshot.player.warehouse??={};snapshot.schemaVersion=SAVE_VERSION;changed=true;}
   validateCatalog(catalog);
   if(snapshot){
     if(snapshot.schemaVersion!==SAVE_VERSION||snapshot.catalogVersion!==catalog.version)throw new Error('存檔格式不相容');

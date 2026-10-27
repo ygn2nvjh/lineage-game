@@ -4,6 +4,7 @@ import {Storage, parseBackup} from './storage.mjs';
 import {World} from './world.mjs';
 import {loadActorArt} from './actor-art.mjs';
 import {loadWorldArt,REGION_AT} from './world-art.mjs';
+import {loadPortraits} from './portraits.mjs';
 import {drawActor} from './sprites.mjs';
 
 const $=id=>document.getElementById(id);
@@ -11,8 +12,9 @@ const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>
 const fmt=value=>Number(value).toLocaleString('zh-TW',{maximumFractionDigits:1});
 const icon=i=>({weapon:'⚔',armor:'▣',accessory:'◉',material:'✦',consumable:i.effect==='heal'?'♜':'▤'}[i.type]||'◆');
 const storage=new Storage();
-let actorArt,worldArt,catalog,game,world,allocation,activePanel=null,activeTab='',lastFocus,toastUntil=0,lastFrame=0,hudTimer=0,saveTimer=0,lastSavedRevision=-1;
+let actorArt,worldArt,portraits,catalog,game,world,allocation,activePanel=null,activeTab='',lastFocus,toastUntil=0,lastFrame=0,hudTimer=0,saveTimer=0,lastSavedRevision=-1;
 let persistenceError=false,saving=false,editor={category:'items',id:null,dirty:false},running=true;
+let warehouseBusy=false,warehouseMode='deposit';
 let selectedEquipmentSlot='weapon';
 const keys=new Set(),joy={x:0,y:0,pointer:null};
 
@@ -27,7 +29,7 @@ function download(value,name){
   a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 async function persist(force=false){
-  if(!game||saving||(!force&&game.revision===lastSavedRevision))return;
+  if(!game||saving||warehouseBusy||(!force&&game.revision===lastSavedRevision))return;
   saving=true;const snapshot=game.snapshot(),revision=game.revision;
   $('saveStatus').textContent='存檔中…';
   try{await storage.save(snapshot,catalog);lastSavedRevision=revision;persistenceError=false;$('saveStatus').textContent='✓ 已自動存檔';}
@@ -79,7 +81,7 @@ function renderHud(){
   $('hpValue').textContent=`HP ${Math.ceil(p.hp)} / ${d.maxHp}`;$('mpValue').textContent=`MP ${Math.floor(p.mp)} / ${d.maxMp}`;
   $('xpValue').textContent=max?'EXP MAX':`EXP ${xp.toFixed(1)}%`;
   $('acValue').textContent=d.ac;$('weightValue').textContent=`${Math.round(d.weight/d.maxWeight*100)}%`;
-  $('goldValue').textContent=fmt(p.gold);$('mapName').textContent=REGION_AT(game.map,game.p);$('zoneLabel').textContent=game.map.safe?'安全區 · MVP 0.8.0':'戰鬥區 · MVP 0.8.0';
+  $('goldValue').textContent=fmt(p.gold);$('mapName').textContent=REGION_AT(game.map,game.p);$('zoneLabel').textContent=game.map.safe?'安全區 · MVP 0.9.0':'戰鬥區 · MVP 0.9.0';
   $('zoneButton').querySelector('.nav-label').textContent=game.map.safe?'去野外':'回城';
   $('zoneButton').setAttribute('aria-label',game.map.safe?'去野外':'回城');
   const potion=catalog.items.find(i=>i.effect==='heal'),count=p.inventory[potion.id]||0;
@@ -116,7 +118,7 @@ function renderCharacter(){
     <div class="paperdoll" aria-label="人物與 13 個裝備欄位">${catalog.equipmentSlots.map(s=>{
       const i=game.index.items.get(p.equipment[s.id]);
       return `<button class="equipment-slot ${s.id===slot?'selected':''} ${i?'':'empty'}" data-equipment-slot="${s.id}" style="grid-column:${s.column};grid-row:${s.row}" aria-label="${esc(s.name)}：${esc(i?.name||'未裝備')}" aria-pressed="${s.id===slot}"><span class="slot-label"><i aria-hidden="true">${esc(s.icon)}</i>${esc(s.name)}</span><span class="slot-item">${esc(i?.name||'未裝備')}</span></button>`;
-    }).join('')}<div class="paperdoll-figure"><canvas id="paperdollFigure" width="120" height="270" aria-label="騎士人物示意"></canvas><small>${esc(p.name)}</small></div></div>
+    }).join('')}<div class="paperdoll-figure"><canvas id="paperdollFigure" width="384" height="896" aria-label="騎士精細全身立繪"></canvas><small>${esc(p.name)}</small></div></div>
     <div class="selected-slot-title"><h3>${esc(definition.name)}</h3><small class="subtle">點選人物周圍欄位查看</small></div>
     ${current?itemRow(current,`<button data-action="unequip" data-slot="${slot}">卸下</button>`,'<span class="badge">穿戴中</span>'):'<p class="subtle">此欄位尚未裝備。背包持有的相容裝備會顯示在下方。</p>'}
     ${available.map(i=>{
@@ -142,6 +144,7 @@ function renderShop(){
   const p=game.p,d=game.derived,shop=catalog.shops.find(s=>s.mapId===p.mapId);
   if(!game.map.safe||!shop)return pauseNote()+'<div class="empty">商店位於城鎮安全區。<br>使用回城卷軸，或從野外南方出口回城。</div><button class="primary" data-action="return">返回城鎮</button>';
   const head=pauseNote()+`<div class="summary"><span>${esc(shop.name)}</span><strong>◆ ${fmt(p.gold)}</strong></div><p class="subtle">魅力 ${d.stats.cha} · 購買優惠 ${Math.round(d.discount*100)}% · 物品購入後需手動裝備。</p>`;
+  if(activeTab==='warehouse')return renderWarehouse();
   if(activeTab==='rest')return head+`<div class="rest-card"><b>旅人休息所</b><p>在安全區休息，恢復全部生命與魔力。<br>費用：${catalog.rules.restCost===0?'免費':catalog.rules.restCost+' 金幣'}</p><button data-action="rest">休息・恢復生命與魔力</button></div>`;
   if(activeTab==='sell'){
     const items=catalog.items.filter(i=>p.inventory[i.id]&&i.sellPrice>0);
@@ -154,6 +157,24 @@ function renderShop(){
     const i=game.index.items.get(id),price=buyPrice(i,p,catalog),afford=p.gold>=price&&d.weight+i.weight<=d.maxWeight;
     return itemRow(i,`<button data-action="buy" data-id="${id}" data-shop="${shop.id}" ${!afford?'disabled':''}>購買 · ${price} 金</button>${i.type==='consumable'?`<button class="secondary" data-action="buy" data-id="${id}" data-shop="${shop.id}" data-quantity="10" ${p.gold<price*10||d.weight+i.weight*10>d.maxWeight?'disabled':''}>買 10 · ${price*10} 金</button>`:''}`,p.inventory[id]?`<span class="badge">持有 ${p.inventory[id]}</span>`:'');
   }).join('');
+}
+function renderWarehouse(){
+  const p=game.p,d=game.derived,deposit=warehouseMode==='deposit';
+  const rows=catalog.items.filter(i=>(deposit?p.inventory:p.warehouse)[i.id]);
+  return pauseNote()+`<div class="summary"><strong>個人倉庫 · 免費存領</strong><span>負重 ${fmt(d.weight)} / ${d.maxWeight}</span></div><p class="subtle">穿戴中的裝備會保留；倉庫物品不計入隨身負重。領取時需有足夠負重。</p><div class="button-grid"><button data-action="warehouse-deposit" aria-pressed="${deposit}">存入背包物品</button><button data-action="warehouse-withdraw" aria-pressed="${!deposit}">領取倉庫物品</button></div>`+(rows.length?rows.map(i=>{
+    const count=(deposit?p.inventory:p.warehouse)[i.id],worn=deposit?Object.values(p.equipment).filter(id=>id===i.id).length:0,available=count-worn;
+    const capacity=deposit?available:Math.min(available,i.weight?Math.max(0,Math.floor((d.maxWeight-d.weight)/i.weight)):available);
+    return itemRow(i,`<button data-action="${warehouseMode}" data-id="${i.id}" ${warehouseBusy||capacity<1?'disabled':''}>${deposit?'存入':'領取'} 1</button>${capacity>1?`<button data-action="${warehouseMode}" data-id="${i.id}" data-quantity="${Math.min(10,capacity)}" ${warehouseBusy?'disabled':''}>${deposit?'存入':'領取'} ${Math.min(10,capacity)}</button><button data-action="${warehouseMode}" data-id="${i.id}" data-quantity="${capacity}" ${warehouseBusy?'disabled':''}>${deposit?'全部存入':'可領取全部'} ${capacity}</button>`:''}`,`<span class="badge">×${count}${worn?` · 穿戴 ${worn}`:''}</span>`);
+  }).join(''):'<div class="empty">目前沒有可存領物品</div>');
+}
+async function transferWarehouse(action,id,quantity){
+  if(warehouseBusy)return;
+  const before=structuredClone({p:game.p,revision:game.revision,logs:game.logs,events:game.events});
+  const outcome=game[action](id,quantity);if(!outcome.ok){result(outcome);return;}
+  warehouseBusy=true;renderPanel();
+  try{await storage.save(game.snapshot(),catalog);lastSavedRevision=game.revision;persistenceError=false;drainEvents();$('saveStatus').textContent='✓ 倉庫已存檔';}
+  catch(error){game.p=before.p;game.revision=before.revision;game.logs=before.logs;game.events=before.events;toast('存檔失敗，本次存領已取消：'+error.message,6);}
+  finally{warehouseBusy=false;renderHud();renderPanel();}
 }
 function renderMap(){
   return pauseNote()+`<div class="summary"><span>${esc(game.map.name)}</span><strong>${game.map.safe?'安全區':'戰鬥區'}</strong></div><canvas id="mapPreview" class="map-preview" width="320" height="300" aria-label="地圖，可點擊位置設定移動目的地"></canvas><p class="map-legend">● 金色：你　◇ 淺色：出口　■ 棕色：建築　● 紅色：怪物<br>點擊地圖選擇目的地，關閉面板後會自動行走。</p><div class="button-grid"><button data-action="exit">走向${game.map.safe?'野外':'城鎮'}出口</button><button data-action="return" ${game.map.safe?'disabled':''}>使用回城卷軸</button></div><h3>野外分布</h3><p class="subtle">南方墓園：骷髏、史巴托、骷髏鬥士。<br>向北經木橋進入密林：狼人、暗夜狼人、白狼王。<br>墓園與密林屬於同一張野外地圖，只有木橋可以跨河。怪物脫離追擊範圍後返回出生點。</p>`;
@@ -180,26 +201,27 @@ function renderJourney(){
 function renderSystem(){
   if(activeTab==='bestiary')return pauseNote()+`<h3>怪物辨識特徵</h3><p class="subtle">這些是你指定的長期特徵，未來更換像素、手繪或其他美術風格都要保留。</p><div class="monster-previews">${catalog.monsterAppearances.map(a=>`<article class="monster-preview"><canvas data-appearance-preview="${a.id}" width="140" height="150" aria-label="${esc(a.name)}外觀示意"></canvas><b>${esc(a.name)}</b><p>${esc(a.description)}</p></article>`).join('')}</div><p class="subtle">南方墓園有三種骷髏，木橋北方的密林有三種狼人；白狼王體型為一般狼人的1.2倍。</p>`;
   if(activeTab==='help')return pauseNote()+`<h3>第一輪冒險</h3><ol class="help-list"><li>到商店買短劍與布甲，在人物／裝備穿上。</li><li>點「去野外」，自動走到北方出口。</li><li>點怪物或按「鎖定」，再按「攻擊」自動追擊；每次擊殺後重新選擇目標。</li><li>使用藥水或治療術恢復生命。升級後到人物面板分配能力點。</li><li>按「回城」使用卷軸；沒有卷軸時會自動走向南方出口。</li><li>在城鎮休息、出售材料、購買補給，再度出發。</li></ol><h3>鍵盤</h3><p class="kbd">WASD／方向鍵移動 · Space 攻擊 · E 鎖定<br>P 藥水 · H 治療 · R 回城<br>C 人物 · B 背包 · M 地圖 · Esc 關閉</p><h3>這一版的規則</h3><p class="subtle">單機遊戲，開啟面板或離開分頁時暫停。死亡回城不扣金幣或經驗，保留半數生命，可在休息所恢復。野外怪物依資料表重生，重新進入地圖也會重建怪物。角色外觀沿用原版像素騎士。<br>資料與公式均為自有設定，並非天堂官方數值。</p>`;
-  return pauseNote()+`<h3>補給設定</h3><label class="setting-row"><span>自動喝紅水</span><input id="autoPotion" type="checkbox" ${game.p.settings.autoPotion?'checked':''}></label><label class="setting-row"><span>生命低於 <b id="thresholdValue">${game.p.settings.potionThreshold}%</b></span><input id="potionThreshold" type="range" min="10" max="90" step="10" value="${game.p.settings.potionThreshold}"></label><h3>存檔與備份</h3><p class="subtle">角色與自有資料表保存在此瀏覽器的 IndexedDB。每 3 秒與操作後自動儲存。換裝置、網址或清除瀏覽資料前，請先匯出完整備份。</p><div class="button-grid"><button data-action="save">立即存檔</button><button data-action="export">匯出完整備份</button><button data-action="import">匯入完整備份</button><button data-action="journey">旅程紀錄</button></div><h3>核心資料管理</h3><p class="subtle">所有裝備、道具、怪物、商店、地圖與公式設定由同一份自有資料庫提供。這裡的修改會在本瀏覽器生效，可匯出資料表留存至專案。</p><button class="primary" data-action="editor">開啟資料管理</button><h3>新旅程</h3><p class="subtle">只重建重置版角色，保留目前資料表。既有 V0.5.x 角色與檔案不受影響。</p><button class="danger" data-action="new-character">重新建立角色</button><h3>版本</h3><p class="subtle">MVP 0.8.0 · ${esc(catalog.version)}<br>${esc(catalog.provenance)}${persistenceError?'<br><strong class="error">目前存檔失敗，請立即匯出備份。</strong>':''}</p>`;
+  return pauseNote()+`<h3>補給設定</h3><label class="setting-row"><span>自動喝紅水</span><input id="autoPotion" type="checkbox" ${game.p.settings.autoPotion?'checked':''}></label><label class="setting-row"><span>生命低於 <b id="thresholdValue">${game.p.settings.potionThreshold}%</b></span><input id="potionThreshold" type="range" min="10" max="90" step="10" value="${game.p.settings.potionThreshold}"></label><h3>存檔與備份</h3><p class="subtle">角色與自有資料表保存在此瀏覽器的 IndexedDB。每 3 秒與操作後自動儲存。換裝置、網址或清除瀏覽資料前，請先匯出完整備份。</p><div class="button-grid"><button data-action="save">立即存檔</button><button data-action="export">匯出完整備份</button><button data-action="import">匯入完整備份</button><button data-action="journey">旅程紀錄</button></div><h3>核心資料管理</h3><p class="subtle">所有裝備、道具、怪物、商店、地圖與公式設定由同一份自有資料庫提供。這裡的修改會在本瀏覽器生效，可匯出資料表留存至專案。</p><button class="primary" data-action="editor">開啟資料管理</button><h3>新旅程</h3><p class="subtle">只重建重置版角色，保留目前資料表。既有 V0.5.x 角色與檔案不受影響。</p><button class="danger" data-action="new-character">重新建立角色</button><h3>版本</h3><p class="subtle">MVP 0.9.0 · ${esc(catalog.version)}<br>${esc(catalog.provenance)}${persistenceError?'<br><strong class="error">目前存檔失敗，請立即匯出備份。</strong>':''}</p>`;
 }
 
 const panelConfig={
   char:{title:'人物／裝備',eyebrow:'CHARACTER',tabs:[['gear','人物裝備'],['stats','六項能力']],render:renderCharacter},
   bag:{title:'背包',eyebrow:'INVENTORY',tabs:[['all','全部'],['consumable','補給'],['gear','裝備'],['material','材料']],render:renderBag},
-  shop:{title:'城鎮補給',eyebrow:'TOWN SUPPLIES',tabs:[['buy','購買'],['sell','出售'],['rest','休息']],render:renderShop},
+  shop:{title:'城鎮補給',eyebrow:'TOWN SUPPLIES',tabs:[['buy','購買'],['sell','出售'],['rest','休息'],['warehouse','倉庫']],render:renderShop},
   map:{title:'世界地圖',eyebrow:'TOWN & WILDERNESS',render:renderMap},
   journey:{title:'遠征紀錄',eyebrow:'YOUR FIRST ADVENTURE',render:renderJourney},
   system:{title:'系統',eyebrow:'SETTINGS & BACKUP',tabs:[['settings','設定與存檔'],['help','遊玩說明'],['bestiary','怪物圖鑑']],render:renderSystem},
   editor:{title:'自有資料管理',eyebrow:'GAME DATABASE · 本機修改',render:renderEditor}
 };
 function openPanel(name,tab){
-  if(!game)return;if(activePanel==='editor'&&editor.dirty&&!confirm('尚有未套用的資料修改，確定離開？'))return;
+  if(!game||warehouseBusy)return;if(activePanel==='editor'&&editor.dirty&&!confirm('尚有未套用的資料修改，確定離開？'))return;
   editor.dirty=false;keys.clear();clearJoy();world?.clearDrag();lastFocus=document.activeElement;
   activePanel=name;activeTab=tab||panelConfig[name].tabs?.[0][0]||'';$('panel').hidden=false;
   $('panelNotice').hidden=true;
   renderPanel();$('closePanel').focus();persist(true);
 }
 function closePanel(){
+  if(warehouseBusy)return;
   if(activePanel==='editor'&&editor.dirty&&!confirm('尚有未套用的資料修改，確定離開？'))return;
   editor.dirty=false;activePanel=null;$('panel').hidden=true;keys.clear();clearJoy();world?.clearDrag();lastFocus?.focus?.();renderHud();persist(true);
 }
@@ -217,7 +239,8 @@ function renderPanel(){
 
 function drawPanelFigures(){
   const figure=$('paperdollFigure');
-  if(figure){const ctx=figure.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.save();ctx.translate(60,155);ctx.scale(2.6,2.6);actorArt.draw(ctx,{x:0,y:0,dir:'down'},game.p.sex,.8);ctx.restore();}
+  if(figure){const ctx=figure.getContext('2d'),im=portraits[game.p.sex],scale=Math.min(figure.width/im.width,figure.height/im.height);ctx.imageSmoothingEnabled=true;ctx.drawImage(im,(figure.width-im.width*scale)/2,(figure.height-im.height*scale)/2,im.width*scale,im.height*scale);}
+
   for(const canvas of document.querySelectorAll('[data-appearance-preview]')){
     const appearance=game.index.monsterAppearances.get(canvas.dataset.appearancePreview),ctx=canvas.getContext('2d');
     ctx.imageSmoothingEnabled=false;ctx.save();ctx.translate(70,105);ctx.scale(1.7,1.7);actorArt.draw(ctx,{x:0,y:0,dir:'down'},appearance.id,.8*(appearance.scale||1));ctx.restore();
@@ -290,8 +313,12 @@ function journeyAction(action){
   if(action==='shop')openPanel('shop');else if(action==='gear')openPanel('char','gear');else if(action==='field')goField();else if(action==='lock'){closePanel();game.lockNearest();}else if(action==='return')returnTown();else openPanel('journey');
 }
 async function dispatch(action,b){
+  if(warehouseBusy)return;
   const id=b?.dataset.id,quantity=Number(b?.dataset.quantity||1);
   switch(action){
+    case 'warehouse-deposit':warehouseMode='deposit';renderPanel();return;
+    case 'warehouse-withdraw':warehouseMode='withdraw';renderPanel();return;
+    case 'deposit':case 'withdraw':await transferWarehouse(action,id,quantity);return;
     case 'buy':result(game.buy(b.dataset.shop,id,quantity));break;
     case 'sell':result(game.sell(id,quantity));break;
     case 'equip':result(game.equip(id,b.dataset.slot||null));break;
@@ -327,7 +354,7 @@ document.addEventListener('click',e=>{
   if(b.dataset.create){
     const key=b.dataset.create,delta=Number(b.dataset.dir);allocation[key]+=delta;renderCreation();return;
   }
-  if(!game)return;
+  if(!game||warehouseBusy)return;
   if(b.dataset.equipmentSlot){selectedEquipmentSlot=b.dataset.equipmentSlot;renderPanel();return;}
   if(b.dataset.tab){activeTab=b.dataset.tab;$('panelBody').scrollTop=0;renderPanel();return;}
   if(b.dataset.editorId){
@@ -335,7 +362,7 @@ document.addEventListener('click',e=>{
     editor.id=b.dataset.editorId;editor.adding=false;renderPanel();return;
   }
   if(b.dataset.journey){journeyAction(b.dataset.journey);return;}
-  if(b.dataset.context){openPanel('shop',b.dataset.context==='rest'?'rest':'buy');return;}
+  if(b.dataset.context){openPanel('shop',b.dataset.context==='warehouse'?'warehouse':b.dataset.context==='rest'?'rest':'buy');return;}
   if(b.dataset.action)dispatch(b.dataset.action,b).catch(error=>toast(error.message,5));
 });
 document.addEventListener('input',e=>{
@@ -358,11 +385,11 @@ $('createForm').addEventListener('submit',async e=>{
 });
 $('closePanel').onclick=closePanel;
 for(const [button,panel] of [['charButton','char'],['bagButton','bag'],['shopButton','shop'],['mapButton','map'],['systemButton','system']])$(button).onclick=()=>openPanel(panel);
-$('zoneButton').onclick=()=>game.map.safe?goField():returnTown();
-$('attackButton').onclick=()=>{game.toggleAttack();drainEvents();renderHud();};
-$('lockButton').onclick=()=>{game.lockNearest();drainEvents();renderHud();};
-$('potionButton').onclick=()=>{const i=catalog.items.find(i=>i.effect==='heal'&&game.p.inventory[i.id]);result(game.useItem(i?.id));drainEvents();renderHud();persist(true);};
-$('healButton').onclick=()=>{result(game.heal());drainEvents();renderHud();persist(true);};
+$('zoneButton').onclick=()=>{if(!warehouseBusy)game.map.safe?goField():returnTown();};
+$('attackButton').onclick=()=>{if(warehouseBusy)return;game.toggleAttack();drainEvents();renderHud();};
+$('lockButton').onclick=()=>{if(warehouseBusy)return;game.lockNearest();drainEvents();renderHud();};
+$('potionButton').onclick=()=>{if(warehouseBusy)return;const i=catalog.items.find(i=>i.effect==='heal'&&game.p.inventory[i.id]);result(game.useItem(i?.id));drainEvents();renderHud();persist(true);};
+$('healButton').onclick=()=>{if(warehouseBusy)return;result(game.heal());drainEvents();renderHud();persist(true);};
 $('importFile').onchange=async e=>{
   const file=e.target.files[0];e.target.value='';if(!file)return;
   try{
@@ -427,15 +454,15 @@ window.addEventListener('unhandledrejection',e=>fatal(e.reason));
 
 // Read-only diagnostics for debugging and browser verification. Returned objects are clones.
 Object.defineProperty(window,'lineageMvp',{value:Object.freeze({
-  inspect:()=>game?structuredClone({snapshot:game.snapshot(),derived:game.derived,enemies:game.enemies,goal:game.goal,target:game.target,autoAttack:game.autoAttack,cooldowns:game.cooldowns,paused:!!activePanel,camera:world.camera,region:REGION_AT(game.map,game.p),art:{version:'integrated-0.8.0',shieldVisible:false,sideFrames:6,playerVisual:world.lastPlayerVisual,drag:{...world.drag}},view:{width:world.width,height:world.height},logs:game.logs}):null
+  inspect:()=>game?structuredClone({snapshot:game.snapshot(),derived:game.derived,enemies:game.enemies,goal:game.goal,target:game.target,autoAttack:game.autoAttack,cooldowns:game.cooldowns,paused:!!activePanel,camera:world.camera,region:REGION_AT(game.map,game.p),art:{version:'integrated-0.9.0',shieldVisible:false,sideFrames:6,playerVisual:world.lastPlayerVisual,occluded:world.lastOccluded,warehouseBusy,drag:{...world.drag}},view:{width:world.width,height:world.height},logs:game.logs}):null
 })});
 
 try{
   await storage.open();const loaded=await storage.load();catalog=loaded.catalog;
-  [actorArt,worldArt]=await Promise.all([loadActorArt(),loadWorldArt()]);world=new World($('game'),$('stage'),point=>{
+  [actorArt,worldArt,portraits]=await Promise.all([loadActorArt(),loadWorldArt(),loadPortraits()]);world=new World($('game'),$('stage'),point=>{
     if(!game||activePanel||!$('createOverlay').hidden)return;
     const b=game.map.buildings.find(b=>point.x>b.x-95&&point.x<b.x+95&&point.y>b.y-62&&point.y<b.y+90);
-    if(b){openPanel('shop',b.action==='rest'?'rest':'buy');return;}
+    if(b){openPanel('shop',b.action==='warehouse'?'warehouse':b.action==='rest'?'rest':'buy');return;}
     const e=game.enemies.filter(e=>!e.dead).sort((a,b)=>distance(a,point)-distance(b,point)).find(e=>distance(e,point)<38);
     if(e){game.select(e.id);renderHud();return;}
     result(game.setGoal(point));

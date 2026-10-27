@@ -2,7 +2,8 @@ import {clearLine,planRoute,riverBlocked} from './navigation.mjs';
 import {ART_MOTION} from './art-config.mjs';
 import {STAT_KEYS, SLOTS, compatibleSlots, indexCatalog} from './catalog.mjs';
 
-export const SAVE_VERSION = 2;
+export const SAVE_VERSION = 3;
+export const STACK_LIMIT = 100000;
 export const clamp = (v,min,max) => Math.max(min,Math.min(max,v));
 export const distance = (a,b) => Math.hypot(a.x-b.x,a.y-b.y);
 const clone = value => structuredClone(value);
@@ -54,7 +55,7 @@ export function createState(c,name='見習騎士',sex='male',allocation=c.rules.
   if(!name||name.length>12) reject('角色名稱請填寫 1～12 字');
   if(!['male','female'].includes(sex)) reject('角色性別無效');
   if(Object.keys(allocation).length!==6||STAT_KEYS.some(k=>!safeInt(allocation[k],0,c.rules.creationPoints))||Object.values(allocation).reduce((a,b)=>a+b,0)!==c.rules.creationPoints) reject('請分配全部創角點數');
-  const p={name,sex,level:1,xp:0,gold:c.rules.startGold,stats:Object.fromEntries(STAT_KEYS.map(k=>[k,c.rules.baseStats[k]+allocation[k]])),points:0,inventory:clone(c.rules.startItems),equipment:Object.fromEntries(SLOTS.map(s=>[s,null])),mapId:'town',...c.maps.find(m=>m.id==='town').spawn,hp:1,mp:0,kills:0,deaths:0,settings:{autoPotion:true,potionThreshold:50},milestones:{bought:false,equipped:false,fieldVisits:0,leveled:false,resupplied:false},playSeconds:0};
+  const p={name,sex,level:1,xp:0,gold:c.rules.startGold,stats:Object.fromEntries(STAT_KEYS.map(k=>[k,c.rules.baseStats[k]+allocation[k]])),points:0,inventory:clone(c.rules.startItems),warehouse:{},equipment:Object.fromEntries(SLOTS.map(s=>[s,null])),mapId:'town',...c.maps.find(m=>m.id==='town').spawn,hp:1,mp:0,kills:0,deaths:0,settings:{autoPotion:true,potionThreshold:50},milestones:{bought:false,equipped:false,fieldVisits:0,leveled:false,resupplied:false},playSeconds:0};
   const d=derive(p,c);p.hp=d.maxHp;p.mp=d.maxMp;return p;
 }
 
@@ -67,7 +68,9 @@ export function validatePlayer(p,c) {
   if(!p.stats||STAT_KEYS.some(k=>!safeInt(p.stats[k],1,999))) reject('存檔六項能力無效');
   const ids=new Map(c.items.map(i=>[i.id,i]));
   if(!p.inventory||typeof p.inventory!=='object'||Array.isArray(p.inventory)) reject('存檔背包無效');
-  for(const [id,qty] of Object.entries(p.inventory)) if(!ids.has(id)||!safeInt(qty,1,100000)) reject(`背包物品無效：${id}`);
+  for(const [id,qty] of Object.entries(p.inventory)) if(!ids.has(id)||!safeInt(qty,1,STACK_LIMIT)) reject(`背包物品無效：${id}`);
+  if(!p.warehouse||typeof p.warehouse!=='object'||Array.isArray(p.warehouse)) reject('存檔倉庫無效');
+  for(const [id,qty] of Object.entries(p.warehouse))if(!ids.has(id)||!safeInt(qty,1,STACK_LIMIT))reject(`倉庫物品無效：${id}`);
   if(!p.equipment||typeof p.equipment!=='object'||Object.keys(p.equipment).length!==SLOTS.length) reject('存檔裝備欄位無效');
   for(const slot of SLOTS) {
     const id=p.equipment[slot];
@@ -158,7 +161,7 @@ export class Game {
     if(!safeInt(quantity,1,99))return {ok:false,message:'購買數量必須是 1～99'};
     const cost=buyPrice(item,this.p,this.catalog)*quantity,d=this.derived;
     if(cost>this.p.gold)return {ok:false,message:'金幣不足'};
-    if((this.p.inventory[itemId]||0)+quantity>100000)return {ok:false,message:'持有數量已達上限'};
+    if((this.p.inventory[itemId]||0)+quantity>STACK_LIMIT)return {ok:false,message:'持有數量已達上限'};
     if(d.weight+item.weight*quantity>d.maxWeight)return {ok:false,message:'負重不足，請先出售物品'};
     this.p.gold-=cost;this.p.inventory[itemId]=(this.p.inventory[itemId]||0)+quantity;
     this.p.milestones.bought=true;
@@ -166,10 +169,24 @@ export class Game {
     this.emit('buy',`購入 ${item.name} ×${quantity}，花費 ${cost} 金幣`);
     return {ok:true};
   }
+  deposit(id,quantity=1){return this.transferWarehouse(id,quantity,true);}
+  withdraw(id,quantity=1){return this.transferWarehouse(id,quantity,false);}
+  transferWarehouse(id,quantity,deposit){
+    const deny=message=>({ok:false,message}),item=this.index.items.get(id);
+    if(this.p.mapId!=='town'||!this.map.safe||this.deathPending)return deny('請回村莊使用個人倉庫');
+    if(!item||!safeInt(quantity,1,STACK_LIMIT))return deny('物品或數量無效');
+    const from=deposit?this.p.inventory:this.p.warehouse,to=deposit?this.p.warehouse:this.p.inventory;
+    const worn=deposit?Object.values(this.p.equipment).filter(x=>x===id).length:0;
+    if((from[id]||0)-worn<quantity)return deny(deposit?'可存數量不足，穿戴中的裝備請先卸下':'倉庫數量不足');
+    if((to[id]||0)+quantity>STACK_LIMIT)return deny('物品數量已達上限');
+    if(!deposit&&this.derived.weight+item.weight*quantity>this.derived.maxWeight)return deny('負重不足，請減少領取數量');
+    from[id]-=quantity;if(!from[id])delete from[id];to[id]=(to[id]||0)+quantity;
+    this.emit('warehouse',`${deposit?'存入':'領取'}${item.name} ×${quantity}`);return {ok:true};
+  }
   sell(itemId,quantity=1) {
     const item=this.index.items.get(itemId);
     if(!this.map.safe)return {ok:false,message:'請回城鎮出售物品'};
-    if(!item||!safeInt(quantity,1,100000)||(this.p.inventory[itemId]||0)<quantity)return {ok:false,message:'持有數量不足'};
+    if(!item||!safeInt(quantity,1,STACK_LIMIT)||(this.p.inventory[itemId]||0)<quantity)return {ok:false,message:'持有數量不足'};
     const worn=Object.values(this.p.equipment).filter(id=>id===itemId).length;
     if((this.p.inventory[itemId]||0)-quantity<worn)return {ok:false,message:'請先卸下這件裝備'};
     if(item.sellPrice<=0)return {ok:false,message:'這件物品無法出售'};
@@ -252,7 +269,7 @@ export class Game {
     const drops=[];
     for(const drop of m.drops)if(this.random()<drop.chance){
       const qty=this.roll(drop.min,drop.max),i=this.index.items.get(drop.itemId),d=this.derived;
-      if((this.p.inventory[i.id]||0)+qty<=100000&&d.weight+qty*i.weight<=d.maxWeight){this.p.inventory[i.id]=(this.p.inventory[i.id]||0)+qty;drops.push(`${i.name} ×${qty}`);}else drops.push(`${i.name}（負重已滿，未拾取）`);
+      if((this.p.inventory[i.id]||0)+qty<=STACK_LIMIT&&d.weight+qty*i.weight<=d.maxWeight){this.p.inventory[i.id]=(this.p.inventory[i.id]||0)+qty;drops.push(`${i.name} ×${qty}`);}else drops.push(`${i.name}（負重已滿，未拾取）`);
     }
     this.emit('kill',`擊敗 ${m.name}：EXP +${m.exp}、金幣 +${gold}${drops.length?'、'+drops.join('、'):''}`,{x:e.x,y:e.y});
     this.grantExp(m.exp);

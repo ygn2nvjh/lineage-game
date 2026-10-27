@@ -307,7 +307,7 @@
       "offsetX": -43,
       "offsetY": -112
     },
-    "night_werewolf:idle:left": {
+    "night_werewolf:idle:right": {
       "x": 451,
       "y": 360,
       "width": 70,
@@ -315,7 +315,7 @@
       "offsetX": -46,
       "offsetY": -112
     },
-    "night_werewolf:idle:right": {
+    "night_werewolf:idle:left": {
       "x": 525,
       "y": 360,
       "width": 69,
@@ -2219,7 +2219,7 @@
     },
     {
       "kind": "night_werewolf",
-      "pose": "idle:left",
+      "pose": "idle:right",
       "sourceBox": [
         552,
         17,
@@ -2230,7 +2230,7 @@
     },
     {
       "kind": "night_werewolf",
-      "pose": "idle:right",
+      "pose": "idle:left",
       "sourceBox": [
         848,
         17,

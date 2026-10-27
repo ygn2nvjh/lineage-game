@@ -185,5 +185,20 @@ test('新版地圖：安全村北接墓園，同圖跨橋到密林，六種指�
 });
 test('狼人特徵為資料來源，白狼王1.2倍及雙手反握短刀；舊版資料升級保留進度和自訂平衡',()=>{
  const a=Object.fromEntries(catalog.monsterAppearances.map(a=>[a.id,a]));assert.equal(a.werewolf.colorTone,'brown');assert.equal(a.werewolf.armor,'ragged_cloth_shorts');assert.equal(a.night_werewolf.colorTone,'gray_black');assert.equal(a.night_werewolf.armor,'simple_leather');assert.equal(a.white_wolf_king.scale,1.2);assert.equal(a.white_wolf_king.armor,'fine_leather');assert.equal(a.white_wolf_king.weapon,'dual_reverse_daggers');
- const old=JSON.parse(readFileSync(new URL('./fixtures/v061-catalog.json',import.meta.url)));old.items.find(i=>i.id==='red_potion').power=57;const p=createState(old,'世界更新保留');p.gold=321;p.kills=17;p.mapId='field';Object.assign(p,old.maps[1].spawn);const snapshot={schemaVersion:2,catalogVersion:old.version,player:p};const up=upgradeData(old,snapshot,catalog);assert(up.changed);assert.equal(up.catalog.version,'mvp-0.8.0');assert.equal(up.catalog.items.find(i=>i.id==='red_potion').power,57);assert.equal(up.snapshot.player.gold,321);assert.equal(up.snapshot.player.kills,17);assert.deepEqual({x:up.snapshot.player.x,y:up.snapshot.player.y},catalog.maps[1].spawn);assert.equal(upgradeData(up.catalog,up.snapshot,catalog).changed,false);
+ const old=JSON.parse(readFileSync(new URL('./fixtures/v061-catalog.json',import.meta.url)));old.items.find(i=>i.id==='red_potion').power=57;const p=createState(old,'世界更新保留');p.gold=321;p.kills=17;p.mapId='field';Object.assign(p,old.maps[1].spawn);const snapshot={schemaVersion:2,catalogVersion:old.version,player:p};const up=upgradeData(old,snapshot,catalog);assert(up.changed);assert.equal(up.catalog.version,'mvp-0.9.0');assert.equal(up.catalog.items.find(i=>i.id==='red_potion').power,57);assert.equal(up.snapshot.player.gold,321);assert.equal(up.snapshot.player.kills,17);assert.deepEqual({x:up.snapshot.player.x,y:up.snapshot.player.y},catalog.maps[1].spawn);assert.equal(upgradeData(up.catalog,up.snapshot,catalog).changed,false);
+});
+test('倉庫存領守恆、穿戴保留、數量與負重拒絕不改變狀態，離城無法存領',()=>{
+ const g=setup();g.p.inventory.short_sword=2;g.equip('short_sword');const before=structuredClone(g.p);
+ assert.equal(g.deposit('short_sword',2).ok,false);assert.deepEqual(g.p,before);
+ assert(g.deposit('short_sword').ok);assert.equal(g.p.inventory.short_sword,1);assert.equal(g.p.warehouse.short_sword,1);validatePlayer(g.p,catalog);
+ assert(g.withdraw('short_sword').ok);assert.equal(g.p.inventory.short_sword,2);assert.deepEqual(g.p.warehouse,{});
+ for(const n of [0,-1,1.5,NaN,Infinity,100001]){const p=structuredClone(g.p);assert.equal(g.deposit('short_sword',n).ok,false);assert.deepEqual(g.p,p);}
+ g.p.warehouse.red_potion=10000;const p=structuredClone(g.p);assert.equal(g.withdraw('red_potion',10000).ok,false);assert.deepEqual(g.p,p);
+ g.p.mapId='field';assert.equal(g.deposit('short_sword').ok,false);assert.equal(g.withdraw('red_potion').ok,false);
+});
+test('0.8倉庫升級僅增加設施，保留地圖、自訂平衡、位置及完整角色；升級不重複',()=>{
+ const old=structuredClone(catalog);old.version='mvp-0.8.0';const town=old.maps.find(m=>m.id==='town');town.buildings=town.buildings.filter(b=>b.action!=='warehouse');town.obstacles=town.obstacles.filter(b=>b.id!=='warehouse');town.paths=town.paths.filter(b=>b.id!=='warehouse_path');old.items[0].price+=3;
+ const player=createState(old,'舊角色');delete player.warehouse;player.gold=789;player.x=520;player.y=550;const snap={schemaVersion:2,catalogVersion:old.version,player};
+ const up=upgradeData(old,snap,catalog);assert.equal(up.snapshot.schemaVersion,3);assert.deepEqual(up.snapshot.player,{...player,warehouse:{}});assert.deepEqual(up.catalog.items,old.items);assert.deepEqual(up.catalog.maps[1],old.maps[1]);assert.equal(up.catalog.maps[0].buildings.filter(b=>b.action==='warehouse').length,1);assert.equal(upgradeData(up.catalog,up.snapshot,catalog).changed,false);
+ const bad=structuredClone(up.snapshot);bad.player.warehouse.red_potion=-1;assert.throws(()=>validateSnapshot(bad,up.catalog));
 });

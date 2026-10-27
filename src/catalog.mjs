@@ -160,7 +160,7 @@ export function validateCatalog(c) {
     }
     if (map.safe && map.spawns.length) fail('安全區不能有怪物出生點');
     for (const b of map.buildings) {
-      point(b,'building'); string(b.name,'building.name',40); allowed(b.action,['shop','rest'],'building.action');
+      point(b,'building'); string(b.name,'building.name',40); allowed(b.action,['shop','rest','warehouse'],'building.action');
       if (b.action==='shop' && byId('shops',b.shopId).mapId!==map.id) fail('商店與建築地圖不一致');
     }
   }

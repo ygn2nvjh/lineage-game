@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "version": "mvp-0.8.0",
+  "version": "mvp-0.9.0",
   "title": "暮色邊境・墓園與密林",
   "provenance": "原創最小循環資料；天堂系列僅作概念參考。新增狼人數值為本版可調整初始平衡。",
   "abilities": [
@@ -679,6 +679,14 @@
           "name": "旅人休息所",
           "action": "rest",
           "art": "inn"
+        },
+        {
+          "id": "warehouse",
+          "name": "個人倉庫",
+          "x": 270,
+          "y": 650,
+          "action": "warehouse",
+          "art": "warehouse"
         }
       ],
       "obstacles": [
@@ -781,6 +789,13 @@
           "height": 110,
           "kind": "gate",
           "sceneryId": "gate"
+        },
+        {
+          "id": "warehouse",
+          "x": 180,
+          "y": 590,
+          "width": 180,
+          "height": 130
         }
       ],
       "spawns": [],
@@ -909,6 +924,14 @@
           "y": 480,
           "width": 200,
           "height": 140
+        },
+        {
+          "id": "warehouse_path",
+          "ground": "cobble",
+          "x": 270,
+          "y": 700,
+          "width": 210,
+          "height": 64
         }
       ]
     },

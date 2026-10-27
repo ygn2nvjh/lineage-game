@@ -242,5 +242,18 @@
         }
       }
     }
+  },
+  "warehouse": {
+    "url": "warehouse.webp",
+    "meta": {
+      "frames": {
+        "warehouse": {
+          "x": 0,
+          "y": 0,
+          "width": 384,
+          "height": 377
+        }
+      }
+    }
   }
 }

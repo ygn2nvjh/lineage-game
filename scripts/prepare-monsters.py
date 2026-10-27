@@ -4,7 +4,7 @@ from PIL import Image
 import json,statistics
 root=Path(__file__).resolve().parents[1];r=root/'assets/monsters'
 ns={'__file__':str(root/'scripts/atlas-extract.py')}
-exec((root/'scripts/atlas-extract.py').read_text().split("pack(extract('chop-source.png'")[0],ns);ns['r']=r/'sources'
+exec((root/'scripts/atlas-extract.py').read_text(),ns)
 keys=['spartoi','skeleton_fighter','werewolf','night_werewolf','white_wolf_king']
 vertical=ns['extract']('vertical-walk.png',40,8)
 items=[];packing=[]
@@ -15,11 +15,11 @@ def stage(kind,key,c,factor,reaction=False):
  items.append({'key':kind+':'+key,'image':sprite,'offsetX':round(-anchor*factor),'offsetY':-sprite.height})
  packing.append({'kind':kind,'pose':key,'sourceBox':c['box'],'scale':factor})
 for index,kind in enumerate(keys):
- rows=ns['extract'](kind+'.png',24,6);factor=112/rows[0][3]['image'].height
+ rows=ns['extract'](kind+'.png',24,6);idleDirections=['down','up','right','left'] if kind=='night_werewolf' else ['down','up','left','right'];factor=112/rows[0][idleDirections.index('right')]['image'].height
  for row,cells in enumerate(rows):
   for col,c in enumerate(cells):
    if row==0:
-    if col<4:stage(kind,'idle:'+['down','up','left','right'][col],c,factor)
+    if col<4:stage(kind,'idle:'+idleDirections[col],c,factor)
    else:stage(kind,['idle','walk:right','attack','reaction'][row]+':'+str(col),c,factor,row==3 and col>=4)
  # Vertical sheet is independently scaled to the same anatomical standing height.
  vf=112/statistics.median(c['image'].height for c in vertical[index])
