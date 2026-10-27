@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#18251c">
   <meta name="description" content="類天堂第一版最小循環：整備、野外戰鬥、升級、回城補給。">
-  <title>類天堂・最初的遠征｜MVP 0.9.0</title>
+  <title>類天堂・最初的遠征｜MVP 0.10.0</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23233529'/%3E%3Cpath d='M22 4l6 1-1 6-12 12-5-5z' fill='%23d5d9c4'/%3E%3Cpath d='M7 16l10 10M4 28l8-8' stroke='%23c7a66b' stroke-width='4'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./src/styles.css">
 </head>
@@ -20,7 +20,7 @@
     <div class="bar exp"><i id="xpFill"></i><span id="xpValue"></span></div>
     <div class="vitals"><span>AC <b id="acValue"></b></span><span>負重 <b id="weightValue"></b></span></div>
   </header>
-  <div class="righttop"><div id="mapName">最初的遠征</div><small id="zoneLabel">MVP 0.9.0</small><div class="gold">◆ <span id="goldValue">—</span></div></div>
+  <div class="righttop"><div id="mapName">最初的遠征</div><small id="zoneLabel">MVP 0.10.0</small><div class="gold">◆ <span id="goldValue">—</span></div></div>
   <button id="systemButton" class="utility" aria-label="開啟系統與資料管理">⚙ 系統</button>
   <div id="target" class="target" hidden></div>
   </div>
@@ -49,7 +49,7 @@
   <section id="loading" class="center-screen"><div class="emblem">⚔</div><h1>最初的遠征</h1><p>正在載入你的世界…</p></section>
   <section id="createOverlay" class="overlay" hidden aria-label="建立角色">
     <form id="createForm" class="create-box">
-      <div class="eyebrow">類天堂 · MVP 0.9.0</div><div class="emblem">⚔</div><h1>最初的遠征</h1><p class="intro">在城鎮整備，向野外踏出第一步。</p>
+      <div class="eyebrow">類天堂 · MVP 0.10.0</div><div class="emblem">⚔</div><h1>最初的遠征</h1><p class="intro">在城鎮整備，向野外踏出第一步。</p>
       <label>角色名稱<input id="createName" name="name" maxlength="12" required value="見習騎士" autocomplete="off"></label>
       <label>角色性別<select id="createSex"><option value="male">男性</option><option value="female">女性</option></select></label>
       <div class="section-line"><h2>六項能力</h2><span>剩餘 <b id="createRemain">0</b> 點</span></div>

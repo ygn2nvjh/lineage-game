@@ -81,7 +81,7 @@ function renderHud(){
   $('hpValue').textContent=`HP ${Math.ceil(p.hp)} / ${d.maxHp}`;$('mpValue').textContent=`MP ${Math.floor(p.mp)} / ${d.maxMp}`;
   $('xpValue').textContent=max?'EXP MAX':`EXP ${xp.toFixed(1)}%`;
   $('acValue').textContent=d.ac;$('weightValue').textContent=`${Math.round(d.weight/d.maxWeight*100)}%`;
-  $('goldValue').textContent=fmt(p.gold);$('mapName').textContent=REGION_AT(game.map,game.p);$('zoneLabel').textContent=game.map.safe?'安全區 · MVP 0.9.0':'戰鬥區 · MVP 0.9.0';
+  $('goldValue').textContent=fmt(p.gold);$('mapName').textContent=REGION_AT(game.map,game.p);$('zoneLabel').textContent=game.map.safe?'安全區 · MVP 0.10.0':'戰鬥區 · MVP 0.10.0';
   $('zoneButton').querySelector('.nav-label').textContent=game.map.safe?'去野外':'回城';
   $('zoneButton').setAttribute('aria-label',game.map.safe?'去野外':'回城');
   const potion=catalog.items.find(i=>i.effect==='heal'),count=p.inventory[potion.id]||0;
@@ -144,6 +144,7 @@ function renderShop(){
   const p=game.p,d=game.derived,shop=catalog.shops.find(s=>s.mapId===p.mapId);
   if(!game.map.safe||!shop)return pauseNote()+'<div class="empty">商店位於城鎮安全區。<br>使用回城卷軸，或從野外南方出口回城。</div><button class="primary" data-action="return">返回城鎮</button>';
   const head=pauseNote()+`<div class="summary"><span>${esc(shop.name)}</span><strong>◆ ${fmt(p.gold)}</strong></div><p class="subtle">魅力 ${d.stats.cha} · 購買優惠 ${Math.round(d.discount*100)}% · 物品購入後需手動裝備。</p>`;
+  if(activeTab==='guild')return head+'<h3>冒險者公會</h3><p>與朋友建立2人或4人房間，一起挑戰墓園副本。</p><p class="subtle">目前使用獨立雲端訪客測試角色；本機角色與倉庫保留。副本不需門票與等級，Google／Apple綁定尚未開放。</p><button data-action="online-guild">進入公會・多人副本</button>';
   if(activeTab==='warehouse')return renderWarehouse();
   if(activeTab==='rest')return head+`<div class="rest-card"><b>旅人休息所</b><p>在安全區休息，恢復全部生命與魔力。<br>費用：${catalog.rules.restCost===0?'免費':catalog.rules.restCost+' 金幣'}</p><button data-action="rest">休息・恢復生命與魔力</button></div>`;
   if(activeTab==='sell'){
@@ -201,13 +202,13 @@ function renderJourney(){
 function renderSystem(){
   if(activeTab==='bestiary')return pauseNote()+`<h3>怪物辨識特徵</h3><p class="subtle">這些是你指定的長期特徵，未來更換像素、手繪或其他美術風格都要保留。</p><div class="monster-previews">${catalog.monsterAppearances.map(a=>`<article class="monster-preview"><canvas data-appearance-preview="${a.id}" width="140" height="150" aria-label="${esc(a.name)}外觀示意"></canvas><b>${esc(a.name)}</b><p>${esc(a.description)}</p></article>`).join('')}</div><p class="subtle">南方墓園有三種骷髏，木橋北方的密林有三種狼人；白狼王體型為一般狼人的1.2倍。</p>`;
   if(activeTab==='help')return pauseNote()+`<h3>第一輪冒險</h3><ol class="help-list"><li>到商店買短劍與布甲，在人物／裝備穿上。</li><li>點「去野外」，自動走到北方出口。</li><li>點怪物或按「鎖定」，再按「攻擊」自動追擊；每次擊殺後重新選擇目標。</li><li>使用藥水或治療術恢復生命。升級後到人物面板分配能力點。</li><li>按「回城」使用卷軸；沒有卷軸時會自動走向南方出口。</li><li>在城鎮休息、出售材料、購買補給，再度出發。</li></ol><h3>鍵盤</h3><p class="kbd">WASD／方向鍵移動 · Space 攻擊 · E 鎖定<br>P 藥水 · H 治療 · R 回城<br>C 人物 · B 背包 · M 地圖 · Esc 關閉</p><h3>這一版的規則</h3><p class="subtle">單機遊戲，開啟面板或離開分頁時暫停。死亡回城不扣金幣或經驗，保留半數生命，可在休息所恢復。野外怪物依資料表重生，重新進入地圖也會重建怪物。角色外觀沿用原版像素騎士。<br>資料與公式均為自有設定，並非天堂官方數值。</p>`;
-  return pauseNote()+`<h3>補給設定</h3><label class="setting-row"><span>自動喝紅水</span><input id="autoPotion" type="checkbox" ${game.p.settings.autoPotion?'checked':''}></label><label class="setting-row"><span>生命低於 <b id="thresholdValue">${game.p.settings.potionThreshold}%</b></span><input id="potionThreshold" type="range" min="10" max="90" step="10" value="${game.p.settings.potionThreshold}"></label><h3>存檔與備份</h3><p class="subtle">角色與自有資料表保存在此瀏覽器的 IndexedDB。每 3 秒與操作後自動儲存。換裝置、網址或清除瀏覽資料前，請先匯出完整備份。</p><div class="button-grid"><button data-action="save">立即存檔</button><button data-action="export">匯出完整備份</button><button data-action="import">匯入完整備份</button><button data-action="journey">旅程紀錄</button></div><h3>核心資料管理</h3><p class="subtle">所有裝備、道具、怪物、商店、地圖與公式設定由同一份自有資料庫提供。這裡的修改會在本瀏覽器生效，可匯出資料表留存至專案。</p><button class="primary" data-action="editor">開啟資料管理</button><h3>新旅程</h3><p class="subtle">只重建重置版角色，保留目前資料表。既有 V0.5.x 角色與檔案不受影響。</p><button class="danger" data-action="new-character">重新建立角色</button><h3>版本</h3><p class="subtle">MVP 0.9.0 · ${esc(catalog.version)}<br>${esc(catalog.provenance)}${persistenceError?'<br><strong class="error">目前存檔失敗，請立即匯出備份。</strong>':''}</p>`;
+  return pauseNote()+`<h3>補給設定</h3><label class="setting-row"><span>自動喝紅水</span><input id="autoPotion" type="checkbox" ${game.p.settings.autoPotion?'checked':''}></label><label class="setting-row"><span>生命低於 <b id="thresholdValue">${game.p.settings.potionThreshold}%</b></span><input id="potionThreshold" type="range" min="10" max="90" step="10" value="${game.p.settings.potionThreshold}"></label><h3>存檔與備份</h3><p class="subtle">角色與自有資料表保存在此瀏覽器的 IndexedDB。每 3 秒與操作後自動儲存。換裝置、網址或清除瀏覽資料前，請先匯出完整備份。</p><div class="button-grid"><button data-action="save">立即存檔</button><button data-action="export">匯出完整備份</button><button data-action="import">匯入完整備份</button><button data-action="journey">旅程紀錄</button></div><h3>核心資料管理</h3><p class="subtle">所有裝備、道具、怪物、商店、地圖與公式設定由同一份自有資料庫提供。這裡的修改會在本瀏覽器生效，可匯出資料表留存至專案。</p><button class="primary" data-action="editor">開啟資料管理</button><h3>新旅程</h3><p class="subtle">只重建重置版角色，保留目前資料表。既有 V0.5.x 角色與檔案不受影響。</p><button class="danger" data-action="new-character">重新建立角色</button><h3>版本</h3><p class="subtle">MVP 0.10.0 · ${esc(catalog.version)}<br>${esc(catalog.provenance)}${persistenceError?'<br><strong class="error">目前存檔失敗，請立即匯出備份。</strong>':''}</p>`;
 }
 
 const panelConfig={
   char:{title:'人物／裝備',eyebrow:'CHARACTER',tabs:[['gear','人物裝備'],['stats','六項能力']],render:renderCharacter},
   bag:{title:'背包',eyebrow:'INVENTORY',tabs:[['all','全部'],['consumable','補給'],['gear','裝備'],['material','材料']],render:renderBag},
-  shop:{title:'城鎮補給',eyebrow:'TOWN SUPPLIES',tabs:[['buy','購買'],['sell','出售'],['rest','休息'],['warehouse','倉庫']],render:renderShop},
+  shop:{title:'城鎮補給',eyebrow:'TOWN SUPPLIES',tabs:[['buy','購買'],['sell','出售'],['rest','休息'],['warehouse','倉庫'],['guild','公會']],render:renderShop},
   map:{title:'世界地圖',eyebrow:'TOWN & WILDERNESS',render:renderMap},
   journey:{title:'遠征紀錄',eyebrow:'YOUR FIRST ADVENTURE',render:renderJourney},
   system:{title:'系統',eyebrow:'SETTINGS & BACKUP',tabs:[['settings','設定與存檔'],['help','遊玩說明'],['bestiary','怪物圖鑑']],render:renderSystem},
@@ -319,6 +320,7 @@ async function dispatch(action,b){
     case 'warehouse-deposit':warehouseMode='deposit';renderPanel();return;
     case 'warehouse-withdraw':warehouseMode='withdraw';renderPanel();return;
     case 'deposit':case 'withdraw':await transferWarehouse(action,id,quantity);return;
+    case 'online-guild':await persist(true);location.assign('https://lineage-party-proof.pearlymoth33.chatgpt.site/dungeon');return;
     case 'buy':result(game.buy(b.dataset.shop,id,quantity));break;
     case 'sell':result(game.sell(id,quantity));break;
     case 'equip':result(game.equip(id,b.dataset.slot||null));break;
@@ -454,7 +456,7 @@ window.addEventListener('unhandledrejection',e=>fatal(e.reason));
 
 // Read-only diagnostics for debugging and browser verification. Returned objects are clones.
 Object.defineProperty(window,'lineageMvp',{value:Object.freeze({
-  inspect:()=>game?structuredClone({snapshot:game.snapshot(),derived:game.derived,enemies:game.enemies,goal:game.goal,target:game.target,autoAttack:game.autoAttack,cooldowns:game.cooldowns,paused:!!activePanel,camera:world.camera,region:REGION_AT(game.map,game.p),art:{version:'integrated-0.9.0',shieldVisible:false,sideFrames:6,playerVisual:world.lastPlayerVisual,occluded:world.lastOccluded,warehouseBusy,drag:{...world.drag}},view:{width:world.width,height:world.height},logs:game.logs}):null
+  inspect:()=>game?structuredClone({snapshot:game.snapshot(),derived:game.derived,enemies:game.enemies,goal:game.goal,target:game.target,autoAttack:game.autoAttack,cooldowns:game.cooldowns,paused:!!activePanel,camera:world.camera,region:REGION_AT(game.map,game.p),art:{version:'integrated-0.10.0',shieldVisible:false,sideFrames:6,playerVisual:world.lastPlayerVisual,occluded:world.lastOccluded,warehouseBusy,drag:{...world.drag}},view:{width:world.width,height:world.height},logs:game.logs}):null
 })});
 
 try{

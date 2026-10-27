@@ -43,6 +43,6 @@ export async function loadActorArt(){
  let manifest=globalThis.LINEAGE_ART;
  if(!manifest){const r=await fetch(new URL('../assets/art/manifest.json',import.meta.url));if(!r.ok)throw Error('角色素材載入失敗');manifest=await r.json();}
  const images={},meta={};
- await Promise.all(Object.entries(manifest).map(async([key,value])=>{meta[key]=value.meta;images[key]=await new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(Error('角色素材載入失敗：'+key));im.src=value.url.startsWith('data:')?value.url:new URL('../assets/art/'+value.url,import.meta.url).href;});}));
+ await Promise.all(Object.entries(manifest).map(async([key,value])=>{meta[key]=value.meta;images[key]=await new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(Error('角色素材載入失敗：'+key));im.src=value.url.startsWith('data:')?value.url:new URL(value.url,new URL('../assets/art/',import.meta.url)).href;});}));
  return new ActorArt(images,meta);
 }

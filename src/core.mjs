@@ -326,13 +326,13 @@ export class Game {
     if(this.blocked(point.x,point.y))return {ok:false,message:'那裡無法通行'};
     this.goal={x:point.x,y:point.y};this.autoAttack=false;this.target=null;return {ok:true};
   }
-  update(dt,input={x:0,y:0}){
+  update(dt,input={x:0,y:0},options={}){
     if(!Number.isFinite(dt)||dt<=0)return;
     dt=Math.min(dt,.1);this.clock+=dt;this.p.playSeconds+=dt;
     if(this.deathPending>0){this.deathPending=Math.max(0,this.deathPending-dt);this.moving=false;if(!this.deathPending)this.die();return;}
     const advance=(animation,resolve)=>{if(!animation)return;animation.elapsed+=dt;if(!animation.done&&animation.elapsed>=animation.impact){animation.done=true;resolve();}};
     advance(this.playerAnimation,()=>this.resolvePlayerAttack(this.enemies.find(e=>e.id===this.playerAnimation?.target)));
-    for(const enemy of this.enemies)if(!enemy.dead)advance(enemy.animation,()=>this.resolveEnemyAttack(enemy));
+    if(options.enemies!==false)for(const enemy of this.enemies)if(!enemy.dead)advance(enemy.animation,()=>this.resolveEnemyAttack(enemy));
     if(this.deathPending)return;
     for(const k of ['attack','potion','heal','transition'])this.cooldowns[k]=Math.max(0,this.cooldowns[k]-dt);
     this.swing=Math.max(0,this.swing-dt);this.hurt=Math.max(0,this.hurt-dt);this.moving=false;
@@ -354,7 +354,7 @@ export class Game {
       else this.attack(e);
     }
     const currentMap=this.p.mapId;
-    if(!this.map.safe)for(const e of this.enemies){
+    if(options.enemies!==false&&!this.map.safe)for(const e of this.enemies){
       const m=this.index.monsters.get(e.monsterId);e.hurt=Math.max(0,e.hurt-dt);e.swing=Math.max(0,e.swing-dt);e.cooldown=Math.max(0,e.cooldown-dt);e.moving=false;
       if(e.dead){e.fall+=dt;e.respawn-=dt;if(e.respawn<=0){Object.assign(e,{x:e.homeX,y:e.homeY,hp:m.hp,dead:false,fall:0,animation:null,hurt:0,swing:0,active:false,cooldown:m.attackSeconds});}continue;}
       if(m.aggressive&&distance(e,this.p)<this.rules.movement.aggroRadius)e.active=true;
@@ -374,6 +374,6 @@ export class Game {
       this.cooldowns.regen=0;const d=this.derived,mult=this.map.safe?this.rules.recovery.townMultiplier:1;
       this.p.hp=Math.min(d.maxHp,this.p.hp+d.hpRegen*mult);this.p.mp=Math.min(d.maxMp,this.p.mp+d.mpRegen*mult);this.touch();
     }
-    if(this.cooldowns.transition<=0&&distance(this.p,this.map.exit)<=this.map.exit.radius)this.travelExit();
+    if(options.travel!==false&&this.cooldowns.transition<=0&&distance(this.p,this.map.exit)<=this.map.exit.radius)this.travelExit();
   }
 }

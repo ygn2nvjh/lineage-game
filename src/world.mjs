@@ -107,9 +107,11 @@ export class World {
     }
     }
     if(g.goal){ctx.strokeStyle='#e9d18b';ctx.lineWidth=2;ctx.strokeRect(g.goal.x-6,g.goal.y-6,12,12);}
-    const actors=[...(map.art==='twilight'?this.worldArt.objects(map).map(prop=>({y:prop.y,prop})):[]),...g.enemies.filter(e=>!e.dead||e.fall<3.9).map(e=>({y:e.y,e})),{y:p.y,player:true}].sort((a,b)=>a.y-b.y);
+    const actors=[...(map.art==='twilight'?this.worldArt.objects(map).map(prop=>({y:prop.y,prop})):[]),...g.enemies.filter(e=>!e.dead||e.fall<3.9).map(e=>({y:e.y,e})),{y:p.y,player:true},...(g.party||[]).map(member=>({y:member.game.p.y,member}))].sort((a,b)=>a.y-b.y);
     const reveal=[p,...g.enemies.filter(e=>e.id===g.target&&!e.dead)];this.lastOccluded=[];
     for(const actor of actors){
+      if(actor.member){const m=actor.member,a=m.game.p,v=this.actorState(a,{moving:m.game.moving,animation:m.game.playerAnimation,hurt:m.game.hurt,hurtFacing:m.game.playerHurtFacing,dead:m.game.fallen||m.game.deathPending>0,fall:m.game.fallen?1:ART_MOTION.fall-(m.game.deathPending||0)},dirFromAngle(m.game.face||0));this.art.draw(ctx,v,m.sex);this.text(m.name+(m.connected?'':'・離線'),a.x,a.y-110,'#a4d9ef',11);continue;}
+
       if(actor.prop){const prop=actor.prop;if(prop.x+prop.width/2>=cam.x&&prop.x-prop.width/2<=cam.x+this.width&&prop.y>=cam.y&&prop.y-prop.height<=cam.y+this.height){this.worldArt.prop(ctx,prop,{reveal,occluded:this.lastOccluded});if(prop.name)this.text(prop.name,prop.x,prop.y-prop.height-8,'#e5d8ba',12);}continue;}
       if(actor.player){
         const visual=this.actorState(p,{moving:g.moving,animation:g.playerAnimation,hurt:g.hurt,hurtFacing:g.playerHurtFacing,dead:g.deathPending>0,fall:g.deathPending>0?ART_MOTION.fall-g.deathPending:0},dirFromAngle(g.face));

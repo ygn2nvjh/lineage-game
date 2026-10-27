@@ -19,6 +19,8 @@ const bundle=modules.map(source=>source.replace(/^import .*;\r?\n/gm,'').replace
 const script=`globalThis.LINEAGE_PORTRAITS=${JSON.stringify(portraits)};\n globalThis.LINEAGE_WORLD=${JSON.stringify(world)};\nglobalThis.LINEAGE_ART=${JSON.stringify(art)};\nglobalThis.LINEAGE_SEED=${JSON.stringify(catalog).replace(/</g,'\\u003c')};\n${bundle}`;
 const single=html.replace('<link rel="stylesheet" href="./src/styles.css">',()=>`<style>${css}</style>`).replace('<script type="module" src="./src/app.mjs"></script>',()=>`<script type="module">\n${script.replace(/<\/script/gi,'<\\/script')}\n</script>`);
 await writeFile(path.join(out,'index.html'),single);
-await writeFile(path.join(root,'artifacts/lineage-mvp-0.9.0.html'),single);
+await writeFile(path.join(root,'artifacts/lineage-mvp-0.10.0.html'),single);
 await cp(path.join(root,'data/game/catalog.json'),path.join(out,'catalog.json'));
-console.log(`Built dist/index.html and artifacts/lineage-mvp-0.9.0.html (${Buffer.byteLength(single)} bytes). No runtime dependencies.`);
+console.log(`Built dist/index.html and artifacts/lineage-mvp-0.10.0.html (${Buffer.byteLength(single)} bytes). No runtime dependencies.`);
+
+for(const pack of ['art','world']){await mkdir(path.join(out,'game-assets',pack),{recursive:true});const manifest=pack==='art'?art:world;for(const key of Object.keys(manifest)){const original=JSON.parse(await readFile(path.join(root,'assets',pack,'manifest.json'),'utf8'))[key];await cp(path.join(root,'assets',pack,original.url),path.join(out,'game-assets',pack,original.url));}}
