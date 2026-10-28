@@ -4,22 +4,27 @@ import {enableLargeDungeon} from '../online/room.mjs';
 import {ADVENTURE_VERSION,adventureCatalog,saveSolo,restoreSolo} from '../online/adventure.mjs';
 const deny=(message,status=409)=>{throw Object.assign(Error(message),{status});};
 const economy=p=>JSON.stringify([p.gold,p.xp,p.level,p.inventory,p.equipment,p.warehouse,p.points,p.stats,p.deaths]);
-const soloTypes={goal:['x','y'],stop:[],attack:['target'],potion:[],heal:[],buy:['item','quantity'],sell:['item','quantity'],equip:['item','slot'],unequip:['slot'],deposit:['item','quantity'],withdraw:['item','quantity'],use:['item'],allocate:['stat'],rest:[],depart:[],return:[],save:[]};
+const soloTypes={goal:['x','y'],stop:[],attack:['target'],potion:[],heal:[],buy:['item','quantity'],sell:['item','quantity'],equip:['item','slot'],unequip:['slot'],deposit:['item','quantity'],withdraw:['item','quantity'],use:['item'],allocate:['stat'],rest:[],depart:[],return:[],save:[],settings:['autoPotion','potionThreshold'],pause:['paused']};
 export class AdventureService extends DungeonHub{
  constructor(ctx,env){const c=adventureCatalog(env.SEED);enableLargeDungeon(c);super(ctx,{...env,SEED:c});}
- setSolo(u,p){u.solo=saveSolo(new Game(this.env.SEED,p));u.p=structuredClone(u.solo.p);u.soloAt=Date.now();}
- advanceSolo(u,now){if(u.room||!u.solo)return;let remaining=Math.min(.5,Math.max(0,(now-(u.soloAt||now))/1000));if(now-(u.soloAt||now)>5000)remaining=0;u.soloAt=now;if(!remaining)return;const before=economy(u.p),g=restoreSolo(this.env.SEED,u.solo);if(now-(u.lastSeen||0)>45000)g.cancelCombat();while(remaining>1e-6){const dt=Math.min(.05,remaining);remaining-=dt;g.update(dt,{x:0,y:0});}u.solo=saveSolo(g);u.p=structuredClone(g.p);if(economy(g.p)!==before)this.needsSettlement=true;}
+ setSolo(u,p){const g=new Game(this.env.SEED,p);g.logs=u.solo?.logs||[];u.solo=saveSolo(g);u.soloPaused=false;u.p=structuredClone(u.solo.p);u.soloAt=Date.now();}
+ advanceSolo(u,now){if(u.room||!u.solo)return;let remaining=Math.min(.5,Math.max(0,(now-(u.soloAt||now))/1000));if(now-(u.soloAt||now)>5000)remaining=0;u.soloAt=now;if(u.soloPaused||!remaining)return;const before=economy(u.p),g=restoreSolo(this.env.SEED,u.solo);if(now-(u.lastSeen||0)>45000)g.cancelCombat();while(remaining>1e-6){const dt=Math.min(.05,remaining);remaining-=dt;g.update(dt,{x:0,y:0});}u.recentEvents=[...(u.recentEvents||[]),...g.events.map(e=>({...e,id:u.soloEventId=(u.soloEventId||0)+1}))].slice(-32);u.solo=saveSolo(g);u.p=structuredClone(g.p);if(economy(g.p)!==before)this.needsSettlement=true;}
  command(owner,b){const now=Date.now(),action=b.action;let u=this.users[owner];
-  if(action==='create'&&!u){for(const k of Object.keys(b))if(!['action','id','seq','since','requestId','name','sex'].includes(k))deny('不接受角色數值',400);if(Object.keys(this.users).length>=30)deny('測試訪客容量已滿',503);let p;try{p=createState(this.env.SEED,b.name,b.sex);}catch(e){deny(e.message,400);}u=this.users[owner]={id:crypto.randomUUID(),p,room:null,lastSeq:0,lastSeen:now};this.setSolo(u,p);this.revision++;return {data:this.view(owner),changed:true,save:true};}
+  if(action==='create'&&!u){for(const k of Object.keys(b))if(!['action','id','seq','since','requestId','name','sex','allocation'].includes(k))deny('不接受角色數值',400);if(Object.keys(this.users).length>=30)deny('測試訪客容量已滿',503);let p;try{p=createState(this.env.SEED,b.name,b.sex,b.allocation??this.env.SEED.rules.defaultAllocation);}catch(e){deny(e.message,400);}u=this.users[owner]={id:crypto.randomUUID(),p,room:null,lastSeq:0,lastSeen:now};this.setSolo(u,p);this.revision++;return {data:this.view(owner),changed:true,save:true};}
   if(!u)return super.command(owner,b);
   if(action!=='ping'){if(!u.solo&&!u.room)this.setSolo(u,u.p);this.advanceSolo(u,now);u.lastSeen=now;}
   const mutation=!['state','ping','create'].includes(action);if(mutation&&(!Number.isSafeInteger(b.seq)||b.seq<1))deny('缺少指令序號',400);
   // Validate before replay detection too: no client-provided character snapshots.
   if(Object.hasOwn(soloTypes,action)){for(const k of Object.keys(b))if(!['id','action','seq','since','requestId',...soloTypes[action]].includes(k))deny('不接受角色數值或額外欄位',400);}
+  if(action==='settings'&&(typeof b.autoPotion!=='boolean'||!Number.isInteger(b.potionThreshold)||b.potionThreshold<10||b.potionThreshold>90))deny('補給設定無效',400);
+  if(action==='pause'&&typeof b.paused!=='boolean')deny('暫停設定無效',400);
   if(mutation&&b.seq<=(u.lastSeq||0))return {data:this.view(owner),changed:false,save:false};
+  if(action==='settings'&&u.room){const m=this.rooms[u.room]?.members.find(m=>m.owner===owner);if(!m)deny('房間成員不存在');m.game.p.settings={autoPotion:b.autoPotion,potionThreshold:b.potionThreshold};m.lastSeq=b.seq;u.lastSeq=b.seq;this.revision++;return {data:this.view(owner),changed:true,save:true};}
   if(['createRoom','join'].includes(action)&&!u.room&&u.p.mapId!=='town')deny('請先回村莊，到冒險者公會組隊');
   if(Object.hasOwn(soloTypes,action)&&!u.room){
    const g=restoreSolo(this.env.SEED,u.solo);let result={ok:true};
+   if(action==='settings')g.p.settings={autoPotion:b.autoPotion,potionThreshold:b.potionThreshold};
+   if(action==='pause')u.soloPaused=b.paused;
    if(action==='goal'){if(!Number.isFinite(b.x)||!Number.isFinite(b.y))deny('移動位置無效',400);result=g.setGoal({x:b.x,y:b.y});}
    if(action==='stop')g.cancelCombat();if(action==='attack'){const e=g.enemies.find(e=>e.id===b.target&&!e.dead);if(!e)deny('請選擇存活怪物');g.target=e.id;g.autoAttack=true;g.goal=null;}
    if(action==='potion')result=g.useItem('red_potion');if(action==='heal')result=g.heal();
@@ -29,7 +34,7 @@ export class AdventureService extends DungeonHub{
    if(action==='depart'){if(!g.map.safe)deny('已在野外');result=g.setGoal(g.map.exit);}
    if(action==='return'){if(g.map.safe)deny('已在村莊');result=g.p.inventory.return_scroll?g.useItem('return_scroll'):g.setGoal(g.map.exit);}
    if(result?.ok===false)deny(result.message);u.solo=saveSolo(g);u.p=structuredClone(g.p);u.lastSeq=b.seq;this.revision++;
-   return {data:this.view(owner),changed:true,save:!['goal','stop','attack'].includes(action)};
+   return {data:this.view(owner),changed:true,save:!['goal','stop','attack','pause'].includes(action)};
   }
   if(Object.hasOwn(soloTypes,action)&&!['goal','stop','attack','potion','heal'].includes(action)&&u.room)deny('請先離開副本房間再整備');
   const before=u.room,out=super.command(owner,b);if(mutation)u.lastSeq=b.seq;
@@ -39,10 +44,10 @@ export class AdventureService extends DungeonHub{
  }
  advance(room,now){const before=room.members.map(m=>economy(m.game.p)).join('|');super.advance(room,now);if(room.members.map(m=>economy(m.game.p)).join('|')!==before)this.needsSettlement=true;}
  expire(now){const was=Object.values(this.users).filter(u=>u.room);super.expire(now);for(const u of was)if(!u.room)this.setSolo(u,u.p);}
- view(owner,since=0){const data=super.view(owner,since),u=this.users[owner];return {...data,version:ADVENTURE_VERSION,solo:u&&!u.room?u.solo:null,sequence:u?.room?data.sequence:u?.lastSeq||0,savedAt:this.lastSave,unified:true};}
+ view(owner,since=0){const data=super.view(owner,since),u=this.users[owner];return {...data,version:ADVENTURE_VERSION,solo:u&&!u.room?u.solo:null,sequence:u?.room?data.sequence:u?.lastSeq||0,savedAt:this.lastSave,paused:!!u?.soloPaused&&!u?.room,events:u?.recentEvents||[],soloEventId:u?.soloEventId||0,unified:true};}
  send(ws,message){if(message.data){message.data.version=ADVENTURE_VERSION;message.data.savedAt=this.lastSave;}return super.send(ws,message);}
  connectedOwners(){return new Set(this.sockets().filter(s=>s.readyState===1).map(s=>s.deserializeAttachment()?.owner).filter(Boolean));}
- soloNeedsTicks(u){return !!u.solo&&(u.p.mapId!=='town'||u.solo.goal||u.solo.deathPending>0||u.p.hp<derive(u.p,this.env.SEED).maxHp||u.p.mp<derive(u.p,this.env.SEED).maxMp);}
+ soloNeedsTicks(u){return !!u.solo&&!u.soloPaused&&(u.p.mapId!=='town'||u.solo.goal||u.solo.deathPending>0||u.p.hp<derive(u.p,this.env.SEED).maxHp||u.p.mp<derive(u.p,this.env.SEED).maxMp);}
  hasActiveRoom(){if(super.hasActiveRoom())return true;const connected=this.connectedOwners();return Object.entries(this.users).some(([owner,u])=>connected.has(owner)&&!u.room&&this.soloNeedsTicks(u));}
  broadcast(activeOnly=false){for(const ws of this.sockets()){const a=ws.deserializeAttachment();if(!a?.owner)continue;const u=this.users[a.owner],data=this.view(a.owner,a.since);if(activeOnly&&!data.room&&!a.lastRoom&&(!u?.solo||!u.activeSolo))continue;a.lastRoom=data.room?.code||null;this.send(ws,{push:true,data});a.since=data.room?.eventId||0;ws.serializeAttachment(a);}}
  async step(){try{const now=Date.now(),connected=this.connectedOwners();for(const [owner,u]of Object.entries(this.users)){u.activeSolo=connected.has(owner)&&!u.room&&this.soloNeedsTicks(u);if(u.activeSolo){u.lastSeen=now;this.advanceSolo(u,now);}}

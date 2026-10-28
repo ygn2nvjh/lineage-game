@@ -1,6 +1,14 @@
 # Unified cloud adventure
 
-The default Cloudflare URL and `/play` now use `adventure-0.1.0`. The legacy `/dungeon` multiplayer prototype remains available with its existing identities and storage. This release starts fresh cloud test characters rather than importing older local or prototype saves.
+The default Cloudflare URL and `/play` now use `adventure-0.1.1`. The legacy `/dungeon` multiplayer prototype remains available with its existing identities and storage. This release starts fresh cloud test characters rather than importing older local or prototype saves.
+
+## Interface preservation in 0.1.1
+
+The original System button remains the entry for supply settings, save/backup, help, bestiary, journey records and data inspection. Connection diagnostics are a System tab. Single-player panels and hidden tabs pause solo simulation on the server; multiplayer rooms continue. Supply settings are validated and saved on the server, including live party settings. Creation allocation, bag categories, buy-ten/sell-all, warehouse bulk transfers, SVG navigation, original item-type symbols and village proximity interactions are retained.
+
+Cloud data management is explicitly read-only for unauthenticated guests: viewing and exporting the authoritative catalog is supported, while editing live global balance requires a project deployment. Backup exports contain character/catalog data without credentials; role recovery uses the private access code. Creating another guest keeps the previous cloud role rather than deleting it.
+
+Connected WebSocket commands preserve send order without waiting for each prior acknowledgement. Own movement uses the existing visual predictor directly, without an extra display smoothing layer; repeated route planning is cached. HP, item consumption and rewards remain authoritative. This reduces added client waits; it does not remove network latency. Diagnostics include active-frame and push-gap P95 values to distinguish rendering stalls from network round trips.
 
 ## Player flow
 
@@ -30,4 +38,6 @@ The 30-guest test cap remains. Solo simulation now runs remotely, so earlier est
 
 ## Validation
 
-Core, legacy API, transport, room and adventure unit tests pass (46 tests). Coverage includes rejected forged stats, authoritative solo rewards, item/equipment/warehouse persistence after restart, command replay, same-role dungeon transfers and rollback on failed checkpoints. Local Cloudflare tests use two independent mobile-size browsers to buy/equip, deposit and reload, kill a solo monster, enter the dungeon with the same characters, clear it, return, reload rewards/warehouse and restore the role through the recovery UI in a fresh browser. These are local tests, not a claim of cross-network phone performance or measured production billing.
+Core, legacy API, transport, room and adventure unit tests pass (50 tests). Coverage includes rejected forged stats, authoritative solo rewards, item/equipment/warehouse persistence after restart, command replay, same-role dungeon transfers and rollback on failed checkpoints. Local Cloudflare tests use two independent mobile-size browsers to buy/equip, deposit and reload, kill a solo monster, enter the dungeon with the same characters, clear it, return, reload rewards/warehouse and restore the role through the recovery UI in a fresh browser. Additional regressions verify System tabs, persisted potion settings, monster previews, credential-free backup export, navigation/item icons, village context buttons, solo pause/resume and 350ms ordered-response latency injection. These are local tests, not a claim of cross-network phone performance or measured production billing.
+
+Optional browser regressions are included in `tests/adventure-preserve-browser.cjs` and `tests/adventure-latency-browser.cjs`. They require Playwright and a Chromium installation. The preservation test targets `ADVENTURE_URL` (default `http://127.0.0.1:8787/play`) with Wrangler running locally; `CHROMIUM_PATH` can select an existing browser. The latency test uses mocked WebSocket replies and local asset interception, with no cloud account needed.
