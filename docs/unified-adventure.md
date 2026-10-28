@@ -1,6 +1,25 @@
 # Unified cloud adventure
 
-The default Cloudflare URL and `/play` now use `adventure-0.1.3`. The legacy `/dungeon` multiplayer prototype remains available with its existing identities and storage. The original 0.1.0 milestone introduced separate cloud test characters rather than importing old local/prototype saves. Subsequent ordinary releases preserve those cloud characters.
+The default Cloudflare URL and `/play` now use `adventure-0.1.4`. The legacy `/dungeon` multiplayer prototype remains available with its existing identities and storage. The original 0.1.0 milestone introduced separate cloud test characters rather than importing old local/prototype saves. Subsequent ordinary releases preserve those cloud characters.
+
+## Delta world transport in 0.1.4
+
+New unified clients negotiate `stateDeltas: 1` on their authenticated WebSocket. The first world snapshot is complete; subsequent packets carry only changed fields, including individual monster/member array fields. Unchanged equipment, inventory, warehouse, logs and events are retained locally. State is fully reconstructed before existing game/UI callbacks see it. Combat formulas, animations, 100ms world cadence, input replay and checkpoint rules are unchanged.
+
+Each socket has an independent in-memory baseline and numbered frames. Map/role/room scope changes, large patches, periodic refresh and new connections send full snapshots. A missing baseline triggers one full-state recovery request; malformed/partial patches are not applied. Baselines are not written to character storage. Old clients that do not negotiate deltas continue receiving complete snapshots. The original legacy `/dungeon` prototype is retained.
+
+Controlled 60-second comparisons encode the exact same authoritative snapshots both ways and verify every reconstructed field:
+
+| World snapshot scenario | Full snapshots | Delta stream | Reduction |
+| --- | ---: | ---: | ---: |
+| Solo field movement, 600 snapshots | 3,183,631 bytes | 262,880 bytes | 91.7% |
+| Two-player combat, both phones, 1,200 snapshots | 8,927,646 bytes | 970,425 bytes | 89.1% |
+
+These measure world-state JSON including delta envelopes, not an entire production session or asset/protocol downloads. Existing compact movement acknowledgements are separate. Actual traffic depends on play; lower bytes do not reduce request counts or awake duration by the same percentage. Re-measure real phone reports and provider usage for capacity planning.
+
+Diagnostics now count incoming UTF-8 JSON bytes (previous versions counted JavaScript string length, which undercounts Chinese text) and include `stateSync` full/delta frame and byte counts plus recovery attempts. This changes measurement accuracy; compare versioned reports accordingly.
+
+Validation includes codec round trips, deletion/array/null/zero handling, per-socket isolation, backward compatibility, periodic/full recovery, private baseline isolation, actual WebSocket dropped-delta recovery without changing the panel/role, the full two-browser solo/dungeon/recovery flow, preserved UI and 150/300ms movement replay with real delta envelopes. `npm run test:sync` runs the codec and controlled traffic tests. Optional `tests/state-delta-browser.cjs` needs Playwright, Chromium and local Wrangler at `ADVENTURE_URL` (default port 8787).
 
 ## Solo input replay in 0.1.3
 
@@ -54,6 +73,6 @@ The 30-guest test cap remains. Solo simulation now runs remotely, so earlier est
 
 ## Validation
 
-Core, legacy API, transport, room and adventure unit tests pass (61 tests). Coverage includes rejected forged stats, authoritative solo rewards, item/equipment/warehouse persistence after restart, command replay, same-role dungeon transfers and rollback on failed checkpoints. Local Cloudflare tests use two independent mobile-size browsers to buy/equip, deposit and reload, kill a solo monster, enter the dungeon with the same characters, clear it, return, reload rewards/warehouse and restore the role through the recovery UI in a fresh browser. Additional regressions verify System tabs, persisted potion settings, monster previews, credential-free backup export, navigation/item icons, village context buttons, live solo panels, background pause/resume unit coverage and 350ms ordered-response latency injection. These are local tests, not a claim of cross-network phone performance or measured production billing.
+Core, legacy API, transport, room and adventure unit tests pass (73 tests). Coverage includes rejected forged stats, authoritative solo rewards, item/equipment/warehouse persistence after restart, command replay, same-role dungeon transfers and rollback on failed checkpoints. Local Cloudflare tests use two independent mobile-size browsers to buy/equip, deposit and reload, kill a solo monster, enter the dungeon with the same characters, clear it, return, reload rewards/warehouse and restore the role through the recovery UI in a fresh browser. Additional regressions verify System tabs, persisted potion settings, monster previews, credential-free backup export, navigation/item icons, village context buttons, live solo panels, background pause/resume unit coverage and 350ms ordered-response latency injection. These are local tests, not a claim of cross-network phone performance or measured production billing.
 
 Additional solo-input browser regression: `tests/solo-input-browser.cjs` (mock network with real service simulation). Optional browser regressions are included in `tests/adventure-preserve-browser.cjs` `tests/adventure-latency-browser.cjs` and `tests/adventure-motion-browser.cjs`. They require Playwright and a Chromium installation. The preservation test targets `ADVENTURE_URL` (default `http://127.0.0.1:8787/play`) with Wrangler running locally; `CHROMIUM_PATH` can select an existing browser. The motion test captures actual renderer inputs across 100ms replacement snapshots and verifies all six lateral frames for both player and monster. The latency test uses mocked WebSocket replies and local asset interception, with no cloud account needed.
