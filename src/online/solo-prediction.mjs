@@ -7,7 +7,7 @@ export function directionStep(position,input,game,dt){
 }
 // Replay exact pending movement frames, never combat/economy or arbitrary client positions.
 export class SoloMovementPrediction{
- constructor(){this.reset();this.metrics={corrections:0,hardCorrections:0,errors:[]};}
+ constructor(){this.reset();this.metrics={corrections:0,hardCorrections:0,errors:[],recentCorrections:[]};}
  reset(position=null){this.position=position?{x:position.x,y:position.y}:null;this.active=false;this.input={x:0,y:0};this.frames=[];this.serial=0;this.lastSentAt=-Infinity;this.lastSentInput={x:0,y:0};this.markerDirty=false;this.lastSnapshot=null;this.ack=0;this.lastAckAt=0;this.stale=false;}
  begin(position,now,lastId=0){this.reset(position);this.serial=lastId;this.active=true;this.lastAckAt=now;}
  setInput(input){const next=normalizeInput(input);if(next.x!==this.input.x||next.y!==this.input.y){this.input=next;this.markerDirty=true;}}
@@ -21,6 +21,7 @@ export class SoloMovementPrediction{
   this.frames=this.frames.filter(f=>f.inputId>movement.id);
   this.lastSnapshot={position:{x:game.p.x,y:game.p.y}};
  }
+ recordCorrection(error,now,hard){const list=this.metrics.recentCorrections,last=list.at(-1);if(!hard&&last&&now-last.at<500)return;list.push({at:Math.round(now),error:Math.round(error*10)/10,hard,ack:this.ack,pendingFrames:this.frames.length,input:{...this.input},sinceAckMs:Math.round(now-this.lastAckAt)});if(list.length>30)list.shift();}
  step(game,dt,now){
   if(!this.position)this.position={x:game.p.x,y:game.p.y};if(!this.active)return null;
   if(game.deathPending||game.fallen||game.p.hp<=0){this.reset(game.p);return null;}
@@ -30,8 +31,8 @@ export class SoloMovementPrediction{
   let p=directionStep(this.position,input,game,dt);
   if(dt>0&&!this.stale&&(input.x||input.y)){this.frames.push({inputId:++this.serial,x:input.x,y:input.y,dt,sent:false});this.markerDirty=false;}
   if(this.lastSnapshot&&!this.stale){const target=this.replay(this.lastSnapshot.position,game),error=Math.hypot(target.x-p.x,target.y-p.y);this.metrics.errors.push(error);this.metrics.errors=this.metrics.errors.slice(-120);
-   if(error>100||game.blocked(p.x,p.y)){p={...p,x:target.x,y:target.y};this.metrics.hardCorrections++;}
-   else if(error>2){const k=Math.min(.18,dt*4),next={x:p.x+(target.x-p.x)*k,y:p.y+(target.y-p.y)*k};if(clearLine(p,next,(x,y,r)=>game.blocked(x,y,r),game.rules.movement.playerRadius)){p={...p,...next};this.metrics.corrections++;}}
+   if(error>100||game.blocked(p.x,p.y)){p={...p,x:target.x,y:target.y};this.metrics.hardCorrections++;this.recordCorrection(error,now,true);}
+   else if(error>2){const k=Math.min(.18,dt*4),next={x:p.x+(target.x-p.x)*k,y:p.y+(target.y-p.y)*k};if(clearLine(p,next,(x,y,r)=>game.blocked(x,y,r),game.rules.movement.playerRadius)){p={...p,...next};this.metrics.corrections++;this.recordCorrection(error,now,false);}}
   }
   this.position={x:p.x,y:p.y,face:p.face};return p;
  }

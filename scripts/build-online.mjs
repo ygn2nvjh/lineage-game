@@ -5,7 +5,7 @@ export async function buildOnline(assetOrigin='https://lineage-first-expedition.
  const art=JSON.parse(await read('assets/art/manifest.json')),world=JSON.parse(await read('assets/world/manifest.json'));
  for(const a of Object.values(art))a.url=assetOrigin+'/game-assets/art/'+a.url;
  for(const a of Object.values(world))a.url=assetOrigin+'/game-assets/world/'+a.url;
- const parts=['art-config','actor-art','world-art','navigation','catalog','core','sprites','world','online/room','online/transport','online/prediction',...(options.websocket?['online/state-delta','online/websocket']:[]),...(options.unified?['online/solo-input','online/solo-prediction','online/adventure','online/adventure-system','online/adventure-client']:[]),'online/client'];
+ const parts=['art-config','actor-art','world-art','navigation','catalog','core','sprites','world','online/room','online/transport','online/prediction',...(options.websocket?['online/state-delta','online/log-stream','online/websocket']:[]),...(options.unified?['online/solo-input','online/solo-prediction','online/adventure','online/adventure-system','online/adventure-client']:[]),'online/guest-access','online/client'];
  const bundle=(await Promise.all(parts.map(n=>read('src/'+n+'.mjs')))).map(s=>s.replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'')).join('\n');
  if(options.unified){const {adventureCatalog}=await import('../src/online/adventure.mjs');Object.assign(seed,adventureCatalog(seed));}
  const script=`globalThis.LINEAGE_WEBSOCKET=${!!options.websocket};globalThis.LINEAGE_UNIFIED=${!!options.unified};globalThis.LINEAGE_SEED=${JSON.stringify(seed)};globalThis.LINEAGE_ART=${JSON.stringify(art)};globalThis.LINEAGE_WORLD=${JSON.stringify(world)};${bundle}`;

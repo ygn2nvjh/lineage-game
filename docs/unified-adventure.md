@@ -1,3 +1,24 @@
+## adventure-0.1.6：訪客身分備援、冒險紀錄獨立傳輸
+
+同一正式網址與瀏覽器會自動載入雲端角色，一般程式更新不重置。沿用原 localStorage key、ADVENTURE namespace 與 unified-v1；新增同 origin、SameSite=Strict、一年期限的訪客 cookie 備援（HTTPS 加 Secure）。舊 localStorage 身分優先並自動補備援；只遺失 localStorage 可由 cookie 恢復。主動「重新建立角色」才清除兩份身分並建立新旅程，原雲端人物仍保留供存取碼找回。換網域、換瀏覽器、清除全部網站資料、私密瀏覽結束不保證保留，仍需要存取碼或未來帳號綁定。不能由本輪測試反推使用者過去重置的確切原因。
+
+只針對 solo.logs 做 logStream:1 協商：首次／重連／要求完整狀態送最多50筆，之後只送新增紀錄並維持50筆上限；未變更不重送內容。不刪旅程紀錄、不影響移動／戰鬥封包、100ms世界頻率、120ms輸入與獎勵保存。舊 client 仍收到完整 logs；多人 room 狀態維持原協定。沒有重新啟用通用 state delta codec。診斷新增 historySync 次數與最近30個有節流的位置校正樣本（誤差、輸入、待確認影格與ACK時間），不新增伺服器請求、不輸出訪客憑證。
+
+### 可重現流量與理論外推
+
+測試指令：`node --test --test-isolation=none tests/state-stream.test.mjs tests/log-stream.test.mjs`。使用正式 AdventureService 的同一份 field 世界狀態、600份100ms快照、50筆短紀錄、每秒新增1筆；前後逐份還原 deepEqual。60秒完整世界JSON 4,725,548 → 3,037,328 bytes，減少35.73%。僅紀錄傳輸的微型 fixture 減少97.59%，不能當成整個遊戲減少97%。雙人房間沿用同測試套件的60秒雙手機合計8,927,646 bytes基準，本輪不優化room內容。
+
+下表是上述測試情境等比例外推，MB=1,000,000 bytes；是持續世界下傳JSON，**不是實機保證、完整session或免費容量上限**。
+
+| 情境 | 修改前 | 修改後 |
+|---|---:|---:|
+| 單人持續同步1人時 | 283.53 MB | 182.24 MB |
+| 雙人副本1人時（每人） | 267.83 MB | 267.83 MB |
+| 每人每日45分鐘單人＋15分鐘副本 | 279.61 MB | 203.64 MB |
+| 30人每日各玩上述1小時 | 8.39 GB | 6.11 GB |
+
+公式：每分鐘bytes×分鐘數；雙人合計除2才是每人。排除移動指令／ACK、其他RPC、首載素材、HTTP／TLS／cookie與網路協定；紀錄長短、怪物／事件數、城鎮閒置是否推送都會改變實值。上傳輸入協定未變，不宣稱同幅下降。先前實機短樣本與本次受控情境不同，不能直接當版本改善倍率。Cloudflare免費限制需另看DO請求／持續時間／SQL rows與儲存，不能把下傳節省比例換成免費玩家增加比例。
+
 # Unified cloud adventure
 
 The default Cloudflare URL and `/play` now use `adventure-0.1.5`. The legacy `/dungeon` multiplayer prototype remains available with its existing identities and storage. The original 0.1.0 milestone introduced separate cloud test characters rather than importing old local/prototype saves. Subsequent ordinary releases preserve those cloud characters.
