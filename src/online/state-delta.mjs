@@ -1,3 +1,5 @@
+// Disabled after the 0.1.4 phone latency regression. Keep the codec for isolated tests.
+export const STATE_DELTAS_ENABLED=false;
 // Transport-only snapshots. No game rules or persistent player data live here.
 const isRecord=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
 const blockedKeys=new Set(['__proto__','prototype','constructor']);

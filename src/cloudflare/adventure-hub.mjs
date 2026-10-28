@@ -1,4 +1,4 @@
-import {StateDeltaEncoder} from '../online/state-delta.mjs';
+import {StateDeltaEncoder,STATE_DELTAS_ENABLED} from '../online/state-delta.mjs';
 import {SOLO_INPUT,normalizeInput} from '../online/solo-input.mjs';
 import {DungeonHub} from './hub.mjs';
 import {Game,createState,derive,distance} from '../core.mjs';
@@ -8,7 +8,7 @@ const deny=(message,status=409)=>{throw Object.assign(Error(message),{status});}
 const economy=p=>JSON.stringify([p.gold,p.xp,p.level,p.inventory,p.equipment,p.warehouse,p.points,p.stats,p.deaths]);
 const soloTypes={move:['frames','mapId'],goal:['x','y'],stop:[],attack:['target'],potion:[],heal:[],buy:['item','quantity'],sell:['item','quantity'],equip:['item','slot'],unequip:['slot'],deposit:['item','quantity'],withdraw:['item','quantity'],use:['item'],allocate:['stat'],rest:[],depart:[],return:[],save:[],settings:['autoPotion','potionThreshold'],pause:['paused']};
 export class AdventureService extends DungeonHub{
- constructor(ctx,env){const c=adventureCatalog(env.SEED);enableLargeDungeon(c);super(ctx,{...env,SEED:c});this.stateStreams=new WeakMap();}
+ constructor(ctx,env){const c=adventureCatalog(env.SEED);enableLargeDungeon(c);super(ctx,{...env,SEED:c});this.stateStreams=new WeakMap();this.stateDeltasEnabled=env.ENABLE_STATE_DELTAS===true||STATE_DELTAS_ENABLED;}
  setSolo(u,p){const g=new Game(this.env.SEED,p);g.logs=u.solo?.logs||[];u.solo=saveSolo(g);u.soloPaused=false;u.soloMove=null;u.p=structuredClone(u.solo.p);u.soloAt=Date.now();}
  advanceSolo(u,now){
   if(u.room||!u.solo)return;
@@ -80,8 +80,8 @@ export class AdventureService extends DungeonHub{
  view(owner,since=0){const data=super.view(owner,since),u=this.users[owner];return {...data,version:ADVENTURE_VERSION,solo:u&&!u.room?u.solo:null,movement:u&&!u.room&&u.soloMove?{id:u.soloMove.id,active:Date.now()<u.soloMove.expiresAt}:null,lastMoveId:u?.lastMoveId||0,sequence:u?.room?data.sequence:u?.lastSeq||0,savedAt:this.lastSave,paused:!!u?.soloPaused&&!u?.room,events:u?.recentEvents||[],soloEventId:u?.soloEventId||0,unified:true};}
  resetStateStream(ws){this.stateStreams.delete(ws);}
  send(ws,message){
-  if(message.data){message.data.version=ADVENTURE_VERSION;message.data.savedAt=this.lastSave;}
-  if(ws.deserializeAttachment()?.stateDeltas&&message.data&&Object.hasOwn(message.data,'player')&&Object.hasOwn(message.data,'room')){
+  if(message.data){message.data.version=ADVENTURE_VERSION;message.data.savedAt=this.lastSave;message.data.edge=ws.deserializeAttachment()?.edge||undefined;}
+  if(this.stateDeltasEnabled&&ws.deserializeAttachment()?.stateDeltas&&message.data&&Object.hasOwn(message.data,'player')&&Object.hasOwn(message.data,'room')){
    let stream=this.stateStreams.get(ws);if(!stream){stream=new StateDeltaEncoder();this.stateStreams.set(ws,stream);}
    return super.send(ws,{...message,...stream.encode(message.data)});
   }
