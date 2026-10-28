@@ -8,6 +8,10 @@
 
 本次保留既有移動／攻擊，只減少冒險紀錄重送、增加訪客身分備援與移動異常診斷。受控單人世界同步資料量減少約36%，不是免費容量增加36%。[測試條件與理論估算](docs/unified-adventure.md)。下方保留本機版與歷史版本說明，雲端版需連線並由伺服器保存人物與結算獎勵。
 
+## 靜態美術第一組（待驗收）
+
+[男女角色與墓園對照頁](https://lineage-game.7gj5vc64m7.workers.dev/art-review.html)：可切換角色、原版與新站姿、正側背面、地面細節。正式遊戲動畫與人物素材尚未替換。[製作說明](docs/art-review.md)。
+
 ## 開發與建置
 
 需要 Node.js 24；執行 `npm test` 驗證核心規則，`npm run build` 建立 dist/index.html。可用 `npm start` 在本機開啟遊戲。建置後的 HTML 包含執行素材，無須外部遊戲服務。
