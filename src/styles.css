@@ -259,3 +259,6 @@ p{line-height:1.7}
 .footer-line{margin-top:8px;pointer-events:none}
 @media(max-width:360px){#stage{--stick-size:86px;--actions-width:124px}.attack-row{gap:8px}.circle.attack{width:70px;height:70px}.circle.lock{width:44px;height:44px}.menu{left:calc(var(--stick-size) + 6px);right:calc(var(--actions-width) + 6px);gap:4px 2px}.menu svg{width:17px;height:17px}.menu .nav-label{font-size:7px}}
 @media(max-height:700px){#stage{--stick-size:80px;--actions-width:112px}.circle.attack{width:62px;height:62px}.circle.lock{width:40px;height:40px}.attack-row{gap:10px}.menu{grid-auto-rows:39px;gap:4px 2px}.menu svg{width:16px;height:16px}.menu .nav-label{font-size:7px}.footer-line{margin-top:6px}}
+
+/* A persistent HUD countdown remains visible when messages hide the journey bar. */
+.righttop small.victory-countdown{font-size:12px;font-weight:bold;color:#ffe390}

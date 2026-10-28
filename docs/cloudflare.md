@@ -13,7 +13,11 @@ Use a Free Cloudflare account and Workers Git integration. Select this repositor
 
 The committed lockfile installs a pinned Wrangler. SQLite Durable Object migration `v1` creates the HUB binding automatically; no D1 database, domain purchase, API token shared in chat or paid Workers plan is required. Do not use the default `npm run build`: that builds the separate solo artifact.
 
-Open the resulting workers.dev URL at `/dungeon`. `/health` identifies online-0.3.0-ws. Deploying does not prove acceptable mobile latency: compare two phones on different networks using the connection diagnostics. No existing Sites URL is automatically redirected.
+Open the resulting workers.dev URL at `/dungeon`. `/health` identifies online-0.3.1-ws. Deploying does not prove acceptable mobile latency: compare two phones on different networks using the connection diagnostics. No existing Sites URL is automatically redirected.
+
+## Release 0.3.1
+
+Starting a room closes the guild panel for all members automatically. Victory keeps survivors in the dungeon with authoritative movement until the server deadline. A fixed countdown appears in the top-right HUD even when transient messages hide the journey bar; diagnostics and reloads do not reset the deadline. The diagnostic report includes the client version, room deadline and elapsed session seconds for traffic analysis.
 
 ## Runtime
 

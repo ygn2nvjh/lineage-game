@@ -1,6 +1,6 @@
 import {Game,createState,derive,distance} from '../core.mjs';
 import {ART_MOTION} from '../art-config.mjs';
-export const ONLINE={version:'online-0.2.0',maxPlayers:4,roomTtl:20*60*1000,reconnectMs:45000,combatPoll:500,lobbyPoll:2000,step:.05,maxCatchup:2};
+export const ONLINE={version:'online-0.2.0',wsVersion:'online-0.3.1-ws',maxPlayers:4,roomTtl:20*60*1000,reconnectMs:45000,combatPoll:500,lobbyPoll:2000,step:.05,maxCatchup:2};
 const largeDungeonSeeds=new WeakSet();
 export function enableLargeDungeon(seed){largeDungeonSeeds.add(seed);}
 const usesLargeDungeon=seed=>!!globalThis.LINEAGE_WEBSOCKET||largeDungeonSeeds.has(seed);
@@ -23,6 +23,13 @@ export function newRoom(seed,owner,id,player,code,capacity,now){
 }
 // All combat methods and formulas come from Game; only party orchestration lives here.
 export function tickRoom(room,seed,now){
+ if(room.status==='cleared'){
+  let remaining=Math.min(ONLINE.maxCatchup,Math.max(0,((Math.min(now,room.closeAt||now))-room.lastAt)/1000));room.lastAt=now;
+  const c=dungeonCatalog(seed);
+  for(const member of room.members){const g=restoreGame(c,member.game,room.enemies);g.autoAttack=false;g.target=null;g.playerAnimation=null;g.swing=0;if(now-member.lastSeen>ONLINE.reconnectMs)g.goal=null;
+   let dtLeft=remaining;while(dtLeft>1e-6){const dt=Math.min(ONLINE.step,dtLeft);dtLeft-=dt;if(!g.fallen)g.update(dt,{x:0,y:0},{enemies:false,travel:false});}member.game=saveGame(g);
+  }return;
+ }
  if(room.status!=='combat'){room.lastAt=now;return;}
  const c=dungeonCatalog(seed),games=room.members.map(m=>restoreGame(c,m.game,room.enemies));
  const random=()=>{room.rng=(Math.imul(room.rng,1664525)+1013904223)>>>0;return room.rng/4294967296;};for(const g of games)g.random=random;
