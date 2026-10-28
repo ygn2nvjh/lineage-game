@@ -1,4 +1,6 @@
-# Cloudflare WebSocket test
+# Cloudflare WebSocket deployment
+
+The current default entry is the [unified cloud adventure](unified-adventure.md) at `/play`. The text below documents the preserved `/dungeon` prototype. Both deploy together; the new adventure adds the ADVENTURE SQLite binding with migration v2.
 
 This is a separate multiplayer test deployment. The existing solo game and HTTP guild site are preserved. A new domain uses a separate browser guest identity; existing characters are not automatically migrated. Google/Apple account linking is not enabled.
 

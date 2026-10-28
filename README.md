@@ -33,3 +33,7 @@
 Cloudflare Workers + SQLite Durable Object test setup: [docs/cloudflare.md](docs/cloudflare.md). Use `npm ci` then `npm run build:cloudflare`. This separate deployment preserves existing solo/browser characters.
 
 For an existing Worker newly connected to GitHub, push a repository change after connecting to trigger its first build. Cloudflare documents build history under the bottom of the Worker's Deployments tab; it is not a separate top-level Builds tab. See the [official build setup](https://developers.cloudflare.com/workers/ci-cd/builds/).
+
+## Unified cloud character
+
+The default Workers URL and `/play` now share a single cloud role across village facilities, solo combat and party dungeons. See [the unified adventure guide](docs/unified-adventure.md). Guests can back up a private recovery access code; Google/Apple binding is not enabled. The old `/dungeon` prototype is preserved.
