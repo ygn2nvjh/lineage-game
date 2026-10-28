@@ -57,7 +57,9 @@ function onlineAccept(){
   }else{onlineRoomCode=null;onlineGame=new Game(LINEAGE_SEED,p);}
   onlineGame.target=onlineTarget;onlineHud();
  }
- if(onlinePanel==='guild'||onlinePanel==='stats')onlineOpen(onlinePanel);
+ // Keep the join form DOM alive during background sync so mobile keyboards and drafts survive.
+ const keepJoinForm=onlinePanel==='guild'&&!room&&online$('onlineCode');
+ if((onlinePanel==='guild'&&!keepJoinForm)||onlinePanel==='stats')onlineOpen(onlinePanel);
  if(room&&['cleared','failed'].includes(room.status)&&onlinePanel!=='guild')onlineOpen('guild');
 }
 function onlineHud(){const p=onlineGame.p,d=onlineGame.derived,room=onlineState.room;online$('hud').hidden=false;online$('controls').hidden=false;online$('journey').hidden=false;online$('playerName').textContent=`Lv.${p.level} ${p.name}・雲端訪客`;
