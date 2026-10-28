@@ -11,3 +11,15 @@
 - UI: src/art-review.mjs，原尺寸男女並列、場景切換與原版2倍比較。
 
 本輪沒有覆寫assets/art正式人物圖集、ActorArt、任何動畫時序／戰鬥規則／Cloudflare binding／訪客key。檢視頁採用相同ActorArt顯示原版人物與三骷髏，獨立新站姿繪製新素材。不能把檢視頁的站姿切換當成完整動畫或已進正式遊戲。
+
+## 第二稿：普通骷髏＋地面（待驗收）
+
+主入口/art-review.html更新為第二稿；第一稿原頁保留/art-review-v1.html，亦可在主頁按「地景與骷髏」固定人物/視角切換前後。新增普通骨白彎刀骷髏站姿，保留指定彎刀；骨骼以較完整面積表達、清楚深色輪廓。地面使用grass/dirt/flagstone/moss四材質atlas，保留大片裸土行走區、低對比局部石路與建物接地陰影。
+
+男女人物素材、史巴托、骷髏鬥士、建物圖均未替換；其他怪物尚未統一。不更改正式/play的atlas、動畫、core、連線、存檔或binding。
+
+來源：assets/art-review/sources/{skeleton-v2,terrain-v2}.webp（無損來源），原生成PNG另留開發工作區。runtime同名WebP、skeleton-v2.json為透明邊界。prepare-art-review-v2.py負責格式打包。本輪新增runtime約698KB，只有檢視頁首次載入，不新增持續連線。
+
+同前量測口徑：土路tile128亮度P90-P10約34.7、相鄰亮度差10.6；草地44.0/13.9，較前稿土路取樣幾乎純色更有材質，低於原墓園圖塊68.9/22.9。取樣範圍不同，只供參考。新骷髏是輪廓/骨骼色塊試稿，局部亮度變化未全面降低，不宣稱所有數據改善或已驗收。
+
+驗證：390/960px瀏覽器切換、第一稿原頁保留、無橫向overflow、零pageerror、零WebSocket，21核心與公開獨立build通過。

@@ -8,9 +8,9 @@
 
 本次保留既有移動／攻擊，只減少冒險紀錄重送、增加訪客身分備援與移動異常診斷。受控單人世界同步資料量減少約36%，不是免費容量增加36%。[測試條件與理論估算](docs/unified-adventure.md)。下方保留本機版與歷史版本說明，雲端版需連線並由伺服器保存人物與結算獎勵。
 
-## 靜態美術第一組（待驗收）
+## 靜態美術第二稿（待驗收）
 
-[男女角色與墓園對照頁](https://lineage-game.7gj5vc64m7.workers.dev/art-review.html)：可切換角色、原版與新站姿、正側背面、地面細節。正式遊戲動畫與人物素材尚未替換。[製作說明](docs/art-review.md)。
+[男女角色、骷髏與墓園對照頁](https://lineage-game.7gj5vc64m7.workers.dev/art-review.html)：第二稿調整普通骷髏與地面材質，可切換修改前後、角色與視角；[第一稿](https://lineage-game.7gj5vc64m7.workers.dev/art-review-v1.html)保留。正式遊戲動畫與人物素材尚未替換。[製作說明](docs/art-review.md)。
 
 ## 開發與建置
 
