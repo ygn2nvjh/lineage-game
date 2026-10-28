@@ -31,7 +31,7 @@ export class DungeonHub {
  if(changed)this.revision++;return {data:this.view(owner,b.since||0),save,changed};
  }
  town(player){const p=structuredClone(player);p.mapId='town';Object.assign(p,this.env.SEED.maps.find(m=>m.id==='town').spawn);p.hp=Math.max(1,p.hp);validatePlayer(p,this.env.SEED);return p;}
- advance(room,now){const settled=room.settled;tickRoom(room,this.env.SEED,now);if(room.settled&&!settled){for(const m of room.members)this.users[m.owner].p=this.town(m.game.p);room.closeAt=now+60000;this.needsSettlement=true;}}
+ advance(room,now){const settled=room.settled;tickRoom(room,this.env.SEED,now);if(room.settled&&!settled){for(const m of room.members)this.users[m.owner].p=this.town(m.game.p);room.closeAt=now+60000;room.expiresAt=Math.max(room.expiresAt,room.closeAt);this.needsSettlement=true;}}
  expire(now){for(const room of Object.values(this.rooms))if(now>=Math.min(room.expiresAt,room.closeAt||Infinity)){for(const m of room.members){const u=this.users[m.owner];if(u?.room===room.code){u.p=this.town(m.game.p);u.room=null;}}delete this.rooms[room.code];this.needsSettlement=true;}}
  view(owner,since=0){const u=this.users[owner],room=this.rooms[u?.room],m=room?.members.find(m=>m.owner===owner);return {version:'online-0.3.0-ws',id:u?.id,player:m?.game.p||u?.p||null,room:room?{...roomView(room,owner,Date.now(),since),closeAt:room.closeAt||null}:null,revision:this.revision,sequence:m?.lastSeq||0,limits:ONLINE};}
  send(ws,v){try{ws.send(JSON.stringify(v));}catch{}}
