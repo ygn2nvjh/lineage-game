@@ -1,4 +1,4 @@
-import {clearLine,planRoute,riverBlocked} from './navigation.mjs';
+import {clearLine,planRoute,riverBlocked,movePosition} from './navigation.mjs';
 import {ART_MOTION} from './art-config.mjs';
 import {STAT_KEYS, SLOTS, compatibleSlots, indexCatalog} from './catalog.mjs';
 
@@ -117,14 +117,12 @@ export class Game {
     return riverBlocked(this.map,x,y,r)||x<r||y<r||x>this.map.width-r||y>this.map.height-r||this.map.obstacles.some(o=>x>o.x-r&&x<o.x+o.width+r&&y>o.y-r&&y<o.y+o.height+r);
   }
   move(entity,dx,dy,speed,dt) {
-    const d=Math.hypot(dx,dy);if(d<0.001)return false;
-    const vx=dx/d*speed*dt,vy=dy/d*speed*dt,ox=entity.x,oy=entity.y;
     const radius=entity===this.p?this.rules.movement.playerRadius:this.rules.movement.enemyRadius;
-    if(!this.blocked(entity.x+vx,entity.y,radius))entity.x+=vx;
-    if(!this.blocked(entity.x,entity.y+vy,radius))entity.y+=vy;
-    if(entity===this.p&&Math.hypot(entity.x-ox,entity.y-oy)>.01)this.face=Math.atan2(dy,dx);
-    return Math.hypot(entity.x-ox,entity.y-oy)>.01;
+    const moved=movePosition(entity,dx,dy,speed,dt,(x,y,r)=>this.blocked(x,y,r),radius);
+    if(entity===this.p&&moved)this.face=Math.atan2(dy,dx);
+    return moved;
   }
+
   navigate(entity,to,speed,dt){
     const radius=entity===this.p?this.rules.movement.playerRadius:this.rules.movement.enemyRadius,blocked=(x,y,r)=>this.blocked(x,y,r);
     let target=to;

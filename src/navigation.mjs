@@ -1,3 +1,11 @@
+// Shared collision movement for authoritative Game and visual input replay.
+export function movePosition(entity,dx,dy,speed,dt,blocked,radius){
+ const d=Math.hypot(dx,dy);if(d<.001||dt<=0)return false;
+ const vx=dx/d*speed*dt,vy=dy/d*speed*dt,ox=entity.x,oy=entity.y;
+ if(!blocked(entity.x+vx,entity.y,radius))entity.x+=vx;
+ if(!blocked(entity.x,entity.y+vy,radius))entity.y+=vy;
+ return Math.hypot(entity.x-ox,entity.y-oy)>.01;
+}
 export function riverBlocked(map,x,y,radius=0){
  const r=map.river;if(!r)return false;const b=r.bridge;
  const touches=x+radius>r.x&&x-radius<r.x+r.width&&y+radius>r.y&&y-radius<r.y+r.height;

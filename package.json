@@ -14,7 +14,7 @@
     "dev:cloudflare": "npm run build:cloudflare && wrangler dev --ip 127.0.0.1",
     "deploy:cloudflare": "npm run build:cloudflare && wrangler deploy",
     "test:cloudflare": "node --test --test-isolation=none tests/cloudflare-hub.test.mjs",
-    "test:adventure": "node --test --test-isolation=none tests/adventure-hub.test.mjs"
+    "test:adventure": "node --test --test-isolation=none tests/adventure-hub.test.mjs tests/solo-movement.test.mjs tests/actor-motion.test.mjs"
   },
   "devDependencies": {
     "wrangler": "4.154.0"
