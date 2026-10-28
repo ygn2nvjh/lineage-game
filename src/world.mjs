@@ -5,7 +5,7 @@ const dirFromAngle=a=>Math.abs(Math.cos(a))>Math.abs(Math.sin(a))?(Math.cos(a)>0
 
 export class World {
   constructor(canvas,stage,onPoint,art,worldArt){
-    this.canvas=canvas;this.stage=stage;this.ctx=canvas.getContext('2d');this.camera={x:0,y:0};this.particles=[];this.art=art;this.worldArt=worldArt;this.motion=new WeakMap();this.drag={x:0,y:0};this.gesture=null;
+    this.canvas=canvas;this.stage=stage;this.ctx=canvas.getContext('2d');this.camera={x:0,y:0};this.particles=[];this.art=art;this.worldArt=worldArt;this.motion=new Map();this.drag={x:0,y:0};this.gesture=null;
     this.resize=()=>{
       const b=stage.getBoundingClientRect(),area=document.getElementById('worldArea').getBoundingClientRect();
       const size=Math.max(1,Math.floor(Math.min(area.width,area.height)));
@@ -60,9 +60,12 @@ export class World {
     r(16,-18,3,30,'#836044');r(13,-22,9,9,'#a9b2a3');if(e.hurt>0)r(-18,-36,36,54,'#fff2c977');
     ctx.restore();
   }
-  actorState(entity,source,dir){
-    let m=this.motion.get(entity);if(!m){m={x:entity.x,y:entity.y,phase:0};this.motion.set(entity,m);}
-    const moved=Math.hypot(entity.x-m.x,entity.y-m.y);if(moved>0&&moved<50)m.phase=(m.phase+moved/ART_MOTION.stride)%1;
+  actorState(entity,source,dir,key=entity,followMovement=false){
+    let m=this.motion.get(key);if(!m){m={x:entity.x,y:entity.y,phase:0};this.motion.set(key,m);}
+    const dx=entity.x-m.x,dy=entity.y-m.y,moved=Math.hypot(dx,dy);
+    // Network snapshots replace objects; stable actor keys keep distance-based steps continuous.
+    if(followMovement&&source.moving){if(moved>.001&&moved<50)m.dir=dirFromAngle(Math.atan2(dy,dx));dir=m.dir||dir;}
+    if(moved>0&&moved<50)m.phase=(m.phase+moved/ART_MOTION.stride)%1;
     const moving=!!source.moving&&moved>.001;if(!moving)m.phase=0;m.x=entity.x;m.y=entity.y;
     const a=source.animation;
     return {x:entity.x,y:entity.y,dir,moving,walkPhase:m.phase,attack:Math.max(0,(a?.duration||0)-(a?.elapsed||0)),attackElapsed:a?.elapsed||0,duration:a?.duration,attackStyle:a?.style||'slash',side:a?.side||dir,hurt:source.hurt||0,hurtFacing:source.hurtFacing||dir,dead:!!source.dead,fall:source.fall||0};
@@ -110,11 +113,11 @@ export class World {
     const actors=[...(map.art==='twilight'?this.worldArt.objects(map).map(prop=>({y:prop.y,prop})):[]),...g.enemies.filter(e=>!e.dead||e.fall<3.9).map(e=>({y:e.y,e})),{y:p.y,player:true},...(g.party||[]).map(member=>({y:member.game.p.y,member}))].sort((a,b)=>a.y-b.y);
     const reveal=[p,...g.enemies.filter(e=>e.id===g.target&&!e.dead)];this.lastOccluded=[];
     for(const actor of actors){
-      if(actor.member){const m=actor.member,a=m.game.p,v=this.actorState(a,{moving:m.game.moving,animation:m.game.playerAnimation,hurt:m.game.hurt,hurtFacing:m.game.playerHurtFacing,dead:m.game.fallen||m.game.deathPending>0,fall:m.game.fallen?1:ART_MOTION.fall-(m.game.deathPending||0)},dirFromAngle(m.game.face||0));this.art.draw(ctx,v,m.sex);this.text(m.name+(m.connected?'':'・離線'),a.x,a.y-110,'#a4d9ef',11);continue;}
+      if(actor.member){const m=actor.member,a=m.game.p,v=this.actorState(a,{moving:m.game.moving,animation:m.game.playerAnimation,hurt:m.game.hurt,hurtFacing:m.game.playerHurtFacing,dead:m.game.fallen||m.game.deathPending>0,fall:m.game.fallen?1:ART_MOTION.fall-(m.game.deathPending||0)},dirFromAngle(m.game.face||0),map.id+':member:'+m.id);this.art.draw(ctx,v,m.sex);this.text(m.name+(m.connected?'':'・離線'),a.x,a.y-110,'#a4d9ef',11);continue;}
 
       if(actor.prop){const prop=actor.prop;if(prop.x+prop.width/2>=cam.x&&prop.x-prop.width/2<=cam.x+this.width&&prop.y>=cam.y&&prop.y-prop.height<=cam.y+this.height){this.worldArt.prop(ctx,prop,{reveal,occluded:this.lastOccluded});if(prop.name)this.text(prop.name,prop.x,prop.y-prop.height-8,'#e5d8ba',12);}continue;}
       if(actor.player){
-        const visual=this.actorState(p,{moving:g.moving,animation:g.playerAnimation,hurt:g.hurt,hurtFacing:g.playerHurtFacing,dead:g.deathPending>0,fall:g.deathPending>0?ART_MOTION.fall-g.deathPending:0},dirFromAngle(g.face));
+        const visual=this.actorState(p,{moving:g.moving,animation:g.playerAnimation,hurt:g.hurt,hurtFacing:g.playerHurtFacing,dead:g.deathPending>0,fall:g.deathPending>0?ART_MOTION.fall-g.deathPending:0},dirFromAngle(g.face),map.id+':player');
         this.art.draw(ctx,visual,p.sex);this.lastPlayerVisual=visual;
         if(!visual.dead)this.text(p.name,p.x,p.y-108,'#e8e4bc',11);continue;
       }
@@ -122,8 +125,7 @@ export class World {
       if(e.x<cam.x-80||e.x>cam.x+this.width+80||e.y<cam.y-80||e.y>cam.y+this.height+80)continue;
       if(g.target===e.id){ctx.strokeStyle='#f3d17c';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(e.x,e.y+12,m.sprite==='ogre'?30:21,10,0,0,Math.PI*2);ctx.stroke();}
       const appearance=g.index.monsterAppearances.get(m.appearanceId),kind=appearance?.id||m.sprite,boneArt=this.art.supports(kind),displayScale=ART_MOTION.scale*(appearance?.scale||1);
-      const visual=this.actorState(e,e,e.moving?dirFromAngle(Math.atan2(e.y-(this.previousEnemyY?.get(e)??e.y),e.x-(this.previousEnemyX?.get(e)??e.x))):dirFromAngle(Math.atan2(p.y-e.y,p.x-e.x)));
-      this.previousEnemyX??=new WeakMap();this.previousEnemyY??=new WeakMap();this.previousEnemyX.set(e,e.x);this.previousEnemyY.set(e,e.y);
+      const visual=this.actorState(e,e,dirFromAngle(Math.atan2(p.y-e.y,p.x-e.x)),map.id+':enemy:'+e.id,true);
       if(boneArt)this.art.draw(ctx,visual,kind,displayScale);
       else{ctx.save();ctx.translate(e.x,e.y);ctx.scale(1.55,1.55);const local={...e,x:0,y:0};if(m.sprite==='goblin'||m.sprite==='orc')this.drawGoblin(local,m,g);else drawActor(ctx,0,0,m.sprite,visual.dir,e.hurt,e.swing,e.moving,e.dead,g.clock,g.index.monsterAppearances.get(m.appearanceId));ctx.restore();}
       if(e.dead)continue;
