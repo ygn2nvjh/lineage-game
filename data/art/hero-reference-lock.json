@@ -1,0 +1,9 @@
+{
+  "id": "hero-static-reference-20261029-v1",
+  "source": "assets/art-review/characters.webp",
+  "sourceSha256": "b3688d80c31a42014036dd6d7711e6612a1893ca4eb849b427f67a6bfb3e85b4",
+  "referenceSha256": "4b3a9152aa9bdf4c91cdbc75a3a5f436ab78ccd8c9bb8fc4d2e51283022aaca8",
+  "partsSha256": "9a087409d2343b5042da914919b42db85e880ebc425419ba8668a49b28ff3154",
+  "metadataSha256": "19a05e94831fc9ec83734e7889ee9dfa18b6ef1d815279e94656e4720e29f3c5",
+  "rule": "Never advance this reference automatically to the latest animation. Any changed source, masks or normalization needs an explicit new revision."
+}

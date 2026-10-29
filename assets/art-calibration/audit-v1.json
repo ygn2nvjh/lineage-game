@@ -1,0 +1,143 @@
+{
+  "referenceId": "hero-static-reference-20261029-v1",
+  "referenceStatus": "fixed-reference-for-this-review",
+  "status": "technical-pass",
+  "artApproval": "pending-user-review",
+  "frameCount": 78,
+  "supportedActions": [
+    "idle",
+    "walk"
+  ],
+  "pendingActions": [
+    "attack",
+    "hurt",
+    "fall",
+    "settle"
+  ],
+  "errors": [],
+  "measurements": {
+    "male": {
+      "down": {
+        "reference": {
+          "width": 79,
+          "height": 112,
+          "headHeightEstimate": 26,
+          "torsoWidthEstimate": 35
+        },
+        "previous": {
+          "width": 69,
+          "height": 113,
+          "headHeightEstimate": 28,
+          "torsoWidthEstimate": 31
+        },
+        "candidateIdlePixelDifferences": 0,
+        "bodyMarks": "manual estimates, not automatic anatomical segmentation",
+        "partsScale": 1,
+        "provenance": "all candidate source parts from fixed reference, never newly generated armor"
+      },
+      "right": {
+        "reference": {
+          "width": 61,
+          "height": 112,
+          "headHeightEstimate": 26,
+          "torsoWidthEstimate": 25
+        },
+        "previous": {
+          "width": 53,
+          "height": 113,
+          "headHeightEstimate": 28,
+          "torsoWidthEstimate": 20
+        },
+        "candidateIdlePixelDifferences": 0,
+        "bodyMarks": "manual estimates, not automatic anatomical segmentation",
+        "partsScale": 1,
+        "provenance": "all candidate source parts from fixed reference, never newly generated armor"
+      },
+      "up": {
+        "reference": {
+          "width": 82,
+          "height": 112,
+          "headHeightEstimate": 26,
+          "torsoWidthEstimate": 38
+        },
+        "previous": {
+          "width": 84,
+          "height": 113,
+          "headHeightEstimate": 28,
+          "torsoWidthEstimate": 31
+        },
+        "candidateIdlePixelDifferences": 0,
+        "bodyMarks": "manual estimates, not automatic anatomical segmentation",
+        "partsScale": 1,
+        "provenance": "all candidate source parts from fixed reference, never newly generated armor"
+      }
+    },
+    "female": {
+      "down": {
+        "reference": {
+          "width": 83,
+          "height": 112,
+          "headHeightEstimate": 25,
+          "torsoWidthEstimate": 34
+        },
+        "previous": {
+          "width": 71,
+          "height": 113,
+          "headHeightEstimate": 28,
+          "torsoWidthEstimate": 28
+        },
+        "candidateIdlePixelDifferences": 0,
+        "bodyMarks": "manual estimates, not automatic anatomical segmentation",
+        "partsScale": 1,
+        "provenance": "all candidate source parts from fixed reference, never newly generated armor"
+      },
+      "right": {
+        "reference": {
+          "width": 68,
+          "height": 112,
+          "headHeightEstimate": 25,
+          "torsoWidthEstimate": 24
+        },
+        "previous": {
+          "width": 47,
+          "height": 113,
+          "headHeightEstimate": 25,
+          "torsoWidthEstimate": 22
+        },
+        "candidateIdlePixelDifferences": 0,
+        "bodyMarks": "manual estimates, not automatic anatomical segmentation",
+        "partsScale": 1,
+        "provenance": "all candidate source parts from fixed reference, never newly generated armor"
+      },
+      "up": {
+        "reference": {
+          "width": 82,
+          "height": 112,
+          "headHeightEstimate": 26,
+          "torsoWidthEstimate": 37
+        },
+        "previous": {
+          "width": 81,
+          "height": 113,
+          "headHeightEstimate": 27,
+          "torsoWidthEstimate": 28
+        },
+        "candidateIdlePixelDifferences": 0,
+        "bodyMarks": "manual estimates, not automatic anatomical segmentation",
+        "partsScale": 1,
+        "provenance": "all candidate source parts from fixed reference, never newly generated armor"
+      }
+    }
+  },
+  "hashes": {
+    "data/art/hero-reference-lock.json": "c0acb2469f9b72b310897a5759ee349aec3ec7848e7881233393995467ea5bd0",
+    "assets/art-calibration/reference-v1.json": "19a05e94831fc9ec83734e7889ee9dfa18b6ef1d815279e94656e4720e29f3c5",
+    "assets/art-calibration/reference-v1.webp": "4b3a9152aa9bdf4c91cdbc75a3a5f436ab78ccd8c9bb8fc4d2e51283022aaca8",
+    "assets/art-calibration/reference-parts-v1.webp": "9a087409d2343b5042da914919b42db85e880ebc425419ba8668a49b28ff3154",
+    "assets/art-calibration/candidate-v1.json": "280d09cbcb58958c5ac52cc71714b26f2fd8beb1b8f633d14700a01a0c5bd7c2",
+    "assets/art-calibration/candidate-v1.webp": "700c8ceb3ab132ab031c97dff3ee4b837b2e1b0c71638db7ac6d42596bfe22cc",
+    "assets/art-play/manifest-v7.json": "5fdd4ad6bbba3ca002a9676ae6bac0d20eaca31bc74e0cc0f5187a5fa4958f76",
+    "assets/art-play/male-v7.webp": "670c3e829cad7aa50811f3cd729659eedb5a018b3b077f071ed1c1d378eaca0d",
+    "assets/art-play/female-v7.webp": "5440a7e1b611e0b5142dcd7330d2e204675d8c3da34eebeaa5ce7398aca9a8c5"
+  }
+}

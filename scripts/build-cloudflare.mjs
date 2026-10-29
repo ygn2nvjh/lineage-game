@@ -8,3 +8,4 @@ for(const dir of ['art','world']){const manifest=JSON.parse(await readFile(new U
 console.log('Built self-hosted WebSocket dungeon and runtime assets (no source PNGs).');
 await import('./build-art-review.mjs');
 await import('./build-art-play.mjs');
+await import('./build-hero-calibration.mjs');

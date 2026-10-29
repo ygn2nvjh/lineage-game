@@ -16,6 +16,10 @@
 
 [可移動與攻擊的美術試場](https://lineage-game.7gj5vc64m7.workers.dev/art-play.html?v=7)。v0.7增加人物局部材質修正、前版切換、頭/軀幹標記與獨立碰撞圈；[統一製作檢查流程](docs/art-production.md)與素材檢查報告。原v0.6新增[五角同場對照](https://lineage-game.7gj5vc64m7.workers.dev/art-play.html?view=compare&v=7)，可比較並排/交錯/近距離與四方向、陰影、定位差值；保留已確認的男角垂劍與原動作試場；保留單武器、交替步行與交戰站距；女角側背髮長一致、骷髏保留破短褲；可切男女、搖桿／拖動／點地移動、攻擊、治療、半速。此頁為本機試場，使用正式核心但不讀寫雲端角色。[說明](docs/art-play.md)。
 
+## 人物固定母版校準 v0.8（待驗收）
+
+[開啟母版／動態／候選校準頁](https://lineage-game.7gj5vc64m7.workers.dev/art-calibration.html?v=8)。男女三視圖、逐格步行、部位框、50%疊圖與可下載PNG；候選直接沿用原靜態稿像素，保留鎧甲、腿甲與靴型。固定母版指紋不自動追隨最新版。此輪候選只含站姿/步行，攻擊等明列未完成，原試場與正式遊戲保留。[流程與驗證](docs/art-calibration.md)。
+
 ## 開發與建置
 
 需要 Node.js 24；執行 `npm test` 驗證核心規則，`npm run build` 建立 dist/index.html。可用 `npm start` 在本機開啟遊戲。建置後的 HTML 包含執行素材，無須外部遊戲服務。

@@ -1,0 +1,685 @@
+{
+  "id": "hero-static-reference-20261029-v1",
+  "source": "assets/art-review/characters.webp",
+  "sourceSha256": "b3688d80c31a42014036dd6d7711e6612a1893ca4eb849b427f67a6bfb3e85b4",
+  "normalization": "one uniform height normalization per original view, 112 source pixels; right mirrors the original left view; no independently fitted body parts",
+  "status": "fixed-reference-for-this-review",
+  "frames": {
+    "male": {
+      "idle:down": {
+        "x": 0,
+        "y": 0,
+        "w": 160,
+        "h": 160,
+        "dx": -80,
+        "dy": -148,
+        "sourceAnchor": 52,
+        "sourceOffset": [
+          28,
+          37
+        ]
+      },
+      "idle:right": {
+        "x": 160,
+        "y": 0,
+        "w": 160,
+        "h": 160,
+        "dx": -80,
+        "dy": -148,
+        "sourceAnchor": 18,
+        "sourceOffset": [
+          62,
+          37
+        ]
+      },
+      "idle:up": {
+        "x": 320,
+        "y": 0,
+        "w": 160,
+        "h": 160,
+        "dx": -80,
+        "dy": -148,
+        "sourceAnchor": 28,
+        "sourceOffset": [
+          52,
+          37
+        ]
+      }
+    },
+    "female": {
+      "idle:down": {
+        "x": 0,
+        "y": 160,
+        "w": 160,
+        "h": 160,
+        "dx": -80,
+        "dy": -148,
+        "sourceAnchor": 56,
+        "sourceOffset": [
+          24,
+          37
+        ]
+      },
+      "idle:right": {
+        "x": 160,
+        "y": 160,
+        "w": 160,
+        "h": 160,
+        "dx": -80,
+        "dy": -148,
+        "sourceAnchor": 20,
+        "sourceOffset": [
+          60,
+          37
+        ]
+      },
+      "idle:up": {
+        "x": 320,
+        "y": 160,
+        "w": 160,
+        "h": 160,
+        "dx": -80,
+        "dy": -148,
+        "sourceAnchor": 26,
+        "sourceOffset": [
+          54,
+          37
+        ]
+      }
+    }
+  },
+  "parts": {
+    "male": {
+      "down": {
+        "upper": {
+          "x": 0,
+          "y": 0,
+          "w": 79,
+          "h": 112,
+          "anchor": 52,
+          "hip": [
+            52,
+            0
+          ],
+          "knee": [
+            7.0,
+            86
+          ],
+          "sourcePixelCount": 2938
+        },
+        "far": {
+          "x": 160,
+          "y": 0,
+          "w": 79,
+          "h": 112,
+          "anchor": 52,
+          "hip": [
+            39.0,
+            77
+          ],
+          "knee": [
+            40.0,
+            86
+          ],
+          "sourcePixelCount": 470
+        },
+        "near": {
+          "x": 320,
+          "y": 0,
+          "w": 79,
+          "h": 112,
+          "anchor": 52,
+          "hip": [
+            63.0,
+            77
+          ],
+          "knee": [
+            65.0,
+            86
+          ],
+          "sourcePixelCount": 436
+        }
+      },
+      "right": {
+        "upper": {
+          "x": 0,
+          "y": 160,
+          "w": 61,
+          "h": 112,
+          "anchor": 18,
+          "hip": [
+            18,
+            0
+          ],
+          "knee": [
+            51.0,
+            86
+          ],
+          "sourcePixelCount": 2113
+        },
+        "far": {
+          "x": 160,
+          "y": 160,
+          "w": 61,
+          "h": 112,
+          "anchor": 18,
+          "hip": [
+            11.0,
+            79
+          ],
+          "knee": [
+            10.5,
+            86
+          ],
+          "sourcePixelCount": 334
+        },
+        "near": {
+          "x": 320,
+          "y": 160,
+          "w": 61,
+          "h": 112,
+          "anchor": 18,
+          "hip": [
+            23.0,
+            78
+          ],
+          "knee": [
+            22.5,
+            86
+          ],
+          "sourcePixelCount": 496
+        }
+      },
+      "up": {
+        "upper": {
+          "x": 0,
+          "y": 320,
+          "w": 82,
+          "h": 112,
+          "anchor": 28,
+          "hip": [
+            28,
+            0
+          ],
+          "knee": [
+            69.5,
+            86
+          ],
+          "sourcePixelCount": 3071
+        },
+        "far": {
+          "x": 160,
+          "y": 320,
+          "w": 82,
+          "h": 112,
+          "anchor": 28,
+          "hip": [
+            15.0,
+            77
+          ],
+          "knee": [
+            13.0,
+            86
+          ],
+          "sourcePixelCount": 456
+        },
+        "near": {
+          "x": 320,
+          "y": 320,
+          "w": 82,
+          "h": 112,
+          "anchor": 28,
+          "hip": [
+            40.5,
+            77
+          ],
+          "knee": [
+            42.0,
+            86
+          ],
+          "sourcePixelCount": 454
+        }
+      }
+    },
+    "female": {
+      "down": {
+        "upper": {
+          "x": 0,
+          "y": 480,
+          "w": 83,
+          "h": 112,
+          "anchor": 56,
+          "hip": [
+            56,
+            0
+          ],
+          "knee": [
+            7.0,
+            84
+          ],
+          "sourcePixelCount": 2707
+        },
+        "far": {
+          "x": 160,
+          "y": 480,
+          "w": 83,
+          "h": 112,
+          "anchor": 56,
+          "hip": [
+            42.5,
+            69
+          ],
+          "knee": [
+            44.0,
+            84
+          ],
+          "sourcePixelCount": 553
+        },
+        "near": {
+          "x": 320,
+          "y": 480,
+          "w": 83,
+          "h": 112,
+          "anchor": 56,
+          "hip": [
+            64.0,
+            69
+          ],
+          "knee": [
+            68.0,
+            84
+          ],
+          "sourcePixelCount": 543
+        }
+      },
+      "right": {
+        "upper": {
+          "x": 0,
+          "y": 640,
+          "w": 68,
+          "h": 112,
+          "anchor": 20,
+          "hip": [
+            20,
+            0
+          ],
+          "knee": [
+            59.0,
+            84
+          ],
+          "sourcePixelCount": 2273
+        },
+        "far": {
+          "x": 160,
+          "y": 640,
+          "w": 68,
+          "h": 112,
+          "anchor": 20,
+          "hip": [
+            12.0,
+            76
+          ],
+          "knee": [
+            11.0,
+            84
+          ],
+          "sourcePixelCount": 409
+        },
+        "near": {
+          "x": 320,
+          "y": 640,
+          "w": 68,
+          "h": 112,
+          "anchor": 20,
+          "hip": [
+            25.0,
+            75
+          ],
+          "knee": [
+            24.5,
+            84
+          ],
+          "sourcePixelCount": 551
+        }
+      },
+      "up": {
+        "upper": {
+          "x": 0,
+          "y": 800,
+          "w": 82,
+          "h": 112,
+          "anchor": 26,
+          "hip": [
+            26,
+            0
+          ],
+          "knee": [
+            71.5,
+            84
+          ],
+          "sourcePixelCount": 2940
+        },
+        "far": {
+          "x": 160,
+          "y": 800,
+          "w": 82,
+          "h": 112,
+          "anchor": 26,
+          "hip": [
+            16.0,
+            74
+          ],
+          "knee": [
+            13.0,
+            84
+          ],
+          "sourcePixelCount": 473
+        },
+        "near": {
+          "x": 320,
+          "y": 800,
+          "w": 82,
+          "h": 112,
+          "anchor": 26,
+          "hip": [
+            37.0,
+            74
+          ],
+          "knee": [
+            38.5,
+            84
+          ],
+          "sourcePixelCount": 472
+        }
+      }
+    }
+  },
+  "records": {
+    "male": {
+      "down": {
+        "sourceCrop": [
+          110,
+          19,
+          458,
+          511
+        ],
+        "mirrored": false,
+        "sourceScale": 0.22764227642276422,
+        "normalizedSize": [
+          79,
+          112
+        ],
+        "sourceAnchor": 52,
+        "marks": {
+          "head": [
+            37,
+            0,
+            24,
+            26
+          ],
+          "torso": [
+            32,
+            27,
+            35,
+            39
+          ],
+          "thigh": [
+            58,
+            82,
+            12,
+            1
+          ],
+          "shin": [
+            62,
+            93,
+            10,
+            1
+          ],
+          "boot": [
+            65,
+            105,
+            12,
+            1
+          ]
+        }
+      },
+      "right": {
+        "sourceCrop": [
+          607,
+          19,
+          876,
+          512
+        ],
+        "mirrored": true,
+        "sourceScale": 0.22718052738336714,
+        "normalizedSize": [
+          61,
+          112
+        ],
+        "sourceAnchor": 18,
+        "marks": {
+          "head": [
+            16,
+            0,
+            25,
+            26
+          ],
+          "torso": [
+            10,
+            27,
+            25,
+            40
+          ],
+          "thigh": [
+            18,
+            81,
+            12,
+            1
+          ],
+          "shin": [
+            18,
+            94,
+            9,
+            1
+          ],
+          "boot": [
+            17,
+            110,
+            23,
+            1
+          ]
+        }
+      },
+      "up": {
+        "sourceCrop": [
+          1066,
+          18,
+          1425,
+          508
+        ],
+        "mirrored": false,
+        "sourceScale": 0.22857142857142856,
+        "normalizedSize": [
+          82,
+          112
+        ],
+        "sourceAnchor": 28,
+        "marks": {
+          "head": [
+            15,
+            0,
+            25,
+            26
+          ],
+          "torso": [
+            8,
+            27,
+            38,
+            40
+          ],
+          "thigh": [
+            35,
+            82,
+            14,
+            1
+          ],
+          "shin": [
+            40,
+            94,
+            9,
+            1
+          ],
+          "boot": [
+            40,
+            105,
+            15,
+            1
+          ]
+        }
+      }
+    },
+    "female": {
+      "down": {
+        "sourceCrop": [
+          104,
+          521,
+          458,
+          1001
+        ],
+        "mirrored": false,
+        "sourceScale": 0.23333333333333334,
+        "normalizedSize": [
+          83,
+          112
+        ],
+        "sourceAnchor": 56,
+        "marks": {
+          "head": [
+            38,
+            0,
+            27,
+            25
+          ],
+          "torso": [
+            34,
+            27,
+            34,
+            38
+          ],
+          "thigh": [
+            59,
+            76,
+            13,
+            1
+          ],
+          "shin": [
+            67,
+            92,
+            9,
+            1
+          ],
+          "boot": [
+            70,
+            105,
+            12,
+            1
+          ]
+        }
+      },
+      "right": {
+        "sourceCrop": [
+          597,
+          524,
+          886,
+          1000
+        ],
+        "mirrored": true,
+        "sourceScale": 0.23529411764705882,
+        "normalizedSize": [
+          68,
+          112
+        ],
+        "sourceAnchor": 20,
+        "marks": {
+          "head": [
+            20,
+            0,
+            23,
+            25
+          ],
+          "torso": [
+            14,
+            26,
+            24,
+            38
+          ],
+          "thigh": [
+            20,
+            79,
+            12,
+            1
+          ],
+          "shin": [
+            21,
+            94,
+            10,
+            1
+          ],
+          "boot": [
+            20,
+            110,
+            24,
+            1
+          ]
+        }
+      },
+      "up": {
+        "sourceCrop": [
+          1082,
+          521,
+          1432,
+          999
+        ],
+        "mirrored": false,
+        "sourceScale": 0.23430962343096234,
+        "normalizedSize": [
+          82,
+          112
+        ],
+        "sourceAnchor": 26,
+        "marks": {
+          "head": [
+            14,
+            0,
+            26,
+            26
+          ],
+          "torso": [
+            9,
+            28,
+            37,
+            38
+          ],
+          "thigh": [
+            33,
+            79,
+            12,
+            1
+          ],
+          "shin": [
+            37,
+            94,
+            10,
+            1
+          ],
+          "boot": [
+            38,
+            105,
+            14,
+            1
+          ]
+        }
+      }
+    }
+  }
+}
