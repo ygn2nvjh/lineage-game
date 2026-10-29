@@ -1,6 +1,8 @@
+import {setupRightWalkReview} from './hero-right-walk.mjs';
 // Review fixed source identity before approving any replacement animation.
 const data=globalThis.HERO_CALIBRATION,$=id=>document.getElementById(id),state={kind:'male',dir:'down',action:'idle',playing:true,phase:0,guides:false,overlay:false,zoom:false};
 const images={};await Promise.all(Object.entries(data.images).map(async([key,url])=>{const im=new Image();im.src=url;await im.decode();images[key]=im;}));
+setupRightWalkReview({reference:data.reference,image:images.parts,referenceImage:images.reference,motion:data.motion,config:data.rightWalk,audit:data.rightAudit});
 const u=data.motion.height*data.motion.scale/112;
 function source(which,key){
  if(which==='reference')return {image:images.reference,f:data.reference.frames[state.kind]['idle:'+state.dir],offset:0};

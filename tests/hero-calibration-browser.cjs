@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),{chromium}=require('playwright');
  for(const viewport of [{width:390,height:844},{width:960,height:900}]){
   const p=await b.newPage({viewport,isMobile:viewport.width<500,hasTouch:true,acceptDownloads:true}),errors=[],bad=[];let sockets=0;
   p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)bad.push(r.url());});p.on('websocket',()=>sockets++);
-  await p.goto(process.env.HERO_CALIBRATION_URL||'http://127.0.0.1:8802/art-calibration.html');await p.waitForFunction(()=>window.heroCalibration);
+  await p.goto(process.env.HERO_CALIBRATION_URL||'http://127.0.0.1:8802/art-calibration.html');await p.waitForFunction(()=>window.heroCalibration);await p.locator('#legacyCalibration > summary').click();
   const inspect=()=>p.evaluate(()=>heroCalibration.inspect());
   for(const kind of ['male','female']){await p.locator('[data-kind='+kind+']').click();
    for(const dir of ['down','right','up']){await p.locator('[data-dir='+dir+']').click();assert.equal((await inspect()).referenceDifference,0);

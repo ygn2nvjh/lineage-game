@@ -1,0 +1,50 @@
+{
+  "id": "hero-right-walk-v1",
+  "status": "technical-pass",
+  "artApproval": "pending-user-review",
+  "rightViewOnly": true,
+  "keyPoses": [
+    "近腳接觸",
+    "近腳支撐・遠腳經過",
+    "遠腳接觸",
+    "遠腳支撐・近腳經過"
+  ],
+  "model": "planted world contact -> fixed two-bone solution -> flat boot; same immutable source pieces",
+  "roles": {
+    "male": {
+      "samples": 4000,
+      "maxSupportDriftSourcePixels": 2.842170943040401e-14,
+      "maxJointLengthError": 1.7763568394002505e-14,
+      "maxReachError": 0,
+      "referenceSource": "hero-static-reference-20261029-v1",
+      "partScale": 1,
+      "weaponContainingUpperCopies": 1
+    },
+    "female": {
+      "samples": 4000,
+      "maxSupportDriftSourcePixels": 2.842170943040401e-14,
+      "maxJointLengthError": 1.7763568394002505e-14,
+      "maxReachError": 0,
+      "referenceSource": "hero-static-reference-20261029-v1",
+      "partScale": 1,
+      "weaponContainingUpperCopies": 1
+    }
+  },
+  "rasterVerification": "separate browser check; mathematical drift is not a claim of zero display-pixel jitter",
+  "pending": [
+    "other directions",
+    "attack",
+    "hurt",
+    "fall",
+    "settle"
+  ],
+  "errors": [],
+  "hashes": {
+    "data/art/right-walk-v1.json": "6b67a4a703f4984503e6062f1f4797328142a3b163e589be5168d240ffd5aca8",
+    "data/art/hero-reference-lock.json": "c0acb2469f9b72b310897a5759ee349aec3ec7848e7881233393995467ea5bd0",
+    "assets/art-calibration/reference-v1.json": "19a05e94831fc9ec83734e7889ee9dfa18b6ef1d815279e94656e4720e29f3c5",
+    "assets/art-calibration/reference-parts-v1.webp": "9a087409d2343b5042da914919b42db85e880ebc425419ba8668a49b28ff3154",
+    "src/hero-walk-motion.mjs": "5899b4361a9fb4e77702e637f4bd3978601993982eb85b93610814a88ab3f595",
+    "src/hero-right-walk.mjs": "298f9929a0f87427b17a6de85986ec2220cdc7b4a89995dfb20deda360faf302"
+  }
+}

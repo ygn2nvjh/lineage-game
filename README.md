@@ -20,6 +20,10 @@
 
 [開啟母版／動態／候選校準頁](https://lineage-game.7gj5vc64m7.workers.dev/art-calibration.html?v=8)。男女三視圖、逐格步行、部位框、50%疊圖與可下載PNG；候選直接沿用原靜態稿像素，保留鎧甲、腿甲與靴型。固定母版指紋不自動追隨最新版。此輪候選只含站姿/步行，攻擊等明列未完成，原試場與正式遊戲保留。[流程與驗證](docs/art-calibration.md)。
 
+## 右側步行四姿勢校準 v0.9（待美術驗收）
+
+[開啟右側步行與母版校準](https://lineage-game.7gj5vc64m7.workers.dev/art-calibration.html?v=9)：固定母版、近遠腿四姿勢、向前移動/支撐點/足跡、半速逐段與PNG。新步行先固定世界支撐腳，再求固定長度髖膝踝，不各自拉腿貼地、不換裝。數學與實際靴底像素兩份校準報告分開保存，其他方向與攻擊未擴充。[流程與限制](docs/right-walk-calibration.md)。原三視圖/v0.8、v0.7動作試場與正式遊戲保留。
+
 ## 開發與建置
 
 需要 Node.js 24；執行 `npm test` 驗證核心規則，`npm run build` 建立 dist/index.html。可用 `npm start` 在本機開啟遊戲。建置後的 HTML 包含執行素材，無須外部遊戲服務。

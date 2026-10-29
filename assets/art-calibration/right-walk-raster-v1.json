@@ -1,0 +1,89 @@
+{
+  "status": "sampled-browser-pass",
+  "scope": "planted boot sole samples in transparent rendered actor layer; diagnostic overlays disabled",
+  "artApproval": "pending-user-review",
+  "records": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kind": "male",
+      "legs": {
+        "near": {
+          "samples": 6,
+          "solePixelVariants": 1,
+          "maxWorldDrift": 0
+        },
+        "far": {
+          "samples": 6,
+          "solePixelVariants": 1,
+          "maxWorldDrift": 0
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kind": "female",
+      "legs": {
+        "near": {
+          "samples": 6,
+          "solePixelVariants": 1,
+          "maxWorldDrift": 0
+        },
+        "far": {
+          "samples": 6,
+          "solePixelVariants": 1,
+          "maxWorldDrift": 0
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 960,
+        "height": 900
+      },
+      "kind": "male",
+      "legs": {
+        "near": {
+          "samples": 6,
+          "solePixelVariants": 1,
+          "maxWorldDrift": 0
+        },
+        "far": {
+          "samples": 6,
+          "solePixelVariants": 1,
+          "maxWorldDrift": 0
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 960,
+        "height": 900
+      },
+      "kind": "female",
+      "legs": {
+        "near": {
+          "samples": 6,
+          "solePixelVariants": 1,
+          "maxWorldDrift": 0
+        },
+        "far": {
+          "samples": 6,
+          "solePixelVariants": 1,
+          "maxWorldDrift": 0
+        }
+      }
+    }
+  ],
+  "hashes": {
+    "data/art/right-walk-v1.json": "6b67a4a703f4984503e6062f1f4797328142a3b163e589be5168d240ffd5aca8",
+    "src/hero-walk-motion.mjs": "5899b4361a9fb4e77702e637f4bd3978601993982eb85b93610814a88ab3f595",
+    "src/hero-right-walk.mjs": "298f9929a0f87427b17a6de85986ec2220cdc7b4a89995dfb20deda360faf302",
+    "assets/art-calibration/reference-parts-v1.webp": "9a087409d2343b5042da914919b42db85e880ebc425419ba8668a49b28ff3154"
+  }
+}
