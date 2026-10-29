@@ -15,11 +15,22 @@ const assert=require('node:assert/strict'),{chromium}=require('playwright');
    if(layout!=='line')assert.deepEqual(s.comparison.drawOrder,s.comparison.actors.slice().sort((a,b)=>a.y-b.y).map(a=>a.kind),'shared World must sort the five sprites by foot depth');else assert.deepEqual([...s.comparison.drawOrder].sort(),s.comparison.actors.map(a=>a.kind).sort());
   }
   for(const dir of ['right','up','left','down']){await p.locator('[data-compare-dir='+dir+']').click();await p.waitForTimeout(60);assert.equal((await state()).comparison.dir,dir);}
-  for(const id of ['compareGuides','compareShadows','compareLabels']){await p.locator('#'+id).click();assert.equal(await p.locator('#'+id).getAttribute('aria-pressed'),'false');await p.locator('#'+id).click();}
+  for(const id of ['compareGuides','compareShadows','compareLabels','compareAnatomy','compareCollision']){const before=await p.locator('#'+id).getAttribute('aria-pressed');await p.locator('#'+id).click();assert.equal(await p.locator('#'+id).getAttribute('aria-pressed'),before==='true'?'false':'true');await p.locator('#'+id).click();}
+  assert.equal(s.comparison.variant,'current');
+  await p.locator('[data-compare-dir=right]').click();await p.waitForTimeout(60);
+  const revised=await p.locator('#playCanvas').screenshot();
+  await p.locator('#compareVersion').click();await p.waitForTimeout(60);assert.equal((await state()).comparison.variant,'previous');
+  const original=await p.locator('#playCanvas').screenshot();assert(!original.equals(revised),'local refinements must visibly change image pixels');
+  await p.locator('#compareVersion').click();await p.waitForTimeout(60);assert.equal((await state()).comparison.variant,'current');
+  await p.locator('#compareAnatomy').click();await p.locator('#compareCollision').click();
+  assert.equal((await state()).comparison.anatomy,true);assert.equal((await state()).comparison.collision,true);
+  assert.equal(await p.locator('#compareRows tr:first-child td').count(),5);
+  assert.equal(await p.locator('#compareRows tr:nth-child(4) td:nth-child(2)').innerText(),'待標記');
   assert.equal(legacyRequests,1);assert.equal((await state()).player.x,before.player.x);assert.equal((await state()).player.hp,before.player.hp);
   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-  await p.screenshot({path:'/tmp/art-compare-line-'+viewport.width+'.png',fullPage:true});
-  await p.locator('[data-compare-layout=close]').click();await p.waitForTimeout(60);await p.screenshot({path:'/tmp/art-compare-close-'+viewport.width+'.png',fullPage:true});
+  await p.locator('[data-compare-dir=right]').click();await p.waitForTimeout(100);
+  await p.screenshot({path:'/tmp/art-compare-v7-line-'+viewport.width+'.png',fullPage:true});
+  await p.locator('[data-compare-layout=close]').click();await p.waitForTimeout(60);await p.screenshot({path:'/tmp/art-compare-v7-close-'+viewport.width+'.png',fullPage:true});
   await p.locator('#compareBack').click();await p.waitForTimeout(80);assert.equal((await state()).mode,'local-art-sandbox');assert(await p.locator('#dock').isVisible());assert(await p.locator('#playHelp').isVisible());
   await p.keyboard.down('d');await p.waitForTimeout(300);await p.keyboard.up('d');assert((await state()).player.x>before.player.x+20,'original movement must still work after comparison');
   assert.equal(sockets,0);assert.deepEqual(errors,[]);assert.deepEqual(bad,[]);console.log(JSON.stringify({viewport,passed:'five actors, lazy old assets, fixed camera/scale, actual depth order, controls, no mutation, movement restored, no errors'}));await p.close();

@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "standard": "art-standard-1",
+  "status": "technical-pass",
+  "artApproval": "pending-human-review",
+  "actors": {
+    "female": {
+      "atlas": "female-v7.webp",
+      "sha256": "5440a7e1b611e0b5142dcd7330d2e204675d8c3da34eebeaa5ce7398aca9a8c5",
+      "profile": "hero",
+      "marks": "manual-estimate-v1",
+      "frameCount": 72,
+      "groundedFrameCount": 63,
+      "views": {
+        "down": {
+          "imageWidth": 71,
+          "imageHeight": 113,
+          "floor": 0,
+          "bodyHeightReference": 112,
+          "anatomyMethod": "manual-estimate-v1",
+          "headHeight": 28,
+          "torsoWidth": 28,
+          "headHeightRatio": 0.25,
+          "torsoWidthRatio": 0.25,
+          "headChangedFrames": [],
+          "appearance": {
+            "lumaP90MinusP10": 216.2,
+            "rgb32BinsAtLeast1Percent": 21,
+            "meanAdjacentLumaDifference": 43.18
+          }
+        },
+        "right": {
+          "imageWidth": 47,
+          "imageHeight": 113,
+          "floor": 0,
+          "bodyHeightReference": 112,
+          "anatomyMethod": "manual-estimate-v1",
+          "headHeight": 25,
+          "torsoWidth": 22,
+          "headHeightRatio": 0.22321428571428573,
+          "torsoWidthRatio": 0.19642857142857142,
+          "headChangedFrames": [],
+          "appearance": {
+            "lumaP90MinusP10": 212.52,
+            "rgb32BinsAtLeast1Percent": 21,
+            "meanAdjacentLumaDifference": 43.05
+          }
+        },
+        "up": {
+          "imageWidth": 81,
+          "imageHeight": 113,
+          "floor": 0,
+          "bodyHeightReference": 112,
+          "anatomyMethod": "manual-estimate-v1",
+          "headHeight": 27,
+          "torsoWidth": 28,
+          "headHeightRatio": 0.24107142857142858,
+          "torsoWidthRatio": 0.25,
+          "headChangedFrames": [],
+          "appearance": {
+            "lumaP90MinusP10": 193.59,
+            "rgb32BinsAtLeast1Percent": 20,
+            "meanAdjacentLumaDifference": 38.2
+          }
+        }
+      },
+      "errors": [],
+      "warnings": [],
+      "status": "technical-pass"
+    },
+    "male": {
+      "atlas": "male-v7.webp",
+      "sha256": "670c3e829cad7aa50811f3cd729659eedb5a018b3b077f071ed1c1d378eaca0d",
+      "profile": "hero",
+      "marks": "manual-estimate-v1",
+      "frameCount": 72,
+      "groundedFrameCount": 63,
+      "views": {
+        "down": {
+          "imageWidth": 69,
+          "imageHeight": 113,
+          "floor": 0,
+          "bodyHeightReference": 112,
+          "anatomyMethod": "manual-estimate-v1",
+          "headHeight": 28,
+          "torsoWidth": 31,
+          "headHeightRatio": 0.25,
+          "torsoWidthRatio": 0.2767857142857143,
+          "headChangedFrames": [],
+          "appearance": {
+            "lumaP90MinusP10": 147.3,
+            "rgb32BinsAtLeast1Percent": 18,
+            "meanAdjacentLumaDifference": 32.8
+          }
+        },
+        "right": {
+          "imageWidth": 53,
+          "imageHeight": 113,
+          "floor": 0,
+          "bodyHeightReference": 112,
+          "anatomyMethod": "manual-estimate-v1",
+          "headHeight": 28,
+          "torsoWidth": 20,
+          "headHeightRatio": 0.25,
+          "torsoWidthRatio": 0.17857142857142858,
+          "headChangedFrames": [],
+          "appearance": {
+            "lumaP90MinusP10": 178.33,
+            "rgb32BinsAtLeast1Percent": 15,
+            "meanAdjacentLumaDifference": 40.81
+          }
+        },
+        "up": {
+          "imageWidth": 84,
+          "imageHeight": 113,
+          "floor": 0,
+          "bodyHeightReference": 112,
+          "anatomyMethod": "manual-estimate-v1",
+          "headHeight": 28,
+          "torsoWidth": 31,
+          "headHeightRatio": 0.25,
+          "torsoWidthRatio": 0.2767857142857143,
+          "headChangedFrames": [],
+          "appearance": {
+            "lumaP90MinusP10": 134.64,
+            "rgb32BinsAtLeast1Percent": 17,
+            "meanAdjacentLumaDifference": 29.97
+          }
+        }
+      },
+      "errors": [],
+      "warnings": [],
+      "status": "technical-pass"
+    },
+    "skeleton": {
+      "atlas": "skeleton-v4.webp",
+      "sha256": "50e3d7865e2bd432a9886ab91912fee71b50a60ad910b104b20ee710c7e41ad5",
+      "profile": "skeletal-humanoid",
+      "marks": "manual-estimate-v1",
+      "frameCount": 72,
+      "groundedFrameCount": 63,
+      "views": {
+        "down": {
+          "imageWidth": 77,
+          "imageHeight": 113,
+          "floor": 0,
+          "bodyHeightReference": 112,
+          "anatomyMethod": "manual-estimate-v1",
+          "headHeight": 24,
+          "torsoWidth": 24,
+          "headHeightRatio": 0.21428571428571427,
+          "torsoWidthRatio": 0.21428571428571427,
+          "headChangedFrames": [],
+          "appearance": {
+            "lumaP90MinusP10": 226.23,
+            "rgb32BinsAtLeast1Percent": 19,
+            "meanAdjacentLumaDifference": 56.07
+          }
+        },
+        "right": {
+          "imageWidth": 60,
+          "imageHeight": 113,
+          "floor": 0,
+          "bodyHeightReference": 112,
+          "anatomyMethod": "manual-estimate-v1",
+          "headHeight": 24,
+          "torsoWidth": 18,
+          "headHeightRatio": 0.21428571428571427,
+          "torsoWidthRatio": 0.16071428571428573,
+          "headChangedFrames": [],
+          "appearance": {
+            "lumaP90MinusP10": 222.58,
+            "rgb32BinsAtLeast1Percent": 23,
+            "meanAdjacentLumaDifference": 58.94
+          }
+        },
+        "up": {
+          "imageWidth": 86,
+          "imageHeight": 113,
+          "floor": 0,
+          "bodyHeightReference": 112,
+          "anatomyMethod": "manual-estimate-v1",
+          "headHeight": 24,
+          "torsoWidth": 24,
+          "headHeightRatio": 0.21428571428571427,
+          "torsoWidthRatio": 0.21428571428571427,
+          "headChangedFrames": [],
+          "appearance": {
+            "lumaP90MinusP10": 220.78,
+            "rgb32BinsAtLeast1Percent": 21,
+            "meanAdjacentLumaDifference": 50.95
+          }
+        }
+      },
+      "errors": [],
+      "warnings": [],
+      "status": "technical-pass"
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "referencesPending": [
+    "spartoi",
+    "skeleton_fighter"
+  ],
+  "manifestSha256": "5fdd4ad6bbba3ca002a9676ae6bac0d20eaca31bc74e0cc0f5187a5fa4958f76",
+  "standardSha256": "774cb90516b5335de833296dc75d213790ea6692f7716cdd1bddda6e65648ef3"
+}

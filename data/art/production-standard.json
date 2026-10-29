@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "status": "trial-calibration",
+  "revision": "art-standard-1",
+  "coordinateSystem": "frame-local source pixels; rectangles [x,y,width,height]; anatomy marks are manual estimates, never alpha-derived body measurements",
+  "displayReference": "src/art-config.mjs ART_MOTION; retain current scale, no per-frame auto-fit",
+  "shared": {
+    "alphaThreshold": 160,
+    "framePaddingMin": 1,
+    "supportFloorTolerancePx": 1,
+    "walkHeadPixelChangesMax": 0,
+    "sandboxCollisionRadius": 28,
+    "light": "upper-left",
+    "views": [
+      "down",
+      "right",
+      "up"
+    ],
+    "mirroredView": "left"
+  },
+  "profiles": {
+    "hero": {
+      "status": "trial",
+      "headHeightRatio": [
+        0.17,
+        0.3
+      ],
+      "torsoWidthRatio": {
+        "down": [
+          0.18,
+          0.36
+        ],
+        "right": [
+          0.12,
+          0.32
+        ],
+        "up": [
+          0.18,
+          0.36
+        ]
+      }
+    },
+    "skeletal-humanoid": {
+      "status": "trial",
+      "headHeightRatio": [
+        0.16,
+        0.28
+      ],
+      "torsoWidthRatio": {
+        "down": [
+          0.15,
+          0.32
+        ],
+        "right": [
+          0.1,
+          0.26
+        ],
+        "up": [
+          0.15,
+          0.32
+        ]
+      }
+    },
+    "beast": {
+      "status": "not-calibrated"
+    },
+    "soft-body": {
+      "status": "not-calibrated"
+    },
+    "small": {
+      "status": "not-calibrated"
+    },
+    "large": {
+      "status": "not-calibrated"
+    }
+  },
+  "actors": {
+    "male": {
+      "profile": "hero",
+      "markMethod": "manual-estimate-v1",
+      "views": {
+        "down": {
+          "head": [
+            67,
+            37,
+            27,
+            28
+          ],
+          "torso": [
+            65,
+            65,
+            31,
+            38
+          ]
+        },
+        "right": {
+          "head": [
+            65,
+            37,
+            31,
+            28
+          ],
+          "torso": [
+            70,
+            66,
+            20,
+            40
+          ]
+        },
+        "up": {
+          "head": [
+            66,
+            37,
+            29,
+            28
+          ],
+          "torso": [
+            65,
+            65,
+            31,
+            38
+          ]
+        }
+      },
+      "animationLayout": "humanoid-v1"
+    },
+    "female": {
+      "profile": "hero",
+      "markMethod": "manual-estimate-v1",
+      "views": {
+        "down": {
+          "head": [
+            65,
+            35,
+            30,
+            28
+          ],
+          "torso": [
+            66,
+            64,
+            28,
+            35
+          ]
+        },
+        "right": {
+          "head": [
+            72,
+            35,
+            25,
+            25
+          ],
+          "torso": [
+            70,
+            59,
+            22,
+            39
+          ]
+        },
+        "up": {
+          "head": [
+            65,
+            35,
+            30,
+            27
+          ],
+          "torso": [
+            66,
+            68,
+            28,
+            31
+          ]
+        }
+      },
+      "animationLayout": "humanoid-v1"
+    },
+    "skeleton": {
+      "profile": "skeletal-humanoid",
+      "markMethod": "manual-estimate-v1",
+      "views": {
+        "down": {
+          "head": [
+            71,
+            35,
+            18,
+            24
+          ],
+          "torso": [
+            68,
+            59,
+            24,
+            42
+          ]
+        },
+        "right": {
+          "head": [
+            71,
+            35,
+            23,
+            24
+          ],
+          "torso": [
+            73,
+            60,
+            18,
+            41
+          ]
+        },
+        "up": {
+          "head": [
+            71,
+            35,
+            18,
+            24
+          ],
+          "torso": [
+            68,
+            59,
+            24,
+            42
+          ]
+        }
+      },
+      "animationLayout": "humanoid-v1"
+    },
+    "spartoi": {
+      "profile": "skeletal-humanoid",
+      "markMethod": "pending",
+      "views": {},
+      "status": "legacy-reference-only"
+    },
+    "skeleton_fighter": {
+      "profile": "skeletal-humanoid",
+      "markMethod": "pending",
+      "views": {},
+      "status": "legacy-reference-only"
+    }
+  },
+  "humanReview": [
+    "identity and required equipment",
+    "silhouette and anatomy volume",
+    "hair and armor overlap",
+    "material and lighting consistency",
+    "support-foot planting and alternating stride",
+    "attack and weapon continuity",
+    "death and hurt floor behavior"
+  ],
+  "releasePolicy": "Technical errors block build. Ratio warnings and uncalibrated or unmarked actors require review; a technical pass is never art approval.",
+  "animationLayouts": {
+    "humanoid-v1": {
+      "walkFrames": 12,
+      "settlePhaseGroups": 4,
+      "settleFramesPerGroup": 2,
+      "attackFrames": 6,
+      "hurtFrames": 2,
+      "fallFrames": 1,
+      "sourceBodyHeight": 112
+    }
+  }
+}

@@ -12,9 +12,9 @@
 
 [男女角色、骷髏與墓園對照頁](https://lineage-game.7gj5vc64m7.workers.dev/art-review.html)：第二稿調整普通骷髏與地面材質，可切換修改前後、角色與視角；[第一稿](https://lineage-game.7gj5vc64m7.workers.dev/art-review-v1.html)保留。正式遊戲動畫與人物素材尚未替換。[製作說明](docs/art-review.md)。
 
-## 暮色墓園動作試場 v0.6（待驗收）
+## 暮色墓園動作試場 v0.7（待驗收）
 
-[可移動與攻擊的美術試場](https://lineage-game.7gj5vc64m7.workers.dev/art-play.html?v=6)。v0.6新增[五角同場對照](https://lineage-game.7gj5vc64m7.workers.dev/art-play.html?view=compare&v=6)，可比較並排/交錯/近距離與四方向、陰影、定位差值；保留已確認的男角垂劍與原動作試場；保留單武器、交替步行與交戰站距；女角側背髮長一致、骷髏保留破短褲；可切男女、搖桿／拖動／點地移動、攻擊、治療、半速。此頁為本機試場，使用正式核心但不讀寫雲端角色。[說明](docs/art-play.md)。
+[可移動與攻擊的美術試場](https://lineage-game.7gj5vc64m7.workers.dev/art-play.html?v=7)。v0.7增加人物局部材質修正、前版切換、頭/軀幹標記與獨立碰撞圈；[統一製作檢查流程](docs/art-production.md)與素材檢查報告。原v0.6新增[五角同場對照](https://lineage-game.7gj5vc64m7.workers.dev/art-play.html?view=compare&v=7)，可比較並排/交錯/近距離與四方向、陰影、定位差值；保留已確認的男角垂劍與原動作試場；保留單武器、交替步行與交戰站距；女角側背髮長一致、骷髏保留破短褲；可切男女、搖桿／拖動／點地移動、攻擊、治療、半速。此頁為本機試場，使用正式核心但不讀寫雲端角色。[說明](docs/art-play.md)。
 
 ## 開發與建置
 
