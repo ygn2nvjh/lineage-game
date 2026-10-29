@@ -12,6 +12,10 @@
 
 [男女角色、骷髏與墓園對照頁](https://lineage-game.7gj5vc64m7.workers.dev/art-review.html)：第二稿調整普通骷髏與地面材質，可切換修改前後、角色與視角；[第一稿](https://lineage-game.7gj5vc64m7.workers.dev/art-review-v1.html)保留。正式遊戲動畫與人物素材尚未替換。[製作說明](docs/art-review.md)。
 
+## 暮色墓園動作試場（待驗收）
+
+[可移動與攻擊的美術試場](https://lineage-game.7gj5vc64m7.workers.dev/art-play.html)。女角側背髮長一致、骷髏恢復破短褲；可切男女、搖桿／拖動／點地移動、攻擊、治療、半速。此頁為本機試場，使用正式核心但不讀寫雲端角色。[說明](docs/art-play.md)。
+
 ## 開發與建置
 
 需要 Node.js 24；執行 `npm test` 驗證核心規則，`npm run build` 建立 dist/index.html。可用 `npm start` 在本機開啟遊戲。建置後的 HTML 包含執行素材，無須外部遊戲服務。
