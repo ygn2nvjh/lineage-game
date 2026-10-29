@@ -23,11 +23,11 @@ const assert=require('node:assert/strict'),{chromium}=require('playwright');
    await p.keyboard.up('d');assert.equal(samples[sex].headUnique,1,sex+' head must remain stable');assert.equal(samples[sex].groundUnique,1,'same terrain must remain stable');
   }
   await p.waitForTimeout(100);let s=await p.evaluate(()=>window.artPlay.inspect());
-  assert.equal(s.diagnostics.version,'art-play-0.5');assert.equal(s.playerVisual.dir,'right');assert.equal(s.combatRange,70);assert.equal(s.bodySeparation,56);
+  assert.equal(s.diagnostics.version,'art-play-0.6');assert.equal(s.playerVisual.dir,'right');assert.equal(s.combatRange,70);assert.equal(s.bodySeparation,56);
   await p.locator('#bounds').click();await p.locator('#attack').click();
   await p.waitForFunction(()=>window.artPlay.inspect().events.includes('damage'),null,{timeout:15000});await p.waitForTimeout(2500);
   s=await p.evaluate(()=>window.artPlay.inspect());assert(s.diagnostics.minimumActorDistance>=55.99);assert.notEqual(s.playerVisual.dir,'up');
-  await p.screenshot({path:'/tmp/art-play-spacing-v5.png',fullPage:true});assert.deepEqual(errors,[]);
+  await p.screenshot({path:'/tmp/art-play-spacing-v6.png',fullPage:true});assert.deepEqual(errors,[]);
   console.log(JSON.stringify({passed:'both characters stable during gait, stable terrain, right-facing idle, body separation and real male combat',samples,minimumActorDistance:s.diagnostics.minimumActorDistance,errors}));
  }finally{await b.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

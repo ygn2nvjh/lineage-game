@@ -33,8 +33,10 @@ export function createArtPlayAnimation(meta,images,usedFrames,motion){
     const w=Math.round(f.w*u),h=Math.round(f.h*u),dx=Math.round(f.dx*u),dy=Math.round(f.dy*u);
     const feet=(f.feet||[]).map(p=>({x:dx+p.x*w/f.w,y:dy+p.y*h/f.h,width:p.width*w/f.w}));
     const center=feet.length?feet.reduce((s,p)=>s+p.x,0)/feet.length:0;
+    if(a.shadows!==false){
     c.fillStyle='#070d0a38';c.beginPath();c.ellipse(center,1.5,Math.max(13,...feet.map(p=>Math.abs(p.x-center)+p.width/2)),3,0,0,Math.PI*2);c.fill();
     if(!a.dead)for(const foot of feet){c.fillStyle='#05090799';c.beginPath();c.ellipse(foot.x,foot.y+.5,Math.max(3,foot.width*.5),1.3,0,0,Math.PI*2);c.fill();}
+    }
     if(a.hurt>.29)c.globalAlpha=.7;
     c.drawImage(images[kind],f.x,f.y,f.w,f.h,dx,dy,w,h);
     c.restore();return true;
