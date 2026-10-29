@@ -3,9 +3,9 @@ from pathlib import Path
 from PIL import Image
 from scipy.ndimage import label
 import numpy as np,json
-root=Path(__file__).resolve().parents[1];folder=root/'assets/art-play';meta=json.load(open(folder/'manifest-v4.json'))
+root=Path(__file__).resolve().parents[1];folder=root/'assets/art-play';meta=json.load(open(folder/'manifest-v5.json'))
 for kind,m in meta.items():
- a=np.array(Image.open(folder/f'{kind}-v4.webp').convert('RGBA'))
+ a=np.array(Image.open(folder/m.get('atlas',f'{kind}-v4.webp')).convert('RGBA'))
  # Lossless WebP may rewrite invisible RGB; runtime explicitly clears it too.
  a[a[:,:,3]<160]=0
  def frame(key):
@@ -29,3 +29,16 @@ for kind,m in meta.items():
    f=m['frames'][f'walk:{dir}:{i}']
    assert max(p['y']+f['dy'] for p in f['feet'])==0,(kind,dir,i,'support foot must touch ground')
  print(kind,'staggered idle feet and planted support feet checked')
+
+# This revision changes only the male side body; protect the accepted v4 views.
+previous=json.load(open(folder/'manifest-v4.json'))
+for kind in ['female','skeleton']:
+ assert meta[kind]['atlas']==f'{kind}-v4.webp'
+ assert meta[kind]['frames']==previous[kind]['frames'],(kind,'unrelated appearance changed')
+a=np.array(Image.open(folder/'male-v4.webp').convert('RGBA'));b=np.array(Image.open(folder/'male-v5.webp').convert('RGBA'))
+a[a[:,:,3]<160]=0;b[b[:,:,3]<160]=0
+for key,f in meta['male']['frames'].items():
+ if ':right' in key:continue
+ old=previous['male']['frames'][key]
+ assert np.array_equal(a[old['y']:old['y']+old['h'],old['x']:old['x']+old['w']],b[f['y']:f['y']+f['h'],f['x']:f['x']+f['w']]),('male',key,'non-side frame changed')
+print('Female, skeleton and male non-side pixels preserved from v4')

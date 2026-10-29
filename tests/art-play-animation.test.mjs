@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {artPlayPose,createArtPlayAnimation} from '../src/art-play-animation.mjs';
 import {artPlayLegPose,artPlayStandLeg} from '../src/art-play-rig.mjs';
-const meta=JSON.parse(readFileSync(new URL('../assets/art-play/manifest-v4.json',import.meta.url)));
+const meta=JSON.parse(readFileSync(new URL('../assets/art-play/manifest-v5.json',import.meta.url)));
 test('movement and attack transitions draw exactly one whole pose, including mirrored actors',()=>{
   const images={male:{},female:{},skeleton:{}},used=Object.fromEntries(Object.keys(images).map(k=>[k,new Set()]));
   const art=createArtPlayAnimation(meta,images,used,{height:63,scale:1.75});

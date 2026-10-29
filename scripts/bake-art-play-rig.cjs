@@ -2,13 +2,13 @@
 const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 (async()=>{
- const root=path.resolve(__dirname,'..'),dir=path.join(root,'assets/art-play');
+ const root=path.resolve(__dirname,'..'),dir=path.join(root,'assets/art-play'),revision=process.env.ART_PLAY_REVISION||'4';
  const source=fs.readFileSync(path.join(root,'src/art-play-rig.mjs'),'utf8').replace(/^export /gm,'');
- const meta=JSON.parse(fs.readFileSync(path.join(dir,'base-meta-v3.json'))),rig=JSON.parse(fs.readFileSync(path.join(dir,'rig-v4.json')));
+ const meta=JSON.parse(fs.readFileSync(path.join(dir,revision==='5'?'manifest-v4.json':'base-meta-v3.json'))),rig=JSON.parse(fs.readFileSync(path.join(dir,'rig-v'+revision+'.json')));
  const b=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
  try{const p=await b.newPage();
- for(const kind of ['female','male','skeleton']){
-  const original=fs.readFileSync(path.join(dir,kind+'-base-v3.webp')).toString('base64'),parts=fs.readFileSync(path.join(dir,kind+(kind==='male'?'-rig-v4.webp':'-rig-v3.webp'))).toString('base64');
+ for(const kind of (revision==='5'?['male']:['female','male','skeleton'])){
+  const original=fs.readFileSync(path.join(dir,kind+'-base-v3.webp')).toString('base64'),parts=fs.readFileSync(path.join(dir,kind+(kind==='male'?'-rig-v'+revision+'.webp':'-rig-v3.webp'))).toString('base64');
   const data=await p.evaluate(async({original,parts,source,rig,kind})=>{
    const load=async s=>{const im=new Image();im.src='data:image/webp;base64,'+s;await im.decode();return im;};
    const base=await load(original),image=await load(parts),canvas=document.createElement('canvas');canvas.width=1344;canvas.height=1984;
@@ -34,9 +34,9 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
    const pixels=c.getImageData(0,0,canvas.width,canvas.height);for(let i=0;i<pixels.data.length;i+=4){if(pixels.data[i+3]<160)pixels.data.fill(0,i,i+4);else pixels.data[i+3]=255;}c.putImageData(pixels,0,0);
    return {png:canvas.toDataURL().split(',')[1],frames};
   },{original,parts,source,rig:rig[kind],kind});
-  fs.writeFileSync(path.join(dir,kind+'-v4.png'),Buffer.from(data.png,'base64'));
+  fs.writeFileSync(path.join(dir,kind+'-v'+revision+'.png'),Buffer.from(data.png,'base64'));
   Object.assign(meta[kind].frames,data.frames);meta[kind].walkCount=12;meta[kind].settleSeconds=.12;
  }
- fs.writeFileSync(path.join(dir,'manifest-v4.json'),JSON.stringify(meta));
+ fs.writeFileSync(path.join(dir,'manifest-v'+revision+'.json'),JSON.stringify(meta));
  }finally{await b.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

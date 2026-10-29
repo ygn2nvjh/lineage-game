@@ -12,7 +12,7 @@ const assert=require('node:assert/strict'),{chromium}=require('playwright');
    assert(s.frames[sex].filter(k=>k.startsWith('settle:right:')).length>=2,'both visual settling stages must render');
    assert.equal(s.playerVisual.moving,false);assert.equal(s.playerVisual.dir,'right');
    const feet=await p.evaluate(sex=>window.ART_PLAY_META[sex].frames['idle:right'].feet,sex);assert.equal(feet.length,2);
-   await p.screenshot({path:'/tmp/art-play-idle-'+sex+'-v4.png',fullPage:true});
+   await p.screenshot({path:'/tmp/art-play-idle-'+sex+'-v5.png',fullPage:true});
   }
   assert.deepEqual(errors,[]);console.log('Female and male settle visually without position drift; both idle feet remain distinct; zero page errors.');
  }finally{await b.close();}

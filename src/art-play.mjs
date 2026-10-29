@@ -4,10 +4,10 @@ import {WorldArt,loadWorldArt} from './world-art.mjs';
 import {ART_MOTION} from './art-config.mjs';
 import {createArtPlayAnimation} from './art-play-animation.mjs';
 const $=id=>document.getElementById(id),meta=globalThis.ART_PLAY_META;
-const images={};await Promise.all(['female','male','skeleton','terrain'].map(async kind=>{const im=new Image();im.src='/game-assets/art-play/'+kind+(kind==='terrain'?'': '-v4')+'.webp';await im.decode();images[kind]=im;}));
+const images={};await Promise.all(['female','male','skeleton','terrain'].map(async kind=>{const im=new Image();im.src='/game-assets/art-play/'+(kind==='terrain'?'terrain.webp':meta[kind].atlas||kind+'-v4.webp');await im.decode();images[kind]=im;}));
 // Strip generation halos at decode time; invisible RGB must not bleed between frames.
 for(const kind of ['female','male','skeleton']){const image=images[kind],clean=document.createElement('canvas');clean.width=image.width;clean.height=image.height;const ctx=clean.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,0,0);const data=ctx.getImageData(0,0,clean.width,clean.height);for(let i=0;i<data.data.length;i+=4){if(data.data[i+3]<160){data.data[i]=data.data[i+1]=data.data[i+2]=data.data[i+3]=0;}else data.data[i+3]=255;}ctx.putImageData(data,0,0);images[kind]=clean;}
-const playDiagnostics={version:'art-play-0.4',minimumActorDistance:Infinity,renderedFrame:0,viewFrames:[]};
+const playDiagnostics={version:'art-play-0.5',minimumActorDistance:Infinity,renderedFrame:0,viewFrames:[]};
 const gait=new Map();
 const usedFrames={male:new Set(),female:new Set(),skeleton:new Set()};
 const animationArt=createArtPlayAnimation(meta,images,usedFrames,ART_MOTION);
