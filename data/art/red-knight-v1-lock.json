@@ -1,0 +1,8 @@
+{
+  "characterId": "red-knight-female",
+  "revision": "1.0.0",
+  "package": "assets/characters/red-knight/v1/",
+  "checksumsFile": "assets/characters/red-knight/v1/checksums.json",
+  "checksumsSha256": "5402acd3818e3da0567f3fb50429838b4e7a55889011a8220e76f1a8dffa48ca",
+  "policy": "immutable archived revision; changed art creates a new revision"
+}

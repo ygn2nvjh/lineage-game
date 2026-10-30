@@ -24,3 +24,5 @@ await cp(new URL('assets/art-scene-review/knight-eight-static.html',root),new UR
 await cp(new URL('assets/art-scene-review/knight-eight-revised.html',root),new URL('art-eight-revised.html',out));
 
 await cp(new URL('assets/art-scene-review/knight-eight-revised-v2.html',root),new URL('art-eight-revised-v2.html',out));
+
+await import('./build-character-assets.mjs');

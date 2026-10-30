@@ -1,0 +1,20 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "d84e2a0dfcd88d9edb33e4927f57007e04d595aff09b7a51f6cf8a83cc6f1f05",
+    "character.json": "c9c5fd070fcc748b11a79f6d656edc3042672d61dad2bb4f8686fa29541fb17d",
+    "references/concept-original.jpg": "32a503b53c19818f2785cf86cd42d5bc90e6ece8adb3a3d5fc6f758674aaef5b",
+    "references/static-design-original.jpg": "5d991894c95e46014d92e547058a3c197618b71ab3498e58ff4c7fa14f4d52d5",
+    "runtime/frames/down-left.png": "93e4973194d28aebc236c2d2611150f7565f620116c960fd8d15e44dae5adab0",
+    "runtime/frames/down-right.png": "f19d35e07df82be7901ac669b92cbb7e6afa41e0ea757841e08d3d6dcc94233d",
+    "runtime/frames/down.png": "b8d933471bf738190ba58bd1c6564266b234ad36382726a190498131abd58b2b",
+    "runtime/frames/left.png": "494378ff241365233b02d4b4f76ddd1e55c60b4e39acd6fdce462b3da4d40096",
+    "runtime/frames/right.png": "2e05352984ff9abadb798090da584c4e473c0558757958b313c96326f8192939",
+    "runtime/frames/up-left.png": "0af101c58b57b1bb538f0b73090cf82499949b13c7d149f077c2d286e65217d5",
+    "runtime/frames/up-right.png": "f695b2afd6c39c470eb92f63ccc2531466f545be3c4f268d3ddeb6111067b247",
+    "runtime/frames/up.png": "e061c79075929dfe630babe614dd5ff890e954913fb855ed13383fb121de60f5",
+    "runtime/idle.json": "fd5e5e48ab80a2b4d2a1cee69aecf572af4e49cf5eaa82f9652820f8dfab5663",
+    "runtime/idle.png": "a7d6361fba8c9b4edc44bbd7b27b28d75c4e5611c0a81b69f22eb59437ae3c25"
+  },
+  "atlasPixelsMatchEightSourceFrames": true
+}
