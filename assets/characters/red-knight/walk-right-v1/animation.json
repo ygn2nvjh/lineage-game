@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "characterId": "red-knight-female",
+  "revision": "walk-right-0.1.0",
+  "master": "../v1-0-1/character.json",
+  "direction": "right",
+  "atlas": "walk-right.png",
+  "cell": {
+    "width": 128,
+    "height": 128
+  },
+  "frames": [
+    {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        33,
+        19,
+        96,
+        112
+      ],
+      "sourceCell": 4,
+      "pose": "右腳接地"
+    },
+    {
+      "index": 1,
+      "x": 128,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        33,
+        20,
+        95,
+        112
+      ],
+      "sourceCell": 5,
+      "pose": "右腳承重"
+    },
+    {
+      "index": 2,
+      "x": 256,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        36,
+        18,
+        89,
+        112
+      ],
+      "sourceCell": 6,
+      "pose": "左腳經過",
+      "sourceOverride": {
+        "file": "exec-1fd064f9-d107-473a-84c9-ff01831207f4.png",
+        "crop": [
+          0,
+          0,
+          768,
+          1024
+        ],
+        "wholeBody": true,
+        "sourceCanvasScale": 0.1083984375,
+        "offset": [
+          16,
+          10
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "x": 384,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        32,
+        19,
+        90,
+        113
+      ],
+      "sourceCell": 7,
+      "pose": "左腳前送",
+      "sourceOverride": {
+        "file": "exec-12bc9115-d53e-498e-bca4-395bbc2bf4fb.png",
+        "wholeBody": true,
+        "normalizedScale": 0.06666666666666667,
+        "offset": [
+          30,
+          10
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "x": 512,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        34,
+        20,
+        95,
+        112
+      ],
+      "sourceCell": 0,
+      "pose": "左腳接地"
+    },
+    {
+      "index": 5,
+      "x": 640,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        34,
+        21,
+        95,
+        112
+      ],
+      "sourceCell": 1,
+      "pose": "左腳承重"
+    },
+    {
+      "index": 6,
+      "x": 768,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        37,
+        20,
+        89,
+        112
+      ],
+      "sourceCell": 2,
+      "pose": "右腳經過",
+      "sourceOverride": {
+        "file": "exec-e9627109-853e-484d-8fb8-849482de52f3.png",
+        "crop": null,
+        "wholeBody": true,
+        "sourceCanvasScale": 0.07967479674796749,
+        "offset": [
+          12,
+          17
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "x": 896,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        32,
+        21,
+        95,
+        112
+      ],
+      "sourceCell": 3,
+      "pose": "右腳前送",
+      "sourceOverride": {
+        "file": "exec-7dc046f9-520c-474c-a98d-66237266ae1f.png",
+        "cell": 3,
+        "wholeBody": true,
+        "sharedScale": 0.2
+      }
+    }
+  ],
+  "cycleDurationMs": 800,
+  "stridePx": 64,
+  "artStatus": "candidate awaiting visual acceptance",
+  "source": "generated full-body key poses; common cell scale, no cut-and-shift limbs",
+  "sourceScale": 0.2,
+  "sourceCell": {
+    "width": 384,
+    "height": 512,
+    "groundY": 486,
+    "centerX": 192
+  },
+  "root": {
+    "x": 64,
+    "y": 112
+  },
+  "frameDurationMs": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "supportContacts": [
+    {
+      "leg": "right",
+      "x": 80,
+      "y": 111
+    },
+    {
+      "leg": "right",
+      "x": 70,
+      "y": 111
+    },
+    {
+      "leg": "right",
+      "x": 65,
+      "y": 111
+    },
+    {
+      "leg": "right",
+      "x": 51,
+      "y": 112
+    },
+    {
+      "leg": "left",
+      "x": 78,
+      "y": 111
+    },
+    {
+      "leg": "left",
+      "x": 70,
+      "y": 111
+    },
+    {
+      "leg": "left",
+      "x": 65,
+      "y": 111
+    },
+    {
+      "leg": "left",
+      "x": 50,
+      "y": 111
+    }
+  ]
+}

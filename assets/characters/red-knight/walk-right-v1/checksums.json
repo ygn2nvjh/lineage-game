@@ -1,0 +1,19 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "1b8a5c918ef52a88295dc305d7c24412491de9ac4235fe9e2508f6f02230a4ad",
+    "animation.json": "9670fccd3db26bae240457ec6b08c67627de0de67e54e0cce11d3878c90ede91",
+    "calibration.json": "febdb90c64607d625a1ad0f738301aa6a45b39fac2d1f6e469b71bf4a890a633",
+    "master-right.png": "2e05352984ff9abadb798090da584c4e473c0558757958b313c96326f8192939",
+    "quiet.png": "7ed142a5c4da1dfd8b97c01c137a0b735f513b7a926e7f4d0be5957eb7b49b8f",
+    "right-01.png": "17f71e94d3e7e3334aa98870fb853842546919fdd81585ec5a242ddd46fa9d04",
+    "right-02.png": "6580ff7e5b5addae9537fbe42d5daa10ecf3144ba0ea44d6c5c620d9d1a0a242",
+    "right-03.png": "b13c6f6900bb65984e798b1d0bbbe18c12b3b029d815edaa859399dc77cc12cd",
+    "right-04.png": "d10223b8d7b8980fd0a2331cb285d11b53386ed1c1fb8116ea9527967b568d02",
+    "right-05.png": "561a1d4afe218cbd204d88882586ae49266223274bae5b90cfe9ba60045e21a3",
+    "right-06.png": "4e3a9d80b0b5834b4d389fc7dfdbac3353eefa510a782782e47cdea61e80a396",
+    "right-07.png": "d2963d73e808addf36c9bc81c71b4973c72655f2d75cf27aa890e15bd160e537",
+    "right-08.png": "3d331f5133d16068d61b897f99b2fa60f885d213869c6e826a0e9e3817d59b57",
+    "walk-right.png": "b2419c06ff390bde8b18961739968a28fd951598e281fbf3b64c25dff46a63ed"
+  }
+}

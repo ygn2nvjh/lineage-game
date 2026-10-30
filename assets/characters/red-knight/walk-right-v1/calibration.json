@@ -1,0 +1,111 @@
+{
+  "masterSha256": "2e05352984ff9abadb798090da584c4e473c0558757958b313c96326f8192939",
+  "masterUnchanged": true,
+  "frames": [
+    {
+      "index": 0,
+      "bounds": [
+        33,
+        19,
+        96,
+        112
+      ],
+      "alphaComponents": [
+        2596
+      ],
+      "sha256": "17f71e94d3e7e3334aa98870fb853842546919fdd81585ec5a242ddd46fa9d04"
+    },
+    {
+      "index": 1,
+      "bounds": [
+        33,
+        20,
+        95,
+        112
+      ],
+      "alphaComponents": [
+        2488
+      ],
+      "sha256": "6580ff7e5b5addae9537fbe42d5daa10ecf3144ba0ea44d6c5c620d9d1a0a242"
+    },
+    {
+      "index": 2,
+      "bounds": [
+        36,
+        18,
+        89,
+        112
+      ],
+      "alphaComponents": [
+        2223
+      ],
+      "sha256": "b13c6f6900bb65984e798b1d0bbbe18c12b3b029d815edaa859399dc77cc12cd"
+    },
+    {
+      "index": 3,
+      "bounds": [
+        32,
+        19,
+        90,
+        113
+      ],
+      "alphaComponents": [
+        2436
+      ],
+      "sha256": "d10223b8d7b8980fd0a2331cb285d11b53386ed1c1fb8116ea9527967b568d02"
+    },
+    {
+      "index": 4,
+      "bounds": [
+        34,
+        20,
+        95,
+        112
+      ],
+      "alphaComponents": [
+        2527
+      ],
+      "sha256": "561a1d4afe218cbd204d88882586ae49266223274bae5b90cfe9ba60045e21a3"
+    },
+    {
+      "index": 5,
+      "bounds": [
+        34,
+        21,
+        95,
+        112
+      ],
+      "alphaComponents": [
+        2396
+      ],
+      "sha256": "4e3a9d80b0b5834b4d389fc7dfdbac3353eefa510a782782e47cdea61e80a396"
+    },
+    {
+      "index": 6,
+      "bounds": [
+        37,
+        20,
+        89,
+        112
+      ],
+      "alphaComponents": [
+        2224
+      ],
+      "sha256": "d2963d73e808addf36c9bc81c71b4973c72655f2d75cf27aa890e15bd160e537"
+    },
+    {
+      "index": 7,
+      "bounds": [
+        32,
+        21,
+        95,
+        112
+      ],
+      "alphaComponents": [
+        2534
+      ],
+      "sha256": "3d331f5133d16068d61b897f99b2fa60f885d213869c6e826a0e9e3817d59b57"
+    }
+  ],
+  "semanticArtAcceptance": "pending user review; no claim of pixel-identical generated equipment"
+}
