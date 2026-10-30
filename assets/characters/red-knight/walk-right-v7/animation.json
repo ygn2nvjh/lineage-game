@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "characterId": "red-knight-female",
+  "revision": "walk-right-0.7.0",
+  "master": "../v1-0-1/character.json",
+  "direction": "right",
+  "atlas": "walk-right.png",
+  "cell": {
+    "width": 128,
+    "height": 128
+  },
+  "frames": [
+    {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        95,
+        111
+      ],
+      "pose": "右腳接地",
+      "source": "v0.6 plus local shield and hair-junction patch"
+    },
+    {
+      "index": 1,
+      "x": 128,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        96,
+        112
+      ],
+      "pose": "右腳承重",
+      "source": "v0.6 plus local shield and hair-junction patch"
+    },
+    {
+      "index": 2,
+      "x": 256,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        95,
+        113
+      ],
+      "pose": "左腳經過",
+      "source": "v0.6 plus local shield and hair-junction patch"
+    },
+    {
+      "index": 3,
+      "x": 384,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        96,
+        112
+      ],
+      "pose": "左腳前送",
+      "source": "v0.6 plus local shield and hair-junction patch"
+    },
+    {
+      "index": 4,
+      "x": 512,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        97,
+        112
+      ],
+      "pose": "左腳接地",
+      "source": "v0.6 plus local shield and hair-junction patch"
+    },
+    {
+      "index": 5,
+      "x": 640,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        96,
+        112
+      ],
+      "pose": "左腳承重",
+      "source": "v0.6 plus local shield and hair-junction patch"
+    },
+    {
+      "index": 6,
+      "x": 768,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        34,
+        17,
+        96,
+        113
+      ],
+      "pose": "右腳經過",
+      "source": "v0.6 plus local shield and hair-junction patch"
+    },
+    {
+      "index": 7,
+      "x": 896,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        97,
+        111
+      ],
+      "pose": "右腳前送",
+      "source": "v0.6 plus local shield and hair-junction patch"
+    }
+  ],
+  "root": {
+    "x": 64,
+    "y": 112
+  },
+  "stridePx": 48,
+  "cycleDurationMs": 800,
+  "artStatus": "P1 shield and P2 hair seam candidate; P0 protected; pending user review",
+  "supportContacts": [
+    {
+      "leg": "right",
+      "x": 74,
+      "y": 110
+    },
+    {
+      "leg": "right",
+      "x": 69,
+      "y": 111
+    },
+    {
+      "leg": "right",
+      "x": 63,
+      "y": 112
+    },
+    {
+      "leg": "right",
+      "x": 54,
+      "y": 111
+    },
+    {
+      "leg": "left",
+      "x": 74,
+      "y": 110
+    },
+    {
+      "leg": "left",
+      "x": 68,
+      "y": 111
+    },
+    {
+      "leg": "left",
+      "x": 58,
+      "y": 112
+    },
+    {
+      "leg": "left",
+      "x": 53,
+      "y": 108
+    }
+  ],
+  "frameDurationMs": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "baseRevision": "walk-right-0.6.0",
+  "headOffsets": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+  ]
+}

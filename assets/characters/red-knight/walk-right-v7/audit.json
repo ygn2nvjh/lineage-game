@@ -1,0 +1,103 @@
+{
+  "base": "v0.6",
+  "frames": [
+    {
+      "index": 0,
+      "changedPixels": 409,
+      "shieldChangedPixels": 148,
+      "hairJunctionChangedPixels": 261,
+      "outsideMaskChanges": 0,
+      "p0Changes": 0,
+      "legRows85to127Changes": 0,
+      "upperHairRows0to38Changes": 0,
+      "faceChanges": 0,
+      "alphaComponents": 1
+    },
+    {
+      "index": 1,
+      "changedPixels": 405,
+      "shieldChangedPixels": 151,
+      "hairJunctionChangedPixels": 254,
+      "outsideMaskChanges": 0,
+      "p0Changes": 0,
+      "legRows85to127Changes": 0,
+      "upperHairRows0to38Changes": 0,
+      "faceChanges": 0,
+      "alphaComponents": 1
+    },
+    {
+      "index": 2,
+      "changedPixels": 423,
+      "shieldChangedPixels": 155,
+      "hairJunctionChangedPixels": 268,
+      "outsideMaskChanges": 0,
+      "p0Changes": 0,
+      "legRows85to127Changes": 0,
+      "upperHairRows0to38Changes": 0,
+      "faceChanges": 0,
+      "alphaComponents": 1
+    },
+    {
+      "index": 3,
+      "changedPixels": 404,
+      "shieldChangedPixels": 147,
+      "hairJunctionChangedPixels": 257,
+      "outsideMaskChanges": 0,
+      "p0Changes": 0,
+      "legRows85to127Changes": 0,
+      "upperHairRows0to38Changes": 0,
+      "faceChanges": 0,
+      "alphaComponents": 1
+    },
+    {
+      "index": 4,
+      "changedPixels": 403,
+      "shieldChangedPixels": 143,
+      "hairJunctionChangedPixels": 260,
+      "outsideMaskChanges": 0,
+      "p0Changes": 0,
+      "legRows85to127Changes": 0,
+      "upperHairRows0to38Changes": 0,
+      "faceChanges": 0,
+      "alphaComponents": 1
+    },
+    {
+      "index": 5,
+      "changedPixels": 401,
+      "shieldChangedPixels": 147,
+      "hairJunctionChangedPixels": 254,
+      "outsideMaskChanges": 0,
+      "p0Changes": 0,
+      "legRows85to127Changes": 0,
+      "upperHairRows0to38Changes": 0,
+      "faceChanges": 0,
+      "alphaComponents": 1
+    },
+    {
+      "index": 6,
+      "changedPixels": 412,
+      "shieldChangedPixels": 147,
+      "hairJunctionChangedPixels": 265,
+      "outsideMaskChanges": 0,
+      "p0Changes": 0,
+      "legRows85to127Changes": 0,
+      "upperHairRows0to38Changes": 0,
+      "faceChanges": 0,
+      "alphaComponents": 1
+    },
+    {
+      "index": 7,
+      "changedPixels": 413,
+      "shieldChangedPixels": 160,
+      "hairJunctionChangedPixels": 253,
+      "outsideMaskChanges": 0,
+      "p0Changes": 0,
+      "legRows85to127Changes": 0,
+      "upperHairRows0to38Changes": 0,
+      "faceChanges": 0,
+      "alphaComponents": 1
+    }
+  ],
+  "scope": "local shield rear surface/rim plus hair middle junction; no increased sway, new arm motion or lower-leg changes; protected full priorP0 mask",
+  "limits": "technical preservation does not prove visual approval or physics; hair seam is local generated candidate downsampled"
+}
