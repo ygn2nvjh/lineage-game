@@ -34,3 +34,5 @@ await import('./build-walk-diagnosis.mjs');
 await import('./build-walk-upper.mjs');
 
 await import('./build-walk-stability.mjs');
+
+await import('./build-walk-micro.mjs');
