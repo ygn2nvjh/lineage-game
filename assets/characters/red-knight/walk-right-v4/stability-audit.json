@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "base": "../walk-right-v3/animation.json",
+  "canonicalHeadSource": "../walk-right-v3/right-01.png",
+  "headLockRect": [
+    30,
+    12,
+    83,
+    43
+  ],
+  "headUniqueBefore": 8,
+  "headUniqueAfter": 1,
+  "headSeamF8F1": {
+    "beforeChangedPixels": 719,
+    "afterChangedPixels": 0
+  },
+  "headHashesBefore": [
+    "2b5554c862bd0d46a31dd39d88d3213012e81d1e8753ec31da003f05384b5dd2",
+    "6caa109845f21cd778d6bd4db964b169c9b94b0664f769f4cccabf205e7b12ed",
+    "4decdcae0e5bc8d1f79df68a9da33471edc07972bb886c9d1d8d66702548a2c9",
+    "dce345532b6b597458b2658be555b11e2347ed2c711826b90501eec82e286017",
+    "0e1dc6074c380ba9f696d4a3cfacd928e62f2b02518e100a4261d6f31c1dab66",
+    "50fdade1dd226aefee6f17aadd9be499b5b38a5dd121c55fd7abef16152d99a4",
+    "c52f375ddecfbc908232901f1258b3f414633655f4d862ec46b0572a7c22708e",
+    "e3056bf042ac0a81e1a0abff6324f6f0ba3ada1d31fc1aa631a8f8f5428fab86"
+  ],
+  "headHashesAfter": [
+    "2b5554c862bd0d46a31dd39d88d3213012e81d1e8753ec31da003f05384b5dd2",
+    "2b5554c862bd0d46a31dd39d88d3213012e81d1e8753ec31da003f05384b5dd2",
+    "2b5554c862bd0d46a31dd39d88d3213012e81d1e8753ec31da003f05384b5dd2",
+    "2b5554c862bd0d46a31dd39d88d3213012e81d1e8753ec31da003f05384b5dd2",
+    "2b5554c862bd0d46a31dd39d88d3213012e81d1e8753ec31da003f05384b5dd2",
+    "2b5554c862bd0d46a31dd39d88d3213012e81d1e8753ec31da003f05384b5dd2",
+    "2b5554c862bd0d46a31dd39d88d3213012e81d1e8753ec31da003f05384b5dd2",
+    "2b5554c862bd0d46a31dd39d88d3213012e81d1e8753ec31da003f05384b5dd2"
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "changedPixels": 135,
+      "outsideMaskChanges": 0,
+      "lowerRows78to127Changes": 0,
+      "chestRows50to67Changes": 0,
+      "distalHairChanges": 0,
+      "goldHiltChanges": 0,
+      "headMatchesCanonical": true,
+      "alphaComponents": 1,
+      "sha256": "b79d7ccb745d2720109bc54350cfc32bcf5aefbb19ccea41c09f08835db58cd6"
+    },
+    {
+      "index": 1,
+      "changedPixels": 926,
+      "outsideMaskChanges": 0,
+      "lowerRows78to127Changes": 0,
+      "chestRows50to67Changes": 0,
+      "distalHairChanges": 0,
+      "goldHiltChanges": 0,
+      "headMatchesCanonical": true,
+      "alphaComponents": 1,
+      "sha256": "afa5da944039ab6044d4ab09068820e0bc8fba57a86d0e1912041f406bc50cce"
+    },
+    {
+      "index": 2,
+      "changedPixels": 875,
+      "outsideMaskChanges": 0,
+      "lowerRows78to127Changes": 0,
+      "chestRows50to67Changes": 0,
+      "distalHairChanges": 0,
+      "goldHiltChanges": 0,
+      "headMatchesCanonical": true,
+      "alphaComponents": 1,
+      "sha256": "db80685c47f553f6239185c65a2fd98e217361b4fe97e77745ebcd376dd6f8b9"
+    },
+    {
+      "index": 3,
+      "changedPixels": 880,
+      "outsideMaskChanges": 0,
+      "lowerRows78to127Changes": 0,
+      "chestRows50to67Changes": 0,
+      "distalHairChanges": 0,
+      "goldHiltChanges": 0,
+      "headMatchesCanonical": true,
+      "alphaComponents": 1,
+      "sha256": "8dc5c38ee1556d21c73eaf30dabcfbfcdf255ddf4812fa3a3d6b3ab9059cf484"
+    },
+    {
+      "index": 4,
+      "changedPixels": 878,
+      "outsideMaskChanges": 0,
+      "lowerRows78to127Changes": 0,
+      "chestRows50to67Changes": 0,
+      "distalHairChanges": 0,
+      "goldHiltChanges": 0,
+      "headMatchesCanonical": true,
+      "alphaComponents": 1,
+      "sha256": "3037381b9f35760ba124eb400643e91bd7501d5fa358815617e6d55f7d051b2d"
+    },
+    {
+      "index": 5,
+      "changedPixels": 883,
+      "outsideMaskChanges": 0,
+      "lowerRows78to127Changes": 0,
+      "chestRows50to67Changes": 0,
+      "distalHairChanges": 0,
+      "goldHiltChanges": 0,
+      "headMatchesCanonical": true,
+      "alphaComponents": 1,
+      "sha256": "6f04f7831f692db5250f31aa0eeb0541c69abbf349d5d92f4549ae9c0097b9fb"
+    },
+    {
+      "index": 6,
+      "changedPixels": 881,
+      "outsideMaskChanges": 0,
+      "lowerRows78to127Changes": 0,
+      "chestRows50to67Changes": 0,
+      "distalHairChanges": 0,
+      "goldHiltChanges": 0,
+      "headMatchesCanonical": true,
+      "alphaComponents": 1,
+      "sha256": "78e51ed255692a3c226a97fe42544f7af194a58b41b5fab909b27888269a97c8"
+    },
+    {
+      "index": 7,
+      "changedPixels": 850,
+      "outsideMaskChanges": 0,
+      "lowerRows78to127Changes": 0,
+      "chestRows50to67Changes": 0,
+      "distalHairChanges": 0,
+      "goldHiltChanges": 0,
+      "headMatchesCanonical": true,
+      "alphaComponents": 1,
+      "sha256": "b6bb59620c9fff4816b8afc21b4624134a5877e48f26c7dcde9b86d72c17ff5a"
+    }
+  ],
+  "gripContactProxy": {
+    "method": "minimum pixel distance between pale gauntlet colors and original gold hilt colors in wrist ROI; proxy only, not anatomical detection",
+    "before": [
+      1.0,
+      1.0,
+      1.41,
+      1.41,
+      1.0,
+      1.41,
+      1.0,
+      1.0
+    ],
+    "after": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "preserved": [
+    "all rows78..127 including legs, feet and visible blade",
+    "chest core rows50..67",
+    "distal hair x<=54,y>=44",
+    "original gold guard/hilt selected pixels",
+    "8-frame order, root64,112, stride48"
+  ],
+  "source": "exec-abd25cf4-85f4-45f2-b679-6519a9e934d1.png",
+  "artAcceptance": "pending visual review; neck/grip tiny patches generated, not precision hand-painted pixels"
+}
