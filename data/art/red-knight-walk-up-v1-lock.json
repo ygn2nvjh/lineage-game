@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "characterId": "red-knight-female",
+  "revision": "walk-up-0.1.0",
+  "reviewStatus": "user-accepted-visual-only-ground-separate",
+  "package": "assets/characters/red-knight/walk-up-v1/",
+  "checksumsFile": "assets/characters/red-knight/walk-up-v1/checksums.json",
+  "checksumsSha256": "bf5d38e645121e98df5991e12b9f654a328190842c9e05ecc2a843506d916fb7"
+}

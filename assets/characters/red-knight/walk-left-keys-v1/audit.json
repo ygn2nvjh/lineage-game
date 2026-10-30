@@ -1,0 +1,114 @@
+{
+  "referenceChecks": "static/right/front/back files and SHA exact before production",
+  "frames": [
+    {
+      "phase": 1,
+      "bounds": [
+        39,
+        22,
+        98,
+        117
+      ],
+      "visibleHeight": 95,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0,
+      "perFrameScale": false,
+      "anchor": [
+        64,
+        112
+      ]
+    },
+    {
+      "phase": 3,
+      "bounds": [
+        45,
+        22,
+        98,
+        117
+      ],
+      "visibleHeight": 95,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0,
+      "perFrameScale": false,
+      "anchor": [
+        64,
+        112
+      ]
+    },
+    {
+      "phase": 5,
+      "bounds": [
+        38,
+        22,
+        98,
+        116
+      ],
+      "visibleHeight": 94,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0,
+      "perFrameScale": false,
+      "anchor": [
+        64,
+        112
+      ]
+    },
+    {
+      "phase": 7,
+      "bounds": [
+        45,
+        22,
+        98,
+        117
+      ],
+      "visibleHeight": 95,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0,
+      "perFrameScale": false,
+      "anchor": [
+        64,
+        112
+      ]
+    }
+  ],
+  "contactEstimates": [
+    {
+      "phase": 1,
+      "leg": "right",
+      "x": 48,
+      "y": 116,
+      "method": "manual boot footprint center estimate from enlarged images; anatomical support remains visual-review candidate",
+      "uncertaintyPx": 2
+    },
+    {
+      "phase": 3,
+      "leg": "right",
+      "x": 59,
+      "y": 116,
+      "method": "manual boot footprint center estimate from enlarged images; anatomical support remains visual-review candidate",
+      "uncertaintyPx": 2
+    },
+    {
+      "phase": 5,
+      "leg": "left",
+      "x": 48,
+      "y": 115,
+      "method": "manual boot footprint center estimate from enlarged images; anatomical support remains visual-review candidate",
+      "uncertaintyPx": 2
+    },
+    {
+      "phase": 7,
+      "leg": "left",
+      "x": 59,
+      "y": 116,
+      "method": "manual boot footprint center estimate from enlarged images; anatomical support remains visual-review candidate",
+      "uncertaintyPx": 2
+    }
+  ],
+  "sourceImage": "exec-b2f285a9-a0b5-4678-b0d4-0bcb00804c5f.png",
+  "limits": [
+    "New left-view whole poses generated independently, not mirrored right images",
+    "Uniform downsampled pixel-style source, not native hand pixel art",
+    "Near/far anatomical identity and phase names require user review, not automatically proved",
+    "No full gait, stride, ground or 8-direction approval claimed"
+  ]
+}

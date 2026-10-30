@@ -50,3 +50,5 @@ await import('./build-down-walk.mjs');
 await import('./build-up-walk-keys.mjs');
 
 await import('./build-up-walk.mjs');
+
+await import('./build-left-walk-keys.mjs');
