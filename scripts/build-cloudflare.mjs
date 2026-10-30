@@ -40,3 +40,5 @@ await import('./build-walk-micro.mjs');
 await import('./build-walk-p0.mjs');
 
 await import('./build-walk-p12.mjs');
+
+await import('./build-character-record.mjs');

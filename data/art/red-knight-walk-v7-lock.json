@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "characterId": "red-knight-female",
+  "revision": "walk-right-0.7.0",
+  "reviewStatus": "user-accepted-right-walk-only",
+  "package": "assets/characters/red-knight/walk-right-v7/",
+  "checksumsFile": "assets/characters/red-knight/walk-right-v7/checksums.json",
+  "checksumsSha256": "d18c540bf31210c0c8daa351db519b7bb1a2df9b914fe7f1f177dac3768b2e7e"
+}

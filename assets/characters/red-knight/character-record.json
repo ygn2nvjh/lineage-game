@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "id": "red-knight-female",
+  "name": "紅髮女騎士",
+  "recordRevision": "2026-10-30-walk-v7",
+  "staticMaster": {
+    "revision": "1.0.1",
+    "manifest": "v1-0-1/character.json",
+    "runtime": "v1-0-1/runtime/idle.json",
+    "policy": "original immutable; no changes this update"
+  },
+  "identity": {
+    "hair": "red braided high ponytail",
+    "armor": "silver plate, layered hip tassets, silver greaves",
+    "cloth": "red lining",
+    "legs": "black stockings",
+    "rightHand": "single straight sword",
+    "leftHand": "red heater shield",
+    "cape": false
+  },
+  "currentWalk": {
+    "revision": "walk-right-0.7.0",
+    "direction": "right",
+    "status": "user-accepted-visual-reference",
+    "acceptedEvidence": "使用者於v0.7回覆「太好了」，要求更新人物資料與後續八方向指令",
+    "manifest": "walk-right-v7/animation.json",
+    "atlas": "walk-right-v7/walk-right.png",
+    "checksums": "walk-right-v7/checksums.json",
+    "audit": "walk-right-v7/audit.json",
+    "reviewURL": "/art-walk-p12.html?v=7",
+    "sourceManifestStatus": "historical candidate label retained in immutable package; current user review status is recorded here",
+    "frames": 8,
+    "integration": "preview-only; formal game unchanged"
+  },
+  "walkDirections": [
+    {
+      "direction": "down",
+      "status": "not-produced",
+      "frameCount": 0,
+      "manifest": null
+    },
+    {
+      "direction": "down-right",
+      "status": "not-produced",
+      "frameCount": 0,
+      "manifest": null
+    },
+    {
+      "direction": "right",
+      "status": "accepted",
+      "frameCount": 8,
+      "manifest": "walk-right-v7/animation.json"
+    },
+    {
+      "direction": "up-right",
+      "status": "not-produced",
+      "frameCount": 0,
+      "manifest": null
+    },
+    {
+      "direction": "up",
+      "status": "not-produced",
+      "frameCount": 0,
+      "manifest": null
+    },
+    {
+      "direction": "up-left",
+      "status": "not-produced",
+      "frameCount": 0,
+      "manifest": null
+    },
+    {
+      "direction": "left",
+      "status": "not-produced",
+      "frameCount": 0,
+      "manifest": null
+    },
+    {
+      "direction": "down-left",
+      "status": "not-produced",
+      "frameCount": 0,
+      "manifest": null
+    }
+  ],
+  "walkCoverage": {
+    "targetDirections": 8,
+    "targetFramesPerDirection": 8,
+    "targetFrames": 64,
+    "acceptedDirections": 1,
+    "acceptedFrames": 8,
+    "remainingDirections": 7,
+    "remainingFrames": 56
+  },
+  "technicalReference": {
+    "cell": {
+      "width": 128,
+      "height": 128
+    },
+    "groundAnchor": {
+      "x": 64,
+      "y": 112
+    },
+    "approximateVisibleHeightPx": 96,
+    "viewpointApproxDegrees": 35,
+    "rightStrideSourcePx": 48,
+    "rightPreviewSpeedSourcePxPerSecond": 60,
+    "cycleDurationMs": 800,
+    "headOffsetsY": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "rightHand": "sword",
+    "leftHand": "shield",
+    "doNotMirrorHandedEquipment": true,
+    "nativePixelArtClaim": false
+  },
+  "instructions": {
+    "readable": "guide/eight-direction-walk-ai.md",
+    "machineReadable": "guide/eight-direction-walk-spec.json",
+    "web": "/character-walk-ai.html"
+  },
+  "history": {
+    "rightWalkPackages": [
+      "walk-right-v1",
+      "walk-right-v2",
+      "walk-right-v3",
+      "walk-right-v4",
+      "walk-right-v6",
+      "walk-right-v7"
+    ],
+    "microV5Review": "/art-walk-micro.html?v=5",
+    "policy": "preserve prior files and source-art references"
+  },
+  "notYetApproved": [
+    "other seven walk directions",
+    "full eight-direction transitions",
+    "formal game integration",
+    "new attack animation"
+  ]
+}

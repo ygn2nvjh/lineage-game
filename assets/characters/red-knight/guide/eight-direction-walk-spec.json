@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "characterId": "red-knight-female",
+  "characterRecord": "../character-record.json",
+  "approvedRightWalk": "../walk-right-v7/animation.json",
+  "staticMaster": "../v1-0-1/runtime/idle.json",
+  "target": {
+    "directions": [
+      "down",
+      "down-right",
+      "right",
+      "up-right",
+      "up",
+      "up-left",
+      "left",
+      "down-left"
+    ],
+    "framesPerDirection": 8,
+    "frameCount": 64,
+    "remainingFrameCount": 56
+  },
+  "workflow": {
+    "oneCharacterAtATime": true,
+    "oneDirectionAtATime": true,
+    "keyFramesFirst": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "inBetweenFrames": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "suggestedRemainingOrder": [
+      "down",
+      "up",
+      "left",
+      "down-right",
+      "up-right",
+      "up-left",
+      "down-left"
+    ],
+    "userMayOverrideDirectionOrder": true
+  },
+  "output": {
+    "cell": [
+      128,
+      128
+    ],
+    "atlasPerDirection": [
+      1024,
+      128
+    ],
+    "groundAnchor": [
+      64,
+      112
+    ],
+    "transparent": true,
+    "interpolation": "consistent; nearest-neighbor preview",
+    "noPerFrameAutoFit": true
+  },
+  "anatomy": {
+    "rightHand": "one straight sword",
+    "leftHand": "shield",
+    "legIds": [
+      "anatomical-right",
+      "anatomical-left"
+    ],
+    "nearFarLeg": "define per view; never substitute for anatomical identity",
+    "horizontalMirrorAsFinal": false
+  },
+  "phaseOrder": [
+    "right-contact",
+    "right-load",
+    "left-passing",
+    "left-forward-swing",
+    "left-contact",
+    "left-load",
+    "right-passing",
+    "right-forward-swing"
+  ],
+  "referenceTiming": {
+    "frameDurationsMs": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "cycleMs": 800,
+    "headOffsetsY": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "rightStrideSourcePx": 48,
+    "rightPreviewSpeedSourcePxPerSecond": 60,
+    "otherDirectionProjectedStride": "measure per direction; do not copy right48 as screen displacement",
+    "formalWorldSpeed": "not changed; requires explicit scale conversion"
+  },
+  "forbidden": [
+    "full-character-regeneration-for-local-repair",
+    "cut-and-translate-leg-animation",
+    "equipment-redesign",
+    "handedness-swap",
+    "disconnected-or-double-blade",
+    "concave-breastplate-notch",
+    "yellow-neck-bars",
+    "per-frame-resize",
+    "mixed-characters",
+    "declaring-all-directions-complete-from-one-view"
+  ],
+  "validation": {
+    "playOrder": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      1
+    ],
+    "seamReviewOnce": [
+      7,
+      8,
+      1,
+      2
+    ],
+    "seamStopAt": 2,
+    "tests": [
+      "file-layout-and-order",
+      "actual-rgba-protected-regions",
+      "anatomical-leg-tracking",
+      "world-support-foot-slip",
+      "full-sword-continuity",
+      "convex-armor-surface",
+      "collar-and-face-seam",
+      "shield-occlusion-and-hair-junction",
+      "native-size-mobile-playback",
+      "cross-direction-transition"
+    ],
+    "technicalPassIsVisualApproval": false,
+    "alphaConnectivityProvesSingleCompleteSword": false,
+    "approvalScope": "one direction until separately accepted"
+  },
+  "promptFile": "eight-direction-walk-ai.md"
+}
