@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "red-knight-female",
   "name": "紅髮女騎士",
-  "recordRevision": "2026-10-30-down-key-poses-v1",
+  "recordRevision": "2026-10-30-down-walk-candidate-v1",
   "staticMaster": {
     "revision": "1.0.1",
     "manifest": "v1-0-1/character.json",
@@ -35,12 +35,15 @@
   "walkDirections": [
     {
       "direction": "down",
-      "status": "key-poses-review",
+      "status": "walk-animation-review",
       "frameCount": 0,
       "manifest": null,
       "keyPoseCount": 4,
       "keyPoseManifest": "walk-down-keys-v1/animation.json",
-      "keyPoseReviewURL": "/art-walk-down-keys.html?v=1"
+      "keyPoseReviewURL": "/art-walk-down-keys.html?v=1",
+      "candidateFrameCount": 8,
+      "candidateManifest": "walk-down-v1/animation.json",
+      "candidateReviewURL": "/art-walk-down.html?v=1"
     },
     {
       "direction": "down-right",
@@ -148,15 +151,11 @@
   ],
   "workInProgress": {
     "direction": "down",
-    "stage": "F1/F3/F5/F7 key-pose review",
-    "keyPoseCount": 4,
-    "completedWalkFrames": 0,
-    "missingPhases": [
-      2,
-      4,
-      6,
-      8
-    ],
-    "reviewURL": "/art-walk-down-keys.html?v=1"
+    "stage": "eight-frame dynamic and ground review",
+    "candidateFrameCount": 8,
+    "acceptedFrameCount": 0,
+    "originalFourKeysPreserved": true,
+    "reviewURL": "/art-walk-down.html?v=1",
+    "groundStatus": "unvalidated; possible support-foot slide"
   }
 }
