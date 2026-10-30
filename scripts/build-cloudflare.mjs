@@ -9,3 +9,6 @@ console.log('Built self-hosted WebSocket dungeon and runtime assets (no source P
 await import('./build-art-review.mjs');
 await import('./build-art-play.mjs');
 await import('./build-hero-calibration.mjs');
+
+// Isolated static art acceptance; does not replace /play or its assets.
+await cp(new URL('assets/art-scene-review/knight-96-review.html',root),new URL('art-scene-review.html',out));
