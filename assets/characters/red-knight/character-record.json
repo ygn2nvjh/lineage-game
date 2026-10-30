@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "red-knight-female",
   "name": "紅髮女騎士",
-  "recordRevision": "2026-10-30-down-visual-accepted-up-keys",
+  "recordRevision": "2026-10-30-up-walk-candidate-v1",
   "staticMaster": {
     "revision": "1.0.1",
     "manifest": "v1-0-1/character.json",
@@ -67,12 +67,15 @@
     },
     {
       "direction": "up",
-      "status": "key-poses-review",
+      "status": "walk-animation-review",
       "frameCount": 0,
       "manifest": null,
       "keyPoseCount": 4,
       "keyPoseManifest": "walk-up-keys-v1/animation.json",
-      "keyPoseReviewURL": "/art-walk-up-keys.html?v=1"
+      "keyPoseReviewURL": "/art-walk-up-keys.html?v=1",
+      "candidateFrameCount": 8,
+      "candidateManifest": "walk-up-v1/animation.json",
+      "candidateReviewURL": "/art-walk-up.html?v=1"
     },
     {
       "direction": "up-left",
@@ -157,16 +160,12 @@
   ],
   "workInProgress": {
     "direction": "up",
-    "stage": "F1/F3/F5/F7 key-pose review",
-    "keyPoseCount": 4,
+    "stage": "eight-frame dynamic and ground review",
+    "candidateFrameCount": 8,
     "acceptedFrameCount": 0,
-    "missingPhases": [
-      2,
-      4,
-      6,
-      8
-    ],
-    "reviewURL": "/art-walk-up-keys.html?v=1"
+    "originalFourKeysPreserved": true,
+    "reviewURL": "/art-walk-up.html?v=1",
+    "groundStatus": "support-foot proxy 2/3px range at trial stride32; visual review pending"
   },
   "acceptedWalks": [
     {

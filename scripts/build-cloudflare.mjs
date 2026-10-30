@@ -48,3 +48,5 @@ await import('./build-down-walk-keys.mjs');
 await import('./build-down-walk.mjs');
 
 await import('./build-up-walk-keys.mjs');
+
+await import('./build-up-walk.mjs');

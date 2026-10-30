@@ -1,0 +1,194 @@
+{
+  "frames": [
+    {
+      "phase": 1,
+      "originalKeyBytesPreserved": true,
+      "loadLegRepair": false,
+      "bounds": [
+        37,
+        21,
+        105,
+        113
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 2,
+      "originalKeyBytesPreserved": false,
+      "loadLegRepair": true,
+      "bounds": [
+        37,
+        21,
+        105,
+        112
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 3,
+      "originalKeyBytesPreserved": true,
+      "loadLegRepair": false,
+      "bounds": [
+        37,
+        21,
+        105,
+        110
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 4,
+      "originalKeyBytesPreserved": false,
+      "loadLegRepair": false,
+      "bounds": [
+        37,
+        21,
+        105,
+        112
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 5,
+      "originalKeyBytesPreserved": true,
+      "loadLegRepair": false,
+      "bounds": [
+        37,
+        21,
+        105,
+        113
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 6,
+      "originalKeyBytesPreserved": false,
+      "loadLegRepair": true,
+      "bounds": [
+        37,
+        21,
+        105,
+        106
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 7,
+      "originalKeyBytesPreserved": true,
+      "loadLegRepair": false,
+      "bounds": [
+        37,
+        21,
+        105,
+        109
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 8,
+      "originalKeyBytesPreserved": false,
+      "loadLegRepair": false,
+      "bounds": [
+        37,
+        21,
+        105,
+        111
+      ],
+      "alphaComponents": 1
+    }
+  ],
+  "contactEstimates": [
+    {
+      "leg": "right",
+      "x": 72,
+      "y": 101,
+      "method": "manual boot ROI alpha-bottom proxy",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "right",
+      "x": 72,
+      "y": 104,
+      "method": "manual boot ROI alpha-bottom proxy",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "right",
+      "x": 72,
+      "y": 109,
+      "method": "manual boot ROI alpha-bottom proxy",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "right",
+      "x": 72,
+      "y": 111,
+      "method": "manual boot ROI alpha-bottom proxy",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "left",
+      "x": 56,
+      "y": 100,
+      "method": "manual boot ROI alpha-bottom proxy",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "left",
+      "x": 56,
+      "y": 105,
+      "method": "manual boot ROI alpha-bottom proxy",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "left",
+      "x": 56,
+      "y": 108,
+      "method": "manual boot ROI alpha-bottom proxy",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "left",
+      "x": 56,
+      "y": 110,
+      "method": "manual boot ROI alpha-bottom proxy",
+      "uncertaintyPx": 2
+    }
+  ],
+  "supportWorldYProxy": [
+    {
+      "supportLeg": "right",
+      "worldYProxy": [
+        101,
+        100,
+        101,
+        99
+      ],
+      "rangePx": 2,
+      "stride": 32,
+      "uncertaintyPx": 2
+    },
+    {
+      "supportLeg": "left",
+      "worldYProxy": [
+        84,
+        85,
+        84,
+        82
+      ],
+      "rangePx": 3,
+      "stride": 32,
+      "uncertaintyPx": 2
+    }
+  ],
+  "groundReviewNote": "試播步幅32px／輪由原關鍵格支撐靴投影差估算，可調8–48px。人工接觸點約估±2px；承重期間世界足點代理殘差：右2px、左3px。數值只輔助找滑動，不能代替實際播放驗收。",
+  "groundStatus": "estimated candidate; not user-approved ground motion",
+  "initialSource": "exec-4ea1d9c9-a24b-417b-9d11-3b8d1cec87a7.png",
+  "loadRepairSource": "exec-ec39033a-fb6d-4c8f-831a-5497b1f2dd08.png",
+  "limitations": [
+    "Full even-pose generation followed by local F2/F6 load-leg correction; not native hand pixel art",
+    "Odd keyPNG files byte-preserved",
+    "Alpha connectivity alone cannot prove single sword",
+    "World-foot coordinates are proxies from manual boot ROI; uncertainty2px; do not claim anatomical precision or slip-free movement"
+  ]
+}
