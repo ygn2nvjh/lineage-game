@@ -1,0 +1,21 @@
+{
+  "algorithm": "sha256",
+  "atlasPixelsMatchEightSourceFrames": true,
+  "files": {
+    "README.md": "44d2936a0e6241228409647323882572509d02773ad8f6269970a8dcf4b5220a",
+    "character.json": "e5f7d32a3cf429d90eee2685aa2b1a9cb7cba57d9bd99ed718dacb369ca87c0e",
+    "cleanup-audit.json": "30fa0bf9d56da1d0047999f4c9315911db74b24264c12923c93e71eb530138de",
+    "references/concept-original.jpg": "32a503b53c19818f2785cf86cd42d5bc90e6ece8adb3a3d5fc6f758674aaef5b",
+    "references/static-design-original.jpg": "5d991894c95e46014d92e547058a3c197618b71ab3498e58ff4c7fa14f4d52d5",
+    "runtime/frames/down-left.png": "93e4973194d28aebc236c2d2611150f7565f620116c960fd8d15e44dae5adab0",
+    "runtime/frames/down-right.png": "f19d35e07df82be7901ac669b92cbb7e6afa41e0ea757841e08d3d6dcc94233d",
+    "runtime/frames/down.png": "b8d933471bf738190ba58bd1c6564266b234ad36382726a190498131abd58b2b",
+    "runtime/frames/left.png": "87e6c6d4f6a517c5bff5aa4ffe1e16dd5bd7f046255c7a40a6f663e62038aa49",
+    "runtime/frames/right.png": "2e05352984ff9abadb798090da584c4e473c0558757958b313c96326f8192939",
+    "runtime/frames/up-left.png": "0af101c58b57b1bb538f0b73090cf82499949b13c7d149f077c2d286e65217d5",
+    "runtime/frames/up-right.png": "f695b2afd6c39c470eb92f63ccc2531466f545be3c4f268d3ddeb6111067b247",
+    "runtime/frames/up.png": "e061c79075929dfe630babe614dd5ff890e954913fb855ed13383fb121de60f5",
+    "runtime/idle.json": "4f11362caa0a64f10888fa435be7b425376fe72b39ec8ce3f68bdf2295591c09",
+    "runtime/idle.png": "4bc583eb31104988fecc604aca90e19eb9f9be7288c301fb066e7d0e4d0c0cff"
+  }
+}

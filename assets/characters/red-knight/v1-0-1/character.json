@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "red-knight-female",
+  "revision": "1.0.1",
+  "name": "紅髮女騎士",
+  "references": [
+    {
+      "role": "concept",
+      "file": "references/concept-original.jpg",
+      "width": 1066,
+      "height": 1280,
+      "sha256": "32a503b53c19818f2785cf86cd42d5bc90e6ece8adb3a3d5fc6f758674aaef5b",
+      "preservedOriginalBytes": true
+    },
+    {
+      "role": "static-design",
+      "file": "references/static-design-original.jpg",
+      "width": 985,
+      "height": 1280,
+      "sha256": "5d991894c95e46014d92e547058a3c197618b71ab3498e58ff4c7fa14f4d52d5",
+      "preservedOriginalBytes": true
+    }
+  ],
+  "runtime": {
+    "manifest": "runtime/idle.json",
+    "purpose": "eight-direction static in-world display"
+  },
+  "identity": {
+    "hair": "red braided high ponytail",
+    "armor": "silver plate, layered hip tassets, silver greaves",
+    "cloth": "red lining",
+    "legs": "black stockings",
+    "rightHand": "single straight sword",
+    "leftHand": "red heater shield",
+    "cape": false
+  },
+  "referenceReview": {
+    "result": "identity consistent; deliberate game-style adaptations recorded",
+    "conceptRole": "character identity and equipment design",
+    "staticDesignRole": "high-detail static design reference; white-background JPEG, not a world sprite",
+    "runtimeRole": "latest simplified, transparent eight-direction working baseline",
+    "adaptations": [
+      "stylized proportions and approximate35-degree game viewpoint",
+      "matte silver chest and silver hip plates; red mainly inner lining",
+      "more compact ponytail and simplified shield emblem"
+    ],
+    "doNotRegenerateAnimationsFromHighDetailReferenceAlone": true
+  },
+  "versionPolicy": "freeze this revision; any later identity, source-image or runtime change creates a new revision",
+  "patch": {
+    "previousRevision": "1.0.0",
+    "change": "Remove 23 isolated extraction-residue pixels from left-facing frame; character silhouette pixels, other seven frames and anchors unchanged."
+  }
+}

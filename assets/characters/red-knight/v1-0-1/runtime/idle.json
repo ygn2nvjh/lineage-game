@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "characterId": "red-knight-female",
+  "revision": "1.0.1",
+  "state": "idle",
+  "atlas": "idle.png",
+  "atlasWidth": 1024,
+  "atlasHeight": 128,
+  "directionOrder": [
+    "down",
+    "down-right",
+    "right",
+    "up-right",
+    "up",
+    "up-left",
+    "left",
+    "down-left"
+  ],
+  "frames": {
+    "down": {
+      "x": 0,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleWidth": 69,
+      "visibleHeight": 94,
+      "footContacts": [
+        [
+          47,
+          112
+        ],
+        [
+          81,
+          112
+        ]
+      ],
+      "source": "frames/down.png",
+      "sha256": "b8d933471bf738190ba58bd1c6564266b234ad36382726a190498131abd58b2b"
+    },
+    "down-right": {
+      "x": 128,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleWidth": 59,
+      "visibleHeight": 93,
+      "footContacts": [
+        [
+          51.5,
+          116
+        ],
+        [
+          76.5,
+          108
+        ]
+      ],
+      "source": "frames/down-right.png",
+      "sha256": "f19d35e07df82be7901ac669b92cbb7e6afa41e0ea757841e08d3d6dcc94233d"
+    },
+    "right": {
+      "x": 256,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleWidth": 55,
+      "visibleHeight": 96,
+      "footContacts": [
+        [
+          62.5,
+          115
+        ],
+        [
+          66,
+          108
+        ]
+      ],
+      "source": "frames/right.png",
+      "sha256": "2e05352984ff9abadb798090da584c4e473c0558757958b313c96326f8192939"
+    },
+    "up-right": {
+      "x": 384,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleWidth": 62,
+      "visibleHeight": 95,
+      "footContacts": [
+        [
+          73.5,
+          116
+        ],
+        [
+          55,
+          109
+        ]
+      ],
+      "source": "frames/up-right.png",
+      "sha256": "f695b2afd6c39c470eb92f63ccc2531466f545be3c4f268d3ddeb6111067b247"
+    },
+    "up": {
+      "x": 512,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleWidth": 67,
+      "visibleHeight": 92,
+      "footContacts": [
+        [
+          49.5,
+          112
+        ],
+        [
+          79,
+          112
+        ]
+      ],
+      "source": "frames/up.png",
+      "sha256": "e061c79075929dfe630babe614dd5ff890e954913fb855ed13383fb121de60f5"
+    },
+    "up-left": {
+      "x": 640,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleWidth": 56,
+      "visibleHeight": 93,
+      "footContacts": [
+        [
+          55,
+          116
+        ],
+        [
+          73,
+          108
+        ]
+      ],
+      "source": "frames/up-left.png",
+      "sha256": "0af101c58b57b1bb538f0b73090cf82499949b13c7d149f077c2d286e65217d5"
+    },
+    "left": {
+      "x": 768,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleWidth": 44,
+      "visibleHeight": 95,
+      "footContacts": [
+        [
+          60,
+          116
+        ],
+        [
+          68,
+          108
+        ]
+      ],
+      "source": "frames/left.png",
+      "sha256": "87e6c6d4f6a517c5bff5aa4ffe1e16dd5bd7f046255c7a40a6f663e62038aa49"
+    },
+    "down-left": {
+      "x": 896,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleWidth": 67,
+      "visibleHeight": 96,
+      "footContacts": [
+        [
+          47,
+          116
+        ],
+        [
+          80.5,
+          108
+        ]
+      ],
+      "source": "frames/down-left.png",
+      "sha256": "93e4973194d28aebc236c2d2611150f7565f620116c960fd8d15e44dae5adab0"
+    }
+  },
+  "scalePolicy": "frame size includes transparent padding; game display scale must be chosen separately",
+  "visibleHeightIncludesPonytail": true,
+  "animationFramesPerDirection": 1,
+  "sourceBaseline": "eight-static-p012-ne-v3",
+  "artStatus": "archived working static baseline; game acceptance remains separate"
+}
