@@ -12,3 +12,5 @@ await import('./build-hero-calibration.mjs');
 
 // Isolated static art acceptance; does not replace /play or its assets.
 await cp(new URL('assets/art-scene-review/knight-96-review.html',root),new URL('art-scene-review.html',out));
+
+await cp(new URL('assets/art-scene-review/knight-128-review.html',root),new URL('art-scene-review-v2.html',out));
