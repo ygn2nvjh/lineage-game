@@ -1,0 +1,118 @@
+{
+  "base": "v0.5",
+  "frames": [
+    {
+      "index": 0,
+      "changedPixels": 553,
+      "outsideMaskChanges": 0,
+      "headChanges": 0,
+      "bootChanges": 0,
+      "bladeAxisMissingSilverColumns": [],
+      "bladeFit": {
+        "slope": 0.9088010820210604,
+        "intercept": 12.88706405178248,
+        "tipX": 94
+      },
+      "alphaComponents": 1
+    },
+    {
+      "index": 1,
+      "changedPixels": 553,
+      "outsideMaskChanges": 0,
+      "headChanges": 0,
+      "bootChanges": 0,
+      "bladeAxisMissingSilverColumns": [],
+      "bladeFit": {
+        "slope": 0.8880829015544027,
+        "intercept": 13.68393782383429,
+        "tipX": 94
+      },
+      "alphaComponents": 1
+    },
+    {
+      "index": 2,
+      "changedPixels": 544,
+      "outsideMaskChanges": 0,
+      "headChanges": 0,
+      "bootChanges": 0,
+      "bladeAxisMissingSilverColumns": [],
+      "bladeFit": {
+        "slope": 0.8461538461538465,
+        "intercept": 19.192307692307725,
+        "tipX": 93
+      },
+      "alphaComponents": 1
+    },
+    {
+      "index": 3,
+      "changedPixels": 539,
+      "outsideMaskChanges": 0,
+      "headChanges": 0,
+      "bootChanges": 0,
+      "bladeAxisMissingSilverColumns": [],
+      "bladeFit": {
+        "slope": 0.8985358511220585,
+        "intercept": 11.779214559386881,
+        "tipX": 95
+      },
+      "alphaComponents": 1
+    },
+    {
+      "index": 4,
+      "changedPixels": 559,
+      "outsideMaskChanges": 0,
+      "headChanges": 0,
+      "bootChanges": 0,
+      "bladeAxisMissingSilverColumns": [],
+      "bladeFit": {
+        "slope": 0.8820186122041098,
+        "intercept": 13.223658734619988,
+        "tipX": 95
+      },
+      "alphaComponents": 1
+    },
+    {
+      "index": 5,
+      "changedPixels": 540,
+      "outsideMaskChanges": 0,
+      "headChanges": 0,
+      "bootChanges": 0,
+      "bladeAxisMissingSilverColumns": [],
+      "bladeFit": {
+        "slope": 0.9305153445280868,
+        "intercept": 10.0296964182311,
+        "tipX": 94
+      },
+      "alphaComponents": 1
+    },
+    {
+      "index": 6,
+      "changedPixels": 555,
+      "outsideMaskChanges": 0,
+      "headChanges": 0,
+      "bootChanges": 0,
+      "bladeAxisMissingSilverColumns": [],
+      "bladeFit": {
+        "slope": 0.9613543091655273,
+        "intercept": 6.336867305061517,
+        "tipX": 94
+      },
+      "alphaComponents": 1
+    },
+    {
+      "index": 7,
+      "changedPixels": 559,
+      "outsideMaskChanges": 0,
+      "headChanges": 0,
+      "bootChanges": 0,
+      "bladeAxisMissingSilverColumns": [],
+      "bladeFit": {
+        "slope": 0.8038566419945459,
+        "intercept": 19.736852356836813,
+        "tipX": 96
+      },
+      "alphaComponents": 1
+    }
+  ],
+  "limitations": "color blade-axis screening plus visual review; edit area includes blade occlusion over legs, not claim of hidden anatomy; generated local pixels downsampled, not native hand pixel work"
+}

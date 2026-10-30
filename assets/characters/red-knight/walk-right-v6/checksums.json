@@ -1,0 +1,10 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "edit-mask.png": "44128bbd8d59991dc1c7fc7bb0f520f26366120ea9fad51b8307df80a46cb4c0",
+    "walk-right.png": "2db7f3532274999b720332e2e48b0d724ac96d4817e11d51118ed7bd96a5708c",
+    "README.md": "85134f8ba8d151f04ccfa5937e13c8c67be30558e231808dd4faecd916685af0",
+    "audit.json": "ff632f845c2c8f75aed3b59bc54e052563c911cc11439dc5d9538532df6e6351",
+    "animation.json": "b3f43bd70760cec5a4df34a9ec91205e7d1d9df7da075c1130bd3f3d6017d4b5"
+  }
+}

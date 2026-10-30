@@ -1,0 +1,4 @@
+import {cp,mkdir,readFile} from 'node:fs/promises';import {createHash} from 'node:crypto';
+const root=new URL('../',import.meta.url),source=new URL('assets/characters/red-knight/walk-right-v6/',root),out=new URL('dist-cloudflare/public/',root),target=new URL('game-assets/characters/red-knight/walk-right-v6/',out);
+const checks=JSON.parse(await readFile(new URL('checksums.json',source),'utf8'));for(const [p,h]of Object.entries(checks.files))if(createHash('sha256').update(await readFile(new URL(p,source))).digest('hex')!==h)throw Error('P0 asset changed: '+p);
+await mkdir(target,{recursive:true});await cp(source,target,{recursive:true});await cp(new URL('assets/art-scene-review/knight-walk-p0.html',root),new URL('art-walk-p0.html',out));console.log('Built P0 collar convex breastplate and complete sword review.');
