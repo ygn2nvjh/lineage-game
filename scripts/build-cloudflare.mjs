@@ -18,3 +18,5 @@ await cp(new URL('assets/art-scene-review/knight-128-review.html',root),new URL(
 await cp(new URL('assets/art-scene-review/knight-112-review.html',root),new URL('art-scene-review-v3.html',out));
 
 await cp(new URL('assets/art-scene-review/knight-96-local-fix.html',root),new URL('art-scene-review-v4.html',out));
+
+await cp(new URL('assets/art-scene-review/knight-eight-static.html',root),new URL('art-eight-static.html',out));
