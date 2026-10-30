@@ -28,3 +28,5 @@ await cp(new URL('assets/art-scene-review/knight-eight-revised-v2.html',root),ne
 await import('./build-character-assets.mjs');
 
 await import('./build-knight-walk-right.mjs');
+
+await import('./build-walk-diagnosis.mjs');

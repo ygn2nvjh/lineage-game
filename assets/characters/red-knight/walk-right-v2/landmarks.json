@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 1,
+  "method": "manual visual annotation of visible near/far shin, knee, heel and toe; not inferred from frame labels",
+  "uncertaintyPx": 2,
+  "coordinateSystem": "128x128 source frame, x right, y down; right anatomical leg=near orange, left=far cyan",
+  "old": {
+    "stridePx": 64,
+    "frames": [
+      {
+        "frame": 0,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            74,
+            89
+          ],
+          "heel": [
+            75,
+            111
+          ],
+          "toe": [
+            86,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            52,
+            91
+          ],
+          "heel": [
+            42,
+            109
+          ],
+          "toe": [
+            51,
+            110
+          ]
+        },
+        "intendedSupport": "right",
+        "observedSupport": "right"
+      },
+      {
+        "frame": 1,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            65,
+            90
+          ],
+          "heel": [
+            66,
+            111
+          ],
+          "toe": [
+            78,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            54,
+            92
+          ],
+          "heel": [
+            48,
+            104
+          ],
+          "toe": [
+            49,
+            109
+          ]
+        },
+        "intendedSupport": "right",
+        "observedSupport": "right"
+      },
+      {
+        "frame": 2,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            63,
+            89
+          ],
+          "heel": [
+            64,
+            111
+          ],
+          "toe": [
+            75,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            59,
+            92
+          ],
+          "heel": [
+            53,
+            104
+          ],
+          "toe": [
+            55,
+            109
+          ]
+        },
+        "intendedSupport": "right",
+        "observedSupport": "right",
+        "annotationNote": "far boot partly occluded; low confidence"
+      },
+      {
+        "frame": 3,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            53,
+            91
+          ],
+          "heel": [
+            43,
+            109
+          ],
+          "toe": [
+            56,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            70,
+            91
+          ],
+          "heel": [
+            74,
+            110
+          ],
+          "toe": [
+            86,
+            109
+          ]
+        },
+        "intendedSupport": "right",
+        "observedSupport": "right"
+      },
+      {
+        "frame": 4,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            52,
+            93
+          ],
+          "heel": [
+            43,
+            110
+          ],
+          "toe": [
+            54,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            69,
+            91
+          ],
+          "heel": [
+            74,
+            111
+          ],
+          "toe": [
+            81,
+            111
+          ]
+        },
+        "intendedSupport": "left",
+        "observedSupport": "left"
+      },
+      {
+        "frame": 5,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            64,
+            90
+          ],
+          "heel": [
+            65,
+            111
+          ],
+          "toe": [
+            77,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            53,
+            93
+          ],
+          "heel": [
+            47,
+            104
+          ],
+          "toe": [
+            50,
+            109
+          ]
+        },
+        "intendedSupport": "left",
+        "observedSupport": "right"
+      },
+      {
+        "frame": 6,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            56,
+            88
+          ],
+          "heel": [
+            42,
+            96
+          ],
+          "toe": [
+            45,
+            104
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            64,
+            96
+          ],
+          "heel": [
+            64,
+            111
+          ],
+          "toe": [
+            76,
+            111
+          ]
+        },
+        "intendedSupport": "left",
+        "observedSupport": "left"
+      },
+      {
+        "frame": 7,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            52,
+            90
+          ],
+          "heel": [
+            44,
+            110
+          ],
+          "toe": [
+            56,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            72,
+            91
+          ],
+          "heel": [
+            77,
+            107
+          ],
+          "toe": [
+            88,
+            106
+          ]
+        },
+        "intendedSupport": "left",
+        "observedSupport": "right"
+      }
+    ],
+    "identityWarnings": [
+      {
+        "frame": 5,
+        "reason": "bright near leg planted again like F2; planned far-leg stance contradicted"
+      },
+      {
+        "frame": 7,
+        "reason": "bright near leg behind/planted before F1 near-leg forward/contact"
+      }
+    ]
+  },
+  "new": {
+    "stridePx": 48,
+    "frames": [
+      {
+        "frame": 0,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            73,
+            89
+          ],
+          "heel": [
+            74,
+            110
+          ],
+          "toe": [
+            84,
+            110
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            53,
+            91
+          ],
+          "heel": [
+            44,
+            106
+          ],
+          "toe": [
+            54,
+            107
+          ]
+        },
+        "intendedSupport": "right",
+        "observedSupport": "right"
+      },
+      {
+        "frame": 1,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            66,
+            90
+          ],
+          "heel": [
+            69,
+            111
+          ],
+          "toe": [
+            79,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            52,
+            91
+          ],
+          "heel": [
+            47,
+            99
+          ],
+          "toe": [
+            51,
+            103
+          ]
+        },
+        "intendedSupport": "right",
+        "observedSupport": "right"
+      },
+      {
+        "frame": 2,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            65,
+            90
+          ],
+          "heel": [
+            63,
+            112
+          ],
+          "toe": [
+            74,
+            112
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            68,
+            92
+          ],
+          "heel": [
+            68,
+            106
+          ],
+          "toe": [
+            74,
+            107
+          ]
+        },
+        "intendedSupport": "right",
+        "observedSupport": "right",
+        "annotationNote": "far boot partly occluded; low confidence"
+      },
+      {
+        "frame": 3,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            56,
+            91
+          ],
+          "heel": [
+            54,
+            111
+          ],
+          "toe": [
+            65,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            76,
+            91
+          ],
+          "heel": [
+            80,
+            109
+          ],
+          "toe": [
+            89,
+            108
+          ]
+        },
+        "intendedSupport": "right",
+        "observedSupport": "right"
+      },
+      {
+        "frame": 4,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            54,
+            90
+          ],
+          "heel": [
+            44,
+            111
+          ],
+          "toe": [
+            57,
+            111
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            71,
+            91
+          ],
+          "heel": [
+            74,
+            110
+          ],
+          "toe": [
+            83,
+            110
+          ]
+        },
+        "intendedSupport": "left",
+        "observedSupport": "left"
+      },
+      {
+        "frame": 5,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            56,
+            87
+          ],
+          "heel": [
+            45,
+            99
+          ],
+          "toe": [
+            50,
+            105
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            69,
+            90
+          ],
+          "heel": [
+            68,
+            111
+          ],
+          "toe": [
+            79,
+            111
+          ]
+        },
+        "intendedSupport": "left",
+        "observedSupport": "left"
+      },
+      {
+        "frame": 6,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            67,
+            88
+          ],
+          "heel": [
+            56,
+            103
+          ],
+          "toe": [
+            64,
+            107
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            64,
+            94
+          ],
+          "heel": [
+            58,
+            112
+          ],
+          "toe": [
+            70,
+            112
+          ]
+        },
+        "intendedSupport": "left",
+        "observedSupport": "left"
+      },
+      {
+        "frame": 7,
+        "right": {
+          "hip": [
+            65,
+            78
+          ],
+          "knee": [
+            73,
+            91
+          ],
+          "heel": [
+            77,
+            106
+          ],
+          "toe": [
+            87,
+            105
+          ]
+        },
+        "left": {
+          "hip": [
+            61,
+            77
+          ],
+          "knee": [
+            56,
+            91
+          ],
+          "heel": [
+            53,
+            108
+          ],
+          "toe": [
+            65,
+            109
+          ]
+        },
+        "intendedSupport": "left",
+        "observedSupport": "left"
+      }
+    ],
+    "identityWarnings": []
+  },
+  "notProofOfAnatomy": "Occluded parts are estimated; threshold results flag review, not automatic artistic approval."
+}

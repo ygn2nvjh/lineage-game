@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "masterRevision": "1.0.1",
+  "masterSha256": "2e05352984ff9abadb798090da584c4e473c0558757958b313c96326f8192939",
+  "masterByteUnchanged": true,
+  "anchor": {
+    "x": 64,
+    "y": 112
+  },
+  "atlasPixelsEqualFrames": true,
+  "frames": [
+    {
+      "index": 0,
+      "bounds": [
+        36,
+        17,
+        94,
+        111
+      ],
+      "alphaComponents": 1,
+      "sha256": "374cbb19b89a4d58a457320480368693e07d5112a7c29e12914c02f092a4e8a6"
+    },
+    {
+      "index": 1,
+      "bounds": [
+        36,
+        17,
+        96,
+        112
+      ],
+      "alphaComponents": 1,
+      "sha256": "9e9b62533b56416c187ee4db2e0603eb592fadeec470e5c3e73d70a1a44ef69c"
+    },
+    {
+      "index": 2,
+      "bounds": [
+        36,
+        19,
+        94,
+        113
+      ],
+      "alphaComponents": 1,
+      "sha256": "b8c459e23412afa94fbb95e86a2241f3fe1c89b6fd3c0f9b8469e9f036a3f9df"
+    },
+    {
+      "index": 3,
+      "bounds": [
+        36,
+        19,
+        96,
+        112
+      ],
+      "alphaComponents": 1,
+      "sha256": "542d081e151ad64c668e2824109e1a726d3eb92e5b8b97ccebae12db5cc50552"
+    },
+    {
+      "index": 4,
+      "bounds": [
+        36,
+        19,
+        94,
+        112
+      ],
+      "alphaComponents": 1,
+      "sha256": "a86f704d43c65e4614cfc0295125387ba3b081f4c3c8b77fba5185595552e6ad"
+    },
+    {
+      "index": 5,
+      "bounds": [
+        36,
+        19,
+        96,
+        112
+      ],
+      "alphaComponents": 1,
+      "sha256": "2c7ec7e7faedc125ded48d2765ca18bec0c9a00d6cffad3cc5f50bbe5da7ec7f"
+    },
+    {
+      "index": 6,
+      "bounds": [
+        34,
+        18,
+        97,
+        113
+      ],
+      "alphaComponents": 1,
+      "sha256": "991ed315b87be0f2721e1f48c698b91cf82a879ade92524f46411d3926a86ec5"
+    },
+    {
+      "index": 7,
+      "bounds": [
+        36,
+        17,
+        95,
+        111
+      ],
+      "alphaComponents": 1,
+      "sha256": "5145d376390bfbd109467703f5145e41befdd25f160ca64f5f85b7b48efd993c"
+    }
+  ],
+  "technicalChecks": "8unique, no clipping, 1alpha component each, common canvas/root",
+  "artAcceptance": "pending user visual review",
+  "remainingReview": [
+    "F7→F8 near foot swing ~21px",
+    "F3 far foot occluded: joint estimate uncertain",
+    "generative equipment/proportion fidelity still requires master comparison"
+  ],
+  "notNativeHandDrawnPixels": true
+}

@@ -1,0 +1,25 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "94b95cda7f1cb1f042fa24300715a8e35939172ec7c25437d13999fa9abc8812",
+    "animation.json": "b0d52cbbeb66c5d3171ce22020a325e2c95b4160ae9cf6162aad0bf936ed4928",
+    "calibration.json": "5a1651c9f6d420ab44dc2493c75e08e761812faba1b2123ac2e9a5a5b0800dbf",
+    "diagnosis.json": "763daf8719634b59864cd7e379e9a9bc5a3ad651ef59d37dceddd2160a094779",
+    "generation-prompts.json": "b19b454af4d01843ebcf45e50886d55a10f0f8168490186f8e5ec14ce1f7cc47",
+    "landmarks.json": "8df43eb1717ee4785f1e9c310fa26670fdaf9f68fb99ad99f856c1209ebfbeb2",
+    "master-right.png": "2e05352984ff9abadb798090da584c4e473c0558757958b313c96326f8192939",
+    "pose-guide.json": "e822a59bda1e2ed06ba3bb8138a097c537a61890ffc3aff002cebfdfb96c013c",
+    "pose-guide.png": "550ef9f5381028192ff42602f23a2f6f807573a0ebf7b910fc176f29151bd13e",
+    "production-guide.md": "d0cc062761c03775e31940d3291df8d3414d46074a6c22ad10052f05c25786d6",
+    "quiet.png": "7ed142a5c4da1dfd8b97c01c137a0b735f513b7a926e7f4d0be5957eb7b49b8f",
+    "right-01.png": "374cbb19b89a4d58a457320480368693e07d5112a7c29e12914c02f092a4e8a6",
+    "right-02.png": "9e9b62533b56416c187ee4db2e0603eb592fadeec470e5c3e73d70a1a44ef69c",
+    "right-03.png": "b8c459e23412afa94fbb95e86a2241f3fe1c89b6fd3c0f9b8469e9f036a3f9df",
+    "right-04.png": "542d081e151ad64c668e2824109e1a726d3eb92e5b8b97ccebae12db5cc50552",
+    "right-05.png": "a86f704d43c65e4614cfc0295125387ba3b081f4c3c8b77fba5185595552e6ad",
+    "right-06.png": "2c7ec7e7faedc125ded48d2765ca18bec0c9a00d6cffad3cc5f50bbe5da7ec7f",
+    "right-07.png": "991ed315b87be0f2721e1f48c698b91cf82a879ade92524f46411d3926a86ec5",
+    "right-08.png": "5145d376390bfbd109467703f5145e41befdd25f160ca64f5f85b7b48efd993c",
+    "walk-right.png": "bf5d5967e57a11166a523fb217f904440e3cb73dca92f6b167a717f7a1ada22c"
+  }
+}

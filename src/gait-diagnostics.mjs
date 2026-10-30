@@ -1,0 +1,8 @@
+// Numeric review of HUMAN-ANNOTATED joints. Does not detect anatomy in images.
+export function analyzeGait(sequence,{uncertaintyPx=2,reviewJumpPx=18}={}){
+ const {frames,stridePx}=sequence;if(frames?.length!==8||!Number.isFinite(stridePx)||stridePx<=0)throw new Error('Eight annotated frames and positive stride required');
+ for(const f of frames)for(const leg of ['right','left'])for(const joint of ['hip','knee','heel','toe'])if(!Array.isArray(f[leg]?.[joint])||f[leg][joint].length!==2||!f[leg][joint].every(Number.isFinite))throw new Error('Missing landmark: '+leg+'.'+joint);
+ const jumps=[];for(let i=0;i<8;i++)for(const leg of ['right','left']){const j=(i+1)%8,a=frames[i][leg].heel,b=frames[j][leg].heel;const dx=b[0]-a[0],dy=b[1]-a[1];jumps.push({from:i,to:j,leg,dx,dy,distancePx:+Math.hypot(dx,dy).toFixed(2)});}
+ const stance=[];for(const [leg,start]of [['right',0],['left',4]])for(let i=start;i<start+3;i++){const a=frames[i][leg].heel,b=frames[i+1][leg].heel;stance.push({from:i,to:i+1,leg,rootAdvancePx:stridePx/8,heelDx:b[0]-a[0],worldDriftPx:+(b[0]-a[0]+stridePx/8).toFixed(2),labelConsistent:frames[i].observedSupport===leg&&frames[i+1].observedSupport===leg});}
+ return {method:'manual-landmark estimates, not image-based anatomy detection',uncertaintyPx,driftUncertaintyPx:2*uncertaintyPx,stridePx,seam:jumps.filter(x=>x.from===7),maxHeelJumpPx:Math.max(...jumps.map(x=>x.distancePx)),maxStanceDriftPx:Math.max(0,...stance.filter(x=>x.labelConsistent).map(x=>Math.abs(x.worldDriftPx))),jumps,stance,reviewFlags:jumps.filter(x=>x.distancePx>reviewJumpPx),supportIdentityWarnings:frames.filter(f=>f.observedSupport!==f.intendedSupport).map(f=>f.frame),artAcceptance:'pending manual visual review'};
+}

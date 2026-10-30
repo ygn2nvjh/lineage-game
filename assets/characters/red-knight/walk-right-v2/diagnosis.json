@@ -1,0 +1,517 @@
+{
+  "old": {
+    "method": "manual-landmark estimates, not image-based anatomy detection",
+    "uncertaintyPx": 2,
+    "driftUncertaintyPx": 4,
+    "stridePx": 64,
+    "seam": [
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "right",
+        "dx": 31,
+        "dy": 1,
+        "distancePx": 31.02
+      },
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "left",
+        "dx": -35,
+        "dy": 2,
+        "distancePx": 35.06
+      }
+    ],
+    "maxHeelJumpPx": 35.06,
+    "maxStanceDriftPx": 13,
+    "jumps": [
+      {
+        "from": 0,
+        "to": 1,
+        "leg": "right",
+        "dx": -9,
+        "dy": 0,
+        "distancePx": 9
+      },
+      {
+        "from": 0,
+        "to": 1,
+        "leg": "left",
+        "dx": 6,
+        "dy": -5,
+        "distancePx": 7.81
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "leg": "right",
+        "dx": -2,
+        "dy": 0,
+        "distancePx": 2
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "leg": "left",
+        "dx": 5,
+        "dy": 0,
+        "distancePx": 5
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "leg": "right",
+        "dx": -21,
+        "dy": -2,
+        "distancePx": 21.1
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "leg": "left",
+        "dx": 21,
+        "dy": 6,
+        "distancePx": 21.84
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "leg": "right",
+        "dx": 0,
+        "dy": 1,
+        "distancePx": 1
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "leg": "left",
+        "dx": 0,
+        "dy": 1,
+        "distancePx": 1
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "leg": "right",
+        "dx": 22,
+        "dy": 1,
+        "distancePx": 22.02
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "leg": "left",
+        "dx": -27,
+        "dy": -7,
+        "distancePx": 27.89
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "leg": "right",
+        "dx": -23,
+        "dy": -15,
+        "distancePx": 27.46
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "leg": "left",
+        "dx": 17,
+        "dy": 7,
+        "distancePx": 18.38
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "leg": "right",
+        "dx": 2,
+        "dy": 14,
+        "distancePx": 14.14
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "leg": "left",
+        "dx": 13,
+        "dy": -4,
+        "distancePx": 13.6
+      },
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "right",
+        "dx": 31,
+        "dy": 1,
+        "distancePx": 31.02
+      },
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "left",
+        "dx": -35,
+        "dy": 2,
+        "distancePx": 35.06
+      }
+    ],
+    "stance": [
+      {
+        "from": 0,
+        "to": 1,
+        "leg": "right",
+        "rootAdvancePx": 8,
+        "heelDx": -9,
+        "worldDriftPx": -1,
+        "labelConsistent": true
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "leg": "right",
+        "rootAdvancePx": 8,
+        "heelDx": -2,
+        "worldDriftPx": 6,
+        "labelConsistent": true
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "leg": "right",
+        "rootAdvancePx": 8,
+        "heelDx": -21,
+        "worldDriftPx": -13,
+        "labelConsistent": true
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "leg": "left",
+        "rootAdvancePx": 8,
+        "heelDx": -27,
+        "worldDriftPx": -19,
+        "labelConsistent": false
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "leg": "left",
+        "rootAdvancePx": 8,
+        "heelDx": 17,
+        "worldDriftPx": 25,
+        "labelConsistent": false
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "leg": "left",
+        "rootAdvancePx": 8,
+        "heelDx": 13,
+        "worldDriftPx": 21,
+        "labelConsistent": false
+      }
+    ],
+    "reviewFlags": [
+      {
+        "from": 2,
+        "to": 3,
+        "leg": "right",
+        "dx": -21,
+        "dy": -2,
+        "distancePx": 21.1
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "leg": "left",
+        "dx": 21,
+        "dy": 6,
+        "distancePx": 21.84
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "leg": "right",
+        "dx": 22,
+        "dy": 1,
+        "distancePx": 22.02
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "leg": "left",
+        "dx": -27,
+        "dy": -7,
+        "distancePx": 27.89
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "leg": "right",
+        "dx": -23,
+        "dy": -15,
+        "distancePx": 27.46
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "leg": "left",
+        "dx": 17,
+        "dy": 7,
+        "distancePx": 18.38
+      },
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "right",
+        "dx": 31,
+        "dy": 1,
+        "distancePx": 31.02
+      },
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "left",
+        "dx": -35,
+        "dy": 2,
+        "distancePx": 35.06
+      }
+    ],
+    "supportIdentityWarnings": [
+      5,
+      7
+    ],
+    "artAcceptance": "pending manual visual review"
+  },
+  "new": {
+    "method": "manual-landmark estimates, not image-based anatomy detection",
+    "uncertaintyPx": 2,
+    "driftUncertaintyPx": 4,
+    "stridePx": 48,
+    "seam": [
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "right",
+        "dx": -3,
+        "dy": 4,
+        "distancePx": 5
+      },
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "left",
+        "dx": -9,
+        "dy": -2,
+        "distancePx": 9.22
+      }
+    ],
+    "maxHeelJumpPx": 22.14,
+    "maxStanceDriftPx": 4,
+    "jumps": [
+      {
+        "from": 0,
+        "to": 1,
+        "leg": "right",
+        "dx": -5,
+        "dy": 1,
+        "distancePx": 5.1
+      },
+      {
+        "from": 0,
+        "to": 1,
+        "leg": "left",
+        "dx": 3,
+        "dy": -7,
+        "distancePx": 7.62
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "leg": "right",
+        "dx": -6,
+        "dy": 1,
+        "distancePx": 6.08
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "leg": "left",
+        "dx": 21,
+        "dy": 7,
+        "distancePx": 22.14
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "leg": "right",
+        "dx": -9,
+        "dy": -1,
+        "distancePx": 9.06
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "leg": "left",
+        "dx": 12,
+        "dy": 3,
+        "distancePx": 12.37
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "leg": "right",
+        "dx": -10,
+        "dy": 0,
+        "distancePx": 10
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "leg": "left",
+        "dx": -6,
+        "dy": 1,
+        "distancePx": 6.08
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "leg": "right",
+        "dx": 1,
+        "dy": -12,
+        "distancePx": 12.04
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "leg": "left",
+        "dx": -6,
+        "dy": 1,
+        "distancePx": 6.08
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "leg": "right",
+        "dx": 11,
+        "dy": 4,
+        "distancePx": 11.7
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "leg": "left",
+        "dx": -10,
+        "dy": 1,
+        "distancePx": 10.05
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "leg": "right",
+        "dx": 21,
+        "dy": 3,
+        "distancePx": 21.21
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "leg": "left",
+        "dx": -5,
+        "dy": -4,
+        "distancePx": 6.4
+      },
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "right",
+        "dx": -3,
+        "dy": 4,
+        "distancePx": 5
+      },
+      {
+        "from": 7,
+        "to": 0,
+        "leg": "left",
+        "dx": -9,
+        "dy": -2,
+        "distancePx": 9.22
+      }
+    ],
+    "stance": [
+      {
+        "from": 0,
+        "to": 1,
+        "leg": "right",
+        "rootAdvancePx": 6,
+        "heelDx": -5,
+        "worldDriftPx": 1,
+        "labelConsistent": true
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "leg": "right",
+        "rootAdvancePx": 6,
+        "heelDx": -6,
+        "worldDriftPx": 0,
+        "labelConsistent": true
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "leg": "right",
+        "rootAdvancePx": 6,
+        "heelDx": -9,
+        "worldDriftPx": -3,
+        "labelConsistent": true
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "leg": "left",
+        "rootAdvancePx": 6,
+        "heelDx": -6,
+        "worldDriftPx": 0,
+        "labelConsistent": true
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "leg": "left",
+        "rootAdvancePx": 6,
+        "heelDx": -10,
+        "worldDriftPx": -4,
+        "labelConsistent": true
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "leg": "left",
+        "rootAdvancePx": 6,
+        "heelDx": -5,
+        "worldDriftPx": 1,
+        "labelConsistent": true
+      }
+    ],
+    "reviewFlags": [
+      {
+        "from": 1,
+        "to": 2,
+        "leg": "left",
+        "dx": 21,
+        "dy": 7,
+        "distancePx": 22.14
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "leg": "right",
+        "dx": 21,
+        "dy": 3,
+        "distancePx": 21.21
+      }
+    ],
+    "supportIdentityWarnings": [],
+    "artAcceptance": "pending manual visual review"
+  }
+}
