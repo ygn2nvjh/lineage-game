@@ -1,0 +1,196 @@
+{
+  "frames": [
+    {
+      "phase": 1,
+      "originalKeyBytesPreserved": true,
+      "forwardSwingLegRepair": false,
+      "bounds": [
+        39,
+        22,
+        98,
+        117
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 2,
+      "originalKeyBytesPreserved": false,
+      "forwardSwingLegRepair": false,
+      "bounds": [
+        41,
+        22,
+        98,
+        117
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 3,
+      "originalKeyBytesPreserved": true,
+      "forwardSwingLegRepair": false,
+      "bounds": [
+        45,
+        22,
+        98,
+        117
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 4,
+      "originalKeyBytesPreserved": false,
+      "forwardSwingLegRepair": true,
+      "bounds": [
+        39,
+        22,
+        98,
+        117
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 5,
+      "originalKeyBytesPreserved": true,
+      "forwardSwingLegRepair": false,
+      "bounds": [
+        38,
+        22,
+        98,
+        116
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 6,
+      "originalKeyBytesPreserved": false,
+      "forwardSwingLegRepair": false,
+      "bounds": [
+        39,
+        22,
+        98,
+        116
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 7,
+      "originalKeyBytesPreserved": true,
+      "forwardSwingLegRepair": false,
+      "bounds": [
+        45,
+        22,
+        98,
+        117
+      ],
+      "alphaComponents": 1
+    },
+    {
+      "phase": 8,
+      "originalKeyBytesPreserved": false,
+      "forwardSwingLegRepair": true,
+      "bounds": [
+        36,
+        22,
+        98,
+        116
+      ],
+      "alphaComponents": 1
+    }
+  ],
+  "contactEstimates": [
+    {
+      "leg": "right",
+      "x": 48,
+      "y": 116,
+      "method": "manual selected footprint ROI center/edge proxy; not automatic joint detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "right",
+      "x": 50.0,
+      "y": 116,
+      "method": "manual selected footprint ROI center/edge proxy; not automatic joint detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "right",
+      "x": 59,
+      "y": 116,
+      "method": "manual selected footprint ROI center/edge proxy; not automatic joint detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "right",
+      "x": 71.0,
+      "y": 116,
+      "method": "manual selected footprint ROI center/edge proxy; not automatic joint detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "left",
+      "x": 48,
+      "y": 115,
+      "method": "manual selected footprint ROI center/edge proxy; not automatic joint detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "left",
+      "x": 47.5,
+      "y": 115,
+      "method": "manual selected footprint ROI center/edge proxy; not automatic joint detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "left",
+      "x": 59,
+      "y": 116,
+      "method": "manual selected footprint ROI center/edge proxy; not automatic joint detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "leg": "left",
+      "x": 66.5,
+      "y": 115,
+      "method": "manual selected footprint ROI center/edge proxy; not automatic joint detection",
+      "uncertaintyPx": 2
+    }
+  ],
+  "supportWorldXProxy": [
+    {
+      "supportLeg": "right",
+      "worldXProxy": [
+        48.0,
+        44.5,
+        48.0,
+        54.5
+      ],
+      "rangePx": 10.0,
+      "stride": 44,
+      "uncertaintyPx": 2
+    },
+    {
+      "supportLeg": "left",
+      "worldXProxy": [
+        26.0,
+        20.0,
+        26.0,
+        28.0
+      ],
+      "rangePx": 8.0,
+      "stride": 44,
+      "uncertaintyPx": 2
+    }
+  ],
+  "groundReviewNote": "試播步幅44px／輪由原關鍵格腳印投影差估算，可調8–72px。人工足點代理約±2px；支撐期間世界足點殘差：右10.0px、左8.0px。這只是找滑動的輔助，不能代替實際播放驗收。",
+  "groundStatus": "trial, pending user review; not proven slip-free",
+  "initialSource": "exec-a8fde7f5-bacc-47dd-9464-99141308c9e7.png",
+  "swingRepairSource": "exec-8ecd6272-2efe-47fc-9739-50ecd689c466.png",
+  "F8FinalRepairSource": "exec-3156460a-6079-49f3-b523-391bf0573786.png",
+  "limitations": [
+    "Even poses generated independently for left direction, not mirrored",
+    "Original odd keyPNG bytes unchanged",
+    "Local leg repair is newly generated drawing, not transformed old feet",
+    "Footprint ROI points are manual estimates, not anatomy ground truth",
+    "Silver component checks do not prove correct grip or occlusion"
+  ]
+}

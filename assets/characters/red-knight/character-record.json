@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "red-knight-female",
   "name": "紅髮女騎士",
-  "recordRevision": "2026-10-30-up-visual-accepted-left-keys",
+  "recordRevision": "2026-10-30-left-walk-candidate-v1",
   "staticMaster": {
     "revision": "1.0.1",
     "manifest": "v1-0-1/character.json",
@@ -87,12 +87,15 @@
     },
     {
       "direction": "left",
-      "status": "key-poses-review",
+      "status": "walk-animation-review",
       "frameCount": 0,
       "manifest": null,
       "keyPoseCount": 4,
       "keyPoseManifest": "walk-left-keys-v1/animation.json",
-      "keyPoseReviewURL": "/art-walk-left-keys.html?v=1"
+      "keyPoseReviewURL": "/art-walk-left-keys.html?v=1",
+      "candidateFrameCount": 8,
+      "candidateManifest": "walk-left-v1/animation.json",
+      "candidateReviewURL": "/art-walk-left.html?v=1"
     },
     {
       "direction": "down-left",
@@ -165,16 +168,12 @@
   ],
   "workInProgress": {
     "direction": "left",
-    "stage": "F1/F3/F5/F7 key-pose review",
-    "keyPoseCount": 4,
+    "stage": "eight-frame dynamic and ground review",
+    "candidateFrameCount": 8,
     "acceptedFrameCount": 0,
-    "missingPhases": [
-      2,
-      4,
-      6,
-      8
-    ],
-    "reviewURL": "/art-walk-left-keys.html?v=1"
+    "originalFourKeysPreserved": true,
+    "reviewURL": "/art-walk-left.html?v=1",
+    "groundStatus": "trial; sliding and phase timing need review"
   },
   "acceptedWalks": [
     {
