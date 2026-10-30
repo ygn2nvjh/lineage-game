@@ -1,0 +1,265 @@
+{
+  "version": "eight-static-p012-v2",
+  "frames": [
+    {
+      "key": "down",
+      "label": "正面",
+      "file": "down.png",
+      "width": 128,
+      "height": 128,
+      "anchorX": 64,
+      "anchorY": 112,
+      "visibleWidth": 69,
+      "visibleHeight": 94,
+      "source": "exec-283b1383-918a-4437-8c8e-1ca2e162cee2.png",
+      "crop": "384x512+0+0",
+      "sharedScale": 0.20210526315789473,
+      "sourceRoot": [
+        38,
+        93
+      ],
+      "footContacts": [
+        [
+          47,
+          112
+        ],
+        [
+          81,
+          112
+        ]
+      ],
+      "manualContacts": true,
+      "mirrored": false,
+      "sha256": "b8d933471bf738190ba58bd1c6564266b234ad36382726a190498131abd58b2b"
+    },
+    {
+      "key": "down-right",
+      "label": "右前",
+      "file": "down-right.png",
+      "width": 128,
+      "height": 128,
+      "anchorX": 64,
+      "anchorY": 112,
+      "visibleWidth": 59,
+      "visibleHeight": 93,
+      "source": "exec-f171915c-0397-44cd-9f94-30539498fecd.png",
+      "crop": null,
+      "sharedScale": 0.20210526315789473,
+      "sourceRoot": [
+        37,
+        88
+      ],
+      "footContacts": [
+        [
+          51.5,
+          116
+        ],
+        [
+          76.5,
+          108
+        ]
+      ],
+      "manualContacts": true,
+      "mirrored": false,
+      "sha256": "f19d35e07df82be7901ac669b92cbb7e6afa41e0ea757841e08d3d6dcc94233d"
+    },
+    {
+      "key": "right",
+      "label": "右側",
+      "file": "right.png",
+      "width": 128,
+      "height": 128,
+      "anchorX": 64,
+      "anchorY": 112,
+      "visibleWidth": 55,
+      "visibleHeight": 96,
+      "source": "exec-283b1383-918a-4437-8c8e-1ca2e162cee2.png",
+      "crop": "384x512+768+0",
+      "sharedScale": 0.20210526315789473,
+      "sourceRoot": [
+        29,
+        92
+      ],
+      "footContacts": [
+        [
+          62.5,
+          115
+        ],
+        [
+          66,
+          108
+        ]
+      ],
+      "manualContacts": true,
+      "mirrored": false,
+      "sha256": "2e05352984ff9abadb798090da584c4e473c0558757958b313c96326f8192939"
+    },
+    {
+      "key": "up-right",
+      "label": "右後",
+      "file": "up-right.png",
+      "width": 128,
+      "height": 128,
+      "anchorX": 64,
+      "anchorY": 112,
+      "visibleWidth": 64,
+      "visibleHeight": 96,
+      "source": "exec-283b1383-918a-4437-8c8e-1ca2e162cee2.png",
+      "crop": "384x512+1152+0",
+      "sharedScale": 0.20210526315789473,
+      "sourceRoot": [
+        24,
+        94
+      ],
+      "footContacts": [
+        [
+          76,
+          113
+        ],
+        [
+          53,
+          110
+        ]
+      ],
+      "manualContacts": true,
+      "mirrored": false,
+      "sha256": "f6fd55f6fa3bde42185eb62ac49a832bf3177376812d6b2818141482ff3299ef"
+    },
+    {
+      "key": "up",
+      "label": "背面",
+      "file": "up.png",
+      "width": 128,
+      "height": 128,
+      "anchorX": 64,
+      "anchorY": 112,
+      "visibleWidth": 67,
+      "visibleHeight": 92,
+      "source": "exec-283b1383-918a-4437-8c8e-1ca2e162cee2.png",
+      "crop": "384x512+0+512",
+      "sharedScale": 0.20210526315789473,
+      "sourceRoot": [
+        28,
+        91
+      ],
+      "footContacts": [
+        [
+          49.5,
+          112
+        ],
+        [
+          79,
+          112
+        ]
+      ],
+      "manualContacts": true,
+      "mirrored": false,
+      "sha256": "e061c79075929dfe630babe614dd5ff890e954913fb855ed13383fb121de60f5"
+    },
+    {
+      "key": "up-left",
+      "label": "左後",
+      "file": "up-left.png",
+      "width": 128,
+      "height": 128,
+      "anchorX": 64,
+      "anchorY": 112,
+      "visibleWidth": 56,
+      "visibleHeight": 93,
+      "source": "exec-00418966-25cd-4edd-8a5e-e00569502178.png",
+      "crop": null,
+      "sharedScale": 0.20210526315789473,
+      "sourceRoot": [
+        29,
+        88
+      ],
+      "footContacts": [
+        [
+          55,
+          116
+        ],
+        [
+          73,
+          108
+        ]
+      ],
+      "manualContacts": true,
+      "mirrored": false,
+      "sha256": "0af101c58b57b1bb538f0b73090cf82499949b13c7d149f077c2d286e65217d5"
+    },
+    {
+      "key": "left",
+      "label": "左側",
+      "file": "left.png",
+      "width": 128,
+      "height": 128,
+      "anchorX": 64,
+      "anchorY": 112,
+      "visibleWidth": 63,
+      "visibleHeight": 95,
+      "source": "exec-283b1383-918a-4437-8c8e-1ca2e162cee2.png",
+      "crop": "384x512+768+512",
+      "sharedScale": 0.20210526315789473,
+      "sourceRoot": [
+        18,
+        90
+      ],
+      "footContacts": [
+        [
+          60,
+          116
+        ],
+        [
+          68,
+          108
+        ]
+      ],
+      "manualContacts": true,
+      "mirrored": false,
+      "sha256": "494378ff241365233b02d4b4f76ddd1e55c60b4e39acd6fdce462b3da4d40096"
+    },
+    {
+      "key": "down-left",
+      "label": "左前",
+      "file": "down-left.png",
+      "width": 128,
+      "height": 128,
+      "anchorX": 64,
+      "anchorY": 112,
+      "visibleWidth": 67,
+      "visibleHeight": 96,
+      "source": "exec-283b1383-918a-4437-8c8e-1ca2e162cee2.png",
+      "crop": "384x512+1152+512",
+      "sharedScale": 0.20210526315789473,
+      "sourceRoot": [
+        37,
+        91
+      ],
+      "footContacts": [
+        [
+          47,
+          116
+        ],
+        [
+          80.5,
+          108
+        ]
+      ],
+      "manualContacts": true,
+      "mirrored": false,
+      "sha256": "93e4973194d28aebc236c2d2611150f7565f620116c960fd8d15e44dae5adab0"
+    }
+  ],
+  "sharedScale": 0.20210526315789473,
+  "origin": [
+    64,
+    112
+  ],
+  "artApproval": "pending",
+  "scope": "P0 body and origin, P1 equipment and ponytail, P2 chest/hip planes",
+  "notes": [
+    "same source-canvas normalization and one shared scale; no per-frame auto-fit or horizontal stretching",
+    "foot contacts visually reviewed; root is rounded mean of support contacts, not sword/lowest image pixel",
+    "anatomy/handedness/hair/armor are generated visual candidates, not fully verified semantic measurements"
+  ]
+}
