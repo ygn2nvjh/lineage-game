@@ -1,0 +1,13 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "keys.png": "3769a1f208ec2c5d06e2c398d449c8ca27d89b907455af2e5322e8e7399e3960",
+    "F7.png": "f9d8f822863b407ec627df5b0c5bc48129dd88059391658c5aa068bca7a9d8d1",
+    "F1.png": "5b3bb34b56854b9084724115e8fbe1b1633d8d266d2bbc04bc2c18b9a057987d",
+    "README.md": "6a9feb45cc671094649e9c1757e5f7c3aeaad977a46b4fdaf1ed655f864d8f8f",
+    "audit.json": "8e36f267da766efacfde520aab0dcf2fcc6a0acf6328e75b63fd956f3e3309b7",
+    "animation.json": "9dd03db7087b29b290aef12fe0efe202bc29df0da5824c7c085564a7aedb1d38",
+    "F3.png": "f7674bb66289a9f56ac19346fdd7ba589a60dab7dd86d9b8e2c9e8a7cb565652",
+    "F5.png": "afa8209b98c4db9159b6bf558e40a3033fc4f7d94a63a90cdb86a88e2c3628dc"
+  }
+}

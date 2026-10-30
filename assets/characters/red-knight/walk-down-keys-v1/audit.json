@@ -1,0 +1,118 @@
+{
+  "attachmentCheck": {
+    "allRequiredFilesPresent": true,
+    "staticAndRightChecksumsPassed": true,
+    "references": [
+      "concept-original.jpg",
+      "static-design-original.jpg",
+      "v1-0-1/runtime/idle.png",
+      "v1-0-1/runtime/idle.json",
+      "walk-right-v7/walk-right.png",
+      "walk-right-v7/animation.json",
+      "walk-right-v7/audit.json",
+      "character-record.json",
+      "guide/eight-direction-walk-spec.json"
+    ]
+  },
+  "frames": [
+    {
+      "phase": 1,
+      "bounds": [
+        30,
+        17,
+        94,
+        113
+      ],
+      "visibleHeight": 96,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0,
+      "anchor": [
+        64,
+        112
+      ],
+      "supportBootROI": [
+        54,
+        66
+      ],
+      "supportFloorBefore": 112,
+      "wholePoseGroundTranslationY": 0,
+      "anatomicalReview": "right leg and sword screen-left; left leg and shield screen-right; visual key-pose candidate, manual review pending"
+    },
+    {
+      "phase": 3,
+      "bounds": [
+        28,
+        17,
+        93,
+        113
+      ],
+      "visibleHeight": 96,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0,
+      "anchor": [
+        64,
+        112
+      ],
+      "supportBootROI": [
+        54,
+        66
+      ],
+      "supportFloorBefore": 112,
+      "wholePoseGroundTranslationY": 0,
+      "anatomicalReview": "right leg and sword screen-left; left leg and shield screen-right; visual key-pose candidate, manual review pending"
+    },
+    {
+      "phase": 5,
+      "bounds": [
+        30,
+        18,
+        95,
+        113
+      ],
+      "visibleHeight": 95,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0,
+      "anchor": [
+        64,
+        112
+      ],
+      "supportBootROI": [
+        64,
+        76
+      ],
+      "supportFloorBefore": 110,
+      "wholePoseGroundTranslationY": 2,
+      "anatomicalReview": "right leg and sword screen-left; left leg and shield screen-right; visual key-pose candidate, manual review pending"
+    },
+    {
+      "phase": 7,
+      "bounds": [
+        27,
+        18,
+        92,
+        113
+      ],
+      "visibleHeight": 95,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0,
+      "anchor": [
+        64,
+        112
+      ],
+      "supportBootROI": [
+        64,
+        76
+      ],
+      "supportFloorBefore": 110,
+      "wholePoseGroundTranslationY": 2,
+      "anatomicalReview": "right leg and sword screen-left; left leg and shield screen-right; visual key-pose candidate, manual review pending"
+    }
+  ],
+  "sourceImage": "exec-d4eded7c-6446-459a-a46e-5e079c160af4.png",
+  "limits": [
+    "Full poses generated for new direction, not local edits to right view",
+    "Uniform downsampling from generated pixel-style source; not native pixel hand drawing",
+    "Phase labels are intent; anatomy and support require user key-pose review",
+    "No full walk loop, speed, slipping or full 8-direction approval claimed"
+  ]
+}

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "red-knight-female",
   "name": "紅髮女騎士",
-  "recordRevision": "2026-10-30-walk-v7",
+  "recordRevision": "2026-10-30-down-key-poses-v1",
   "staticMaster": {
     "revision": "1.0.1",
     "manifest": "v1-0-1/character.json",
@@ -35,9 +35,12 @@
   "walkDirections": [
     {
       "direction": "down",
-      "status": "not-produced",
+      "status": "key-poses-review",
       "frameCount": 0,
-      "manifest": null
+      "manifest": null,
+      "keyPoseCount": 4,
+      "keyPoseManifest": "walk-down-keys-v1/animation.json",
+      "keyPoseReviewURL": "/art-walk-down-keys.html?v=1"
     },
     {
       "direction": "down-right",
@@ -142,5 +145,18 @@
     "full eight-direction transitions",
     "formal game integration",
     "new attack animation"
-  ]
+  ],
+  "workInProgress": {
+    "direction": "down",
+    "stage": "F1/F3/F5/F7 key-pose review",
+    "keyPoseCount": 4,
+    "completedWalkFrames": 0,
+    "missingPhases": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "reviewURL": "/art-walk-down-keys.html?v=1"
+  }
 }
