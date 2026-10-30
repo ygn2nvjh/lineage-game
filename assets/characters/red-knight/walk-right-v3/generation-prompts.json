@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "status": "local generated candidates composited through explicit masks; pending visual approval",
+  "sources": [
+    {
+      "stage": "p0",
+      "source": "exec-51305495-43af-4865-9260-fcbc8819f2e4.png",
+      "prompt": "LOCAL ANIMATION EDIT of reference1, not a new character sheet. Preserve EXACT 1536x1024 canvas, 4x2 cells384x512, ALL eight original poses, figure positions and pixel scale. Reference2 yellow regions indicate ONLY possible editing areas; DO NOT render yellow, text or guide. Keep every leg, boot, hip, face, head, red ponytail and armor design UNCHANGED. Modify only shoulder/elbow/wrist articulation and attached ONE sword/ONE far-arm shield. This is small armed WALK, not attack and not empty-hand exaggerated arm swing. All face RIGHT. Frame order same as reference1. Anatomical RIGHT sword arm is near camera: wrist back a tiny amount in F1 (right leg forward), then F2 less back, F3 neutral, F4 slightly forward, F5 most forward (left leg forward), F6 slightly forward, F7 neutral, F8 slightly back. Native96px scale wrist x shifts [-2,-1,0,+1,+2,+1,0,-1] pixels, so source4x shifts [-8,-4,0,4,8,4,0,-4] only. Shoulder small counter-rotation, elbow angle changes smoothly, wrist holds same hilt, sword diagonal down-forward continuous arc, swordtip vertical excursion<=4sourcepx across sequence. Far LEFT shield arm follows opposite subtle motion, shield stays protective, only1nativepx horizontal movement and tiny angle, no pendulum. Preserve blade length/width, hilt, shield brown inside/silver rim, same armor plate shapes and thickness, same silver/red colors. Keep chest near same, no breast/armor redesign. No full-body moving, no per-frame scaling, no sword changing hand, no two blades or extra arms. Do not alter lower body or ponytail this stage. Transparent background, no ground or labels. Restrained coherent arm motion and equipment attachment is the goal.",
+      "alignment": "same355x474 source patch inside384x512 at14,18 across8 cells; common96x128 sample, pad16"
+    },
+    {
+      "stage": "p1",
+      "source": "exec-b0801fb8-8228-4ea1-b00b-35cc7bf94bdd.png",
+      "prompt": "Precise LOCAL EDIT of reference sheet. Keep exact1536x1024 canvas,4columns2rows, equal384x512cells, same positions. Preserve all8 walking legs and BOOTS exactly, preserve head and face positions, ponytail and all equipment. Only in F2(top row second) and F6(bottom row second), add a VERY SUBTLE weight-bearing compression: shoulders, chest and waist settle DOWN by ONLY4sourcepixels (one native96px pixel). Neck compresses slightly under fixed head. Keep silver plate design and thickness exactly, do not redraw new armor; elbow/wrist/sword/shield move smoothly with torso at most4sourcepixels. Keep sword angle, ONE blade attached, far shield protective. Other six frames preserve original height. Passing F3/F7 should be relatively higher than down F2/F6. Do NOT move whole figures or legs; hip/foot ground remains fixed. No head bob more than original, no hopping. Same source pixel art, same color palette, no extra details or body enlargement. Transparent background, no labels, no shadows. We need one-native-pixel torso compression only, not regeneration or alternate character. Locked lower body must remain untouched.",
+      "adoption": "onlyF2 andF6 masked upper body; F6 generated local patch placed1px lower to obtain intended compression"
+    },
+    {
+      "stage": "p2",
+      "source": "exec-7d866591-0a2f-4f93-a44e-bc6b4edd0715.png",
+      "prompt": "LOCAL HAIR-TIP ANIMATION EDIT ONLY. Preserve exact reference1536x1024 4x2 sheet grid/canvas, all body poses, face, silver armor, arms sword shield and legs/boots pixel positions. Animate ONLY the distal lower half of the RED PONYTAIL, below the hair tie and behind shoulders. Hair ROOT, tie and head DO NOT MOVE, length and volume remain the same. Restrained inertia: F2/F6 torso weight settles; tail tips follow ONE FRAME LATER in F3/F7, downward about4sourcepixels (ONE nativepixel), then return in F4/F8. Tiny fore/aft tip sway across8 frames at native-pixel dx [0,-1,-1,0,+1,+1,0,-1]; equivalent source4x dx[0,-4,-4,0,4,4,0,-4]. Tips only, not whole ponytail: no wide sweep, no extra strands, no shortened/grown hair, no red confetti or detached bits. Preserve same red cluster shading and pixel scale, no extra highlights, head roots remain fixed. Full eight sprites same composition, right-facing. Do NOT change arms, chest, hips, legs, sword position or shield shape; previous walking already fixed. Transparent background, no labels or effects.",
+      "adoption": "distal red hair only x<=54,y44..62 in1px envelope; roots/face fixed"
+    }
+  ]
+}

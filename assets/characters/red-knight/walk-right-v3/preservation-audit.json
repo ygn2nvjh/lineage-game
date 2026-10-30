@@ -1,0 +1,804 @@
+{
+  "schemaVersion": 1,
+  "base": "../walk-right-v2/animation.json",
+  "stages": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "protectedLegPixels": 597,
+      "stages": {
+        "p0": {
+          "changedPixels": 1086,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p1": {
+          "changedPixels": 0,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p2": {
+          "changedPixels": 232,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        }
+      }
+    },
+    {
+      "index": 1,
+      "protectedLegPixels": 584,
+      "stages": {
+        "p0": {
+          "changedPixels": 1042,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p1": {
+          "changedPixels": 1054,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p2": {
+          "changedPixels": 247,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        }
+      }
+    },
+    {
+      "index": 2,
+      "protectedLegPixels": 448,
+      "stages": {
+        "p0": {
+          "changedPixels": 1091,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p1": {
+          "changedPixels": 0,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p2": {
+          "changedPixels": 272,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        }
+      }
+    },
+    {
+      "index": 3,
+      "protectedLegPixels": 584,
+      "stages": {
+        "p0": {
+          "changedPixels": 1056,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p1": {
+          "changedPixels": 0,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p2": {
+          "changedPixels": 259,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        }
+      }
+    },
+    {
+      "index": 4,
+      "protectedLegPixels": 612,
+      "stages": {
+        "p0": {
+          "changedPixels": 1187,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p1": {
+          "changedPixels": 0,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p2": {
+          "changedPixels": 253,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        }
+      }
+    },
+    {
+      "index": 5,
+      "protectedLegPixels": 549,
+      "stages": {
+        "p0": {
+          "changedPixels": 1109,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p1": {
+          "changedPixels": 1087,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p2": {
+          "changedPixels": 246,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        }
+      }
+    },
+    {
+      "index": 6,
+      "protectedLegPixels": 377,
+      "stages": {
+        "p0": {
+          "changedPixels": 1061,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p1": {
+          "changedPixels": 0,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p2": {
+          "changedPixels": 262,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        }
+      }
+    },
+    {
+      "index": 7,
+      "protectedLegPixels": 581,
+      "stages": {
+        "p0": {
+          "changedPixels": 1101,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p1": {
+          "changedPixels": 0,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        },
+        "p2": {
+          "changedPixels": 232,
+          "outsideMaskChanges": 0,
+          "protectedLegChanges": 0,
+          "headRows0to42Changes": 0,
+          "bootZoneRows104to127Changes": 0,
+          "alphaComponents": 1
+        }
+      }
+    }
+  ],
+  "metrics": {
+    "swordTips": {
+      "base": [
+        [
+          93,
+          98.5
+        ],
+        [
+          95,
+          98.5
+        ],
+        [
+          93,
+          101.5
+        ],
+        [
+          95,
+          99.5
+        ],
+        [
+          93,
+          101.0
+        ],
+        [
+          95,
+          100.5
+        ],
+        [
+          96,
+          100.0
+        ],
+        [
+          94,
+          100.0
+        ]
+      ],
+      "p0": [
+        [
+          94,
+          98.0
+        ],
+        [
+          95,
+          97.5
+        ],
+        [
+          94,
+          98.5
+        ],
+        [
+          95,
+          97.5
+        ],
+        [
+          96,
+          97.0
+        ],
+        [
+          95,
+          96.5
+        ],
+        [
+          95,
+          96.5
+        ],
+        [
+          96,
+          97.0
+        ]
+      ],
+      "p1": [
+        [
+          94,
+          98.0
+        ],
+        [
+          95,
+          96.5
+        ],
+        [
+          94,
+          98.5
+        ],
+        [
+          95,
+          97.5
+        ],
+        [
+          96,
+          97.0
+        ],
+        [
+          95,
+          96.5
+        ],
+        [
+          95,
+          96.5
+        ],
+        [
+          96,
+          97.0
+        ]
+      ],
+      "p2": [
+        [
+          94,
+          98.0
+        ],
+        [
+          95,
+          96.5
+        ],
+        [
+          94,
+          98.5
+        ],
+        [
+          95,
+          97.5
+        ],
+        [
+          96,
+          97.0
+        ],
+        [
+          95,
+          96.5
+        ],
+        [
+          95,
+          96.5
+        ],
+        [
+          96,
+          97.0
+        ]
+      ]
+    },
+    "hiltColorCenters": {
+      "base": [
+        [
+          66.91,
+          74.57
+        ],
+        [
+          69.29,
+          74.71
+        ],
+        [
+          66.71,
+          76.38
+        ],
+        [
+          69.54,
+          75.33
+        ],
+        [
+          66.04,
+          75.17
+        ],
+        [
+          67.88,
+          75.46
+        ],
+        [
+          68.05,
+          73.37
+        ],
+        [
+          67.27,
+          74.77
+        ]
+      ],
+      "p0": [
+        [
+          67.7,
+          74.74
+        ],
+        [
+          69.08,
+          75.54
+        ],
+        [
+          68.44,
+          75.52
+        ],
+        [
+          69.65,
+          75.35
+        ],
+        [
+          68.41,
+          73.45
+        ],
+        [
+          68.77,
+          73.97
+        ],
+        [
+          69.55,
+          72.67
+        ],
+        [
+          69.03,
+          73.48
+        ]
+      ],
+      "p1": [
+        [
+          67.7,
+          74.74
+        ],
+        [
+          68.76,
+          75.48
+        ],
+        [
+          68.44,
+          75.52
+        ],
+        [
+          69.65,
+          75.35
+        ],
+        [
+          68.41,
+          73.45
+        ],
+        [
+          68.33,
+          75.07
+        ],
+        [
+          69.55,
+          72.67
+        ],
+        [
+          69.03,
+          73.48
+        ]
+      ],
+      "p2": [
+        [
+          67.7,
+          74.74
+        ],
+        [
+          68.76,
+          75.48
+        ],
+        [
+          68.44,
+          75.52
+        ],
+        [
+          69.65,
+          75.35
+        ],
+        [
+          68.41,
+          73.45
+        ],
+        [
+          68.33,
+          75.07
+        ],
+        [
+          69.55,
+          72.67
+        ],
+        [
+          69.03,
+          73.48
+        ]
+      ]
+    },
+    "shoulderProxy": {
+      "base": [
+        48.32,
+        48.19,
+        49.78,
+        49.33,
+        49.7,
+        49.36,
+        48.51,
+        47.69
+      ],
+      "p0": [
+        48.06,
+        48.06,
+        48.43,
+        48.23,
+        47.49,
+        47.43,
+        47.3,
+        47.26
+      ],
+      "p1": [
+        48.06,
+        49.24,
+        48.43,
+        48.23,
+        47.49,
+        48.55,
+        47.3,
+        47.26
+      ],
+      "p2": [
+        48.06,
+        49.24,
+        48.43,
+        48.23,
+        47.49,
+        48.55,
+        47.3,
+        47.26
+      ]
+    },
+    "tailTips": {
+      "base": [
+        [
+          46.0,
+          59
+        ],
+        [
+          46.0,
+          61
+        ],
+        [
+          46.5,
+          61
+        ],
+        [
+          46.5,
+          62
+        ],
+        [
+          46.5,
+          61
+        ],
+        [
+          46.5,
+          61
+        ],
+        [
+          45.5,
+          60
+        ],
+        [
+          47.0,
+          60
+        ]
+      ],
+      "p0": [
+        [
+          46.0,
+          59
+        ],
+        [
+          46.0,
+          61
+        ],
+        [
+          46.5,
+          61
+        ],
+        [
+          46.5,
+          62
+        ],
+        [
+          46.5,
+          61
+        ],
+        [
+          46.5,
+          61
+        ],
+        [
+          45.5,
+          60
+        ],
+        [
+          47.0,
+          60
+        ]
+      ],
+      "p1": [
+        [
+          46.0,
+          59
+        ],
+        [
+          46.0,
+          61
+        ],
+        [
+          46.5,
+          61
+        ],
+        [
+          46.5,
+          62
+        ],
+        [
+          46.5,
+          61
+        ],
+        [
+          46.5,
+          61
+        ],
+        [
+          45.5,
+          60
+        ],
+        [
+          47.0,
+          60
+        ]
+      ],
+      "p2": [
+        [
+          46.0,
+          59
+        ],
+        [
+          46.0,
+          59
+        ],
+        [
+          46.5,
+          62
+        ],
+        [
+          46.0,
+          59
+        ],
+        [
+          47.0,
+          60
+        ],
+        [
+          45.5,
+          60
+        ],
+        [
+          46.5,
+          60
+        ],
+        [
+          46.0,
+          60
+        ]
+      ]
+    }
+  },
+  "methods": {
+    "masks": "P0 arm/shield regions plus sword corridor estimated from original visible blade line; visible base leg pixels outside blade corridor protected. P1 onlyF2/F6 upper-body area. P2 distal red hair y44..62 x<=54, one-pixel envelope.",
+    "legClaimBoundary": "visible protected legs excludes original sword-overlap corridor; no claim to hidden anatomy",
+    "proxies": "gold hilt centroid and shoulder silver-color centroid are color-region estimates, not exact anatomical joints. Sword tip estimated from rightmost visible blade pixels.",
+    "compressionTargetPx": 1,
+    "tailDelayTargetFrames": 1,
+    "artAcceptance": "pending user visual review"
+  },
+  "originalSourceFiles": [
+    "exec-51305495-43af-4865-9260-fcbc8819f2e4.png",
+    "exec-b0801fb8-8228-4ea1-b00b-35cc7bf94bdd.png",
+    "exec-7d866591-0a2f-4f93-a44e-bc6b4edd0715.png"
+  ],
+  "sourceBladeMasks": [
+    {
+      "frame": 0,
+      "originalBladeLine": {
+        "slope": 0.8013087222936679,
+        "intercept": 23.61283001739925,
+        "rightmostX": 93,
+        "bandPx": 4.5
+      },
+      "protectedLegPixels": 597
+    },
+    {
+      "frame": 1,
+      "originalBladeLine": {
+        "slope": 0.8964057507987225,
+        "intercept": 13.920127795527138,
+        "rightmostX": 95,
+        "bandPx": 4.5
+      },
+      "protectedLegPixels": 584
+    },
+    {
+      "frame": 2,
+      "originalBladeLine": {
+        "slope": 0.8961611076148539,
+        "intercept": 17.880899937067184,
+        "rightmostX": 93,
+        "bandPx": 4.5
+      },
+      "protectedLegPixels": 448
+    },
+    {
+      "frame": 3,
+      "originalBladeLine": {
+        "slope": 0.9638460664368779,
+        "intercept": 8.128574675201653,
+        "rightmostX": 95,
+        "bandPx": 4.5
+      },
+      "protectedLegPixels": 584
+    },
+    {
+      "frame": 4,
+      "originalBladeLine": {
+        "slope": 0.7820709491850426,
+        "intercept": 28.077852348993336,
+        "rightmostX": 93,
+        "bandPx": 4.5
+      },
+      "protectedLegPixels": 612
+    },
+    {
+      "frame": 5,
+      "originalBladeLine": {
+        "slope": 0.8646654887889113,
+        "intercept": 18.649933516693597,
+        "rightmostX": 95,
+        "bandPx": 4.5
+      },
+      "protectedLegPixels": 549
+    },
+    {
+      "frame": 6,
+      "originalBladeLine": {
+        "slope": 0.9238210399032638,
+        "intercept": 12.243738124028411,
+        "rightmostX": 96,
+        "bandPx": 4.5
+      },
+      "protectedLegPixels": 377
+    },
+    {
+      "frame": 7,
+      "originalBladeLine": {
+        "slope": 0.8724222494705168,
+        "intercept": 16.535168877494133,
+        "rightmostX": 94,
+        "bandPx": 4.5
+      },
+      "protectedLegPixels": 581
+    }
+  ]
+}

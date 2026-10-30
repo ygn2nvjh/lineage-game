@@ -30,3 +30,5 @@ await import('./build-character-assets.mjs');
 await import('./build-knight-walk-right.mjs');
 
 await import('./build-walk-diagnosis.mjs');
+
+await import('./build-walk-upper.mjs');

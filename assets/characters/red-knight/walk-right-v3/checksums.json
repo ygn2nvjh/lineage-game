@@ -1,0 +1,27 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "50164bddc09ed0e5ee88ca22184a35f57ae49214a190e4d37dddc74da86f10eb",
+    "animation.json": "7d333ad318278ef0697e07f2f10d1614c20a188d9bf908aad16ed49d9c4314c7",
+    "generation-prompts.json": "d5e2a51fc9151791a4aeeca2ead49e5579d3eea255584032bd036343b67b609a",
+    "mask-p0.png": "557359d32f4138d6466cd366b3603a5dea8816abca9ecb9c09156e3a61446058",
+    "mask-p1.png": "242dd4578fd5d5c0e7096b1cdf8117f058c0f8a75a4be2aa0a129bf40fef30af",
+    "mask-p2.png": "7ff3ab5e77c9841d7e663786d0f79aec9d2a4555ec02e44d5ca40f8db2f8ed20",
+    "master-right.png": "2e05352984ff9abadb798090da584c4e473c0558757958b313c96326f8192939",
+    "p0.png": "9757ae273b5c5bad498da0a14a190ba23972601fa16ba665f3718cd5a323830f",
+    "p1.png": "a1e1188c75eba83b2d14f501bf95c837f944715193d9e7a60e878ab9b078b2d4",
+    "preservation-audit.json": "4f2960d6939cb33e85093c794f5e3477a2f70e76b7e833a5b9b1eced1263627f",
+    "production-guide.md": "587bb2b99b4b34c258abe3fae240575426f87aee26c984b16c3585002ffbb04c",
+    "protected-legs.png": "a316cf6963de269035877b5d5ff97c1be8b45fa316edbb00aaca61acad522dd3",
+    "quiet.png": "7ed142a5c4da1dfd8b97c01c137a0b735f513b7a926e7f4d0be5957eb7b49b8f",
+    "right-01.png": "0395184c92128a9895054a0859b4ce3519eef6ef2abd27dfb7859f69639c60b1",
+    "right-02.png": "6c2af0573a8e97b6edcd251ddece770f8398e02fdb807026cf17eaf62f64d597",
+    "right-03.png": "44c7777115efb0a3cbe4f1f52e4696de0b8f2770e70020ec1da5eeccc181df73",
+    "right-04.png": "f3d4f50fc6efc878ffac002f66ba56b1220787d882e98fbb36244926c2a3c2b3",
+    "right-05.png": "63a0e53e4c04a8713a81ef95a20fe1a2c09ee72563bb4da0bf63ab57012aad41",
+    "right-06.png": "f33b44ad40b29eae8eda74910da67511f7837e0f26e00c518d0d5fa3ad680924",
+    "right-07.png": "7ae93d163494442ef9676897cc3e032c5f938bcb39d3e9f0f54d602f5c22af4d",
+    "right-08.png": "25ad5357d0dac7f364040d1e1cda1fb41c1168bf71e374df61ffeecf181063ea",
+    "walk-right.png": "4377da76e6ced772970642fbea898420918dcf17919efe7d1043ecc79726d72f"
+  }
+}

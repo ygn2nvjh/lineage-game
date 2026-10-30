@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "characterId": "red-knight-female",
+  "revision": "walk-right-0.3.0",
+  "master": "../v1-0-1/character.json",
+  "direction": "right",
+  "atlas": "walk-right.png",
+  "cell": {
+    "width": 128,
+    "height": 128
+  },
+  "frames": [
+    {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        95,
+        111
+      ],
+      "pose": "右腳接地",
+      "source": "v0.2 base plus restricted generated patches",
+      "sourceNormalization": "P0 common355x474 in384x512 at14,18; common96x128 sampler, pad16. P1 source384x512, F6 local patch offsety+1. P2 source384x512. Per-stage masks preserve base.",
+      "alphaComponents": [
+        2582
+      ],
+      "sha256": "0395184c92128a9895054a0859b4ce3519eef6ef2abd27dfb7859f69639c60b1"
+    },
+    {
+      "index": 1,
+      "x": 128,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        96,
+        112
+      ],
+      "pose": "右腳承重",
+      "source": "v0.2 base plus restricted generated patches",
+      "sourceNormalization": "P0 common355x474 in384x512 at14,18; common96x128 sampler, pad16. P1 source384x512, F6 local patch offsety+1. P2 source384x512. Per-stage masks preserve base.",
+      "alphaComponents": [
+        2543
+      ],
+      "sha256": "6c2af0573a8e97b6edcd251ddece770f8398e02fdb807026cf17eaf62f64d597"
+    },
+    {
+      "index": 2,
+      "x": 256,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        19,
+        95,
+        113
+      ],
+      "pose": "左腳經過",
+      "source": "v0.2 base plus restricted generated patches",
+      "sourceNormalization": "P0 common355x474 in384x512 at14,18; common96x128 sampler, pad16. P1 source384x512, F6 local patch offsety+1. P2 source384x512. Per-stage masks preserve base.",
+      "alphaComponents": [
+        2293
+      ],
+      "sha256": "44c7777115efb0a3cbe4f1f52e4696de0b8f2770e70020ec1da5eeccc181df73"
+    },
+    {
+      "index": 3,
+      "x": 384,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        19,
+        96,
+        112
+      ],
+      "pose": "左腳前送",
+      "source": "v0.2 base plus restricted generated patches",
+      "sourceNormalization": "P0 common355x474 in384x512 at14,18; common96x128 sampler, pad16. P1 source384x512, F6 local patch offsety+1. P2 source384x512. Per-stage masks preserve base.",
+      "alphaComponents": [
+        2428
+      ],
+      "sha256": "f3d4f50fc6efc878ffac002f66ba56b1220787d882e98fbb36244926c2a3c2b3"
+    },
+    {
+      "index": 4,
+      "x": 512,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        19,
+        97,
+        112
+      ],
+      "pose": "左腳接地",
+      "source": "v0.2 base plus restricted generated patches",
+      "sourceNormalization": "P0 common355x474 in384x512 at14,18; common96x128 sampler, pad16. P1 source384x512, F6 local patch offsety+1. P2 source384x512. Per-stage masks preserve base.",
+      "alphaComponents": [
+        2548
+      ],
+      "sha256": "63a0e53e4c04a8713a81ef95a20fe1a2c09ee72563bb4da0bf63ab57012aad41"
+    },
+    {
+      "index": 5,
+      "x": 640,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        19,
+        96,
+        112
+      ],
+      "pose": "左腳承重",
+      "source": "v0.2 base plus restricted generated patches",
+      "sourceNormalization": "P0 common355x474 in384x512 at14,18; common96x128 sampler, pad16. P1 source384x512, F6 local patch offsety+1. P2 source384x512. Per-stage masks preserve base.",
+      "alphaComponents": [
+        2408
+      ],
+      "sha256": "f33b44ad40b29eae8eda74910da67511f7837e0f26e00c518d0d5fa3ad680924"
+    },
+    {
+      "index": 6,
+      "x": 768,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        34,
+        18,
+        96,
+        113
+      ],
+      "pose": "右腳經過",
+      "source": "v0.2 base plus restricted generated patches",
+      "sourceNormalization": "P0 common355x474 in384x512 at14,18; common96x128 sampler, pad16. P1 source384x512, F6 local patch offsety+1. P2 source384x512. Per-stage masks preserve base.",
+      "alphaComponents": [
+        2304
+      ],
+      "sha256": "7ae93d163494442ef9676897cc3e032c5f938bcb39d3e9f0f54d602f5c22af4d"
+    },
+    {
+      "index": 7,
+      "x": 896,
+      "y": 0,
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 112
+      },
+      "visibleBounds": [
+        35,
+        17,
+        97,
+        111
+      ],
+      "pose": "右腳前送",
+      "source": "v0.2 base plus restricted generated patches",
+      "sourceNormalization": "P0 common355x474 in384x512 at14,18; common96x128 sampler, pad16. P1 source384x512, F6 local patch offsety+1. P2 source384x512. Per-stage masks preserve base.",
+      "alphaComponents": [
+        2526
+      ],
+      "sha256": "25ad5357d0dac7f364040d1e1cda1fb41c1168bf71e374df61ffeecf181063ea"
+    }
+  ],
+  "root": {
+    "x": 64,
+    "y": 112
+  },
+  "stridePx": 48,
+  "cycleDurationMs": 800,
+  "artStatus": "upper-body local candidates; pending user visual acceptance",
+  "supportContacts": [
+    {
+      "leg": "right",
+      "x": 74,
+      "y": 110
+    },
+    {
+      "leg": "right",
+      "x": 69,
+      "y": 111
+    },
+    {
+      "leg": "right",
+      "x": 63,
+      "y": 112
+    },
+    {
+      "leg": "right",
+      "x": 54,
+      "y": 111
+    },
+    {
+      "leg": "left",
+      "x": 74,
+      "y": 110
+    },
+    {
+      "leg": "left",
+      "x": 68,
+      "y": 111
+    },
+    {
+      "leg": "left",
+      "x": 58,
+      "y": 112
+    },
+    {
+      "leg": "left",
+      "x": 53,
+      "y": 108
+    }
+  ],
+  "frameDurationMs": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "baseRevision": "walk-right-0.2.0",
+  "stages": [
+    {
+      "key": "base",
+      "label": "v0.2 原步態",
+      "atlas": "../walk-right-v2/walk-right.png"
+    },
+    {
+      "key": "p0",
+      "label": "P0 手臂與劍盾",
+      "atlas": "p0.png"
+    },
+    {
+      "key": "p1",
+      "label": "P0＋P1 承重起伏",
+      "atlas": "p1.png"
+    },
+    {
+      "key": "p2",
+      "label": "P0＋P1＋P2 髮尾",
+      "atlas": "walk-right.png"
+    }
+  ]
+}
