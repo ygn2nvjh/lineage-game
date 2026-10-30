@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "red-knight-female",
   "name": "紅髮女騎士",
-  "recordRevision": "2026-10-30-down-walk-candidate-v1",
+  "recordRevision": "2026-10-30-down-visual-accepted-up-keys",
   "staticMaster": {
     "revision": "1.0.1",
     "manifest": "v1-0-1/character.json",
@@ -35,15 +35,17 @@
   "walkDirections": [
     {
       "direction": "down",
-      "status": "walk-animation-review",
-      "frameCount": 0,
-      "manifest": null,
+      "status": "accepted",
+      "frameCount": 8,
+      "manifest": "walk-down-v1/animation.json",
       "keyPoseCount": 4,
       "keyPoseManifest": "walk-down-keys-v1/animation.json",
       "keyPoseReviewURL": "/art-walk-down-keys.html?v=1",
       "candidateFrameCount": 8,
       "candidateManifest": "walk-down-v1/animation.json",
-      "candidateReviewURL": "/art-walk-down.html?v=1"
+      "candidateReviewURL": "/art-walk-down.html?v=1",
+      "visualReview": "user accepted eight-frame appearance and asked to continue next direction",
+      "groundStatus": "not independently passed; trial stride and possible slide retained"
     },
     {
       "direction": "down-right",
@@ -65,9 +67,12 @@
     },
     {
       "direction": "up",
-      "status": "not-produced",
+      "status": "key-poses-review",
       "frameCount": 0,
-      "manifest": null
+      "manifest": null,
+      "keyPoseCount": 4,
+      "keyPoseManifest": "walk-up-keys-v1/animation.json",
+      "keyPoseReviewURL": "/art-walk-up-keys.html?v=1"
     },
     {
       "direction": "up-left",
@@ -92,10 +97,10 @@
     "targetDirections": 8,
     "targetFramesPerDirection": 8,
     "targetFrames": 64,
-    "acceptedDirections": 1,
-    "acceptedFrames": 8,
-    "remainingDirections": 7,
-    "remainingFrames": 56
+    "acceptedDirections": 2,
+    "acceptedFrames": 16,
+    "remainingDirections": 6,
+    "remainingFrames": 48
   },
   "technicalReference": {
     "cell": {
@@ -144,18 +149,40 @@
     "policy": "preserve prior files and source-art references"
   },
   "notYetApproved": [
-    "other seven walk directions",
+    "remaining six complete walk directions",
+    "down ground-motion calibration",
     "full eight-direction transitions",
     "formal game integration",
     "new attack animation"
   ],
   "workInProgress": {
-    "direction": "down",
-    "stage": "eight-frame dynamic and ground review",
-    "candidateFrameCount": 8,
+    "direction": "up",
+    "stage": "F1/F3/F5/F7 key-pose review",
+    "keyPoseCount": 4,
     "acceptedFrameCount": 0,
-    "originalFourKeysPreserved": true,
-    "reviewURL": "/art-walk-down.html?v=1",
-    "groundStatus": "unvalidated; possible support-foot slide"
-  }
+    "missingPhases": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "reviewURL": "/art-walk-up-keys.html?v=1"
+  },
+  "acceptedWalks": [
+    {
+      "direction": "right",
+      "revision": "walk-right-0.7.0",
+      "manifest": "walk-right-v7/animation.json",
+      "reviewURL": "/art-walk-p12.html?v=7",
+      "approval": "visual reference"
+    },
+    {
+      "direction": "down",
+      "revision": "walk-down-0.1.0",
+      "manifest": "walk-down-v1/animation.json",
+      "reviewURL": "/art-walk-down.html?v=1",
+      "approval": "visual; user requested next direction",
+      "groundStatus": "not passed independently; possible slide"
+    }
+  ]
 }

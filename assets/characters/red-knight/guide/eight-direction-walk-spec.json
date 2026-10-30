@@ -17,7 +17,7 @@
     ],
     "framesPerDirection": 8,
     "frameCount": 64,
-    "remainingFrameCount": 56
+    "remainingFrameCount": 48
   },
   "workflow": {
     "oneCharacterAtATime": true,
@@ -35,7 +35,6 @@
       8
     ],
     "suggestedRemainingOrder": [
-      "down",
       "up",
       "left",
       "down-right",
@@ -156,5 +155,7 @@
     "alphaConnectivityProvesSingleCompleteSword": false,
     "approvalScope": "one direction until separately accepted"
   },
-  "promptFile": "eight-direction-walk-ai.md"
+  "promptFile": "eight-direction-walk-ai.md",
+  "approvedFrontWalk": "../walk-down-v1/animation.json",
+  "frontGroundCalibration": "not independently passed"
 }

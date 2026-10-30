@@ -1,0 +1,123 @@
+{
+  "referenceChecks": "static / right / down files and SHA exact before generation",
+  "frames": [
+    {
+      "phase": 1,
+      "bounds": [
+        37,
+        21,
+        105,
+        113
+      ],
+      "visibleHeight": 92,
+      "anchor": [
+        64,
+        112
+      ],
+      "sharedTranslationY": -2,
+      "perFrameScale": false,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0
+    },
+    {
+      "phase": 3,
+      "bounds": [
+        37,
+        21,
+        105,
+        110
+      ],
+      "visibleHeight": 89,
+      "anchor": [
+        64,
+        112
+      ],
+      "sharedTranslationY": -2,
+      "perFrameScale": false,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0
+    },
+    {
+      "phase": 5,
+      "bounds": [
+        37,
+        21,
+        105,
+        113
+      ],
+      "visibleHeight": 92,
+      "anchor": [
+        64,
+        112
+      ],
+      "sharedTranslationY": -2,
+      "perFrameScale": false,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0
+    },
+    {
+      "phase": 7,
+      "bounds": [
+        37,
+        21,
+        105,
+        109
+      ],
+      "visibleHeight": 88,
+      "anchor": [
+        64,
+        112
+      ],
+      "sharedTranslationY": -2,
+      "perFrameScale": false,
+      "alphaComponents": 1,
+      "removedTinyExtractionPixels": 0
+    }
+  ],
+  "contactEstimates": [
+    {
+      "phase": 1,
+      "leg": "right",
+      "x": 72,
+      "y": 101,
+      "method": "manual selected support boot ROI alpha bottom; not automatic anatomy detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "phase": 3,
+      "leg": "right",
+      "x": 72,
+      "y": 109,
+      "method": "manual selected support boot ROI alpha bottom; not automatic anatomy detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "phase": 5,
+      "leg": "left",
+      "x": 56,
+      "y": 100,
+      "method": "manual selected support boot ROI alpha bottom; not automatic anatomy detection",
+      "uncertaintyPx": 2
+    },
+    {
+      "phase": 7,
+      "leg": "left",
+      "x": 56,
+      "y": 108,
+      "method": "manual selected support boot ROI alpha bottom; not automatic anatomy detection",
+      "uncertaintyPx": 2
+    }
+  ],
+  "projectedSupportDelta": {
+    "F1toF3": 8,
+    "F5toF7": 8,
+    "interpretation": "support foot moves screen-down within sprite as body walks up; estimated only, full inbetweens and motion calibration still needed"
+  },
+  "sourceImage": "exec-c1020d79-cc76-431a-909b-c578a02bbe88.png",
+  "limits": [
+    "Full new-direction poses generated then uniformly downsampled; not native hand-pixel art",
+    "Phase names are intent, not proof of anatomy",
+    "Visible height differences include lifted boots; not per-frame rescaling",
+    "No full gait/ground/transition approval"
+  ]
+}

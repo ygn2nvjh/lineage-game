@@ -46,3 +46,5 @@ await import('./build-character-record.mjs');
 await import('./build-down-walk-keys.mjs');
 
 await import('./build-down-walk.mjs');
+
+await import('./build-up-walk-keys.mjs');
